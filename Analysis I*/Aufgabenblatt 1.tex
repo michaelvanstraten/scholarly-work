@@ -1,0 +1,59 @@
+\documentclass{exam}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\title{Analysis I* - Aufgabenblatt 1}
+\author{Michael van Straten}
+\begin{document}
+    \maketitle
+    \section*{1. Summenformeln}
+        Beweisen Sie folgende Summenformeln fur alle $n \in \mathbb{N}$:
+        \begin{enumerate}
+            \item[a)]
+                \[
+                    \sum_{k = 1}^{n} k^3 = \left(\sum_{k = 1}^{n}k\right)^2,
+                \]
+            \item[b)]
+                \[
+                    \sum_{k = 1}^{n-1} k^2(n-k)^2 = \frac{n(n^4-1)}{30}.
+                \]
+        \end{enumerate}
+        \subsection*{Lösungen:}
+        \begin{proof}[Bew.] 
+            Für alle $n \in \mathbb{N}$ gilt $\sum_{k = 1}^{n} k^3 = \left(\sum_{k = 1}^{n}k\right)^2$.
+            \begin{enumerate}
+                \item[a)] \underline{Anfang}: $A(0)$ ist war: $Leere\ Summe = 0 = (Leere\ Summme)^2$
+                \item[b)] \underline{Schritt}: Sei $n \ge n_0$. Angenommen $A(n)$ sei schon bewiesen.
+                    Dann ist \begin{align}
+                        \sum_{k = 1}^{n + 1} k^3 &= \sum_{k = 1}^{n}k^3 + (n + 1)^3 \\ 
+                        &= \left(\sum_{k = 1}^{n}k\right)^2 + (n + 1)^3 \tag{Gausische summenformel} \\
+                        &= \left(\frac{n(n+1)}{2}\right)^2 + (n + 1)^3 \\ 
+                        &= \frac{n^2(n+1)^2}{4} + (n + 1)^3 \\
+                        &= \frac{n^2(n+1)^2}{4} + \frac{4(n + 1)^3}{4} \\
+                        &= \frac{n^2(n+1)^2 + 4(n + 1)^3}{4} \\
+                        &= \frac{(n+1)^2(n^2 + 4(n + 1))}{4} \\
+                        &= \frac{(n+1)^2(n^2 + 4n + 4))}{4} \\
+                        &= \frac{(n+1)^2(n +2)^2}{4} \\
+                        &= \left(\frac{(n+1)(n +2)}{2}\right)^2 \\
+                        &= \left(\sum_{k=1}^{n+1}k\right)^2 
+                    \end{align}
+            \end{enumerate}
+            Dann folgt aus a), b), dass $A(n)$ für alle $n \ge n_0$ wahr ist.
+        \end{proof}
+        \begin{proof}[Bew.]
+            Für alle $n \in \mathbb{N}$ gilt $\sum_{k = 1}^{n - 1} k^2(n - k)^2 = \frac{n(n^4 - 1)}{30}$.
+            \begin{enumerate}
+                \item[a)] \underline{Anfang}: $A(1)$ ist war: $Leere\ Summe = \frac{1(1^4 - 1)}{30} = 0$ 
+                \item[b)] \underline{Schritt}: Sei $n \ge n_0$. Angenommen $A(n)$ sei shon beweisen: Dann ist 
+                    \begin{align}
+                        \sum_{k = 1}^{n} k^2(n + 1 - k)^2 &= \frac{n((n+1)^4 - 1)}{30} + n^2(n+1-n)^2 \\
+                        &= \frac{n((n+1)^4 - 1)}{30} + n^2(1)^2 \\
+                        &= \frac{n((n+1)^4 - 1)}{30} + n^2 \\
+                        &= \frac{n((n+1)^4 - 1)}{30} + \frac{30n^2}{30} \\
+                        &= \frac{n((n+1)^4 - 1) + 30n^2}{30} \\
+                    \end{align}
+            \end{enumerate}
+        \end{proof}
+\end{document}
