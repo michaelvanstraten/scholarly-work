@@ -1,59 +1,143 @@
 \documentclass{exam}
 
-\usepackage{amsthm}
-\usepackage{amsmath}
-\usepackage{amsfonts}
+\usepackage{amsthm, amsmath, amsfonts}
+\usepackage[german]{babel}
 
 \title{Analysis I* - Aufgabenblatt 1}
 \author{Michael van Straten}
 \begin{document}
-    \maketitle
-    \section*{1. Summenformeln}
-        Beweisen Sie folgende Summenformeln fur alle $n \in \mathbb{N}$:
-        \begin{enumerate}
-            \item[a)]
-                \[
-                    \sum_{k = 1}^{n} k^3 = \left(\sum_{k = 1}^{n}k\right)^2,
-                \]
-            \item[b)]
-                \[
-                    \sum_{k = 1}^{n-1} k^2(n-k)^2 = \frac{n(n^4-1)}{30}.
-                \]
-        \end{enumerate}
-        \subsection*{Lösungen:}
-        \begin{proof}[Bew.] 
-            Für alle $n \in \mathbb{N}$ gilt $\sum_{k = 1}^{n} k^3 = \left(\sum_{k = 1}^{n}k\right)^2$.
-            \begin{enumerate}
-                \item[a)] \underline{Anfang}: $A(0)$ ist war: $Leere\ Summe = 0 = (Leere\ Summme)^2$
-                \item[b)] \underline{Schritt}: Sei $n \ge n_0$. Angenommen $A(n)$ sei schon bewiesen.
-                    Dann ist \begin{align}
-                        \sum_{k = 1}^{n + 1} k^3 &= \sum_{k = 1}^{n}k^3 + (n + 1)^3 \\ 
-                        &= \left(\sum_{k = 1}^{n}k\right)^2 + (n + 1)^3 \tag{Gausische summenformel} \\
-                        &= \left(\frac{n(n+1)}{2}\right)^2 + (n + 1)^3 \\ 
-                        &= \frac{n^2(n+1)^2}{4} + (n + 1)^3 \\
-                        &= \frac{n^2(n+1)^2}{4} + \frac{4(n + 1)^3}{4} \\
-                        &= \frac{n^2(n+1)^2 + 4(n + 1)^3}{4} \\
-                        &= \frac{(n+1)^2(n^2 + 4(n + 1))}{4} \\
-                        &= \frac{(n+1)^2(n^2 + 4n + 4))}{4} \\
-                        &= \frac{(n+1)^2(n +2)^2}{4} \\
-                        &= \left(\frac{(n+1)(n +2)}{2}\right)^2 \\
-                        &= \left(\sum_{k=1}^{n+1}k\right)^2 
-                    \end{align}
-            \end{enumerate}
-            Dann folgt aus a), b), dass $A(n)$ für alle $n \ge n_0$ wahr ist.
-        \end{proof}
-        \begin{proof}[Bew.]
-            Für alle $n \in \mathbb{N}$ gilt $\sum_{k = 1}^{n - 1} k^2(n - k)^2 = \frac{n(n^4 - 1)}{30}$.
-            \begin{enumerate}
-                \item[a)] \underline{Anfang}: $A(1)$ ist war: $Leere\ Summe = \frac{1(1^4 - 1)}{30} = 0$ 
-                \item[b)] \underline{Schritt}: Sei $n \ge n_0$. Angenommen $A(n)$ sei shon beweisen: Dann ist 
-                    \begin{align}
-                        \sum_{k = 1}^{n} k^2(n + 1 - k)^2 &= \frac{n((n+1)^4 - 1)}{30} + n^2(n+1-n)^2 \\
-                        &= \frac{n((n+1)^4 - 1)}{30} + n^2(1)^2 \\
-                        &= \frac{n((n+1)^4 - 1)}{30} + n^2 \\
-                        &= \frac{n((n+1)^4 - 1)}{30} + \frac{30n^2}{30} \\
-                        &= \frac{n((n+1)^4 - 1) + 30n^2}{30} \\
-                    \end{align}
-            \end{enumerate}
-        \end{proof}
+\maketitle
+\section*{1. Summenformeln}
+Beweisen Sie folgende Summenformeln fur alle $n \in \mathbb{N}$:
+\begin{enumerate}
+	\item[a)]
+	      \[
+		      \sum_{k = 1}^{n} k^3 = \left(\sum_{k = 1}^{n}k\right)^2,
+	      \]
+	\item[b)]
+	      \[
+		      \sum_{k = 1}^{n-1} k^2(n-k)^2 = \frac{n(n^4-1)}{30}.
+	      \]
+\end{enumerate}
+\begin{proof}
+	Für alle $n \in \mathbb{N}$ gilt $\sum_{k = 1}^{n} k^3 = \left(\sum_{k = 1}^{n}k\right)^2$.
+	\begin{enumerate}
+		\item[a)] \underline{Anfang}: $A(0)$ ist war: $Leere\ Summe = 0 = (Leere\ Summme)^2$
+		\item[b)] \underline{Schritt}: Sei $n \ge n_0$. Angenommen $A(n)$ sei schon bewiesen.
+		      Dann ist \begin{align}
+			      \sum_{k = 1}^{n + 1} k^3 & = \sum_{k = 1}^{n}k^3 + (n + 1)^3                                           \\
+			                               & = \left(\sum_{k = 1}^{n}k\right)^2 + (n + 1)^3 \tag{Gausische summenformel} \\
+			                               & = \left(\frac{n(n+1)}{2}\right)^2 + (n + 1)^3                               \\
+			                               & = \frac{n^2(n+1)^2}{4} + (n + 1)^3                                          \\
+			                               & = \frac{n^2(n+1)^2}{4} + \frac{4(n + 1)^3}{4}                               \\
+			                               & = \frac{n^2(n+1)^2 + 4(n + 1)^3}{4}                                         \\
+			                               & = \frac{(n+1)^2(n^2 + 4(n + 1))}{4}                                         \\
+			                               & = \frac{(n+1)^2(n^2 + 4n + 4))}{4}                                          \\
+			                               & = \frac{(n+1)^2(n +2)^2}{4}                                                 \\
+			                               & = \left(\frac{(n+1)(n +2)}{2}\right)^2                                      \\
+			                               & = \left(\sum_{k=1}^{n+1}k\right)^2
+		      \end{align}
+	\end{enumerate}
+	Dann folgt aus a), b), dass $A(n)$ für alle $n \ge n_0$ wahr ist.
+\end{proof}
+\begin{proof}
+	Für alle $n \in \mathbb{N}$ gilt $\sum_{k = 1}^{n - 1} k^2(n - k)^2 = \frac{n(n^4 - 1)}{30}$.
+	\begin{enumerate}
+		\item[a)] \underline{Anfang}: $A(1)$ ist war: $Leere\ Summe = \frac{1(1^4 - 1)}{30} = 0$
+		\item[b)] \underline{Schritt}: Sei $n \ge n_0$. Angenommen $A(n)$ sei shon beweisen: Dann ist
+		      \begin{align}
+			      \sum_{k = 1}^{n} k^2(n + 1 - k)^2 & = \sum_{k = 1}^{n} k^2(n - k + 1)^2                                                      \\
+			                                        & = \sum_{k = 1}^{n} k^2((n - k)^2 + 2(n-k)+ 1)                                            \\
+			                                        & = \sum_{k = 1}^{n} k^2(n - k)^2 + 2k^2(n-k) + k^2                                        \\
+			                                        & = \sum_{k = 1}^{n} k^2(n - k)^2 + \sum_{k=1}^{n} 2k^2(n-k) + k^2                         \\
+			                                        & = \frac{n(n^4 - 1)}{30} + \sum_{k=1}^{n} 2k^2(n-k) + k^2                                 \\
+			                                        & = \frac{n(n^4 - 1)}{30} + \sum_{k=1}^{n} 2nk^2 - \sum_{k=1}^{n} k^3 + \sum_{k=1}^{n} k^2 \\
+			                                        & = \frac{n(n^4 - 1)}{30} + 2n\sum_{k=1}^{n} k^2 - \sum_{k=1}^{n} k^3 + \sum_{k=1}^{n} k^2 \\
+			                                        & = \frac{n(n^4 - 1)}{30} + 3n\sum_{k=1}^{n} k^2 - \sum_{k=1}^{n} k^3                      \\
+			                                        & = \frac{n(n^4 - 1)}{30} + 3n\sum_{k=1}^{n} k^2 - \sum_{k=1}^{n} k^3                      \\
+		      \end{align}
+	\end{enumerate}
+\end{proof}
+
+\section*{Aufgabe 2:}
+Wir ergänzen nun die Definition 2.9 des Binomialkoeffizienten $n \choose k$ mit $n \in \mathbb{N}$ und $k \in \mathbb{Z}$ aus der Vorlesung zu $x \choose v$ mit $x \in \mathbb{R}$ und $v \in \mathbb{N}$:
+\[
+	\binom{x}{v} := \prod_{j=1}^{v}\frac{x-j+1}{j} = \frac{x(x-1)\cdot\ldots\cdot(x-v+1)}{v!}.
+\]
+Es sein $x \in \mathbb{R}$, $v,l,k \in \mathbb{N}$ und $l \le k$. Beweisen Sie die folgenden Formeln für die
+Binomialkoeffizienten $\binom{x}{v}$:
+\begin{proof}
+	a)
+	\begin{displaymath}
+		\binom{-x}{v} = (-1)^v\binom{x+v-1}{v}
+	\end{displaymath}
+	\begin{align}
+		\binom{-x}{v} & = \frac{(-x)(-x-1)\cdot\ldots\cdot(-x-v+1)}{v!}                                                 \\
+		              & = \frac{(-1)(x)(-1)(x+1)\cdot\ldots\cdot(-1)(x+v-1)}{v!}                                        \\
+		              & = \frac{\overbrace{(-1)\cdot\ldots\cdot(-1)}^{v\text{ mal}}(x)(x+1)\cdot\ldots\cdot(x+v-1)}{v!} \\
+		              & = \frac{(-1)^v(x)(x+1)\cdot\ldots\cdot(x+v-1)}{v!}                                              \\
+		              & = (-1)^v\frac{(x)(x+1)\cdot\ldots\cdot(x+v-1)}{v!}                                              \\
+		              & = (-1)^v\frac{(x+v-1)\cdot\ldots\cdot(x+1)(x)}{v!}                                              \\
+		              & = (-1)^v\binom{x+v-1}{v}
+	\end{align}
+\end{proof}
+\begin{proof}
+	b)
+	\begin{displaymath}
+		\binom{x+1}{v+1} &= \binom{x}{v}\frac{x+1}{v+1} \\
+	\end{displaymath}
+	\begin{align}
+		\binom{x+1}{v+1} & = \frac{(x+1)x(x-1)\cdot\ldots\cdot(x-v+1)}{(v+1)!}        \\
+		                 & = \frac{(x+1)x(x-1)\cdot\ldots\cdot(x-v+1)}{(v+1)v!}       \\
+		                 & = \frac{x+1}{v+1} \frac{x(x-1)\cdot\ldots\cdot(x-v+1)}{v!} \\
+		                 & = \frac{x+1}{v+1} \binom{x}{v}                             \\
+		                 & = \binom{x}{v} \frac{x+1}{v+1}
+	\end{align}
+
+\end{proof}
+\begin{proof}
+	c)
+	\begin{displaymath}
+		\binom{x}{v+1} = \binom{x}{v}\frac{x-v}{v+1}
+	\end{displaymath}
+	\begin{align}
+		\binom{x}{v+1} & = \prod_{j=1}^{v+1}\frac{x-j+1}{j}                    \\
+		               & = \prod_{j=1}^{v}\frac{x-j+1}{j}\frac{x-(v+1)+1}{v+1} \\
+		               & = \binom{x}{v}\frac{x-v-1+1}{v+1}                     \\
+		               & = \binom{x}{v}\frac{x-v}{v+1}
+	\end{align}
+\end{proof}
+\begin{proof}
+	d)
+	\begin{displaymath}
+		\binom{x}{k}\binom{k}{l} = \binom{x}{l}\binom{x-l}{k-l}
+	\end{displaymath}
+	\begin{align}
+		\binom{x}{k}\binom{k}{l} & = \frac{x(x-1)\cdot\ldots\cdot(x-k+1)}{k!}\frac{k(k-1)\cdot\ldots\cdot(k-l+1)}{l!}
+	\end{align}
+\end{proof}
+
+\section*{Aufgabe 3:}
+Beweisen Sie 3.14 a) und b) aus der Vorlesung:
+\newline\newline
+Für alle $n,m \in \mathbb{Z}$ und $x \in \mathbb{R}$ bzw. $x \in \mathbb{R}^* = \mathbb{R}\setminus\{0\}$ im Falle negativer Potenzen gilt
+\begin{proof}
+	a)
+	\begin{displaymath}
+		x^nx^m = x^{n+m}
+	\end{displaymath}
+	\textbf{Fall $n,m \ge 0$}
+	\begin{align}
+		x^nx^m & = \overbrace{x \cdot\ldots\cdot x}^{n\text{ mal}} \cdot x^m                                                                           \\
+		       & = \overbrace{x \cdot\ldots\cdot x}^{n\text{ mal}} \cdot \overbrace{x \cdot\ldots\cdot x}^{m\text{ mal}}                               \\
+		       & = \underbrace{\overbrace{x \cdot\ldots\cdot x}^{n\text{ mal}} \cdot \overbrace{x \cdot\ldots\cdot x}^{m\text{ mal}}}_{n+m\text{ mal}}
+	\end{align}
+\end{proof}
+\begin{proof}
+	b)
+	\begin{displaymath}
+		{(x^n)}^m = x^{nm}
+	\end{displaymath}
+\end{proof}
+
 \end{document}
