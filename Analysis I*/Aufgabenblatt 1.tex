@@ -1,6 +1,7 @@
 \documentclass{exam}
 
 \usepackage{amsthm, amsmath, amsfonts}
+\usepackage{mathtools}
 \usepackage[german]{babel}
 
 \title{Analysis I* - Aufgabenblatt 1}
@@ -8,7 +9,7 @@
 \begin{document}
 \maketitle
 \section*{1. Summenformeln}
-Beweisen Sie folgende Summenformeln fur alle $n \in \mathbb{N}$:
+Beweisen Sie folgende Summenformeln für alle $n \in \mathbb{N}$:
 \begin{enumerate}
 	\item[a)]
 	      \[
@@ -22,7 +23,7 @@ Beweisen Sie folgende Summenformeln fur alle $n \in \mathbb{N}$:
 \begin{proof}
 	Für alle $n \in \mathbb{N}$ gilt $\sum_{k = 1}^{n} k^3 = \left(\sum_{k = 1}^{n}k\right)^2$.
 	\begin{enumerate}
-		\item[a)] \underline{Anfang}: $A(0)$ ist war: $Leere\ Summe = 0 = (Leere\ Summme)^2$
+		\item[a)] \underline{Anfang}: $A(0)$ wahr: $Leere\ Summe = 0 = (Leere\ Summme)^2$
 		\item[b)] \underline{Schritt}: Sei $n \ge n_0$. Angenommen $A(n)$ sei schon bewiesen.
 		      Dann ist \begin{align}
 			      \sum_{k = 1}^{n + 1} k^3 & = \sum_{k = 1}^{n}k^3 + (n + 1)^3                                           \\
@@ -35,29 +36,45 @@ Beweisen Sie folgende Summenformeln fur alle $n \in \mathbb{N}$:
 			                               & = \frac{(n+1)^2(n^2 + 4n + 4))}{4}                                          \\
 			                               & = \frac{(n+1)^2(n +2)^2}{4}                                                 \\
 			                               & = \left(\frac{(n+1)(n +2)}{2}\right)^2                                      \\
-			                               & = \left(\sum_{k=1}^{n+1}k\right)^2
+			                               & = \left(\sum_{k=1}^{n+1}k\right)^2.
 		      \end{align}
 	\end{enumerate}
 	Dann folgt aus a), b), dass $A(n)$ für alle $n \ge n_0$ wahr ist.
 \end{proof}
+
 \begin{proof}
 	Für alle $n \in \mathbb{N}$ gilt $\sum_{k = 1}^{n - 1} k^2(n - k)^2 = \frac{n(n^4 - 1)}{30}$.
 	\begin{enumerate}
-		\item[a)] \underline{Anfang}: $A(1)$ ist war: $Leere\ Summe = \frac{1(1^4 - 1)}{30} = 0$
-		\item[b)] \underline{Schritt}: Sei $n \ge n_0$. Angenommen $A(n)$ sei shon beweisen: Dann ist
+		\item[a)] \underline{Anfang}: $A(1)$ wahr: $Leere\ Summe = \frac{1(1^4 - 1)}{30} = 0$
+		\item[b)] \underline{Schritt}: Sei $n \ge n_0$. Angenommen $A(n)$ sei schon beweisen: Dann ist
 		      \begin{align}
-			      \sum_{k = 1}^{n} k^2(n + 1 - k)^2 & = \sum_{k = 1}^{n} k^2(n - k + 1)^2                                                      \\
-			                                        & = \sum_{k = 1}^{n} k^2((n - k)^2 + 2(n-k)+ 1)                                            \\
-			                                        & = \sum_{k = 1}^{n} k^2(n - k)^2 + 2k^2(n-k) + k^2                                        \\
-			                                        & = \sum_{k = 1}^{n} k^2(n - k)^2 + \sum_{k=1}^{n} 2k^2(n-k) + k^2                         \\
-			                                        & = \frac{n(n^4 - 1)}{30} + \sum_{k=1}^{n} 2k^2(n-k) + k^2                                 \\
-			                                        & = \frac{n(n^4 - 1)}{30} + \sum_{k=1}^{n} 2nk^2 - \sum_{k=1}^{n} k^3 + \sum_{k=1}^{n} k^2 \\
-			                                        & = \frac{n(n^4 - 1)}{30} + 2n\sum_{k=1}^{n} k^2 - \sum_{k=1}^{n} k^3 + \sum_{k=1}^{n} k^2 \\
-			                                        & = \frac{n(n^4 - 1)}{30} + 3n\sum_{k=1}^{n} k^2 - \sum_{k=1}^{n} k^3                      \\
-			                                        & = \frac{n(n^4 - 1)}{30} + 3n\sum_{k=1}^{n} k^2 - \sum_{k=1}^{n} k^3                      \\
+			      \sum_{k = 1}^{n} k^2(n + 1 - k)^2 & = \sum_{k = 1}^{n} k^2(n - k + 1)^2                                                                       \\
+			                                        & = \sum_{k = 1}^{n} k^2((n - k)^2 + 2(n-k)+ 1)                                                             \\
+			                                        & = \sum_{k = 1}^{n} k^2(n - k)^2 + 2k^2(n-k) + k^2                                                         \\
+			                                        & = \sum_{k = 1}^{n} k^2(n - k)^2 + \sum_{k=1}^{n} 2k^2(n-k) + k^2                                          \\
+			                                        & = \frac{n(n^4 - 1)}{30} + \sum_{k=1}^{n} 2k^2(n-k) + k^2                                                  \\
+			                                        & = \frac{n(n^4 - 1)}{30} + \sum_{k=1}^{n} 2nk^2 - 2\sum_{k=1}^{n} k^3 + \sum_{k=1}^{n} k^2                 \\
+			                                        & = \frac{n(n^4 - 1)}{30} + 2n\sum_{k=1}^{n} k^2 - 2\sum_{k=1}^{n} k^3 + \sum_{k=1}^{n} k^2                 \\
+			                                        & = \frac{n(n^4 - 1)}{30} + (2n+1)\sum_{k=1}^{n} k^2 - 2\sum_{k=1}^{n} k^3 \tag{aus 1.a}                    \\
+			                                        & = \frac{n(n^4 - 1)}{30} + (2n+1)\sum_{k=1}^{n} k^2 - 2\left(\frac{n(n+1)}{2}\right)^2 \tag{aus Vorlesung} \\
+			                                        & = \frac{n(n^4 - 1)}{30} + (2n+1)\left(\frac{n(n+1)(2n+1)}{6}\right) - 2\left(\frac{n(n+1)}{2}\right)^2    \\
+			                                        & = \frac{n(n^4 - 1)}{30} + (2n+1)\left(\frac{n(n+1)(2n+1)}{6}\right) - 2\frac{n^2(n+1)^2}{4}               \\
+			                                        & = \frac{n(n^4 - 1)}{30} + \frac{n(n+1)(2n+1)^2}{6} - \frac{2n^2(n+1)^2}{4}                                \\
+			                                        & = \frac{n(n^4 - 1)}{30} + \frac{n(n+1)(2n+1)^2 - 3n^2(n+1)^2}{6}                                          \\
+			                                        & = \frac{n(n^4 - 1) + 5n(n+1)(2n+1)^2 - 15n^2(n+1)^2}{30}                                                  \\
+			                                        & = \frac{n^5 - n + (5n^2+5n)(2n+1)(2n+1) - 15n^2(n+1)(n+1)}{30}                                            \\
+			                                        & = \frac{n^5 - n + (5n^2+5n)(4n^2 + 4n +1) - 15n^2(n^2 + 2n +1)}{30}                                       \\
+			                                        & = \frac{n^5 - n + 20n^4 + 20n^3 + 5n^2 + 20n^3 + 20n^2 + 5n - 15n^4- 30n^3 - 15n^2}{30}                   \\
+			                                        & = \frac{n^5 + 5n^4 + 10n^3 + 10n^2 + 4n}{30}                                                              \\
+			                                        & = \frac{(n+1)(n^4+4n^3+6n^2+4n)}{30} \tag{Polynomdivision}                                                \\
+			                                        & = \frac{(n+1)(n^4+4n^3+6n^2+4n + 1 - 1)}{30}                                                              \\
+			                                        & = \frac{(n+1)((n^2 + 2n +1)^2 - 1)}{30}                                                                   \\
+			                                        & = \frac{(n+1)((n + 1)^4 - 1)}{30}
 		      \end{align}
 	\end{enumerate}
 \end{proof}
+
+\pagebreak
 
 \section*{Aufgabe 2:}
 Wir ergänzen nun die Definition 2.9 des Binomialkoeffizienten $n \choose k$ mit $n \in \mathbb{N}$ und $k \in \mathbb{Z}$ aus der Vorlesung zu $x \choose v$ mit $x \in \mathbb{R}$ und $v \in \mathbb{N}$:
@@ -117,6 +134,8 @@ Binomialkoeffizienten $\binom{x}{v}$:
 	\end{align}
 \end{proof}
 
+\pagebreak
+
 \section*{Aufgabe 3:}
 Beweisen Sie 3.14 a) und b) aus der Vorlesung:
 \newline\newline
@@ -126,18 +145,105 @@ Für alle $n,m \in \mathbb{Z}$ und $x \in \mathbb{R}$ bzw. $x \in \mathbb{R}^* =
 	\begin{displaymath}
 		x^nx^m = x^{n+m}
 	\end{displaymath}
-	\textbf{Fall $n,m \ge 0$}
-	\begin{align}
-		x^nx^m & = \overbrace{x \cdot\ldots\cdot x}^{n\text{ mal}} \cdot x^m                                                                           \\
-		       & = \overbrace{x \cdot\ldots\cdot x}^{n\text{ mal}} \cdot \overbrace{x \cdot\ldots\cdot x}^{m\text{ mal}}                               \\
-		       & = \underbrace{\overbrace{x \cdot\ldots\cdot x}^{n\text{ mal}} \cdot \overbrace{x \cdot\ldots\cdot x}^{m\text{ mal}}}_{n+m\text{ mal}}
-	\end{align}
+	Potenzen werden in 3.13 im Skript wie folgt definiert: \\
+	Für alle $x \in K$, $n \in \mathbb{N}$ gilt
+	\[
+		x^0 := 1 \text{ und } x^{n+1}:=x^n \cdot n.
+	\]
+	Für alle $x \in K^*=K\setminus\{0\}$, $n \in \mathbb{N}$ gilt \[
+		x^{-n} := (x^{-1})^n.
+	\]
+	Somit kann $x^n$ für $n \ge 0$ als: \[
+		\underbrace{x \cdot \ldots \cdot x}_{n\text{ mal}}
+	\] geschrieben werden oder für $x < 0$ als: \[
+		\underbrace{x^{-1} \cdot \ldots \cdot x^{-1}}_{n\text{ mal}}.
+	\]
+	Dasselbe gilt natürlich auch für $x^m$. \\
+	Somit kann man $x^nx^m$ auch als: \[
+		\underbrace{x \cdot \ldots \cdot x}_{n\text{ mal}} \cdot \underbrace{x \cdot \ldots \cdot x}_{m\text{ mal}}
+	\] oder: \[
+		\underbrace{x \cdot \ldots \cdot x \cdot x \cdot \ldots \cdot x}_{n+m\text{ mal}}
+	\] schreiben, somit gilt $x^nx^m = x^{n+m}$. \\
+	\\
+	Es ist zu bemerken das, das obere immer noch hält, auch wenn einer der beiden Exponenten negative ist.
+	Da \[
+		x^{-n}x^m = {(x^{-1})}^nx^m = \underbrace{x^{-1} \cdot\ldots\cdots x^{-1}}_{n\text{ mal}} \cdot \underbrace{x \cdot \ldots \cdot x}_{m\text{ mal}}
+	\] oder vereinfacht \[
+		x^{-n}x^m = \underbrace{x \cdot \ldots \cdot x}_{\mathclap{m - n\text{ mal da } x^{-1} \cdot x = 1}} = x^{m-n}
+	\] gilt. \\
+	\\
+	Wenn beide Exponenten negative sind folgt: \[
+		x^{-n}x^{-m} = {(x^{-1})}^n{(x^{-1})}^m = {(x^{-1})}^{n+m} = x^{(-1)(n+m)} = x^{-n+(-m)} = x^{-n-m}.
+	\]
 \end{proof}
 \begin{proof}
 	b)
 	\begin{displaymath}
-		{(x^n)}^m = x^{nm}
+		{(x^n)}^m = x^{nm}:
 	\end{displaymath}
+	Aus 3.a wissen wir bereits das wir $x^n$ als $\underbrace{x \cdot \ldots \cdot x}_{n\text{ mal}}$ schreiben können.
+	Somit können wir ${(x^n)}^m$ auch als \[
+		(\underbrace{x \cdot \ldots \cdot x}_{n\text{ mal}})^m
+	\] schreiben. Dasselbe lässt sich natürlich auch für $z^m$ mach und somit erhalten wir \[
+		\underbrace{
+		\underbrace{
+			x \cdot \ldots \cdot x
+		}_{n\text{ mal}
+		} \cdot \ldots \cdot \underbrace{
+			x \cdot \ldots \cdot x
+		}_{n\text{ mal}}
+		}_{m\text{ mal}}
+	\] oder vereinfacht \[
+		\underbrace{
+			x \cdot \ldots \cdot x \cdot \ldots \cdot x \cdot \ldots \cdot x.
+		}_{n \cdot m\text{ mal}
+	\]
+	Es gilt also ${(x^n)}^m = x^{nm}$. \\
+	\\
+	Das obere gilt auch dann noch wenn einer oder beider der oberen Exponenten negative ist: \[
+		{(x^{-n})}^m = {({(x^{-1})}^n)}^m = {(x^{-1})}^{x \cdot m}
+	\] oder \[
+		{(x^{n})}^{-m} = {({(x^n)}^{-1})}^m = {({(x \cdot \ldots \cdot x)}^{-1})}^m = {(x^{-1} \cdot \ldots \cdot x^{-1})}^m = {({(x^{-1})}^n)}^m = {(x^{-1})}^{n \cdot m}
+	\] und auch \[
+		{(x^{-n})}^{-m} = {({({(x^{-1})}^n)}^{-1})}^m = {({(\underbrace{{(x^{-1})}^{-1}}_{\mathclap{{(x^{-1})}^{-1} = x \text{ laut Definition des inversen Elements}}})}^n)}^m = {({x}^n)}^m = x^{nm}.
+	\]
 \end{proof}
+
+\pagebreak
+
+\section*{Aufgabe 4:}
+In der LAAG I* haben Sie kürzlich eine Einführung in die Mengenlehre erhalten. Siehe
+auch unser Analysis I* Skript Z1, und insbesondere Z1.10. \\
+Seien $X$, $Y$ Mengen und $A$, $A^\prime$ Teilmengen von $X$ und $B$, $B^\prime$ Teilmengen von $Y$.
+\begin{enumerate}
+	\item[a)]
+	      \begin{proof}
+		      Zeigen Sie die Formel
+		      \begin{displaymath}
+			      (A \times B) \cap (A^\prime \times B^\prime) = (A \cap A^\prime) \times (B \cap B^\prime).
+		      \end{displaymath}
+		      Um das obere zu beweisen, müssen wir die Gleichheit der beiden folgenden Mengen Zeigen.
+		      \[
+			      (A \times B) \cap (A^\prime \times B^\prime) = \{(x,y)\,|\,( x \in A \, \land \, y\in B) \land (x \in A^\prime \, \land \, y \in B^\prime)\}
+		      \]
+		      \[
+			      (A \cap A^\prime) \times (B \cap B^\prime) = \{(x,y)\,|\,(x \in A \land x \in A^\prime) \land (x \in B \land x \in B^\prime)\}.
+		      \]
+		      Somit folgt:
+		      \begin{align}
+			      (A \times B) \cap (A^\prime \times B^\prime) & = \{(x,y)\,|\,( x \in A \, \land \, y\in B) \land (x \in A^\prime \, \land \, y \in B^\prime)\} \\
+			                                                   & = \{(x,y)\,|\,x \in A \, \land \, y\in B \land x \in A^\prime \, \land \, y \in B^\prime\}      \\
+			                                                   & = \{(x,y)\,|\,x \in A \land x \in A^\prime \land x \in B \land x \in B^\prime\}                 \\
+			                                                   & = \{(x,y)\,|\,(x \in A \land x \in A^\prime) \land (x \in B \land x \in B^\prime)\}             \\
+			                                                   & =  (A \cap A^\prime) \times (B \cap B^\prime).
+		      \end{align}
+	      \end{proof}
+	\item[b)]
+	      Gibt es eine ähnliche Formel für die Vereinigung? \\
+	      Ja es gibt eine ähnliche Formel: \[
+		      (A \times B) \cup (A^\prime \times B^\prime) \subseteq (A \cup A^\prime) \times (B \cup B^\prime).
+          \]
+          Der Beweis dazu ist ähnliche aber nicht gleich zu dem Beweis in a).
+\end{enumerate}
 
 \end{document}
