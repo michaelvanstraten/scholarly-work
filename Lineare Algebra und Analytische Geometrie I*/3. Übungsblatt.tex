@@ -1,0 +1,80 @@
+\documentclass{exam}
+
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage[german]{babel}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+\title{Lineare Algebra und analytische Geometrie I - 3. Übungsblatt}
+\author{Michael van Straten}
+\date{\today}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+\maketitle
+
+\section*{Aufgabe 1:}
+Geben Sie alle Äquivalenzrelationen, die zugehörigen Äquivalenzklassen und die Mächtigkeit der
+zugehörigen Quotientenmenge auf der Menge $\{1, 2, 3\}$ an.
+
+\begin{center}
+	\begin{tabular}{ | c | c | c | }
+		\hline
+		\textbf{Äquivalenzrelationen}                                                                 & \textbf{Äquivalenzklassen} & \textbf{Mächtigkeit der Quotientenmenge} \\
+		\hline
+		$a \sim b \Leftrightarrow a = b$                                                              &
+		\begin{array}{ccc}
+			$[1]_\sim := \{b \in \{1,2,3\} \mid b \sim a\} = \{1\}$ \\
+			$[2]_\sim := \{b \in \{1,2,3\} \mid b \sim a\} = \{2\}$ \\
+			$[3]_\sim := \{b \in \{1,2,3\} \mid b \sim a\} = \{3\}$
+		\end{array} & \[
+			| A/{\sim} := \{[a]_{\sim\!} \mid a \in A\}| = 3
+		\]                                                                                                                                                                    \\
+		\hline
+		$a \sim b \Leftrightarrow a \equiv_1 b                                                        &
+	\end{tabular}
+\end{center}
+
+\pagebreak
+
+\section*{Aufgabe 2:}
+
+\pagebreak
+
+\section*{Aufgabe 3:}
+Seien $X$ und $Y$ Mengen und $f : X \rightarrow Y$. Beweisen Sie
+\begin{itemize}
+	\item [i)] für $M \subseteq X$ gilt $M \subseteq f^{-1}(f(M))$,
+	\item [ii)] falls $f$ injektive gilt i) sogar Gleichheit,
+	\item [iii)] für $N \subseteq Y$ gilt $f(f^{-1}(N)) \subseteq N$,
+	\item [iii)] falls $f$ surjektiv gilt iii) sogar Gleichheit,
+\end{itemize}
+\begin{proof} \\\
+	\begin{itemize}
+		\item [i)]
+		      Sei $x \in M$ beliebig aber fest, da $M \subseteq X \Rightarrow x \in X$.
+		      Lass $A = f(M) = \{f(\tilde{x}) \mid \tilde{x} \in M\}$, somit ist $f(x) \in A$.
+		      Lass nun $U = f^{-1}(A) = \{\tilde{x} \in X \mid f(\tilde{x}) \in A\}$.
+		      Somit ist $x \in U$, da $x \in X$ und $f(x) \in A$.
+		      Da $x$ beliebig gewählt wurde, ist somit $M \subseteq U$. \checkmark
+		\item [ii)]
+		      Wenn $f$ injektiv dann existieren keine zwei $x_1, x_2$ für die gilt $f(x_1) = f(x_2) \land x_1 \not= x_2$.
+		      Somit muss es für jedes $y \in A$, ein wohl bestimmtes $x$ geben für das gilt $x \in X \land x \in M \land f(x) = y$.
+		      Da jedes $x \in U$ somit auch in $M$ ist, muss $U \subseteq M$ oder anders $M = U$. \checkmark
+		\item [iii)]
+		      Lass $U = f^{-1}(N) = \{x \in X \mid f(x) \in N\}$, somit gilt $\forall x \in U \Rightarrow f(x) \in N$. \\
+		      Lass jetzt $A = f(U) = \{f(x) \mid x \in U\}$, da $\forall x \in U$ gilt für $f(x) \in N$. \\
+		      Gilt $\forall y \in f(f^{-1}(N)) \Rightarrow y \in N$, was zu zeigen war. \checkmark
+		\item [iv)]
+		      Wenn $f$ surjektive dann gilt $\forall y \in N \Rightarrow \exists x \in X$ sodass $f(x) = y$. \\
+		      Somit $\exists x \in U: f(x) \in N$, daraus folgt Axiomatisch aus der Definition von A $\forall y \in N: \exists y \in A$. \checkmark
+	\end{itemize}
+\end{proof}
+
+\pagebreak
+
+\section*{Aufgabe 4:}
+
+\end{document}
+
