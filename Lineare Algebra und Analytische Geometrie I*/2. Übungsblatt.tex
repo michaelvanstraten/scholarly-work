@@ -2,6 +2,7 @@
 
 \usepackage{amssymb, amsmath, amsthm}
 \usepackage[german]{babel}
+\usepackage{hyperref}
 \usepackage{tabularx}
 
 \title{Lineare Algebra und analytische Geometrie I - 2. Übungsblatt}
@@ -29,7 +30,7 @@
 	      \end{enumerate}
 	      \begin{definition}
 		      \begin{displaymath}
-			      \mathcal{P}(M) := \{X\.|\,X \subseteq M\}
+			      \mathcal{P}(M) := \{X\,|\,X \subseteq M\}
 		      \end{displaymath}
 	      \end{definition}
 
@@ -55,6 +56,8 @@
 	      In dem fall $\mathcal{P}(M) \cap \mathcal{P}(N) \subseteq \mathcal{P}(M \cap N)$, gilt sogar $\mathcal{P}(M) \cap \mathcal{P}(N) = \mathcal{P}(M \cap N)$.
 \end{enumerate}
 
+\pagebreak
+
 \section*{Aufgabe 2:}
 Sei $M$ eine Menge und $R$ eine reflexive, symmetrische und antisymmetrische Relation auf $M$. Zeigen Sie, dass \[
 	R = Id_M := \{(x,y) \in M \times M\,|\,x=y \}.
@@ -73,6 +76,8 @@ Sei $M$ eine Menge und $R$ eine reflexive, symmetrische und antisymmetrische Rel
 		      Somit ist $R$ antisymmetrische.
 	\end{enumerate}
 \end{proof}
+
+\pagebreak
 
 \section*{Aufgabe 3:}
 Sei $M$ eine Menge und $\le_{M}$ eine partielle Ordnung auf $M$. Zeigen Sie, dass \[
@@ -97,6 +102,8 @@ Sei $M$ eine Menge und $\le_{M}$ eine partielle Ordnung auf $M$. Zeigen Sie, das
 		\item [c)] \underline{transitive}: Für alle $x,y,z \in Q$ gilt, wenn $x \sim y$ und $y \sim z$ $\Rightarrow x \sim z$ \newline
 	\end{enumerate}
 \end{proof}
+
+\pagebreak
 
 \section*{Aufgabe 4:}
 Wir betrachten die folgende Relation $\sim$ auf $Q := \mathbb{Z} \times \mathbb{Z}\setminus\{0\}$ \[
@@ -132,35 +139,50 @@ Beweise oder widerlegen Sie die folgenden Aussagen:
 		\item [iii)] $\sim$ ist eine partielle Ordnung auf $Q$: \newline
 		      Damit $\sim$ eine partielle auf Q definiert muss es die folgenden drei Eigenschaften erfüllen.
 		      \begin{enumerate}
-			      \item [a)] \underline{reflexive}: Für alle $x \in Q$ gilt $x \sim x$ \newline
+			      \item [a)] \underline{reflexive}: Für alle $x \in Q$ gilt $x \sim x$: \newline
 			            Für alle $(n_1,d_1) \in Q$ gilt $(n_1, d_1) \sim (n_1, d_1)$ da \begin{align}
 				            n_1*d_1 = d_1*n_1 \\
 				            n_1*d_1 = n_1*d_1
-			            \end{align} somit ist $\sim$ reflexive.
-			      \item [b)] \underline{antisymmetrische}: Für alle $x, y \in Q$ gilt wenn $x \sim y$ und $y \sim x$ $\Rightarrow x = y$ \newline
-			            Aus 4.i wissen wir das, dass paar $((3,6),(9,18))$ in $\sim$ enthalten ist, wenn nun $((9,18),(3,6))$ Teil von $\sim$ ist muss laut Voraussetzung $(3,6) = (9,18)$ sein.
-			            $9*6 = 18 * 3 = 54$, somit ist $(9,18) \sim (3,6)$. Da $(3,6) \neq (9,18)$ ist $\sim$ somit nicht antisymmetrische.
+			            \end{align} somit ist $\sim$ reflexive. \checkmark
+			      \item [b)] \underline{antisymmetrische}: Für alle $x, y \in Q$ gilt, wenn $x \sim y$ und $y \sim x$ $\Rightarrow x = y$: \newline
+			            Aus \underline{4. i) a)} wissen wir das, dass paar $((3,6),(9,18))$ in $\sim$ enthalten ist, wenn nun $((9,18),(3,6))$ Teil von $\sim$ ist muss laut Voraussetzung $(3,6) = (9,18)$ sein.
+			            $9*6 = 18 * 3 = 54$, somit ist $(9,18) \sim (3,6)$.
+			            Da $(3,6) \neq (9,18)$ ist $\sim$ somit nicht antisymmetrische.
 			      \item [c)] \underline{transitive}: Für alle $x,y,z \in Q$ gilt, wenn $x \sim y$ und $y \sim z$ dann $x \sim z$ \newline
 			            Lass $(n_1,d_1), (n_2,d_2), (n_3, d_3) \in Q$ für die gilt $n_1*d_2 = d_1*n_2$ und $n_2*d_3=d_2*n_3$.
-			            Jetzt ist für Transitivität zu beweisen das $n_1*d_3=d_1*n_3$, starten wir mit der Gleichung \[
-				            n_1*d_2 = d_1*n_2
-			            \] können wir da $n_2*d_3=d_2*n_3$, die beiden der zwei Gleichungen mit ein an der multiplizieren und erhalten \[
-				            n_1*n_2*d_2*d_3 = d_1*d_2*n_2*n_3
-			            \]. Beide Seiten beinhalten den Term $n_2*d_2$ somit kann dieser weggekürzt werden, bemerke das die Ausgangsmenge die $0$ nicht enthielt. Wir erhalten den Term \[
+			            Für Transitivität ist zu beweisen das $n_1*d_3=d_1*n_3$, starten wir mit $(n_1, d_1) \sim (n_2, d_2)$ so gilt: \[
+				            n_1*d_2 = d_1*n_2.
+			            \]
+			            Da $n_2*d_3=d_2*n_3$ können wir beiden Seiten der zwei Gleichungen mit ein an der multiplizieren und erhalten \[
+				            n_1*n_2*d_2*d_3 = d_1*d_2*n_2*n_3.
+			            \]
+			            Beide Seiten beinhalten den Term $n_2*d_2$ und da die Ausgangsmenge die $0$ nicht enthielt können diese weggekürzten.
+			            Wir erhalten den Term \[
 				            n_1*d_3 = d_1*n_3
-			            \] was zu zeigen war. Somit ist die Relation transitive.
+			            \] was zu zeigen war. \checkmark
 		      \end{enumerate}
-		      Da die Relation erfüllt somit nicht die Eigenschaften einer partiellen Ordnung.
+		      Die Relation erfüllt somit nicht die Eigenschaften einer partiellen Ordnung.
 		\item [iv)] $\sim$ ist eine Äquivalenzrelation auf $Q$ \newline
 		      Damit $\sim$ eine Äquivalenzrelation auf $Q$ definiert muss sie die folgenden drei Eigenschaften haben.
 		      \begin{enumerate}
 			      \item [a)] \underline{reflexive}: Für alle $x \in Q$ gilt $x \sim x$ \newline
-			            \textbf{bewiesen in \textit{iii.a}}
+			            Bereits bewiesen in \underline{4. iii) a)}
 			      \item [b)] \underline{symmetrisch}: Für alle $x,y \in Q$ gilt, wenn $x \sim y$ dann $y \sim x$: \newline
-			            Angenommen wir haben zwei paare $(n_1,d_1),(n_2,d_2) \in Q$ für die gilt $n_1*d_2=d_1*n_2$ somit ist zu beweisen da dann auch $n_2*d_1 = d_2*n_1$ gilt. Da $a = b$ dasselbe ist, wie $b = a$ dürfen wir $n_2*d_1 = d_2*n_1$ zu $d_2*n_1 = n_2*d_1$ umformen. Laut assoziative gesetzt ist $a*b = b*a$ und somit dürfen wir auf beiden Seiten $d_x$ mit $n_x$ vertauschen. Somit gelangen wir zu unserer Ausgangsrelation $n_1*d_2=d_1*n_2$.
-			            Somit ist $\sim$ symmetrisch.
+			            Angenommen wir haben zwei paare $(n_1,d_1),(n_2,d_2) \in Q$ für die gilt $n_1*d_2=d_1*n_2$.
+			            Somit ist zu beweisen das dann auch \[
+				            n_2*d_1 = d_2*n_1
+			            \] gilt.
+			            \newline\newline
+			            Laut assoziative gesetzt ist $a*b = b*a$ und somit dürfen wir auf beiden Seiten $d_k$ mit $n_k$ vertauschen.
+			            \[
+				            d_2*n_1=n_2*d_1.
+			            \]
+			            Da $a = b$ dasselbe ist, wie $b = a$ dürfen wir beide Seiten vertauschen \[
+				            n_2*d_1 = d_2*n_1.
+			            \]
+			            Somit existiert die Relation $(n_2,d_2) \sim (n_1, d_1)$, was zu zeigen war.
 			      \item [c)] \underline{transitive}: Für alle $x,y,z \in Q$ gilt, wenn $x \sim y$ und $y \sim z$ dann $x \sim z$ \newline
-			            \textbf{bewiesen in \textit{iii.c}}
+			            Bereits bewiesen in \underline{4. iii) c)}
 		      \end{enumerate}
 		      Da $\sim$ reflexive, symmetrisch und transitive ist, ist sie eine Äquivalenzrelation.
 	\end{enumerate}
