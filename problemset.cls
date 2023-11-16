@@ -1,32 +1,38 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{problemset}[Custom class for problemsets]
 
-\LoadClass[a4paper]{scrartcl} % Inherit from scrartcl class
+\LoadClass[a4paper]{scrartcl}
 
 \RequirePackage[utf8]{inputenc}         % this is needed for umlauts
 \RequirePackage[ngerman]{babel}         % this is needed for German translations
 \RequirePackage[T1]{fontenc}            % needed for right umlaut output in pdf
 \RequirePackage[ngerman, num]{isodate}  % get DD.MM.YYYY dates
-\RequirePackage[hidelinks]{hyperref}
 \RequirePackage{amsmath, amsthm, amssymb}
 \RequirePackage{mathtools}
+\RequirePackage{extramarks}
 \RequirePackage{enumitem}
 \RequirePackage{fancyhdr}
 \RequirePackage[top=2.5cm, bottom=2.5cm, outer=2.0cm, inner=2.0cm, heightrounded, marginparwidth=1cm, marginparsep=0.5cm]{geometry}
+\RequirePackage[hidelinks]{hyperref}
 
+\hypersetup{
+	pdftitle={\@Lecture - \@Problemset},
+	pdfauthor={\@Student},
+	pdfkeywords={mathematics},
+}
 
 \setlist[enumerate, 1]{label=\roman*)}
 \setlist[description]{font=\normalfont}
 
-\def\Student#1{\gdef\@Student{#1}}
-\def\Lecture#1{\gdef\@Lecture{#1}}
-\def\Problemset#1{\gdef\@Problemset{#1}}
-\def\DoOn#1{\gdef\@DoOn{#1}}
+\newcommand{\Student}[1]{\gdef\@Student{#1}}
+\newcommand{\Lecture}[1]{\gdef\@Lecture{#1}}
+\newcommand{\Problemset}[1]{\gdef\@Problemset{#1}}
+\newcommand{\DoOn}[1]{\gdef\@DoOn{#1}}
 
 \def\@Student{Max Musterman}
 \def\@Lecture{Lineare Algebra und Analytische Geometrie I}
 \def\@Problemset{1}
-\def\@DoOn{20. April 1970 16:20 Uhr}
+\def\@DoOn{1. Januar 1970 00:00 Uhr}
 
 \renewcommand{\maketitle}{
 	\thispagestyle{empty}
@@ -44,10 +50,14 @@
 
 \pagestyle{fancy}
 \lhead{
-    \@Lecture \\
-    \textbf{Lösungen}: \@Problemset . Übungsblatt
+	\@Lecture \\
+	\textbf{Lösungen}: \@Problemset . Übungsblatt
 }
-\rhead{\@Student}
+\rhead{
+	\@Student \\
+	\firstxmark
+
+}
 \cfoot{\thepage}
 
 \newtheoremstyle{problem}% name of the style to be used
@@ -63,4 +73,10 @@
 \theoremstyle{problem}
 \newtheorem{problem}{Aufgabe}
 
-\newtheorem{definition}{Definition}
+% \newenvironment{problem}{
+% 	\nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+% 	\begin{problem_internal}
+% 		}
+% 		{
+% 	\end{problem_internal}
+% }
