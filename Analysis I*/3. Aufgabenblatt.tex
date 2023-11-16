@@ -1,0 +1,193 @@
+\documentclass{../problemset}
+
+\Lecture{Analysis I*}
+\Problemset{3}
+\DoOn{14. November 2023}
+\Student{Michael van Straten}
+
+\setlist[enumerate, 1]{label=\alph*)}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Unendliche Reihen]
+\\\
+\begin{enumerate}
+	\item Zeigen Sie, dass die folgende Reihe konvergiert und bestimmen Sie ihren Grenzwert:
+	      \[
+		      \sum_{n=1}^{\infty} \frac{1}{n(n + 1)(n + 2)}.
+	      \]
+	\item Gleiche Aufgabenstellung wie in a) für
+	      \[
+		      \sum_{n=0}^{\infty} \sum_{k=0}^{n} {n \choose k} \frac{1}{3n+k}.
+	      \]
+	\item Drücken Sie zunächst, unter der natürlichen Annahme ihres Bildungsgesetzes, die folgende Reihe mittels des Summenzeichens aus. Zeigen Sie sodann, dass sie konvergiert, und bestimmen Sie ihren Grenzwert:
+	      \[
+		      \frac{1}{1 \cdot 4 } + \frac{1}{4 \cdot 7 } + \frac{1}{7 \cdot 10} + \frac{1}{10 \cdot 13} + \ldots
+	      \]
+	\item Gleiche Aufgabenstellung wie in c) für
+	      \[
+		      \frac{1}{1 \cdot 3 \cdot 5 \cdot 7 } + \frac{1}{3 \cdot 5 \cdot 7 \cdot 9} + \frac{1}{5 \cdot 7 \cdot 9 \cdot 11} + \frac{1}{7 \cdot 9 \cdot 11 \cdot 13} + \ldots.
+	      \]
+\end{enumerate}
+\begin{proof}
+	\\\
+	\begin{enumerate}
+		\item
+		      \[
+			      \sum_{n = 1}^{\infty}\frac{1}{n(n + 1)(n + 2)} = \frac{1}{4}:\ ?
+		      \]
+		      \begin{align}
+			      \frac{1}{n(n + 1)(n + 2)} & = \frac{1/2}{n} - \frac{1}{n + 1} + \frac{1/2}{n + 2}                                                               \\
+			                                & = \frac{1}{2}\left(\frac{1}{n} - \frac{1}{n + 1}\right) - \frac{1}{2}\left(\frac{1}{n + 1} - \frac{1}{n + 2}\right)
+		      \end{align}
+		      Nun haben wir eine Telekopierende Reihe:
+		      \begin{align}
+			      \sum_{n = 1}^{\infty}\frac{1}{n(n + 1)(n + 2)} & = \frac{1}{2}\sum_{n = 1}^{\infty}\left(\frac{1}{n} - \frac{1}{n + 1}\right) - \frac{1}{2}\sum_{n = 2}^{\infty}\left(\frac{1}{n} - \frac{1}{n + 1}\right) \\
+			                                                     & = \frac{1}{2}\left(\frac{1}{1} - \frac{1}{2}\right) = \frac{1}{4}
+		      \end{align}
+		\item
+		\item \begin{align*}
+			      \sum_{n=0}^{\infty} \frac{1}{(3n + 1)(3n + 4)}                                                                                                                                                                                 & = \\
+			      \sum_{n=0}^{\infty} \frac{1}{3}\frac{1}{3n + 1} + \frac{1}{-3}\frac{1}{3n + 4}                                                                                                                                                 & = \\
+			      \frac{1}{3} \sum_{n=0}^{\infty} \frac{1}{3n + 1} - \frac{1}{3n + 4}                                                                                                                                                            & = \\
+			      \frac{1}{3} \left(\left[\frac{1}{1} - \frac{1}{4}\right] + \left[\frac{1}{4} - \frac{1}{7}\right] + \ldots + \left[\frac{1}{3(n-1) + 1} - \frac{1}{3(n-1) +4}\right] + \left[\frac{1}{3n + 1} - \frac{1}{3n +4}\right] \right) & = \\
+			      \frac{1}{3} \left(\left[\frac{1}{1} - \frac{1}{4}\right] + \left[\frac{1}{4} - \frac{1}{7}\right] + \ldots + \left[\frac{1}{3n -3 + 1} - \frac{1}{3n -3 + 4}\right] + \left[\frac{1}{3n + 1} - \frac{1}{3n +4}\right] \right)  & = \\
+			      \frac{1}{3} \left(\left[\frac{1}{1} - \frac{1}{4}\right] + \left[\frac{1}{4} - \frac{1}{7}\right] + \ldots + \left[\frac{1}{3n - 2} - \frac{1}{3n + 1}\right] + \left[\frac{1}{3n + 1} - \frac{1}{3n +4}\right] \right)        & = \\
+			      \frac{1}{3} \left(\frac{1}{1} - \frac{1}{4} + \frac{1}{4} - \frac{1}{7} + \ldots + \frac{1}{3n - 2} - \frac{1}{3n + 1} + \frac{1}{3n + 1} - \frac{1}{3n +4} \right)                                                            & = \\
+			      \frac{1}{3} \left(\frac{1}{1} + 0 + 0 + \ldots + 0 + 0 - \frac{1}{3n +4} \right)                                                                                                                                               & = \\
+			      \frac{1}{3} \left(\frac{1}{1} - \frac{1}{3n +4} \right)                                                                                                                                                                        & = \\
+			      \frac{1}{3}
+		      \end{align*}
+		\item \[
+			      \sum_{n=0}^{\infty} \frac{1}{(2n+1)(2n+3)(2n+5)(2n+7)}
+		      \]
+	\end{enumerate}
+\end{proof}
+\end{problem}
+
+
+\pagebreak
+
+\begin{problem}[Cauchy-Folgen]
+Sei $(a_n)_{n\in\mathbb{N}}$ eine reelle Zahlenfolge mit $|a_n - a_{n+1}| \leq c^n$ für alle $n \in \mathbb{N}$, wobei $c \in \mathbb{R}$.
+\begin{enumerate}
+	\item Zeigen Sie, dass $(a_n)$ für $0 \leq c < 1$ eine Cauchy-Folge ist.
+	\item Kann $(a_n)$ auch für $c \geq 1$ eine Cauchy-Folge sein?
+\end{enumerate}
+\begin{proof}
+	Betrachten wir die Definition einer Cauchy-Folge.
+	Eine Folge $(a_n)$ reeller Zahlen heißt Cauchy-Folge, wenn für jedes $\varepsilon > 0$ ein $N \in \mathbb{N}$ existiert,
+	sodass für alle $m, n \geq N$ die Ungleichung $|a_m - a_n| < \varepsilon$ erfüllt ist.
+
+	\begin{enumerate}
+		\item Wie wir bereits aus der Vorlesung wissen konvergiert $c^n$, mit $|c| < 1$.
+		      Somit existiert ein $N \in \mathbb{N}$ sodas für alle $n \in \mathbb{N}$ $n \ge N$ $c^n < \varepsilon$. \\
+		      Also gilt \[
+			      |a_n - a_{n+1}| \leq c^n < \varepsilon \Longrightarrow |a_n - a_{n+1}| < \varepsilon
+		      \] für ein $N \in \mathbb{N}$. Somit konvergiert $a_n$ ebenfalls für ein $N$.
+		      Da jede konvergente Folge auch eine Cauchy-Folge ist, ist $a_n$ für $0 \leq c < 1$ auch eine Cauchy-Folge.
+		\item Ja $a_n$ kann auch für $c \ge 1$ konvergieren und somit auch eine Cauchy-Folge sein.
+		      Dies ist aber mit der Kondition behalten das $|a_n - a_{n+1}|$ strikt kleiner als $c^n$ sein muss für alle $n \in \mathbb{N}$.
+	\end{enumerate}
+\end{proof}
+
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Folgen, Partialsummen und Reihen]
+Sei $(a_n)_{n\in\mathbb{N}^*}$ eine reelle Zahlenfolge mit $a_n > 0$ für alle $n \in \mathbb{N}^*$, und sei $s_n = a_1 + \ldots + a_n$ die Partialsummen einer divergenten Reihe $\sum_{n=1}^{\infty} a_n$.
+\begin{enumerate}
+	\item Beweisen Sie, dass dann die folgende Reihe ebenfalls divergiert:
+	      \[
+		      \sum_{n=1}^{\infty} \frac{a_n}{1 + a_n}.
+	      \]
+	\item Beweisen Sie, dass für alle $N, k \in \mathbb{N}^*$
+	      \[
+		      \frac{a_{N+1}}{s_{N+1}} + \ldots + \frac{a_{N+k}}{s_{N+k}} \geq 1 - \frac{s_N}{s_{N+k}},
+	      \]
+	      und leiten Sie daraus her, dass folgende Reihe ebenfalls divergiert:
+	      \[
+		      \sum_{n=1}^{\infty} \frac{a_n}{s_n}.
+	      \]
+	\item Beweisen Sie, dass für alle $n \in \mathbb{N}^*$
+	      \[
+		      \frac{a_n}{s_n^2} \leq \frac{1}{s_{n-1}} - \frac{1}{s_n},
+	      \]
+	      und leiten Sie daraus her, dass folgende Reihe nun konvergiert:
+	      \[
+		      \sum_{n=1}^{\infty} \frac{a_n}{s_n^2}.
+	      \]
+\end{enumerate}
+\begin{proof}
+	\\\
+	\begin{enumerate}
+		\item Angenommen, $\sum{a_n\over 1+{a_n}}$ konvergiert.
+		      Dann konvergiert $\frac{a_n}{1+a_n}\to 0$.
+		      Es ist leicht zu sehen, dass: \[
+			      \lim_{n\to\infty}a_n=0\iff \lim_{n\to\infty}\frac{a_n}{1+a_n}=0.
+		      \]
+		      (Sei $b_n=\frac{a_n}{1+a_n}$, dann $a_n=\frac{b_n}{1-b_n}$.)
+
+		      Also haben wir \[
+			      \lim_{n\to\infty}\frac{\frac{a_n}{1+a_n}}{a_n}=1,
+		      \]
+		      durch den Vergleichstest für positive Reihen konvergiert die Reihe $\sum a_n$, was ein Widerspruch ist.
+		      \checkmark
+		\item \begin{align}
+			      \sum_{m=1}^k\frac{a_{N+m}}{s_{N+m}} & \ge\frac{1}{s_{N+k}}\sum_{m=1}^ka_{N+m} \\
+			                                          & ={s_{N+k}-s_N\over s_{N+k}}             \\
+			                                          & = 1-\frac{s_N}{s_{N+k}}.
+		      \end{align}
+		      Sei $0<\epsilon<1$. Da $\lim_{k\to\infty}1-\frac{s_N}{s_{N+k}}=1$, gibt es ein $K\ge 1$, so dass $k\ge K\implies 1-\left(1-\frac{s_N}{s_{N+k}}\right)<\epsilon$; das heißt $\frac{s_N}{s_{N+k}}<\epsilon$.
+		      Es wurde also gezeigt, dass es ein $\epsilon>0$ gibt, so dass für alle $N\ge 1$ gilt $\sum_{m=1}^k\frac{a_{N+m}}{s_{N+m}}>1-\epsilon$.
+		      Daher erfüllt die Reihe nicht das Cauchy-Kriterium und divergiert.
+		      \checkmark
+
+		\item
+
+		      Dieses Ergebnis kann durch Induktion bewiesen werden. Zuerst, im Fall $n=2$ gilt:
+		      \begin{align*}
+			      \frac{a_2}{S^2_{2}} \leq \frac{1}{S_{1}}-\frac{1}{S_{2}},
+		      \end{align*}
+		      woraus folgt, dass $\frac{1}{S_{1}}-\frac{1}{S_{2}}= \frac{S_2-S_1}{S_1S_{2}}=\frac{a_2}{S_1S_{2}}$ und $S_2 \geq S_1$.
+
+		      Nehmen Sie an, dass
+		      \begin{align*}
+			      \frac{a_n}{S^2_{n}} \leq \frac{1}{S_{n-1}}-\frac{1}{S_{n}}.
+		      \end{align*}
+		      Dann gilt
+		      \begin{align*}
+			      \frac{a_{n+1}}{S^2_{n+1}} = \frac{a_{n+1}}{(S_{n}+a_{n+1})^2} \leq  \frac{a_{n+1}}{S_{n}S_{n+1}}=\frac{1}{S_{n}}-\frac{1}{S_{n+1}}.
+		      \end{align*}
+		      \checkmark
+	\end{enumerate}
+\end{proof}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Konvergenzeigenschaften]
+Sei wieder wie in Aufgabe 3 eine reelle Zahlenfolge $(a_n)_{n\in\mathbb{N}^*}$ mit $a_n > 0$ für alle $n \in \mathbb{N}^*$. Welche die Konvergenzeigenschaften betreffenden Aussagen lassen sich treffen für
+\[
+	\sum_{n=1}^{\infty} \frac{a_n}{1 + n a_n}
+\]
+und
+\[
+	\sum_{n=1}^{\infty} \frac{a_n}{1 + n^2 a_n}?
+\]
+\end{problem}
+\begin{proof}
+	Es bekannt, aus der Vorlesung, und leicht zu zeigen das $\sum_{n=1}^{\infty}\frac{1}{n^p}$ für $p > 1$ konvergiert.
+	\begin{enumerate}
+		\item Wir bemerken das $\sum_{n=1}^{\infty} \frac{a_n}{1 + n a_n} = \sum_{n=1}^{\infty} \frac{1}{a_n^{-1} + n}$ und ein $k$ existiert mit $k > 1$ für welches gilt \[
+                \sum_{n=1}^{\infty} \frac{1}{\underbrace{a_n^{-1} + n}_{> n}} \le \sum_{n=1}^{\infty} \frac{1}{n^k}.
+		      \]. Da $\sum_{n=1}^{\infty} \frac{1}{n^k}$ für $k > 1$ konvergiert, konvergiert auch $\sum_{n=1}^{\infty} \frac{a_n}{1 + n a_n}$.
+		\item Somit folgt \[
+			      \sum_{n=1}^{\infty} \frac{a_n}{1 + n^2 a_n} <	\sum_{n=1}^{\infty} \frac{a_n}{n^2 a_n} = \sum_{n=1}^{\infty} \frac{1}{n^2},
+		      \] da $2 > 1$ konvergiert $\sum_{n=1}^{\infty} \frac{1}{n^2}$ und somit konvergiert auch $\sum_{n=1}^{\infty} \frac{a_n}{1 + n^2 a_n}$.
+	\end{enumerate}
+\end{proof}
+
+\end{document}
