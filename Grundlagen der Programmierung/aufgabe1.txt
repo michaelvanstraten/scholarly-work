@@ -1,0 +1,6 @@
+1)
+Compilerfehler
+HelloWorld.java:1: error: class HalloWelt is public, should be declared in a file named HalloWelt.java
+public class HalloWelt {
+       ^
+1 error
