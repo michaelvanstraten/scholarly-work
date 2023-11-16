@@ -15,6 +15,7 @@
 \RequirePackage{extramarks}
 \RequirePackage{enumitem}
 \RequirePackage{fancyhdr}
+\RequirePackage{xpatch}
 \RequirePackage[top=2.5cm, bottom=2.5cm, outer=2.0cm, inner=2.0cm, heightrounded, marginparwidth=1cm, marginparsep=0.5cm]{geometry}
 \RequirePackage[hidelinks, bookmarksopen=true]{hyperref}
 \RequirePackage[open]{bookmark}
@@ -94,3 +95,5 @@
 
 % Create a 'problem' environment using the defined style
 \declaretheorem[style=problem,title=Aufgabe, postheadhook=\theorembookmark]{problem}
+
+\xapptocmd{\proof}{\mbox{}\par\nobreak}{}{}
