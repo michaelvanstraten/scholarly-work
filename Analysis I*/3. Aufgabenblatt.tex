@@ -1,9 +1,9 @@
 \documentclass{../problemset}
 
+\author{Michael van Straten}
 \Lecture{Analysis I*}
 \Problemset{3}
 \DoOn{14. November 2023}
-\Student{Michael van Straten}
 
 \setlist[enumerate, 1]{label=\alph*)}
 
@@ -11,7 +11,6 @@
 \maketitle
 
 \begin{problem}[Unendliche Reihen]
-\\\
 \begin{enumerate}
 	\item Zeigen Sie, dass die folgende Reihe konvergiert und bestimmen Sie ihren Grenzwert:
 	      \[
@@ -31,7 +30,6 @@
 	      \]
 \end{enumerate}
 \begin{proof}
-	\\\
 	\begin{enumerate}
 		\item
 		      \[
@@ -121,7 +119,6 @@ Sei $(a_n)_{n\in\mathbb{N}^*}$ eine reelle Zahlenfolge mit $a_n > 0$ für alle $
 	      \]
 \end{enumerate}
 \begin{proof}
-	\\\
 	\begin{enumerate}
 		\item Angenommen, $\sum{a_n\over 1+{a_n}}$ konvergiert.
 		      Dann konvergiert $\frac{a_n}{1+a_n}\to 0$.
@@ -182,7 +179,7 @@ und
 	Es bekannt, aus der Vorlesung, und leicht zu zeigen das $\sum_{n=1}^{\infty}\frac{1}{n^p}$ für $p > 1$ konvergiert.
 	\begin{enumerate}
 		\item Wir bemerken das $\sum_{n=1}^{\infty} \frac{a_n}{1 + n a_n} = \sum_{n=1}^{\infty} \frac{1}{a_n^{-1} + n}$ und ein $k$ existiert mit $k > 1$ für welches gilt \[
-                \sum_{n=1}^{\infty} \frac{1}{\underbrace{a_n^{-1} + n}_{> n}} \le \sum_{n=1}^{\infty} \frac{1}{n^k}.
+			      \sum_{n=1}^{\infty} \frac{1}{\underbrace{a_n^{-1} + n}_{> n}} \le \sum_{n=1}^{\infty} \frac{1}{n^k}.
 		      \]. Da $\sum_{n=1}^{\infty} \frac{1}{n^k}$ für $k > 1$ konvergiert, konvergiert auch $\sum_{n=1}^{\infty} \frac{a_n}{1 + n a_n}$.
 		\item Somit folgt \[
 			      \sum_{n=1}^{\infty} \frac{a_n}{1 + n^2 a_n} <	\sum_{n=1}^{\infty} \frac{a_n}{n^2 a_n} = \sum_{n=1}^{\infty} \frac{1}{n^2},

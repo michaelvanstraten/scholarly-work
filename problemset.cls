@@ -7,9 +7,9 @@
 
 % Required packages
 \RequirePackage[ngerman]{babel}
-\RequirePackage[T1]{fontenc}
 \RequirePackage[ngerman, num]{isodate}
 \RequirePackage{amsmath}
+\RequirePackage{amssymb}
 \RequirePackage{amsthm, thmtools}
 \RequirePackage{mathtools}
 \RequirePackage{extramarks}
