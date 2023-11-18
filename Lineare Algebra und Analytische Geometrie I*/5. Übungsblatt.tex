@@ -1,0 +1,226 @@
+\documentclass{../problemset}
+
+\Lecture{Lineare Algebra und Analytische Geometrie I}
+\Problemset{5}
+\DoOn{19. November 2023 23:59 Uhr}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Untergruppenkriterien; Kern als Untergruppe ]
+Sei $(G, \cdot)$ eine Gruppe und $U \subseteq G$ nicht leer. Ist auch $(U, \cdot)$ eine Gruppe, so heißt sie Untergruppe von $(G, \cdot)$.
+
+\begin{enumerate}
+	\item Zeigen Sie die Äquivalenz der folgenden Aussagen:
+	      \begin{enumerate}[label=\alph*)]
+		      \item $(U, \cdot)$ ist eine Untergruppe von $(G, \cdot)$,
+		      \item Für alle $a, b \in U$ gilt $ab^{-1} \in U$,
+		      \item Die Relation $\sim_U := \{(a, b) \in G \times G \mid ab^{-1} \in U\}$ ist eine Äquivalenzrelation auf $G$.
+	      \end{enumerate}
+	\item Sei $(H, +)$ eine weitere Gruppe und $f: G \to H$ ein Gruppenhomomorphismus. Zeigen Sie, dass $(\ker(f), \cdot)$ eine Untergruppe von $(G, \cdot)$ ist.
+\end{enumerate}
+
+\begin{proof}
+	\begin{enumerate}
+		\item Äquivalenz von Aussagen
+		      \begin{enumerate}[label=\alph*)]
+			      \item \textit{a)} $\Longrightarrow$ \textit{b)}: \\
+			            $(U, \cdot)$ ist eine Untergruppe von $(G, \cdot)$, wenn sie in Hinsicht auf das inverse Element und die Operationen $\cdot$ geschlossen ist.
+			            Es folgt \begin{align}
+				            a, b \in U \overbrace{\Longrightarrow}^{\mathclap{Geschlossenheit}} a \cdot b \in U \\
+				            b \in U \overbrace{\Longrightarrow}^{\mathclap{Inverse}} b^{-1} \in U
+			            \end{align} mit $a \in U$ und $b \in U$ aus (2) das auch $b^{-1} \in U$ und aus (1) das somit auch $a \cdot b^{-1} \in U$.
+			            \checkmark
+			      \item \textit{b)} $\Longleftrightarrow$ \textit{c)}: \\
+			            \textbf{Reflexivität}: $(a, a) \in \sim_U$ \\
+			            da laut Kriterium \textit{b)} gilt $\forall a,b \in U$ $\Longrightarrow$ $ab^{-1} \in U$ folgt,
+			            $a, a \in U \Longrightarrow aa^{-1} \in U$. Somit ist aber $a \sim a$, was impliziert $\sim_U$ ist reflexive.
+			            \checkmark \\
+			            \textbf{Symmetrie}: $(a, b) \in \sim_U \Longrightarrow (b,a) \in \sim_U$ \\
+			            wiederum aus Kriterium \textit{b)} folgt $a, b \in U \Longrightarrow ab^{-1} \in U$ aber auch $b,a \in U \Longrightarrow ba^{-1} \in U$.
+			            Somit folgt $\forall a,b \in U a \sim b \Longrightarrow b \sim a$.
+			            \checkmark \\
+
+		      \end{enumerate}
+
+	\end{enumerate}
+\end{proof}
+
+
+\end{problem}
+
+\begin{problem}[Der erste Isomorphiesatz am Beispiel]
+Sei $x \in \mathbb{R}$ und $n \in \mathbb{N}$.
+Wir betrachten die Abbildung $d: (P_{\le n }[x], +) \to (P_{\le n-1}[x], +)$ zwischen den additiven Gruppen der Polynome vom Grad kleiner gleich $n$ und Grad kleiner gleich $n - 1$, die für jedes $p(x) = a_0 + a_1x + a_2x^2 + \ldots + a_nx^n \in P_{\le n}[x]$, $a_j \in \mathbb{R}$, $j \in \{1, \ldots, n\}$ gegeben ist durch \[
+	d(p(x)) = a_1 + 2a_2x + \ldots + na_nx^{n-1} \in P_{\le n-1}[x].
+\]
+
+Sei weiter $P'_{\le n}[x] := \{p(x) \in P_{\le n}[x] \mid p(x) = a_1x + \ldots + a_nx^n, a_j \in \mathbb{R}, j \in \{1, \ldots, n\}\}$.
+
+\begin{enumerate}
+	\item Zeigen Sie, dass $d$ ein surjektiver Gruppenhomomorphismus ist.
+	\item Berechnen Sie $\ker(d)$ und zeigen Sie, dass $\ker(d) \cap P'_{\le n}[x] = \{0\}$, wobei $0$ das neutrale Element in $(P_{\le n}[x], +)$ bezeichnet.
+	\item Zeigen Sie, dass $(P'_{\le n}[x], +)$ eine Untergruppe von $(P_n[x], +)$ ist.
+	\item Zeigen Sie, dass $D := d|_{P'_n[x]}$ bijektiv ist und geben Sie die inverse Abbildung $I := D^{-1}: P_{n-1}[x] \to P'_n[x]$ von $D$ an.
+\end{enumerate}
+
+\begin{proof}
+	\begin{enumerate}
+		\item \textit{$d$ ein surjektiver Gruppenhomomorphismus} \\
+		      \textbf{$d$ ist ein Gruppenhomomorphismus}: \\
+		      Zu zeigen is das $\forall p(x),q(x) \in P_{\le n}[x]$ gilt $d(p(x) + q(x)) = d(p(x)) + d(q(x))$.
+
+		      Notiere das:
+		      \begin{align}
+			      p(x) = a_0 + a_1x^1 + a_2x^2 + \ldots + a_nx^n, \\
+			      q(x) = b_0 + b_1x^1 + b_2x^2 + \ldots + b_nx^n.
+		      \end{align}
+
+		      Somit ist $p(x) + q(x) =$ \[
+			      (a_0+b_0) + (a_1+b_1)x^1 + (a_2 + b_2)x^2 + \ldots + (a_n+b_n)x^n,
+		      \] und $d(p(x) + q(x)) =$ \[
+			      (a_1+b_1) + 2(a_2 + b_2)x + \ldots + n(a_n+b_n)x^{n-1}.
+		      \]
+
+		      Betrachten wir nun die Abbildung von $d(p(x)) + d(q(x))$: \begin{align}
+			       & d(a_0 + a_1x^1 + a_2x^2 + \ldots + a_nx^n) + d(b_0 + b_1x^1 + b_2x^2 + \ldots + b_nx^n) \\
+			       & = a_1 + 2a_2x + \ldots + na_nx^{n-1} + b_1 + 2b_2x + \ldots + nb_nx^{n-1}               \\
+			       & = a_1 + b_1 + 2a_2x + 2b_2x + \ldots + na_nx^{n-1} + nb_nx^{n-1}                        \\
+			       & = (a_1 + b_1) + 2(a_2 + b_2)x + \ldots + n(a_n+b_n)x^{n-1}                              \\
+			       & = d(p(x) + q(x)).
+		      \end{align}
+
+		      Somit is gezeigt das $d(p(x))$ ein Gruppenhomomorphismus ist.
+		      \checkmark
+
+		      \textbf{$d$ ist surjektiv}: \\
+		      Zu zeigen ist das $\forall p_{\le n-1}(x) \in P_{\le n-1}[x]$ ein $p(x) \in P_{\le n}[x]$ existiert sodas $d(p(x)) = p_{\le n-1}(x)$.
+		      \\\\
+		      Ein solches $p(x)$ zu finden ist gleich gesetzt für jedes Polynom vom Grad $n-1$ ein Polynom des Grades $n$ in $P_{\le n}[x]$ zu finden,
+		      da $d(p(x))$ von Polynomen Grad $n$ zu Polynomen Grad $n-1$ abbildet.
+		      Da $P_{\le n}[x]$ allerdings die Menge der Polynome vom Grad $n$ ist,
+		      lässt sich für jedes Polynom aus der Menge $P_{\le n - 1}$ ein Polynom des Grades $n+1$ in $P_{\le n}[x]$ finden sodas $d(p(x)) = p_{\le n -1}(x)$.
+		      Somit ist $d$ surjektiv.
+		      \checkmark
+		\item \textit{Der $ker(d)$ und seine Schnitte} \\
+		      Es ist leicht zu sehen, dass der $ker(d)$ gleich der Menge \[
+			      \{p(x) \in P_{\le n} \mid a_0 \in \mathbb{R} \land a_j = 0, j \in \{1, \ldots, n\}\}
+		      \] ist, da $\forall p(x) \in ker(d)$ gilt \[
+			      d(p(x)) = 0 + 0 + \ldots + 0 = 0 = \text{neutrales Element aus } P_{\le n-1}.
+		      \]
+		      Somit ist allerdings auch leicht zu sehen das $\ker(d) \cap P'_{\le n}[x] = \{0\}$, da \begin{align}
+			      \ker(d) \cap P'_{\le n}[x] & = \{p(x) \in P_{\le n} \mid (a_0 \in \mathbb{R} \land a_j = 0) \land (a_0 = 0 \land a_j \in \mathbb{R}), j \in \{1, \ldots, n\}\} \\
+			                                 & = \{p(x) \in P_{\le n} \mid (a_0 = 0 \land a_j = 0, j \in \{1, \ldots, n\}\}                                                      \\
+			                                 & = \{p(x) \in P_{\le n} \mid (a_j = 0, j \in \{0, \ldots, n\}\}                                                                    \\
+			                                 & = \{0\}.
+		      \end{align}
+		      \checkmark
+		\item \textit{Die Untergruppe} \\
+		      Um zu beweisen das $P'_{\le n}[x]$ eine Untergruppe von $P_{\le n}[x]$ müssen wir die Geschlossenheit von $P'_{\le n}[x]$ sowie seine Geschlossenheit in Hinsicht auf inverse beweisen. \\
+		      \textbf{Geschlossenheit}: \\
+		      Es ist zu zeigen das $\forall p(x),q(x) \in P'_{\le n}[x]$ gilt $p(x) + q(x) \in P'_{\le n}[x]$
+
+		      Lass soeben wieder $p(x), q(x) =$ \[
+			      p(x) = a^\prime_1x + \ldots + a^\prime_nx^n, \\
+			      q(x) = b^\prime_1x + \ldots + b^\prime_nx^n.
+		      \]
+		      Somit gilt $p(x) + q(x) =$ \[
+			      a^\prime_1x + \ldots + a^\prime_nx^n + b^\prime_1x + \ldots + b^\prime_nx^n =
+			      \overbrace{(a^\prime_1+b^\prime_1)}^{\in \mathbb{R}}x + \ldots + \overbrace{(a^\prime_n+b^\prime_n)}^{\in \mathbb{R}}x^n,
+		      \] was jedoch wider in $P'_{\le n}[x]$ liegt.
+		      \checkmark
+		      \\
+		      \textbf{Geschlossenheit unter Inversen}: \\
+		      Da $\mathbb{R}$ ein Körper ist existiert zu jedem Faktor $a_j$ ein additives inverses Element in $\mathbb{R}$ sodas $a_j + a_j^{-1} = 0$.
+		      Daraus folgt, dass es für jedes $p(x) \in P'_{\le n}[x]$ ein $p(x)^{-1} \in P'_{\le n}[x]$ existiert sodas $p(x) + p(x)^{-1} = 0 =$ neutrale Element in $P'_{\le n}[x]$ und in $P_{\le n}[x]$.
+		      \checkmark
+	\end{enumerate}
+
+
+\end{proof}
+
+\end{problem}
+
+\begin{problem}[Erster Isomorphiesatz]
+Seien $(G, \cdot)$ und $(H, +)$ Gruppen und $f: G \to H$ ein surjektiver Gruppenhomomorphismus. Zeigen Sie, dass $G/\ker(f)$ isomorph zu $H$ ist. Zeigen Sie dazu, dass
+\begin{enumerate}
+	\item $F: G/\ker(f) \to H$ definiert durch $F(K) := f(g)$ für ein $g \in K$ wohl definiert ist. Das heißt, der Wert von $F$ hängt nicht von der Wahl von $g \in K$ aus der Definition ab.
+	\item $f = F \circ \pi$, wobei $\pi: G \to G/\ker(f)$, $g \mapsto [g]_{\sim_{\ker(f)}}$ die kanonische Abbildung eines Elements auf seine Äquivalenzklasse bezüglich $\ker(f)$ ist.
+	\item $F$ bijektiv ist.
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}[Einfache Körpererweiterungen]
+Sei $(L, +, \cdot)$ ein Körper, $K \subsetneq L$, und $(K, +, \cdot)$ ebenfalls ein Körper bezüglich der gleichen Operationen (man nennt $K$ dann Unterkörper von $L$ analog zur Untergruppe aus Aufgabe 1). Sei weiter $j \in L \setminus K$ mit $j^2 \in K$. Zeigen Sie, dass $K[j] := \{a + bj \in L \mid a, b \in K\}$ mit den Operationen
+\begin{align*}
+	(a + bj) \oplus (c + dj)  & = a + c + j(b + d),       \\
+	(a + bj) \otimes (c + dj) & = ac + j^2bd + j(ad + bc)
+\end{align*}
+einen Körper bildet.
+\begin{proof}
+	Um zu beweisen, das $K[j]$ einen Körper bildet muss beweisen werden das er alle Körperaxiome erfüllt. \\
+	\textbf{Assoziativität} \\
+	\begin{align}
+		((a + bj) \oplus (c + dj)) \oplus (e + fj) & = (a + c + j(b + d)) \oplus (e + fj)         \\
+		                                           & = (a + c + e ) + j(b + d + f)                \\
+		                                           & = (a + bj) \oplus (c + e + j(d + f))         \\
+		                                           & = (a + bj) \oplus ((c + dj) \oplus (e + fj))
+	\end{align}
+	\begin{align}
+		((a + bj) \otimes (c + dj)) \otimes (e + fj) & = (ac + j^2bd + j(ad + bc)) \otimes (e + fj)                   \\
+		                                             & = (ac+j^2bd)e + j^2(ad + bc)f + j((ac + j^2bd)f + (ad + bc)e)  \\
+		                                             & = ace + j^2bde + j^2adf + j^2bcf + acfj + j^3bdf + adej + bcej \\
+		                                             & = (ce+j^2df)a + j^2(cf + de)b + j((ce + j^2df)b + (cf + de)a)  \\
+		                                             & = (a + bj) \otimes (ce + j^2df + j(cf + de))                   \\
+		                                             & = (a + bj) \otimes ((c + dj) \otimes (e + fj))
+	\end{align}
+	\textbf{Kommutativität} \\
+	\begin{align}
+		(a + bj) \oplus (c + dj) & = a + c + j(b + d)         \\
+		                         & = c + a + j(d + b)         \\
+		                         & = (c + dj) \oplus (a + bj)
+	\end{align}
+	\begin{align}
+		(a + bj) \otimes (c + dj) & = ac + j^2bd + j(ad + bc)   \\
+		                          & = ca + j^2db + j(da + ca)   \\
+		                          & = (c + dj) \otimes (a + bj) \\
+	\end{align}
+	\textbf{Neutrale Elemente} \\
+	Für die Operation $\oplus$ ist das neutrale Element $e_\oplus = (0+0j)$ da \[
+		(a + bj) \oplus (0 + 0j)   = a + 0 + j(b + 0) = a + bj
+	\]
+
+	Für die Operation $\otimes$ ist das neutrale Element $e_\otimes = (1+0j)$ da \[
+		(a + bj) \otimes (1 + 0j)  = a*1 + j^2b*0 + j(a*0 + b*1) = a + bj
+	\]
+	\textbf{Inverse Elemente} \\
+	Für die Operation $\oplus$ ist das inverse Element $\forall (a + bj) \in K[j]$ gleich $(a^{-1}+b^{-1}j)$ da \[
+		(a + bj) \oplus (a^{-1} + b^{-1}j) = a + a^{-1} + j(b + b^{-1}) = 0 + 0j
+	\]
+
+	Für die Operation $\otimes$ ist das inverse Element $\forall (a + bj) \in K[j]$ gleich $({(a+jb)}^{-1}+0)$ da \begin{align}
+		(a + bj) \otimes ({(a+jb)}^{-1}+0) & = a{(a+jb)}^{-1} + j^2b*0 + j(a*0 + b*{(a+jb)}^{-1}) \\
+		                                   & = a{(a+jb)}^{-1} + jb*{(a+jb)}^{-1}                  \\
+		                                   & = {(a+jb)}^{-1}(a + jb)                              \\
+		                                   & = 1
+	\end{align}
+	\textbf{Distributibgetze} \\
+	\begin{align}
+		(a + bj) \otimes ((c + dj) \oplus (e + fj)) & = (a + bj) \otimes (ce + j(d + f))                               \\
+		                                            & = ace + j^2b(d+f) + j(a(d+f) + bce)                              \\
+		                                            & = ace + j^2(bd+bf) + j(ad+af + bce)                              \\
+		                                            & = ace + j^2bd+j^2bf + j(ad+af + bce)                             \\
+		                                            & = (ac + j^2bd) + (ae + j^2bf) + j((ad + bc) + (af + be)))        \\
+		                                            & = (ac + j^2bd + j(ad + bc)) \oplus (ae + j^2bf + j(af + be))     \\
+		                                            & = ((a + bj) \otimes (c + jd)) \oplus ((a + bj) \otimes (e + fj))
+	\end{align}
+
+\end{proof}
+
+
+\end{problem}
+
+\end{document}
+
