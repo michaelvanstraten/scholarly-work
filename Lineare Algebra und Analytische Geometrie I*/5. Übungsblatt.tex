@@ -36,19 +36,29 @@ Sei $(G, \cdot)$ eine Gruppe und $U \subseteq G$ nicht leer. Ist auch $(U, \cdot
 			            Angenommen $\forall a,b \in U$ gilt $ab^{-1} \in U$, somit muss auch das neutrale Element in $U$ sein da wenn, $a=b \Longrightarrow aa^{-1} \in U$.
 			            Setze $a=e$ und $b=a$ somit muss auch das inverse Element zu $a$ in $U$ sein da $ea^{-1} = a^{-1} \in U$.
 			            Da jedoch auch Inverse Element in $U$ sind, muss $U$ somit auch abgeschossen sein da $a,b^{-1} \in U \Longrightarrow a{(b^{-1})}^{-1} = ab \in U$.
-			            Somit sind alle bedingungen für eine Untergruppe erfüllt und die beiden Aussagen sind equivalent.
+			            Somit sind alle Bedingungen für eine Untergruppe erfüllt und die beiden Aussagen sind equivalent.
 			      \item \textit{b)} $\Longleftrightarrow$ \textit{c)}: \\
 			            \textbf{Reflexivität}: $(a, a) \in \sim_U$ \\
-			            da laut Kriterium \textit{b)} gilt $\forall a,b \in U$ $\Longrightarrow$ $ab^{-1} \in U$ folgt,
-			            $a, a \in U \Longrightarrow aa^{-1} \in U$. Somit ist aber $a \sim a$, was impliziert $\sim_U$ ist reflexiv.
+			            $\forall (a,a) G \times G$ gilt durch das Kriterium das $aa^{-1} \in U$ da wie in \textit{ii)} bewiesen, da das neutrale Element in $U$ ist.
 			            \checkmark \\
 			            \textbf{Symmetrie}: $(a, b) \in \sim_U \Longrightarrow (b,a) \in \sim_U$ \\
-			            wiederum aus Kriterium \textit{b)} folgt $a, b \in U \Longrightarrow ab^{-1} \in U$ aber auch $b,a \in U \Longrightarrow ba^{-1} \in U$.
-			            Somit folgt $\forall a,b \in U a \sim b \Longrightarrow b \sim a$.
+			            Hier folgt wiederum direkt aus dem Kriterium das, wenn $ab^{-1}$ in $U$ sind auch $ba^{-1}$ in $U$, wieder bewiesen in \textit{ii)}.
 			            \checkmark \\
-
+			            \textbf{Transivität}: $(a, b) \in \sim_U \land (b,c) \in \sim_U \Longrightarrow (a,c) \in \sim_U$ \\
 		      \end{enumerate}
-
+		\item \textit{$ker(f)$ eine Untergruppe}
+		      Wie bereits in \textit{i.b} bewiesen müssen wir lediglich zeigen das $\forall a,b \in ker(f) \Rightarrow ab^{-1} \in U$ um zu zeigen das $ker(f)$ eine Untergruppe von $G$ ist.
+		      \\\\
+		      Nehmen wir zwei Elemente aus $ker(f)$ $a,b$ somit ist laut Definition von Homomorphismen $f(a \cdot b) = f(a) + f(b)$.
+		      Somit folgt \begin{align}
+			      f(b^{-1})         & = \overbrace{f(b)^{-1}}^{\mathclap{\text{Homomorphismen bilden inverse auf inverse ab}}}                      \\
+			      f(b \cdot b^{-1}) & = f(b) + f(b)^{-1}                                                                                            \\
+			      f(e_G)            & = e_H + f(b)^{-1}                                                                                             \\
+			      f(e_G)            & = e_H + \underbrace{e_H}_{\mathclap{\text{Homomorphismen bilden neutrale Elemente auf neutrale Elemente ab}}}
+		      \end{align}, somit muss $b^{-1}$ in $ker(f)$ sein da $f(b^{-1} = e_H$.
+		      Somit folgt \begin{align}
+			      f(a \cdot b^{-1}) = f(a) + f(b^{-1}) = e_H + e_H = e_H
+		      \end{align} und somit ist auch $ab^{-1} \in U$ woraus folgt $ker(f)$ ist eine Untergruppe von $G$.
 	\end{enumerate}
 \end{proof}
 
@@ -69,6 +79,8 @@ Sei weiter $P'_{\le n}[x] := \{p(x) \in P_{\le n}[x] \mid p(x) = a_1x + \ldots +
 	\item Zeigen Sie, dass $(P'_{\le n}[x], +)$ eine Untergruppe von $(P_n[x], +)$ ist.
 	\item Zeigen Sie, dass $D := d|_{P'_n[x]}$ bijektiv ist und geben Sie die inverse Abbildung $I := D^{-1}: P_{n-1}[x] \to P'_n[x]$ von $D$ an.
 \end{enumerate}
+
+\pagebreak
 
 \begin{proof}
 	\begin{enumerate}
@@ -139,12 +151,13 @@ Sei weiter $P'_{\le n}[x] := \{p(x) \in P_{\le n}[x] \mid p(x) = a_1x + \ldots +
 		      Da $\mathbb{R}$ ein Körper ist existiert zu jedem Faktor $a_j$ ein additives inverses Element in $\mathbb{R}$ sodas $a_j + a_j^{-1} = 0$.
 		      Daraus folgt, dass es für jedes $p(x) \in P'_{\le n}[x]$ ein $p(x)^{-1} \in P'_{\le n}[x]$ existiert sodas $p(x) + p(x)^{-1} = 0 =$ neutrale Element in $P'_{\le n}[x]$ und in $P_{\le n}[x]$.
 		      \checkmark
+		\item To-do!
 	\end{enumerate}
-
-
 \end{proof}
 
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[Erster Isomorphiesatz]
 Seien $(G, \cdot)$ und $(H, +)$ Gruppen und $f: G \to H$ ein surjektiver Gruppenhomomorphismus. Zeigen Sie, dass $G/\ker(f)$ isomorph zu $H$ ist. Zeigen Sie dazu, dass
@@ -155,6 +168,8 @@ Seien $(G, \cdot)$ und $(H, +)$ Gruppen und $f: G \to H$ ein surjektiver Gruppen
 \end{enumerate}
 
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[Einfache Körpererweiterungen]
 Sei $(L, +, \cdot)$ ein Körper, $K \subsetneq L$, und $(K, +, \cdot)$ ebenfalls ein Körper bezüglich der gleichen Operationen (man nennt $K$ dann Unterkörper von $L$ analog zur Untergruppe aus Aufgabe 1). Sei weiter $j \in L \setminus K$ mit $j^2 \in K$. Zeigen Sie, dass $K[j] := \{a + bj \in L \mid a, b \in K\}$ mit den Operationen
@@ -203,13 +218,7 @@ einen Körper bildet.
 	Für die Operation $\oplus$ ist das inverse Element $\forall (a + bj) \in K[j]$ gleich $(a^{-1}+b^{-1}j)$ da \[
 		(a + bj) \oplus (a^{-1} + b^{-1}j) = a + a^{-1} + j(b + b^{-1}) = 0 + 0j
 	\]
-
-	Für die Operation $\otimes$ ist das inverse Element $\forall (a + bj) \in K[j]$ gleich $({(a+jb)}^{-1}+0)$ da \begin{align}
-		(a + bj) \otimes ({(a+jb)}^{-1}+0) & = a{(a+jb)}^{-1} + j^2b*0 + j(a*0 + b*{(a+jb)}^{-1}) \\
-		                                   & = a{(a+jb)}^{-1} + jb*{(a+jb)}^{-1}                  \\
-		                                   & = {(a+jb)}^{-1}(a + jb)                              \\
-		                                   & = 1
-	\end{align}
+	Für die Operation $\otimes$ ist das inverse Element $\forall (a + bj) \in K[j]$ gleich $(a{(a^2+(-j^2)b^2)}^{-1} + j(-b{(a^2+(-j^2)b^2)}^{-1})$.
 	\textbf{Distributibgetze} \\
 	\begin{align}
 		(a + bj) \otimes ((c + dj) \oplus (e + fj)) & = (a + bj) \otimes (ce + j(d + f))                               \\
@@ -220,7 +229,9 @@ einen Körper bildet.
 		                                            & = (ac + j^2bd + j(ad + bc)) \oplus (ae + j^2bf + j(af + be))     \\
 		                                            & = ((a + bj) \otimes (c + jd)) \oplus ((a + bj) \otimes (e + fj))
 	\end{align}
-
+	\begin{align}
+		((c + dj) \oplus (e + fj)) \otimes (a + bj) & = time! \\
+	\end{align}
 \end{proof}
 
 
