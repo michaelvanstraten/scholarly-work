@@ -23,46 +23,50 @@ Sei $(G, \cdot)$ eine Gruppe und $U \subseteq G$ nicht leer. Ist auch $(U, \cdot
 
 \begin{proof}
 	\begin{enumerate}
-		\item Äquivalenz von Aussagen
+		\item \textit{Äquivalenz von Aussagen:}
 		      \begin{enumerate}[label=\alph*)]
 			      \item \textit{a)} $\Longrightarrow$ \textit{b)}: \\
 			            $(U, \cdot)$ ist eine Untergruppe von $(G, \cdot)$, wenn sie in Hinsicht auf das inverse Element und die Operationen $\cdot$ geschlossen ist.
-			            Es folgt \begin{align}
-				            a, b \in U \overbrace{\Longrightarrow}^{\mathclap{Geschlossenheit}} a \cdot b \in U \\
-				            b \in U \overbrace{\Longrightarrow}^{\mathclap{Inverse}} b^{-1} \in U
-			            \end{align} mit $a \in U$ und $b \in U$ aus (2) das auch $b^{-1} \in U$ und aus (1) das somit auch $a \cdot b^{-1} \in U$.
-			            \checkmark
+			            Es folgt
+			            \begin{align}
+				            a, b \in U & \Longrightarrow a \cdot b \in U \quad \text{(Geschlossenheit)}, \\
+				            b \in U    & \Longrightarrow b^{-1} \in U \quad \text{(Inverse)}.
+			            \end{align}
+			            Mit $a \in U$ und $b \in U$ aus (2) folgt, dass auch $b^{-1} \in U$ ist und aus (1) folgt, dass somit auch $a \cdot b^{-1} \in U$. \checkmark
 			      \item \textit{a)} $\Longleftarrow$ \textit{b)}: \\
-			            Angenommen $\forall a,b \in U$ gilt $ab^{-1} \in U$, somit muss auch das neutrale Element in $U$ sein da wenn, $a=b \Longrightarrow aa^{-1} \in U$.
-			            Setze $a=e$ und $b=a$ somit muss auch das inverse Element zu $a$ in $U$ sein da $ea^{-1} = a^{-1} \in U$.
-			            Da jedoch auch Inverse Element in $U$ sind, muss $U$ somit auch abgeschossen sein da $a,b^{-1} \in U \Longrightarrow a{(b^{-1})}^{-1} = ab \in U$.
-			            Somit sind alle Bedingungen für eine Untergruppe erfüllt und die beiden Aussagen sind equivalent.
+			            Angenommen, $\forall a,b \in U$ gilt $ab^{-1} \in U$. \\
+			            \\
+			            Somit muss auch das neutrale Element in $U$ sein, da wenn $a=b$, dann $aa^{-1} \in U$. \\
+			            \\
+			            Setze $a=e$ und $b=a$. Somit muss auch das inverse Element zu $a$ in $U$ sein, da $ea^{-1} = a^{-1} \in U$.
+			            Da jedoch auch inverse Elemente in $U$ sind, muss $U$ somit auch abgeschlossen sein, da $a,b^{-1} \in U \Longrightarrow a{(b^{-1})}^{-1} = ab \in U$. \\
+			            \\
+			            Somit sind alle Bedingungen für eine Untergruppe erfüllt und die beiden Aussagen sind äquivalent. \checkmark
 			      \item \textit{b)} $\Longleftrightarrow$ \textit{c)}: \\
 			            \textbf{Reflexivität}: $(a, a) \in \sim_U$ \\
-			            $\forall (a,a) G \times G$ gilt durch das Kriterium das $aa^{-1} \in U$ da wie in \textit{ii)} bewiesen, da das neutrale Element in $U$ ist.
-			            \checkmark \\
+			            $\forall (a,a) \in G \times G$ gilt durch das Kriterium, dass $aa^{-1} \in U$ (wie in \textit{ii)} bewiesen), da das neutrale Element in $U$ ist. \checkmark \\
 			            \textbf{Symmetrie}: $(a, b) \in \sim_U \Longrightarrow (b,a) \in \sim_U$ \\
-			            Hier folgt wiederum direkt aus dem Kriterium das, wenn $ab^{-1}$ in $U$ sind auch $ba^{-1}$ in $U$, wieder bewiesen in \textit{ii)}.
-			            \checkmark \\
-			            \textbf{Transivität}: $(a, b) \in \sim_U \land (b,c) \in \sim_U \Longrightarrow (a,c) \in \sim_U$ \\
+			            Hier folgt wiederum direkt aus dem Kriterium, dass wenn $ab^{-1}$ in $U$ ist, auch $ba^{-1}$ in $U$ ist (wie in \textit{ii)} bewiesen). \checkmark \\
+			            \textbf{Transitivität}: $(a, b) \in \sim_U \land (b,c) \in \sim_U \Longrightarrow (a,c) \in \sim_U$ \\
+			            Angenommen, $(a, b) \in \sim_U$ und $(b, c) \in \sim_U$. Das bedeutet, dass $ab^{-1} \in U$ und $bc^{-1} \in U$. Wir wollen zeigen, dass dann auch $ac^{-1} \in U$.
 		      \end{enumerate}
-		\item \textit{$ker(f)$ eine Untergruppe}
-		      Wie bereits in \textit{i.b} bewiesen müssen wir lediglich zeigen das $\forall a,b \in ker(f) \Rightarrow ab^{-1} \in U$ um zu zeigen das $ker(f)$ eine Untergruppe von $G$ ist.
-		      \\\\
-		      Nehmen wir zwei Elemente aus $ker(f)$ $a,b$ somit ist laut Definition von Homomorphismen $f(a \cdot b) = f(a) + f(b)$.
-		      Somit folgt \begin{align}
-			      f(b^{-1})         & = \overbrace{f(b)^{-1}}^{\mathclap{\text{Homomorphismen bilden inverse auf inverse ab}}}                      \\
-			      f(b \cdot b^{-1}) & = f(b) + f(b)^{-1}                                                                                            \\
-			      f(e_G)            & = e_H + f(b)^{-1}                                                                                             \\
-			      f(e_G)            & = e_H + \underbrace{e_H}_{\mathclap{\text{Homomorphismen bilden neutrale Elemente auf neutrale Elemente ab}}}
-		      \end{align}, somit muss $b^{-1}$ in $ker(f)$ sein da $f(b^{-1} = e_H$.
-		      Somit folgt \begin{align}
+		\item \textit{$\ker(f)$ ist eine Untergruppe:}
+		      Wie bereits in \textit{i.b} bewiesen, müssen wir lediglich zeigen, dass $\forall a,b \in \ker(f) \Rightarrow ab^{-1} \in \ker(f)$, um zu zeigen, dass $\ker(f)$ eine Untergruppe von $G$ ist.
+
+		      Nehmen wir zwei Elemente aus $\ker(f)$, $a$ und $b$. Somit ist laut Definition von Homomorphismen $f(a \cdot b) = f(a) + f(b)$. Somit folgt
+		      \begin{align}
+			      f(b^{-1}) &= f(b)^{-1} \quad \text{(Homomorphismen bilden inverse auf inverse ab)} \\
+			      f(b \cdot b^{-1}) &= f(b) + f(b)^{-1} \\
+			      f(e_G) &= e_H + f(b)^{-1} \\
+			      f(e_G) &= e_H + e_H \quad \text{(Homomorphismen bilden neutrale Elemente auf neutrale Elemente ab)}
+		      \end{align}
+		      Somit muss $b^{-1}$ in $\ker(f)$ sein, da $f(b^{-1}) = e_H$. Folglich folgt
+		      \begin{align}
 			      f(a \cdot b^{-1}) = f(a) + f(b^{-1}) = e_H + e_H = e_H
-		      \end{align} und somit ist auch $ab^{-1} \in U$ woraus folgt $ker(f)$ ist eine Untergruppe von $G$.
+		      \end{align}
+		      und somit ist auch $ab^{-1} \in \ker(f)$, woraus folgt, dass $\ker(f)$ eine Untergruppe von $G$ ist.
 	\end{enumerate}
 \end{proof}
-
-
 \end{problem}
 
 \begin{problem}[Der erste Isomorphiesatz am Beispiel]
