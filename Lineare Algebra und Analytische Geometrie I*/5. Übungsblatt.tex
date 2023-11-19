@@ -213,62 +213,82 @@ Sei $(L, +, \cdot)$ ein Körper, $K \subsetneq L$, und $(K, +, \cdot)$ ebenfalls
 \end{align*}
 einen Körper bildet.
 \begin{proof}
-	Um zu beweisen, das $K[j]$ einen Körper bildet muss beweisen werden das er alle Körperaxiome erfüllt. \\
-	\textbf{Assoziativität} \\
-	\begin{align}
-		((a + bj) \oplus (c + dj)) \oplus (e + fj) & = (a + c + j(b + d)) \oplus (e + fj)         \\
-		                                           & = (a + c + e ) + j(b + d + f)                \\
-		                                           & = (a + bj) \oplus (c + e + j(d + f))         \\
-		                                           & = (a + bj) \oplus ((c + dj) \oplus (e + fj))
-	\end{align}
-	\begin{align}
-		((a + bj) \otimes (c + dj)) \otimes (e + fj) & = (ac + j^2bd + j(ad + bc)) \otimes (e + fj)                   \\
-		                                             & = (ac+j^2bd)e + j^2(ad + bc)f + j((ac + j^2bd)f + (ad + bc)e)  \\
-		                                             & = ace + j^2bde + j^2adf + j^2bcf + acfj + j^3bdf + adej + bcej \\
-		                                             & = (ce+j^2df)a + j^2(cf + de)b + j((ce + j^2df)b + (cf + de)a)  \\
-		                                             & = (a + bj) \otimes (ce + j^2df + j(cf + de))                   \\
-		                                             & = (a + bj) \otimes ((c + dj) \otimes (e + fj))
-	\end{align}
-	\textbf{Kommutativität} \\
-	\begin{align}
-		(a + bj) \oplus (c + dj) & = a + c + j(b + d)         \\
-		                         & = c + a + j(d + b)         \\
-		                         & = (c + dj) \oplus (a + bj)
-	\end{align}
-	\begin{align}
-		(a + bj) \otimes (c + dj) & = ac + j^2bd + j(ad + bc)   \\
-		                          & = ca + j^2db + j(da + ca)   \\
-		                          & = (c + dj) \otimes (a + bj) \\
-	\end{align}
-	\textbf{Neutrale Elemente} \\
-	Für die Operation $\oplus$ ist das neutrale Element $e_\oplus = (0+0j)$ da \[
-		(a + bj) \oplus (0 + 0j)   = a + 0 + j(b + 0) = a + bj
-	\]
+Um zu beweisen, dass $K[j]$ einen Körper bildet, muss gezeigt werden, dass er alle Körperaxiome erfüllt. \\
 
-	Für die Operation $\otimes$ ist das neutrale Element $e_\otimes = (1+0j)$ da \[
-		(a + bj) \otimes (1 + 0j)  = a*1 + j^2b*0 + j(a*0 + b*1) = a + bj
-	\]
-	\textbf{Inverse Elemente} \\
-	Für die Operation $\oplus$ ist das inverse Element $\forall (a + bj) \in K[j]$ gleich $(a^{-1}+b^{-1}j)$ da \[
-		(a + bj) \oplus (a^{-1} + b^{-1}j) = a + a^{-1} + j(b + b^{-1}) = 0 + 0j
-	\]
-	Für die Operation $\otimes$ ist das inverse Element $\forall (a + bj) \in K[j]$ gleich $(a{(a^2+(-j^2)b^2)}^{-1} + j(-b{(a^2+(-j^2)b^2)}^{-1})$.
-	\textbf{Distributibgetze} \\
-	\begin{align}
-		(a + bj) \otimes ((c + dj) \oplus (e + fj)) & = (a + bj) \otimes (ce + j(d + f))                               \\
-		                                            & = ace + j^2b(d+f) + j(a(d+f) + bce)                              \\
-		                                            & = ace + j^2(bd+bf) + j(ad+af + bce)                              \\
-		                                            & = ace + j^2bd+j^2bf + j(ad+af + bce)                             \\
-		                                            & = (ac + j^2bd) + (ae + j^2bf) + j((ad + bc) + (af + be)))        \\
-		                                            & = (ac + j^2bd + j(ad + bc)) \oplus (ae + j^2bf + j(af + be))     \\
-		                                            & = ((a + bj) \otimes (c + jd)) \oplus ((a + bj) \otimes (e + fj))
-	\end{align}
-	\begin{align}
-		((c + dj) \oplus (e + fj)) \otimes (a + bj) & = time! \\
-	\end{align}
+\textbf{Assoziativität}
+
+Für die Operation $\oplus$:
+\begin{align}
+	((a + bj) \oplus (c + dj)) \oplus (e + fj) & = (a + c) + j(b + d) \oplus (e + fj)         \\
+	& = (a + c + e) + j(b + d + f)                \\
+	& = (a + bj) \oplus ((c + dj) \oplus (e + fj))
+\end{align}
+
+Für die Operation $\otimes$:
+\begin{align}
+	((a + bj) \otimes (c + dj)) \otimes (e + fj) & = (ac + j^2bd + j(ad + bc)) \otimes (e + fj)                   \\
+	& = ace + j^2bde + j(adf + bcf) + j^3bdf                    \\
+	& = (ce + j^2df) + j(cf + de) \otimes (a + bj)                   \\
+	& = (a + bj) \otimes ((c + dj) \otimes (e + fj))
+\end{align}
+
+\textbf{Kommutativität}
+
+Für die Operation $\oplus$:
+\begin{align}
+	(a + bj) \oplus (c + dj) & = (a + c) + j(b + d)         \\
+	& = (c + a) + j(d + b)         \\
+	& = (c + dj) \oplus (a + bj)
+\end{align}
+
+Für die Operation $\otimes$:
+\begin{align}
+	(a + bj) \otimes (c + dj) & = ac + j^2bd + j(ad + bc)   \\
+	& = ca + j^2db + j(da + bc)   \\
+	& = (c + dj) \otimes (a + bj)
+\end{align}
+
+\textbf{Neutrale Elemente}
+
+Für die Operation $\oplus$ ist das neutrale Element $e_\oplus = (0+0j)$, da \[
+	(a + bj) \oplus (0 + 0j)   = (a + 0) + j(b + 0) = a + bj
+\]
+
+Für die Operation $\otimes$ ist das neutrale Element $e_\otimes = (1+0j)$, da \[
+	(a + bj) \otimes (1 + 0j)  = ac + j^2b \cdot 0 + j(ad + bc) = a + bj
+\]
+
+\textbf{Inverse Elemente}
+
+Für die Operation $\oplus$ ist das inverse Element $\forall (a + bj) \in K[j]$ gleich $(a^{-1} - b^{-1}j)$, da \[
+	(a + bj) \oplus (a^{-1} - b^{-1}j) = (a + a^{-1}) + j(b - b^{-1}) = 0 + 0j
+\]
+
+Für die Operation $\otimes$ ist das inverse Element $\forall (a + bj) \in K[j]$ gleich $(a{(a^2+(-j^2)b^2)}^{-1} - bj{(a^2+(-j^2)b^2)}^{-1})$.
+
+\textbf{Distributivgesetze}
+
+Für die Operation $\otimes$ über $\oplus$:
+\begin{align}
+	(a + bj) \otimes ((c + dj) \oplus (e + fj)) & = (a + bj) \otimes (ce + j(d + f))                               \\
+	& = ace + j^2b(d + f) + j(ad + af + bce)                              \\
+	& = ace + j^2(bd + bf) + j(ad + af + bce)                              \\
+	& = (ac + j^2bd) + (ae + j^2bf) + j((ad + bc) + (af + be))        \\
+	& = (ac + j^2bd + j(ad + bc)) \oplus (ae + j^2bf + j(af + be))     \\
+	& = ((a + bj) \otimes (c + jd)) \oplus ((a + bj) \otimes (e + fj))
+\end{align}
+
+Für die Operation $\otimes$ über $\oplus$:
+\begin{align}
+	((c + dj) \oplus (e + fj)) \otimes (a + bj) & = (ce + j(d + f)) \otimes (a + bj)                               \\
+	& = ace + j^2(bd + bf) + j(ad + af + bce)                              \\
+	& = (ac + j^2bd) + (ae + j^2bf) + j((ad + bc) + (af + be))        \\
+	& = (c + dj) \otimes (a + bj) \oplus (e + fj)     \\
+	& = ((c + dj) \otimes (a + bj)) \oplus ((e + fj) \otimes (a + bj))
+\end{align}
+
+Damit sind alle Körperaxiome erfüllt, und somit ist gezeigt, dass $K[j]$ ein Körper ist.
 \end{proof}
-
-
 \end{problem}
 
 \end{document}
