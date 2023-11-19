@@ -32,10 +32,15 @@ Sei $(G, \cdot)$ eine Gruppe und $U \subseteq G$ nicht leer. Ist auch $(U, \cdot
 				            b \in U \overbrace{\Longrightarrow}^{\mathclap{Inverse}} b^{-1} \in U
 			            \end{align} mit $a \in U$ und $b \in U$ aus (2) das auch $b^{-1} \in U$ und aus (1) das somit auch $a \cdot b^{-1} \in U$.
 			            \checkmark
+			      \item \textit{a)} $\Longleftarrow$ \textit{b)}: \\
+			            Angenommen $\forall a,b \in U$ gilt $ab^{-1} \in U$, somit muss auch das neutrale Element in $U$ sein da wenn, $a=b \Longrightarrow aa^{-1} \in U$.
+			            Setze $a=e$ und $b=a$ somit muss auch das inverse Element zu $a$ in $U$ sein da $ea^{-1} = a^{-1} \in U$.
+			            Da jedoch auch Inverse Element in $U$ sind, muss $U$ somit auch abgeschossen sein da $a,b^{-1} \in U \Longrightarrow a{(b^{-1})}^{-1} = ab \in U$.
+			            Somit sind alle bedingungen für eine Untergruppe erfüllt und die beiden Aussagen sind equivalent.
 			      \item \textit{b)} $\Longleftrightarrow$ \textit{c)}: \\
 			            \textbf{Reflexivität}: $(a, a) \in \sim_U$ \\
 			            da laut Kriterium \textit{b)} gilt $\forall a,b \in U$ $\Longrightarrow$ $ab^{-1} \in U$ folgt,
-			            $a, a \in U \Longrightarrow aa^{-1} \in U$. Somit ist aber $a \sim a$, was impliziert $\sim_U$ ist reflexive.
+			            $a, a \in U \Longrightarrow aa^{-1} \in U$. Somit ist aber $a \sim a$, was impliziert $\sim_U$ ist reflexiv.
 			            \checkmark \\
 			            \textbf{Symmetrie}: $(a, b) \in \sim_U \Longrightarrow (b,a) \in \sim_U$ \\
 			            wiederum aus Kriterium \textit{b)} folgt $a, b \in U \Longrightarrow ab^{-1} \in U$ aber auch $b,a \in U \Longrightarrow ba^{-1} \in U$.
@@ -93,7 +98,6 @@ Sei weiter $P'_{\le n}[x] := \{p(x) \in P_{\le n}[x] \mid p(x) = a_1x + \ldots +
 
 		      Somit is gezeigt das $d(p(x))$ ein Gruppenhomomorphismus ist.
 		      \checkmark
-
 		      \textbf{$d$ ist surjektiv}: \\
 		      Zu zeigen ist das $\forall p_{\le n-1}(x) \in P_{\le n-1}[x]$ ein $p(x) \in P_{\le n}[x]$ existiert sodas $d(p(x)) = p_{\le n-1}(x)$.
 		      \\\\
