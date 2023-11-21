@@ -1,41 +1,34 @@
 \documentclass{../problemset}
 
-\Lecture{Analysis I} % the lecture
-\Problemset{4} % the problemset number
-\DoOn{21.11.2023} % the date it is due on
+\Lecture{Analysis I} 
+\Problemset{4} 
+\DoOn{21.11.2023} 
 \author{Michael van Straten}
-
 
 \setlist[enumerate, 1]{label=\alph*)}
 
 \begin{document}
 \maketitle
 
-% Problem 1 %
-\begin{problem}{Ungleichungen mit Wurzeln und zwei Anwendungen}{8 Punkte}
-% problem description %
+\begin{problem}[Ungleichungen mit Wurzeln und zwei Anwendungen]
 \begin{enumerate}
-	% subproblem 1a %
 	\item Beweisen Sie: Für alle natürlichen Zahlen $n \geq 2$ gilt
 	      \[
 		      \sum_{k=1}^{n} \frac{1}{\sqrt{k}} > \sqrt{n}.
 	      \]
 
-	      % subproblem 1b %
 	\item Zeigen Sie mithilfe von \textbf{a)}, dass \[
 		      \sum_{k=1}^{\infty} \frac{1}{\sqrt{k}}
 	      \] bestimmt gegen $+\infty$ divergiert.
 
-	      % subproblem 1c %
 	\item Beweisen Sie: Für alle natürlichen Zahlen $n \geq 1$ gilt
 	      \[
-		      \sqrt{n} \leq 1 + 2\sqrt{n}.
+		      \sqrt[n]{n} \leq 1 + \frac{2}{\sqrt{n}}.
 	      \]
 
-	      % subproblem 1d %
 	\item Zeigen Sie mithilfe von c), dass
 	      \[
-		      \lim_{{n\to\infty}} \frac{n}{\sqrt{n}} = 1.
+		      \lim_{{n\to\infty}} \sqrt[n]{n} = 1.
 	      \]
 \end{enumerate}
 
@@ -55,14 +48,37 @@
 		      Setze $N = {(M + 1)}^2$, somit ist $\forall n \ge N$ $\sqrt{n} \ge \sqrt{{(M + 1)}^2} = M+1 > M$.
 		      Somit divergiert $\sqrt{n}$ bestimmt gegen $+\infty$ und transitive auch $\sum_{k=1}^{n} \frac{1}{\sqrt{k}}$.
 		      \checkmark
+		\item In Satz 4.14 haben wir die Bernoullische Ungleichungen definiert, welche aussagt das für alle $x \ge -1$ gilt ${(1+x)}^k \ge 1 + kx$.
+		      Setzen wir $k = \frac{n}{2}$, folgt
+		      \begin{align*}
+			      \sqrt[n]{n} \leq 1 + \frac{2}{\sqrt{n}} \Longrightarrow 1 + \frac{2}{\sqrt{n}} \ge \sqrt[n]{n} \\
+			      \Longrightarrow {(1 + \frac{2}{\sqrt{n}})}^{\frac{n}{2}} \ge 1 + \frac{n}{2}\frac{2}{\sqrt{n}} \\
+			      \Longrightarrow {(1 + \frac{2}{\sqrt{n}})}^{\frac{n}{2}} \ge 1 + \sqrt{n}                      \\
+			      \Longrightarrow {(1 + \frac{2}{\sqrt{n}})}^n \ge {(1 + \sqrt{n})}^{2}                          \\
+			      \Longrightarrow {(1 + \frac{2}{\sqrt{n}})}^n \ge 1 + 2\sqrt{n} + n                             \\
+			      \Longrightarrow {(1 + \frac{2}{\sqrt{n}})}^n > n                                               \\
+			      \Longrightarrow 1 + \frac{2}{\sqrt{n}} > \sqrt[n]{n}.
+		      \end{align*}
+		      \checkmark
+		\item Aus c) wissen wir das $\sqrt[n]{n} < 1 + \frac{2}{\sqrt{n}}$, und da die $n$-te Wurzel aus einer Zahlen $\ge 1$ ebenfalls $\ge 1$ sein muss, muss somit $1 \le \sqrt[n]{n} < 1 + \frac{2}{\sqrt{n}}$.
+		      Es ist somit nur noch zu zeigen, dass $1 + \frac{2}{\sqrt{n}}$ für $n \to \infty$ gegen 1 konvergiert.
+		      Bemerke
+		      \begin{align*}
+			      \lim_{n \to \infty} 1 + \frac{2}{\sqrt{n}} & < \lim_{n \to \infty} {( 1 + \frac{2}{\sqrt{n}})}^2                                                                                 \\
+			                                                 & = \lim_{n \to \infty} 1 + 2\frac{2}{\sqrt{n}} + \frac{4}{n} \tag{Da aus a) $\sqrt{n}$ divergiert muss $ 2\frac{2}{\sqrt{n}} \to 0$} \\
+			                                                 & = \lim_{n \to \infty} 1 + 0 + \frac{4}{n} \tag{[Konvergenz Kriterien] $\frac{4}{n} \to 0$}                                          \\
+			                                                 & = \lim_{n \to \infty} 1 + 0 + 0                                                                                                     \\
+			                                                 & = \lim_{n \to \infty} 1
+		      \end{align*}
+		      Somit haben wir $1 \le \sqrt[n]{n} < 1$ was impliziert $\lim_{n \to \infty} \sqrt[n]{n} = 1$
+		      \checkmark
 	\end{enumerate}
 \end{proof}
-
-
 \end{problem}
 
-% Problem 2 %
-\begin{problem}{Cauchy-Folgen}{6 Punkte}
+\pagebreak
+
+\begin{problem}[Cauchy-Folgen]
 Sei $0 < q < 1$ und $(a_n)$ eine Folge mit $|a_{n+1} - a_n| \leq q |a_n - a_{n-1}|$ für alle $n > n_0$.
 
 % subproblem 2a %
@@ -72,8 +88,9 @@ Sei $0 < q < 1$ und $(a_n)$ eine Folge mit $|a_{n+1} - a_n| \leq q |a_n - a_{n-1
 \item Zeigen Sie, dass aus $|a_{n+1} - a_n| < |a_n - a_{n-1}|$ ab einem $n_0$ nicht notwendigerweise folgt, dass $(a_n)$ eine Cauchy-Folge ist.
 \end{problem}
 
-% Problem 3 %
-\begin{problem}{Eine Folge mit Wurzeln}{6 Punkte}
+\pagebreak
+
+\begin{problem}[Eine Folge mit Wurzeln]
 Seien $c > 1$ und $x_0 = 1$ und $(x_n)$ die folgende rekursiv definierte Folge:
 \[
 	x_{n+1} := \sqrt{c} \cdot x_n, \quad n \in \mathbb{N}.
@@ -82,13 +99,33 @@ Seien $c > 1$ und $x_0 = 1$ und $(x_n)$ die folgende rekursiv definierte Folge:
 Zeigen Sie, dass die Folge $(x_n)$ gegen $c$ konvergiert. Hinweis: Der Beweis kann ähnlich zu dem Beweis von Stz 8.8 geführt werden.
 \end{problem}
 
-% Problem 4 %
-\begin{problem}{\(\sqrt{2}\) als dyadischer Bruch}{4 Sonderpunkte}
-% subproblem 4.1 %
-\item Finden Sie die ersten vier Terme $x_0$, $x_1$, $x_2$, $x_3$ unserer Folge $(x_n)$ aus 8.8 (siehe auch 1.6 im Skript) für die Quadratwurzel aus Zwei als exakte dyadische (=2-adische) Brüche. Einen Beweis brauchen Sie nur für $x_0$, $x_1$, $x_2$ zu führen; für $x_3$ genügt das Resultat.
+\pagebreak
 
-% subproblem 4.2 %
-\item Kleine Forschungsaufgabe: Finden Sie im Internet oder berechnen Sie mit einem Computer \(\sqrt{2}\) als dyadischen Bruch mit einer Genauigkeit von 20 binären Stellen hinter dem Punkt.
+\begin{problem}[$\sqrt{2}$ als dyadischer Bruch]
+$ $ \\
+\begin{enumerate}
+	\item Finden Sie die ersten vier Terme $x_0$, $x_1$, $x_2$, $x_3$ unserer Folge $(x_n)$ aus 8.8 (siehe auch 1.6 im Skript) für die Quadratwurzel aus Zwei als exakte dyadische (=2-adische) Brüche. Einen Beweis brauchen Sie nur für $x_0$, $x_1$, $x_2$ zu führen; für $x_3$ genügt das Resultat.
+	\item Kleine Forschungsaufgabe: Finden Sie im Internet oder berechnen Sie mit einem Computer \(\sqrt{2}\) als dyadischen Bruch mit einer Genauigkeit von 20 binären Stellen hinter dem Punkt.
+\end{enumerate}
+
+\begin{proof}
+	\begin{enumerate}
+		\item \textit{Wurzel Zwei als dyadischer Bruch} \\
+		      Aus dem Skript 1.6 wissen wir die werte von $x_0, x_1, x_2, x_3$ als dezimal Bruch.
+		      Es ist nun Lediglich die dezimal Brüche in dyadische Brüche umzuwandeln.
+		      In Vorlesung 7.10 haben wir die b-adischen Brüche als $\pm \sum_{n=-k}^{\infty}z_nb^{-n}$ definiert.
+		      Setzen wir $b=2$ erhalten wir für die folgenden Werte: \begin{align*}
+			      x_0 = 1 = \frac{1}{1}_2                                  \\
+			      x_1 = \frac{2}{3} = \frac{10}{11}_2                      \\
+			      x_2 = \frac{17}{12} =_2 \frac{10001}{1100}_2             \\
+			      x_3 = \frac{577}{408} =_2 \frac{1001000001}{110011000}_2 \\
+		      \end{align*}
+		\item \textit{$\sqrt{2}$ als dyadischen Bruch}
+		      Aus \href{https://en.wikipedia.org/wiki/Square_root_of_2}{\textit{la Wikipedia}} ist $\sqrt(2)$ zu zwanzig Stellen $1.01101010000010011110$.
+
+	\end{enumerate}
+\end{proof}
+
 \end{problem}
 
 \end{document}
