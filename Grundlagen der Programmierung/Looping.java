@@ -15,6 +15,7 @@ public class Looping {
     static BigInteger MAX_VALUE_LONG = BigInteger.valueOf(Long.MAX_VALUE);
 
     public static void main(String[] args) {
+        // do input validation to check for correct argument
         if (args.length < 1 || (args.length == 2 && !args[1].equals("x")) || args.length > 2) {
             fail();
         }
@@ -22,11 +23,14 @@ public class Looping {
         long N = Long.valueOf(args[0]);
         boolean checkSmallestTruePalindrome = args.length == 2;
 
+        // create instance of our class since we need a non-static method on it later
         Looping instance = new Looping();
 
         for (int n = 0; n < N; n++) {
+            // convert our current number into a arbitrary precision integer 
             BigInteger number = BigInteger.valueOf(n);
 
+            // calculated palindrome while only iteration a maximum of 100 times
             Palindrome palindrome = instance.calculatePalindrome(number, 100);
 
             if (palindrome == null) {
@@ -36,6 +40,7 @@ public class Looping {
                 continue;
             }
 
+            // check if we would overflow a long value
             if (palindrome.value.compareTo(MAX_VALUE_LONG) > 0) {
                 if (!checkSmallestTruePalindrome) {
                     System.out.println(n);
@@ -72,8 +77,10 @@ public class Looping {
         BigInteger reversedNumber = BigInteger.ZERO;
 
         while (!number.equals(BigInteger.ZERO)) {
+            // shift our reversed number to the left and add the single digit of our number to convert
             reversedNumber = reversedNumber.multiply(BY_TEN).add(number.mod(BY_TEN));
 
+            // drop the single digit of our number to convert, this will result in a 0 if the number only has one digit
             number = number.divide(BY_TEN);
         }
 
