@@ -18,7 +18,7 @@ public class Wuerfel {
         }
 
         // cast the number of dice Faces to a double to get float division and calculate
-        // the win probability threshold
+        // the win probability threshold (numberOfDiceFaces = 2, winThreshold = 0.5)
         double winThreshold = ((double) numberOfDiceFaces - 1) / numberOfDiceFaces;
         int totalNumberOfThrows = 0;
 
@@ -38,12 +38,12 @@ public class Wuerfel {
                 numberOfthrows++;
             }
 
-            // sum up the number of throws we needed this simulation step with the previos
-            // ones
+            // sum up the number of throws we needed in this simulation step with the
+            // previous ones
             totalNumberOfThrows += numberOfthrows;
         }
 
-        // normilize the number of throws and print it
+        // normalize the number of throws and print it
         System.out.println((double) totalNumberOfThrows / numberOfSimulations);
     }
 

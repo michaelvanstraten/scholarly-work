@@ -15,17 +15,17 @@ public class Caesar {
         for (int i = 1; i < args.length; i++) {
             String message = args[i];
 
-            // convert every message into a stream of characters, process it and collect the
+            // Convert the message into a stream of characters, process it and collect the
             // result back into a string. This is not completely necessary since we are
-            // "encrypting" every byte in place but this could also be use if we where
+            // "encrypting" every byte in place but, this could also be use if we where
             // actually mapping our char stream though some cryptographically secure
-            // cypher implementation.
+            // cypher implementation that would not be a one to one mapping.
             String encryptedOrDecryptedMessage = message.chars().map(characterCode -> {
                 // character "a" in ASCII
                 int baseOffset = 97;
                 int letter = characterCode - baseOffset;
 
-                // we might be ciphering an upppercase letter in which case the base will be
+                // we might be ciphering an uppercase letter in which case the base will be
                 // different
                 if (letter < 0) {
                     // character "A" in ASCII
@@ -33,7 +33,8 @@ public class Caesar {
                     letter = characterCode - baseOffset;
                 }
 
-                // check if we have a character that is not a valid letter in the alphabet
+                // check if we have a character that is not a valid letter in the alphabet just
+                // return it
                 if (letter > 25 || letter < 0) {
                     return characterCode;
                 }

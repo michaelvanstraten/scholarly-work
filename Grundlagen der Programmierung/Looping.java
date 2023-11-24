@@ -3,7 +3,7 @@
 import java.math.BigInteger;
 
 public class Looping {
-    // this helper class is later use to wrap and return our calculated values
+    // this helper class is later used to wrap and return our calculated values
     public static class Palindrome {
         int iterations;
         BigInteger value;
@@ -18,7 +18,7 @@ public class Looping {
     static BigInteger MAX_VALUE_LONG = BigInteger.valueOf(Long.MAX_VALUE);
 
     public static void main(String[] args) {
-        // do input validation to check for correct argument
+        // do input validation to check for correct arguments
         if (args.length < 1 || (args.length == 2 && !args[1].equals("x")) || args.length > 2) {
             fail();
         }
@@ -30,10 +30,10 @@ public class Looping {
         Looping instance = new Looping();
 
         for (int n = 0; n < N; n++) {
-            // convert our current number into a arbitrary precision integer
+            // convert our current number into an arbitrary precision integer
             BigInteger number = BigInteger.valueOf(n);
 
-            // calculated palindrome while only iteration a maximum of 100 times
+            // calculate palindrome while only iteration a maximum of 100 times
             Palindrome palindrome = instance.calculatePalindrome(number, 100);
 
             if (palindrome == null) {
@@ -45,13 +45,13 @@ public class Looping {
 
             // check if we would overflow a long value
             if (palindrome.value.compareTo(MAX_VALUE_LONG) > 0) {
-                // emulated the long implementation of just assuming that the number does not
-                // generate a palindrome if it overflow a long
+                // emulate the long implementation of just assuming that the number does not
+                // generate a palindrome if it overflow
                 if (!checkSmallestTruePalindrome) {
                     System.out.println(n);
                 } else {
-                    // we found our smallest number that would overflow a long but is and actual
-                    // palindrome, print it and exit the program
+                    // we found our smallest number that would overflow a long value but is an
+                    // actual palindrome, print it and exit the program
                     System.out.println(String.format("%d braucht %d Iterationen bis zum Palindrom %d", n,
                             palindrome.iterations, palindrome.value));
                     System.exit(0);
@@ -67,10 +67,10 @@ public class Looping {
     Palindrome calculatePalindrome(BigInteger number, int maxIterations) {
         for (int i = 0; i <= maxIterations; i++) {
             // do our iteration calculation of reversing the given number and then adding
-            // the reversed and the non-reversed
+            // the reversed version of
             number = number.add(reverse(number));
 
-            // if our new number is a palindrome return it quitting the loop
+            // if our new number is a palindrome, return it while quitting the loop
             if (isPalindrome(number)) {
                 return new Palindrome(i, number);
             }
@@ -81,7 +81,7 @@ public class Looping {
     }
 
     static boolean isPalindrome(BigInteger number) {
-        // Is the number a palindrome? Well, reverse is and check if they are equal.
+        // Is the number a palindrome? Well, reverse it and check if they are equal.
         return number.equals(reverse(number));
     }
 
@@ -89,12 +89,12 @@ public class Looping {
         BigInteger reversedNumber = BigInteger.ZERO;
 
         while (!number.equals(BigInteger.ZERO)) {
-            // shift our reversed number to the left and add the single digit of our number
-            // to convert
+            // shift our reversed number to the left and then add the singles digit of our
+            // number
             reversedNumber = reversedNumber.multiply(BY_TEN).add(number.mod(BY_TEN));
 
-            // drop the single digit of our number to convert, this will result in a 0 if
-            // the number only has one digit
+            // drop the singles digit of our number, this will result in a 0 if the number
+            // only has one digit
             number = number.divide(BY_TEN);
         }
 
