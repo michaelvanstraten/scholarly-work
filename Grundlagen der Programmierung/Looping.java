@@ -3,6 +3,7 @@
 import java.math.BigInteger;
 
 public class Looping {
+    // this helper class is later use to wrap and return our calculated values
     public static class Palindrome {
         int iterations;
         BigInteger value;
@@ -44,9 +45,13 @@ public class Looping {
 
             // check if we would overflow a long value
             if (palindrome.value.compareTo(MAX_VALUE_LONG) > 0) {
+                // emulated the long implementation of just assuming that the number does not
+                // generate a palindrome if it overflow a long
                 if (!checkSmallestTruePalindrome) {
                     System.out.println(n);
                 } else {
+                    // we found our smallest number that would overflow a long but is and actual
+                    // palindrome, print it and exit the program
                     System.out.println(String.format("%d braucht %d Iterationen bis zum Palindrom %d", n,
                             palindrome.iterations, palindrome.value));
                     System.exit(0);
@@ -61,17 +66,22 @@ public class Looping {
 
     Palindrome calculatePalindrome(BigInteger number, int maxIterations) {
         for (int i = 0; i <= maxIterations; i++) {
+            // do our iteration calculation of reversing the given number and then adding
+            // the reversed and the non-reversed
             number = number.add(reverse(number));
 
+            // if our new number is a palindrome return it quitting the loop
             if (isPalindrome(number)) {
                 return new Palindrome(i, number);
             }
         }
 
+        // return null if no palindrome was found
         return null;
     }
 
     static boolean isPalindrome(BigInteger number) {
+        // Is the number a palindrome? Well, reverse is and check if they are equal.
         return number.equals(reverse(number));
     }
 
