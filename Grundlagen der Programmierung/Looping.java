@@ -1,3 +1,5 @@
+// https://github.com/michaelvanstraten/Mathematics-B.Sc./blob/master/Grundlagen%20der%20Programmierung/Looping.java
+
 import java.math.BigInteger;
 
 public class Looping {
@@ -27,7 +29,7 @@ public class Looping {
         Looping instance = new Looping();
 
         for (int n = 0; n < N; n++) {
-            // convert our current number into a arbitrary precision integer 
+            // convert our current number into a arbitrary precision integer
             BigInteger number = BigInteger.valueOf(n);
 
             // calculated palindrome while only iteration a maximum of 100 times
@@ -77,10 +79,12 @@ public class Looping {
         BigInteger reversedNumber = BigInteger.ZERO;
 
         while (!number.equals(BigInteger.ZERO)) {
-            // shift our reversed number to the left and add the single digit of our number to convert
+            // shift our reversed number to the left and add the single digit of our number
+            // to convert
             reversedNumber = reversedNumber.multiply(BY_TEN).add(number.mod(BY_TEN));
 
-            // drop the single digit of our number to convert, this will result in a 0 if the number only has one digit
+            // drop the single digit of our number to convert, this will result in a 0 if
+            // the number only has one digit
             number = number.divide(BY_TEN);
         }
 
