@@ -1,0 +1,160 @@
+\documentclass{../problemset}
+
+\Lecture{Lineare Algebra und Analytische Geometrie I}
+\Problemset{6}
+\DoOn{26. November 2023 23:59 Uhr}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Vektorraum über einem Ring]
+Sei $(K, +, \cdot)$ ein Körper und sei $(R, \oplus, \otimes)$ ein Ring. 
+Die neutralen Elemente bzgl. $\cdot$ und $\otimes$ seien mit $1_K$ und $1_R$ bezeichnet. 
+Weiterhin sei $\varphi: K \to R$ ein einserhaltender Homomorphismus von Ringen, d.h., für alle $\alpha, \beta \in K$ gilt
+\[
+	\varphi(\alpha) \oplus \varphi(\beta) = \varphi(\alpha + \beta),
+\]
+\[
+	\varphi(\alpha) \otimes \varphi(\beta) = \varphi(\alpha \cdot \beta),
+\]
+\[
+	\varphi(1_K) = 1_R.
+\]
+Zeigen Sie, dass $(R, \oplus, \odot)$ einen Vektorraum über $K$ bildet, wobei die Skalarmultiplikation wie folgt definiert ist:
+\[
+	\odot: K \times R \to R, (\alpha, x) \mapsto \varphi(\alpha) \otimes x.
+\]
+\begin{proof}
+	$(R, \oplus, \odot)$ bildet einen Vektorraum über $K$
+
+	Um zu zeigen, das $(R, \oplus, \odot)$ einen Vektorraum über $K$ bildet muss gezeigt werden, dass
+	$(R, \oplus)$ eine kommutative Gruppe bildet.
+	Sowie das die Skalarmultiplikation links und Rechts distributive ist wie zudem auch die folgenden Eigenschaften gelten
+	\[
+        (\alpha \cdot \beta) \odot v = \alpha \odot (\beta \odot v),
+	\]
+    \[
+        1_K \odot v = v.
+    \]
+
+    Da $(R, \oplus, \otimes)$ ein Ring ist, muss $(R, \oplus)$ eine kommutative Gruppe bilden, laut den Kriterien der Ring Struktur. 
+
+    Da 
+\end{proof}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Existenz einer Vektorraumstruktur]
+Zeigen Sie, dass es keine Abbildung $\otimes: \mathbb{C} \times \mathbb{R} \to \mathbb{R}$ gibt, für die $(\mathbb{R}, +_{\mathbb{R}}, \otimes)$ ein Vektorraum über $\mathbb{C}$ ist und $\otimes|_{\mathbb{R} \times \mathbb{R}} = \cdot_{\mathbb{R}}$. Dabei sind $+_{\mathbb{R}}$ und $\cdot_{\mathbb{R}}$ die üblichen Operationen auf $\mathbb{R}$.
+
+\textbf{Hinweis:} Zeigen Sie zunächst die Nullteilerfreiheit von $\otimes$, d.h., für $z \in \mathbb{C}$ und $v \in \mathbb{R}$ mit $z \otimes v = 0_{\mathbb{R}}$ gilt $z = 0_{\mathbb{C}}$ oder $v = 0_{\mathbb{R}}$.
+
+\textbf{Hinweis:} Betrachten Sie $(z \otimes v - (z \cdot_{\mathbb{C}} v)) \otimes v$ für $v \in \mathbb{R}$, $v \neq 0_{\mathbb{R}}$ und $z \in \mathbb{C} \setminus \mathbb{R}$.
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Beispiele für Untervektorräume]
+\begin{enumerate}
+	\item Sind die folgenden Teilmengen Untervektorräume von $\mathbb{R}^2$?
+	      \begin{enumerate}[label=\alph*)]
+		      \item $W_2 := \{(x_1, x_2) \in \mathbb{R}^2 \mid a_1x_1 + a_2x_2 = b\}$, $a_1, a_2, b \in \mathbb{R}$,
+		      \item $W_5 := \{(x_1, x_2) \in \mathbb{R}^2 \mid x_1x_2 \geq 0\}$.
+	      \end{enumerate}
+	\item Sei $x \in \mathbb{R}$. Bezeichne $R[x] := \mathbb{P}[x]$ den Vektorraum der Polynome über $\mathbb{R}$. Sind die folgenden Teilmengen Untervektorräume von $R[x]$?
+	      \begin{enumerate}[label=\alph*)]
+		      \item $U_1 := \{p(x) \in R[x] \mid p(0) = 0\}$,
+		      \item $U_2 := \{p(x) \in R[x] \mid p(0) = 0 \text{ und } p(1) = 0\}$,
+		      \item $U_3 := \{p(x) \in R[x] \mid p(0) = 2\}$.
+	      \end{enumerate}
+\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Eigenschaften von Unterräumen]
+Sei $K$ ein Körper, $V$ ein $K$-Vektorraum und $U_1, U_2 \subseteq V$.
+\begin{enumerate}
+	\item Zeigen Sie eine der folgenden Aussagen:
+	      \begin{enumerate}[label=\alph*)]
+		      \item $U_1 \subseteq \operatorname{Span} U_1$,
+		      \item $U_1 \supseteq \operatorname{Span} U_1$, falls $U_1$ Untervektorraum von $V$,
+		      \item $\operatorname{Span} U_1 = \operatorname{Span} \operatorname{Span} U_1$,
+		      \item $\operatorname{Span} U_1 \subseteq \operatorname{Span} U_2$, falls $U_1 \subset U_2$.
+	      \end{enumerate}
+	\item Zeigen oder widerlegen Sie zwei der folgenden Aussagen:
+	      \begin{enumerate}[label=\alph*)]
+		      \item $\operatorname{Span} U_1 \cap \operatorname{Span} U_2 \subseteq \operatorname{Span}(U_1 \cap U_2)$,
+		      \item $\operatorname{Span} U_1 \cap \operatorname{Span} U_2 \supseteq \operatorname{Span}(U_1 \cap U_2)$,
+		      \item $\operatorname{Span} U_1 \cup \operatorname{Span} U_2 \subseteq \operatorname{Span}(U_1 \cup U_2)$,
+		      \item $\operatorname{Span} U_1 \cup \operatorname{Span} U_2 \supseteq \operatorname{Span}(U_1 \cup U_2)$.
+	      \end{enumerate}
+	\item Für $M, N \subseteq V$ ist $M + N := \{v_1 + v_2 \mid v_1 \in M, v_2 \in N\}$. Zeigen oder widerlegen
+
+	      Sie zwei der folgenden Aussagen:
+	      \begin{enumerate}[label=\alph*)]
+		      \item $\operatorname{Span}(U_1 + U_2) \subseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$,
+		      \item $\operatorname{Span}(U_1 + U_2) \supseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$,
+		      \item $\operatorname{Span}(U_1 + U_2) \supseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$, falls $U_1$ und $U_2$ Untervektorräume von $V$.
+	      \end{enumerate}
+\end{enumerate}
+\begin{proof}
+	Eigenschaften von Untervektorräumen
+	\begin{enumerate}
+		\item Zu zeigen ist das für $U_1 \subseteq V$ gilt $U_1 \subseteq$ Span $U_1$.
+
+		      Betrachten wir die definition der Menge Span $U_1 := \set{\lambda_1 v_1 + \ldots + \lambda_n v_n \mid \lambda_{n \in \mathbb{N}} \in K \; v_{n \in \mathbb{N}} \in U_1}$.
+
+		      Da $V$ ein Vektorraum ist $\exists 0 \in K$, sodass $\forall v \in V$ gilt $0 \times v = 0$, sowie ein $1 \in K$ sodass $\forall v \in V$ gilt $1 \times v = v$.
+
+		      Nehmen wir uns einen beliebigen $v_u \in U_1$, somit existiert eine Linearkombination in Span $U_1$ mit \[
+			      \lambda_1 v_1 + \ldots + \lambda_n v_n \mid \lambda_u = 1 \land \lambda_{n \ne u} = 0 \; v_{n \in \mathbb{N}} \in U_1 = 0 \times v_1 + \ldots + 1 \times v_u + \ldots 0 \times v_n = v_u.
+		      \]
+
+		      Da \(v_u\) beliebig gewählt wurde, gilt dies für jeden \(v \in U_1\), was zeigt das $U_1 \subseteq$ Span $U_1$. \checkmark
+		\item Wiederlegung zweier Aussagen
+
+		      \textbf{a)}
+
+		      Lass \(U_1, U_2 \in R^2\) zwei triviale Basen mit \(U_1 = \left\{\begin{pmatrix}
+			      1 \\ 0
+		      \end{pmatrix},
+		      \begin{pmatrix}
+			      0 \\ 1
+		      \end{pmatrix}\right\}\) und \(U_2 = \left\{\begin{pmatrix}
+			      2 \\ 0
+		      \end{pmatrix},
+		      \begin{pmatrix}
+			      0 \\ 2
+		      \end{pmatrix}\right\}\).
+
+		      Bemerke das \(\operatorname{Span} U_1\) und \(\operatorname{Span} U_2\) gleich \(R^2\) da \(U_1, U_2\) Basen von \(R^2\)
+		      und \(U_1 \cap U_2 = \emptyset \).
+
+		      Somit ist der Schnitt von \(\operatorname{Span} U_1 = \operatorname{Span} U_2 = R^2\) gleich \(R^2\) und \(\operatorname{Span} \emptyset = \emptyset\).
+
+		      Da \(R^2 \not \subseteq \emptyset\), trivialerweise, ist die Aussagen \(\operatorname{Span} U_1 \cap \operatorname{Span} U_2 \subseteq \operatorname{Span}(U_1 \cap U_2)\) widerlegt. \checkmark
+
+		      \textbf{d)}
+
+		      Lass \(U_1, U_2 \in R^2\) mit \(U_1 = \left\{\begin{pmatrix}
+			      1 \\0
+		      \end{pmatrix}\right\}\) und \(U_2 = \left\{\begin{pmatrix}
+			      0 \\1
+		      \end{pmatrix}\right\}\).
+		      Somit bildet \(U_1 \cup U_2\) eine triviale Basis des \(R^2\) mit \(\operatorname{Span} U_1 \cup U_2 = R^2\).
+
+		      Es ist jedoch leicht zu sehen das der Vektor \(\begin{pmatrix}
+			      1 \\ 1
+		      \end{pmatrix}\) nicht in der Vereinigung von \(\operatorname{Span} U_1\) und \(\operatorname{Span} U_2\) ist.
+		      \textbf{Begründung}: Naja, der \(\operatorname{Span} U_1\) und der \(\operatorname{Span} U_2\) bilden für sich die \(X\) und \(Y\)
+		      Achsen des \(R^2\) ab und somit kann ein Vektor in deren Vereinigung liegt entweder nur auf der \(X\) oder nur auf der \(Y\) Achse liegen.
+		      Der Vektor \(\begin{pmatrix}
+			      1 \\ 1
+		      \end{pmatrix}\) liegt hingegen auf der Winkelhalbierenden von Q1 und kann somit nicht auf einer der beiden Achsen liegen. \checkmark
+	\end{enumerate}
+\end{proof}
+\end{problem}
+\end{document}
