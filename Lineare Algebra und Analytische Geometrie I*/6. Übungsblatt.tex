@@ -82,13 +82,66 @@ Zeigen Sie, dass es keine Abbildung $\otimes: \mathbb{C} \times \mathbb{R} \to \
 		      \item $W_2 := \{(x_1, x_2) \in \mathbb{R}^2 \mid a_1x_1 + a_2x_2 = b\}$, $a_1, a_2, b \in \mathbb{R}$,
 		      \item $W_5 := \{(x_1, x_2) \in \mathbb{R}^2 \mid x_1x_2 \geq 0\}$.
 	      \end{enumerate}
-	\item Sei $x \in \mathbb{R}$. Bezeichne $R[x] := \mathbb{P}[x]$ den Vektorraum der Polynome über $\mathbb{R}$. Sind die folgenden Teilmengen Untervektorräume von $R[x]$?
+	\item Sei $x \in \mathbb{R}$. Bezeichne $\mathbb{R}[x] := P[x]$ den Vektorraum der Polynome über $\mathbb{R}$.
+	      Sind die folgenden Teilmengen Untervektorräume von $R[x]$?
 	      \begin{enumerate}[label=\alph*)]
 		      \item $U_1 := \{p(x) \in R[x] \mid p(0) = 0\}$,
 		      \item $U_2 := \{p(x) \in R[x] \mid p(0) = 0 \text{ und } p(1) = 0\}$,
 		      \item $U_3 := \{p(x) \in R[x] \mid p(0) = 2\}$.
 	      \end{enumerate}
 \end{enumerate}
+\begin{proof}
+	Um zu beweisen, das $U \subseteq V$ ein Untervektorraum von $V$ über $K$ ist, müssen die folgenden drei Eigenschaften gelten \begin{align}
+		U \neq \emptyset,                       \\
+		x, y \in U \Longrightarrow x + y \in U, \\
+		a \in K \land x \in U \Longrightarrow a \odot v \in U.
+	\end{align}
+
+	\begin{enumerate}
+		\item Untervektorräume von $\mathbb{R}^2$
+
+		      \begin{enumerate}[label=\alph*)]
+			      \item $W_2$ ist ein Untervektorraum von $\mathbb{R}^2$ da:
+
+			            \textbf{1}: $(0, 0) \in \mathbb{R}^2$ und $0 \in \mathbb{R}$ somit $a_1 \cdot 0 + a_2 \cdot 0 = 0 \Longrightarrow (0, 0) \in W_2$ was impliziert $W_2 \neq \emptyset$. \checkmark
+
+			            \textbf{2}: $(x_1, x_2), (y_1, y_2) \in \mathbb{R}^2$ und $(x_1, x_2) + (y_1+y_2) = (x_1 + y_1, x_2 + y_2)$ sowie \[
+				            a_1(x_1+y_1) + a_2(x_2+y_2) = b \in \mathbb{R},
+			            \] da $a_1,a_2,x_1,x_2,y_1,y_2 \in \mathbb{R}$ und $\mathbb{R}$ Körper somit geschlossen unter Addition und Multiplikation.
+
+			            \textbf{3}: Nehme $s \in \mathbb{R}$ und $(x_1, x_2) \in \mathbb{R}^2$ somit folgt $s \odot (x_1, x_2) = (s \cdot x_1, s \cdot x_2)$ sowie \[
+				            a_1(s \cdot x_1) + a_2(s \cdot x_2) = b \in \mathbb{R},
+			            \] da $a_1,a_2, s,x_1,x_2 \in \mathbb{R}$ und $\mathbb{R}$ Körper somit geschlossen unter Addition und Multiplikation.
+			      \item $W_5$ ist kein Untervektorraum von $\mathbb{R}^2$ da:
+
+			            \textbf{2}: $(1, 2) \in W_5$ und $(-2, -1) \in W_5$ aber $(1, 2) + (-2, -1) = (-1, 1) \not\in W_5$
+		      \end{enumerate}
+		\item Untervektorräume von $\mathbb{R}^2$
+
+		      \begin{enumerate}
+			      \item [a), b)] $U_1$ und $U_2$ sind Untervektorräume von $\mathbb{R}[x]$ da:
+
+			            \textbf{1}: \textbf{Nullpolynom} $\in \mathbb{R}[x]$ und $\textbf{Nullpolynom}(x) = 0 \; \forall x \in \mathbb{R}$ somit $U_1, U_2 \neq \emptyset$. \checkmark
+
+                        \textbf{2}: Nehme $p_1(x), p_2(x) \in \mathbb{R}[x]$ mit $p_1(a) = p_2(a) = 0, \forall a \in N \subseteq \mathbb{R}$.
+			            Da $p_1(x)$ sowie $p_2(x)$ an jeder stelle, $a \in N$ gleich null ist und $0 + 0 = 0$ ist das Polynom $p_1(x) + p_2(x)$ ebenfalls an jeder stelle $a \in N$ gleich null.
+			            Im fall $U_1$ entspricht $N = \set{0}$ und im Fall $U_2$ entspricht $N = \set{0, 1}$.
+			            Somit ist die Vektoraddition von zwei Polynomen, die an denn selben Stellen $N$ gleich null sind geschlossen ($U_1, U_2$). \checkmark
+
+			            \textbf{3}: Nehme $a \in \mathbb{R}$ $p(x) \in \mathbb{R}[x]$ mit $p(b)= 0, \forall b \in N \subseteq \mathbb{R}$.
+			            Da für alle $b \in N$ $p(b) = 0$ und $a * 0 = 0$ $\forall a \in \mathbb{R}$, ist auch das Polynom $a \odot p(x)$ an allen stellen $b \in N$ gleich null.
+			            Im fall $U_1$ entspricht $N = \set{0}$ und im Fall $U_2$ entspricht $N = \set{0, 1}$.
+			            Somit ist die Skalarmultiplikation eines Polynoms, welches an den Stellen $N$ gleich null ist geschlossen ($U_1, U_2$). \checkmark
+			      \item [c)] $U_3$ ist kein Untervektorraum von $\mathbb{R}[x]$ da:
+
+			            \textbf{2}: Nehme $p_1(x), p_2(x) \in U_3$ da $p_1(0) = p_2(0) = 2$ und $2 + 2 = 4$
+			            ist das Polynom $p_1(x) + p_2(x)$ an der Stelle null, vier und nicht zwei, somit ist $p_1(x) + p_2(x) \not \in U_3$
+			            woraus folgt $U_3$ ist kein Untervektorraum von $\mathbb{R}[x]$.
+		      \end{enumerate}
+	\end{enumerate}
+
+
+\end{proof}
 \end{problem}
 
 \pagebreak
