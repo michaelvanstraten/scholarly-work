@@ -9,8 +9,8 @@
 \maketitle
 
 \begin{problem}[Vektorraum über einem Ring]
-Sei $(K, +, \cdot)$ ein Körper und sei $(R, \oplus, \otimes)$ ein Ring. 
-Die neutralen Elemente bzgl. $\cdot$ und $\otimes$ seien mit $1_K$ und $1_R$ bezeichnet. 
+Sei $(K, +, \cdot)$ ein Körper und sei $(R, \oplus, \otimes)$ ein Ring.
+Die neutralen Elemente bzgl. $\cdot$ und $\otimes$ seien mit $1_K$ und $1_R$ bezeichnet.
 Weiterhin sei $\varphi: K \to R$ ein einserhaltender Homomorphismus von Ringen, d.h., für alle $\alpha, \beta \in K$ gilt
 \[
 	\varphi(\alpha) \oplus \varphi(\beta) = \varphi(\alpha + \beta),
@@ -19,28 +19,47 @@ Weiterhin sei $\varphi: K \to R$ ein einserhaltender Homomorphismus von Ringen, 
 	\varphi(\alpha) \otimes \varphi(\beta) = \varphi(\alpha \cdot \beta),
 \]
 \[
-	\varphi(1_K) = 1_R.
+	\varphi(1_K) = 1_R. \label{def:presevesone}
 \]
 Zeigen Sie, dass $(R, \oplus, \odot)$ einen Vektorraum über $K$ bildet, wobei die Skalarmultiplikation wie folgt definiert ist:
 \[
-	\odot: K \times R \to R, (\alpha, x) \mapsto \varphi(\alpha) \otimes x.
+	\odot: K \times R \to R, (\alpha, x) \mapsto \varphi(\alpha) \otimes x. \label{def:scalar}
 \]
 \begin{proof}
 	$(R, \oplus, \odot)$ bildet einen Vektorraum über $K$
 
 	Um zu zeigen, das $(R, \oplus, \odot)$ einen Vektorraum über $K$ bildet muss gezeigt werden, dass
-	$(R, \oplus)$ eine kommutative Gruppe bildet.
-	Sowie das die Skalarmultiplikation links und Rechts distributive ist wie zudem auch die folgenden Eigenschaften gelten
-	\[
-        (\alpha \cdot \beta) \odot v = \alpha \odot (\beta \odot v),
-	\]
-    \[
-        1_K \odot v = v.
-    \]
+	$(R, \oplus)$ eine kommutative Gruppe bildet. Sowie das die folgenden Eigenschaften der Skalarmultiplikation erfüllt sind: \begin{align}
+		\alpha \odot (u \oplus v) = (\alpha \odot u) \oplus (\alpha \odot v) \\
+		(\alpha + \beta) \odot v = (\alpha \odot v) \oplus (\beta \odot v)   \\
+		(\alpha \cdot \beta) \odot v = \alpha \odot (\beta \odot v)          \\
+		1 \odot v = v
+	\end{align}
 
-    Da $(R, \oplus, \otimes)$ ein Ring ist, muss $(R, \oplus)$ eine kommutative Gruppe bilden, laut den Kriterien der Ring Struktur. 
+	Da $(R, \oplus, \otimes)$ ein Ring ist, muss $(R, \oplus)$ eine kommutative Gruppe bilden, laut den Kriterien der Ring Struktur. \checkmark
 
-    Da 
+	\textbf{1}: \begin{align*}
+		\alpha \odot (u \oplus v) & \stackrel{\ref{def:scalar}}{=} \varphi(\alpha) \otimes (u \oplus v)     \\
+		                          & = (\varphi(\alpha) \otimes u) \oplus (\varphi(\alpha) \otimes v)        \\
+		                          & \stackrel{\ref{def:scalar}}{=} (\alpha \odot u) \oplus (\alpha \odot v)
+	\end{align*}
+
+	\textbf{2}: \begin{align*}
+		(\alpha + \beta) \odot v & \stackrel{\ref{def:scalar}}{=} \varphi(\alpha + \beta) \otimes v       \\
+		                         & = (\varphi(\alpha) \oplus \varphi(\beta)) \otimes v                    \\
+		                         & = (\varphi(\alpha) \otimes v) \oplus (\varphi(\beta) \otimes v)        \\
+		                         & \stackrel{\ref{def:scalar}}{=} (\alpha \odot v) \oplus (\beta \odot v)
+	\end{align*}
+
+	\textbf{3}: \begin{align*}
+		(\alpha \cdot \beta) \odot v & \stackrel{\ref{def:scalar}}{=} \varphi(\alpha \cdot \beta) \otimes v \\
+		                             & = \varphi(\alpha) \otimes \varphi(\beta) \otimes v                   \\
+		                             & = \varphi(\alpha) \otimes (\varphi(\beta) \otimes v)                 \\
+		                             & = \varphi(\alpha) \otimes (\beta \odot v)                            \\
+		                             & = \alpha \odot (\beta \odot v)                                       \\
+	\end{align*}
+
+	\textbf{4}: Da $\varphi$ ein einserhaltender Homomorphismus ist, gilt folgendes $\varphi(1_K) \odot v \stackrel{\ref{def:presevesone}}{=} 1_R \otimes v = v$. \checkmark
 \end{proof}
 \end{problem}
 
