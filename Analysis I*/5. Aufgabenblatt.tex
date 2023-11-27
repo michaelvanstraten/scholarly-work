@@ -1,0 +1,85 @@
+\documentclass{../problemset}
+
+\Lecture{Analysis I} 
+\Problemset{5} 
+\DoOn{28.11.2023} 
+\author{Michael van Straten}
+
+\setlist[enumerate, 1]{label=\alph*)}
+\setlist[enumerate, 2]{label=\alph*)}
+\setlist[enumerate, 3]{label=\alph*)}
+\setlist[enumerate, 4]{label=\alph*)}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Aussagenlogik und Mengentheoreme]
+Seien $A$, $B$, $C$ Mengen. Geben Sie, in Analogie mit Bsp Z2.4, detaillierte Beweise mithilfe der Aussagenlogik zu folgenden beiden Mengentheoremen (siehe Z1):
+\begin{enumerate}
+	\item $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$
+	\item $A \setminus (B \cup C) = (A \setminus B) \setminus C$
+\end{enumerate}
+\begin{proof}
+	\begin{enumerate}
+		\item $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$
+
+		      \begin{align*}
+			      x \in A \setminus (B \cup C) & \Longrightarrow x \in A \land x \not \in (B \cup C)                         \\
+			                                   & \Longrightarrow x \in A \land x \not \in B \land x \not \in C               \\
+			                                   & \Longrightarrow x \in A \land x \in A \land x \not \in B \land x \not \in C \\
+			                                   & \Longrightarrow x \in A \land x \not \in B \land x \in A \land x \not \in C \\
+			                                   & \Longrightarrow (x \in A \setminus B) \land (x \in A \setminus C)           \\
+			                                   & \Longrightarrow x \in (A \setminus B) \cap (A \setminus C) \tag{\checkmark} \\
+		      \end{align*}
+
+		\item $A \setminus (B \cup C) = (A \setminus B) \setminus C$
+		      \begin{align*}
+			      x \in A \setminus (B \cup C) & \Longrightarrow x \in A \land x \not\in (B \cup C)                 \\
+			                                   & \Longrightarrow x \in A \land x \not\in B \land x \not\in C        \\
+			                                   & \Longrightarrow x \in (A \setminus B) \land x \not\in C            \\
+			                                   & \Longrightarrow x \in (A \setminus B) \setminus C \tag{\checkmark} \\
+		      \end{align*}
+	\end{enumerate}
+\end{proof}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Abbildungen und Verkn¨upfungen]
+\begin{enumerate}
+	\item Seien $f: X \to Y$, $g: Y \to Z$ und $h = g \circ f$, also $h: X \to Z$.
+	      \begin{enumerate}
+		      \item Beweisen Sie, dass aus $h$ injektiv folgt, dass $f$ injektiv ist.
+		      \item Beweisen Sie, dass $h$ surjektiv $\Rightarrow$ $g$ surjektiv.
+		      \item Gilt $h$ surjektiv $\Rightarrow$ $f$ surjektiv? Gilt $h$ surjektiv $\Rightarrow$ $g$ injektiv? Wenn nicht, dann geben Sie Gegenbeispiele!
+		      \item Seien nun noch vier Mengen $A$, $B$, $C$ und $D$ zusammen mit drei Abbildungen $f: A \to B$, $g: B \to C$ und $h: C \to D$ gegeben. Beweisen Sie, dass aus der Bijektivit¨at von $g \circ f$ und $h \circ g$ folgt, dass $f$, $g$ und $h$ alle bijektiv sind!
+	      \end{enumerate}
+
+\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Graphen]
+\begin{enumerate}
+	\item Seien $X := \{0, 1, 2, 3, 4\}$ und $Y := \{0, 5, 10, 15\}$, sowie $A := X \times Y = \{(x, y) \mid x \in X, y \in Y\}$ und $B := \{x + y \mid x \in X, y \in Y\}$ gegeben. Definiere dann $R \subset A \times B$ durch $R := \{((x, y), x + y) \mid x \in X, y \in Y\}$.
+	      Zeigen Sie, dass es eine bijektive Abbildung $f : A \to B$ gibt, so dass $R$ der Graph von $f$ ist.
+
+	\item Sei $X$ eine nichtleere Menge. Welche Eigenschaften muss $X$ haben, damit $X \times X$ der Graph einer Abbildung von $X$ nach $X$ ist?
+
+\end{enumerate}
+\end{problem}
+
+\pagebreak
+
+\begin{problem}[Injektive Abbildungen]
+Seien $A$, $B$ nichtleere Mengen und $f : A \to B$, $g : B \to A$ injektive Abbildungen. Für jede Teilmenge $C \subset A$ sei die Menge $F(C)$ definiert durch
+\[ F(C) := A \setminus g(B \setminus f(C)). \]
+
+\begin{enumerate}
+	\item Nehmen Sie zunächst an, es gebe eine nichtleere Teilmenge $C \subset A$ mit $F(C) = C$. Zeigen Sie, dass dann eine bijektive Abbildung von $A$ nach $B$ existiert.
+	\item Lassen Sie nun die Zusatzannahme aus a) fallen, und beweisen Sie, dass solch eine Menge $C \subset A$ mit $F(C) = C$ existiert. (Dann haben Sie zusammen mit Ihrem Resultat aus a) bewiesen: Wenn jede von zwei Mengen $A$ und $B$ injektiv in die jeweils andere abgebildet werden kann, dann existiert eine Bijektion von $A$ auf $B$.)
+\end{enumerate}
+\end{problem}
+
+\end{document}
