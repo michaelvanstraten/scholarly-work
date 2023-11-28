@@ -134,27 +134,55 @@ Seien $A$, $B$, $C$ Mengen. Geben Sie, in Analogie mit Bsp Z2.4, detaillierte Be
 	\begin{enumerate}
 		\item $f: A \rightarrow B$ mit Graph von $f$ gleich $R$
 
-		      Wählen wir $f : (x, y) \mapsto x + y$ mit $x \in X$ und $y \in Y$.
-		      Somit ist leicht zu sehen, dass der Graph von $f$ gleich $R$ ist.
+		      Wählen wir \(f: (x, y) \mapsto x + y\) für \(x \in X\) und \(y \in Y\).
+		      Es ist offensichtlich, dass der Graph von \(f\) genau \(R\) ist.
 
-		      Somit ist lediglich zu zeigen das $f$ bijektiv, also injektiv und surjektiv, ist.
+		      Nun müssen wir zeigen, dass \(f\) bijektiv ist, das heißt, \(f\) injektiv und surjektiv ist.
 
-		      \textbf{$f$ surjektiv}:
+		      \textbf{\(f\) surjektiv}:
 
-		      Um zu Zeigen das $f$ surjektiv müssen wir zeigen das $\forall b \in B \Rightarrow \exists a \in A$ sodass $f(a) = b$.
-		      Aus der Definition der Menge $B$ folgt allerdings leicht da $\forall x + y \Rightarrow \exists x \in X, x \in Y$ mit $f((x,y)) = x + y$.
+		      Um zu zeigen, dass \(f\) surjektiv ist, müssen wir zeigen, dass für jedes \(b \in B\) ein \(a \in A\) existiert, so dass \(f(a) = b\).
+		      Aus der Definition der Menge \(B\) folgt leicht, dass für jedes \(x + y \in B\) ein \((x, y) \in A\) existiert, wobei \(f((x, y)) = x + y\).
 
-		      \textbf{$f$ injektiv}:
+		      \textbf{\(f\) injektiv}:
 
-		      $f$ injektiv folgt $f((x_1,y_1)) = f((x_2, y_2))$ impliziert $(x_1, y_1) = (x_2, y_2)$
+		      Annahme: \(f\) ist injektiv, das heißt, es existieren \((x_1, y_1)\) und \((x_2, y_2)\) in \(A\) mit \(f((x_1, y_1)) = f((x_2, y_2))\) und \((x_1, y_1) = (x_2, y_2)\).
 
-              \[
-                x_1 + y_2 = x_2 + y_2 \Rightarrow x_1 = x_2 \land y_1 = y_2
-              \]
+		      Um zu zeigen, dass für alle \(x_1, x_2 \in X := \{0, 1, 2, 3, 4\}\) und \(y_1, y_2 \in Y := \{0, 5, 10, 15\}\) gilt: Wenn \(x_1 + y_1 = x_2 + y_2\), dann folgt \(x_1 = x_2\) und \(y_1 = y_2\), können wir dies durch Fallunterscheidung demonstrieren.
 
+		      Es gibt nur eine begrenzte Anzahl von Kombinationen für \(x_1, x_2, y_1, y_2\) in den gegebenen Mengen \(X\) und \(Y\). Wir können die möglichen Fälle durchgehen:
+
+		      1. \(x_1 = 0\): In diesem Fall ist \(y_1\) beliebig, und wir haben \(0 + y_1 = x_2 + y_2\). Die einzige Möglichkeit für \(x_2\) und \(y_2\), um dies zu erfüllen, ist \(x_2 = 0\) und \(y_2 = y_1\). Daher folgt \(x_1 = x_2\) und \(y_1 = y_2\).
+
+		      2. \(x_1 = 1\): In diesem Fall ist \(y_1\) beliebig, und wir haben \(1 + y_1 = x_2 + y_2\). Die einzige Möglichkeit für \(x_2\) und \(y_2\), um dies zu erfüllen, ist \(x_2 = 1\) und \(y_2 = y_1\). Daher folgt \(x_1 = x_2\) und \(y_1 = y_2\).
+
+		      3. \(x_1 = 2\): Ebenso wie in den vorherigen Fällen folgt \(x_1 = x_2\) und \(y_1 = y_2\).
+
+		      4. \(x_1 = 3\): Wiederholung des obigen Arguments.
+
+		      5. \(x_1 = 4\): Wiederholung des obigen Arguments.
+
+		      Da in jedem Fall \(x_1 = x_2\) und \(y_1 = y_2\) folgt, wenn \(x_1 + y_1 = x_2 + y_2\), haben wir gezeigt, dass die gegebene Aussage für alle \(x_1, x_2 \in X\) und \(y_1, y_2 \in Y\) gilt.
+
+		      Dann ergibt sich:
+
+		      \[
+			      x_1 + y_1 = x_2 + y_2 \Rightarrow x_1 = x_2 \land y_1 = y_2
+		      \]
+
+		      Damit ist gezeigt, dass \(f\) bijektiv ist.
+
+		\item Eigenschaften einer Abbildung mit Graphen $X \times X$
+
+		      Damit der Graph einer Abbildung, bezeichnet als $f: X \rightarrow X$, gleich dem kartesischen Produkt $X \times X$ ist, muss die Menge $X$ einelementig sein.
+		      Andernfalls wäre die Abbildung nicht eindeutig definiert, was bedeutet, dass für einen bestimmten $x$-Wert mehr als genau ein Wert $f(x)$ existieren würde.
+
+		      Um dies zu verdeutlichen, betrachten wir ein Beispiel: Angenommen, $X = \{a, b\}$.
+		      Dann ist das kartesische Produkt $X \times X = \{(a, a), (a, b), (b, a), (b, b)\}$. In diesem Fall kann jedes Element von $X \times X$ als Paar $(x, y)$ dargestellt werden, wobei $x$ und $y$ Elemente von $X$ sind. Wenn $X$ mehr als ein Element enthält, besteht die Möglichkeit, dass verschiedene Paare unterschiedlichen Abbildungswerten zugeordnet werden können, was der Voraussetzung einer Abbildung widerspricht.
+
+		      Daher muss die Menge $X$ einelementig sein, damit der Graph der Abbildung mit $X \times X$ übereinstimmt.
 
 	\end{enumerate}
-
 \end{proof}
 
 \end{problem}
