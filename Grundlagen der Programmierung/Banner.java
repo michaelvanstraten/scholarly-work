@@ -1,3 +1,5 @@
+// https://github.com/michaelvanstraten/Mathematics-B.Sc./blob/master/Grundlagen%20der%20Programmierung/Banner.java
+
 import java.util.ArrayList;
 import java.util.Collections;
 
