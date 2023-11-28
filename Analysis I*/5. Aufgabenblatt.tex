@@ -23,19 +23,21 @@ Seien $A$, $B$, $C$ Mengen. Geben Sie, in Analogie mit Bsp Z2.4, detaillierte Be
 	\begin{enumerate}
 		\item $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$
 
+		      Sei $x$ ein beliebiges Element.
 		      \begin{align*}
-			      x \in A \setminus (B \cup C) & \Longrightarrow x \in A \land x \not \in (B \cup C)                         \\
-			                                   & \Longrightarrow x \in A \land x \not \in B \land x \not \in C               \\
-			                                   & \Longrightarrow x \in A \land x \in A \land x \not \in B \land x \not \in C \\
-			                                   & \Longrightarrow x \in A \land x \not \in B \land x \in A \land x \not \in C \\
-			                                   & \Longrightarrow (x \in A \setminus B) \land (x \in A \setminus C)           \\
-			                                   & \Longrightarrow x \in (A \setminus B) \cap (A \setminus C) \tag{\checkmark} \\
+			      x \in A \setminus (B \cup C) & \Longrightarrow x \in A \land x \not \in (B \cup C)                             \\
+			                                   & \Longrightarrow x \in A \land (x \not \in B \land x \not \in C)                 \\
+			                                   & \Longrightarrow (x \in A \land x \not \in B) \land (x \in A \land x \not \in C) \\
+			                                   & \Longrightarrow (x \in A \setminus B) \land (x \in A \setminus C)               \\
+			                                   & \Longrightarrow x \in (A \setminus B) \cap (A \setminus C) \tag{\checkmark}     \\
 		      \end{align*}
 
 		\item $A \setminus (B \cup C) = (A \setminus B) \setminus C$
+
+		      Sei $x$ ein beliebiges Element.
 		      \begin{align*}
 			      x \in A \setminus (B \cup C) & \Longrightarrow x \in A \land x \not\in (B \cup C)                 \\
-			                                   & \Longrightarrow x \in A \land x \not\in B \land x \not\in C        \\
+			                                   & \Longrightarrow x \in A \land (x \not\in B \land x \not\in C)      \\
 			                                   & \Longrightarrow x \in (A \setminus B) \land x \not\in C            \\
 			                                   & \Longrightarrow x \in (A \setminus B) \setminus C \tag{\checkmark} \\
 		      \end{align*}
@@ -45,7 +47,7 @@ Seien $A$, $B$, $C$ Mengen. Geben Sie, in Analogie mit Bsp Z2.4, detaillierte Be
 
 \pagebreak
 
-\begin{problem}[Abbildungen und Verkn¨upfungen]
+\begin{problem}[Abbildungen und Verknüpfungen]
 \begin{enumerate}
 	\item Seien $f: X \to Y$, $g: Y \to Z$ und $h = g \circ f$, also $h: X \to Z$.
 	      \begin{enumerate}
@@ -56,6 +58,58 @@ Seien $A$, $B$, $C$ Mengen. Geben Sie, in Analogie mit Bsp Z2.4, detaillierte Be
 	      \end{enumerate}
 
 \end{enumerate}
+
+\begin{proof}
+	\begin{enumerate}
+		\item $h = g \circ f$ injektiv folgt, $f$ injektiv
+
+		      Angenommen $f(x) = f(y)$ somit muss für $f$ injektiv gezeigt werden das $x = y$.
+
+		      Betrachten wir $g$ angewendet auf $f(x), f(y)$, da $g$ eine Abbildung ist, muss Sie eindeutig sein somit gilt \[
+			      g(f(x)) = g(f(y)),
+		      \] da $h = g \circ f$ gilt \[
+			      h(x) = h(y)
+		      \], da $h$ injektiv muss somit aber $x = y$, was zu Zeigen war. Somit ist $f$ injektiv. \checkmark
+
+		\item $h = g \circ f$ bijektiv folgt, $g$ bijektiv
+
+		      Wir betrachten die zusammengesetzte Funktion \(g \circ f: X \to Z\) als eine surjektive Abbildung. Nach Definition bedeutet dies, dass für jedes \(z \in Z\) ein \(x \in X\) existiert, so dass \(g \circ f(x) = z\).
+
+		      Wir faktorisieren nun \(g \circ f\) durch \(Y\):
+
+		      \[ X \overset{f}{\to} Y \overset{g}{\to} Z; \]
+
+		      Daher gilt für alle \(x \in X\), dass \(f(x) \in Y\). Somit existiert ein \(y = f(x) \in Y\) mit \(g(y) = g(f(x)) = g \circ f(x) = z\).
+
+		      Da dies für jedes \(z \in Z\) gilt, ergibt sich:
+
+		      \[ g: Y \to Z \]
+
+		      Die Funktion \(g\) ist somit ebenfalls surjektiv.
+
+		\item $h$ surjektiv $\not\Rightarrow$ $f$ surjektiv und $h$ surjektiv $\not\Rightarrow$ $g$ injektiv
+
+		      Nehme $X = \set{x_1}, Y = \set{y_1, y_2}, Z=\set{z_1}$ sowie $f(x_1) = y_1, g(y_1) = g(y_2) = z_1$.
+		      Somit ist $g \circ f$ surjektiv da für jedes $z \in Z$ ein $x \in X$ existiert, sodass $g \circ f(x) = z$.
+		      $f$ ist hier allerdings nicht surjektiv da es für das Element $y_2 \in Y$ kein $x \in X$ gibt mit dem $f(x) = y_2$.
+		      Somit ist bewiesen das aus $g \circ f$ surjektiv nicht unbedingt folgt, $f$ surjektiv. \checkmark
+
+		      Da obere beispiel zeigt, auch das $g$ nicht injektiv sein muss da $g(y_1) = g(y_2)$ aber $y_1 \neq y_2$. \checkmark
+
+		\item $g \circ f$ und $h \circ g$ bijektiv, folgt $f$, $g$ und $h$ bijektiv
+
+		      Da $g \circ f$ bijektiv ist, ist $f$ injektiv und $g$ surjektiv.
+		      Ebenso ist $g \circ h$ bijektiv, was bedeutet, dass $g$ injektiv und $h$ surjektiv ist.
+		      Daher ist $g$ bijektiv.
+
+		      Da $g$ bijektiv ist, existiert die inverse Funktion $g^{-1}$, die ebenfalls bijektiv ist.
+		      Somit kann $f$ als die Komposition zweier bijektiver Funktionen geschrieben werden: $f = g^{-1} \circ (g \circ f)$.
+		      Da die Komposition zweier bijektiver Funktionen wieder bijektiv ist, folgt, dass $f$ bijektiv ist.
+
+		      Analog dazu lässt sich zeigen, dass auch $h$ bijektiv ist: $h = (h \circ g) \circ g^{-1}$.
+
+	\end{enumerate}
+\end{proof}
 \end{problem}
 
 \pagebreak
@@ -68,6 +122,26 @@ Seien $A$, $B$, $C$ Mengen. Geben Sie, in Analogie mit Bsp Z2.4, detaillierte Be
 	\item Sei $X$ eine nichtleere Menge. Welche Eigenschaften muss $X$ haben, damit $X \times X$ der Graph einer Abbildung von $X$ nach $X$ ist?
 
 \end{enumerate}
+
+\begin{proof}
+
+	\begin{enumerate}
+		\item Betrachten wir die Definition des Graphen einer Funktion $f$ \[
+			      G(f) = \{(x,f(x)) : x \in X\},
+		      \]
+
+		      Definiere $f : A \rightarrow B; (x, y) \mapsto x + y$.
+		      Somit ist lediglich zu zeigen das $f$ bijektiv, also injektiv und surjektiv, ist.
+
+		      \textbf{$f$ surjektiv}:
+
+		      Um zu Zeigen das $f$ surjektiv müssen wir zeigen das $\forall b \in B \Rightarrow \exists a \in A$ sodass $f(a) = b$.
+
+
+	\end{enumerate}
+
+\end{proof}
+
 \end{problem}
 
 \pagebreak
@@ -80,6 +154,12 @@ Seien $A$, $B$ nichtleere Mengen und $f : A \to B$, $g : B \to A$ injektive Abbi
 	\item Nehmen Sie zunächst an, es gebe eine nichtleere Teilmenge $C \subset A$ mit $F(C) = C$. Zeigen Sie, dass dann eine bijektive Abbildung von $A$ nach $B$ existiert.
 	\item Lassen Sie nun die Zusatzannahme aus a) fallen, und beweisen Sie, dass solch eine Menge $C \subset A$ mit $F(C) = C$ existiert. (Dann haben Sie zusammen mit Ihrem Resultat aus a) bewiesen: Wenn jede von zwei Mengen $A$ und $B$ injektiv in die jeweils andere abgebildet werden kann, dann existiert eine Bijektion von $A$ auf $B$.)
 \end{enumerate}
+
+\begin{proof}
+	\begin{enumerate}
+		\item
+	\end{enumerate}
+\end{proof}
 \end{problem}
 
 \end{document}
