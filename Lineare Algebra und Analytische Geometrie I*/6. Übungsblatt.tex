@@ -71,7 +71,16 @@ Zeigen Sie, dass es keine Abbildung $\otimes: \mathbb{C} \times \mathbb{R} \to \
 \textbf{Hinweis:} Zeigen Sie zunächst die Nullteilerfreiheit von $\otimes$, d.h., für $z \in \mathbb{C}$ und $v \in \mathbb{R}$ mit $z \otimes v = 0_{\mathbb{R}}$ gilt $z = 0_{\mathbb{C}}$ oder $v = 0_{\mathbb{R}}$.
 
 \textbf{Hinweis:} Betrachten Sie $(z \otimes v - (z \cdot_{\mathbb{C}} v)) \otimes v$ für $v \in \mathbb{R}$, $v \neq 0_{\mathbb{R}}$ und $z \in \mathbb{C} \setminus \mathbb{R}$.
+
+\begin{proof}
+	Angenommen, eine solche Abbildung existierte, dann würde die Vektorraumstruktur vollständig durch den Wert von \(i \cdot 1\) bestimmt werden. Denn für jede von Null verschiedene reale Zahl \(\alpha\) und jede komplexe Zahl \(a+bi\) gilt
+	\[
+		(a+bi) \cdot \alpha = a \cdot \alpha + b \cdot (i \cdot \alpha) = a \alpha + b(i \cdot (\alpha \cdot 1)) = a \alpha + b \alpha (i \cdot 1).
+	\]
+	Angenommen, \(i \cdot 1 = r\). Dann wäre \((r-i) \cdot 1 = 0\), was im Widerspruch zu den Eigenschaften eines Vektorraums steht, da \(r-i \neq 0\) und \(1 \neq \mathbf{0}\). Daher existiert keine solche Vektorraumstruktur.
+\end{proof}
 \end{problem}
+
 
 \pagebreak
 
@@ -123,10 +132,10 @@ Zeigen Sie, dass es keine Abbildung $\otimes: \mathbb{C} \times \mathbb{R} \to \
 
 			            \textbf{1}: \textbf{Nullpolynom} $\in \mathbb{R}[x]$ und $\textbf{Nullpolynom}(x) = 0 \; \forall x \in \mathbb{R}$ somit $U_1, U_2 \neq \emptyset$. \checkmark
 
-                        \textbf{2}: Nehme $p_1(x), p_2(x) \in \mathbb{R}[x]$ mit $p_1(a) = p_2(a) = 0, \forall a \in N \subseteq \mathbb{R}$.
+			            \textbf{2}: Nehme $p_1(x), p_2(x) \in \mathbb{R}[x]$ mit $p_1(a) = p_2(a) = 0, \forall a \in N \subseteq \mathbb{R}$.
 			            Da $p_1(x)$ sowie $p_2(x)$ an jeder stelle, $a \in N$ gleich null ist und $0 + 0 = 0$ ist das Polynom $p_1(x) + p_2(x)$ ebenfalls an jeder stelle $a \in N$ gleich null.
 			            Im fall $U_1$ entspricht $N = \set{0}$ und im Fall $U_2$ entspricht $N = \set{0, 1}$.
-			            Somit ist die Vektoraddition von zwei Polynomen, die an denn selben Stellen $N$ gleich null sind geschlossen ($U_1, U_2$). \checkmark
+			            Somit ist die Vektoraddition von zwei Polynomen, die an denselben Stellen $N$ gleich null sind geschlossen ($U_1, U_2$). \checkmark
 
 			            \textbf{3}: Nehme $a \in \mathbb{R}$ $p(x) \in \mathbb{R}[x]$ mit $p(b)= 0, \forall b \in N \subseteq \mathbb{R}$.
 			            Da für alle $b \in N$ $p(b) = 0$ und $a * 0 = 0$ $\forall a \in \mathbb{R}$, ist auch das Polynom $a \odot p(x)$ an allen stellen $b \in N$ gleich null.
@@ -226,6 +235,16 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum und $U_1, U_2 \subseteq V$.
 		      Der Vektor \(\begin{pmatrix}
 			      1 \\ 1
 		      \end{pmatrix}\) liegt hingegen auf der Winkelhalbierenden von Q1 und kann somit nicht auf einer der beiden Achsen liegen. \checkmark
+		\item Beweis oder Wiederlegung zweier Aussagen
+		      \begin{enumerate}[label=\alph*)]
+			      \item $\operatorname{Span}(U_1 + U_2) \subseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$ da
+
+
+			      \item $\operatorname{Span}(U_1 + U_2) \not\supseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$ da:
+
+			            Nehme $v \in V$ und $U_1 = \set{v}$ $U_2 = \set {-v}$, somit ist $U_1 + U_2 = \emptyset = \operatorname{Span} \emptyset$
+			            aber $\operatorname{Span} U_1 + \operatorname{Span} U_2 \neq \emptyset$. \checkmark
+		      \end{enumerate}
 	\end{enumerate}
 \end{proof}
 \end{problem}
