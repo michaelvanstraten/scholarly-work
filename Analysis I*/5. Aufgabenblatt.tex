@@ -61,17 +61,18 @@ Seien $A$, $B$, $C$ Mengen. Geben Sie, in Analogie mit Bsp Z2.4, detaillierte Be
 
 \begin{proof}
 	\begin{enumerate}
-		\item $h = g \circ f$ injektiv folgt, $f$ injektiv
+		\item $h = g \circ f$ injektiv $\Rightarrow$ $f$ injektiv
 
-		      Angenommen $f(x) = f(y)$ somit muss für $f$ injektiv gezeigt werden das $x = y$.
+		      Angenommen, $f(x) = f(y)$. Um die Injektivität von $f$ zu zeigen, muss gezeigt werden, dass daraus $x = y$ folgt.
 
-		      Betrachten wir $g$ angewendet auf $f(x), f(y)$, da $g$ eine Abbildung ist, muss Sie eindeutig sein somit gilt \[
-			      g(f(x)) = g(f(y)),
-		      \] da $h = g \circ f$ gilt \[
-			      h(x) = h(y)
-		      \], da $h$ injektiv muss somit aber $x = y$, was zu Zeigen war. Somit ist $f$ injektiv. \checkmark
+		      Betrachten wir $g$ angewendet auf $f(x)$ und $f(y)$. Da $g$ eine Abbildung ist, muss sie eindeutig sein. Daher gilt:
+		      \[
+			      g(f(x)) = g(f(y)).
+		      \]
 
-		\item $h = g \circ f$ bijektiv folgt, $g$ bijektiv
+		      Aufgrund der Annahme $h = g \circ f$ haben wir auch $h(x) = h(y)$.
+		      Da $h$ injektiv ist, folgt $x = y$. Somit ist $f$ injektiv. \checkmark
+		\item $h = g \circ f$ bijektiv $\Rightarrow$ $g$ bijektiv
 
 		      Wir betrachten die zusammengesetzte Funktion \(g \circ f: X \to Z\) als eine surjektive Abbildung. Nach Definition bedeutet dies, dass für jedes \(z \in Z\) ein \(x \in X\) existiert, so dass \(g \circ f(x) = z\).
 
@@ -87,16 +88,21 @@ Seien $A$, $B$, $C$ Mengen. Geben Sie, in Analogie mit Bsp Z2.4, detaillierte Be
 
 		      Die Funktion \(g\) ist somit ebenfalls surjektiv.
 
-		\item $h$ surjektiv $\not\Rightarrow$ $f$ surjektiv und $h$ surjektiv $\not\Rightarrow$ $g$ injektiv
+		\item $h$ surjektiv $\not\Rightarrow$ $f$ surjektiv und $h$ surjektiv $\not\Rightarrow$ $g$ injektiv.
 
-		      Nehme $X = \set{x_1}, Y = \set{y_1, y_2}, Z=\set{z_1}$ sowie $f(x_1) = y_1, g(y_1) = g(y_2) = z_1$.
-		      Somit ist $g \circ f$ surjektiv da für jedes $z \in Z$ ein $x \in X$ existiert, sodass $g \circ f(x) = z$.
-		      $f$ ist hier allerdings nicht surjektiv da es für das Element $y_2 \in Y$ kein $x \in X$ gibt mit dem $f(x) = y_2$.
-		      Somit ist bewiesen das aus $g \circ f$ surjektiv nicht unbedingt folgt, $f$ surjektiv. \checkmark
+		      Betrachten wir die Mengen $X = \{x_1\}$, $Y = \{y_1, y_2\}$ und $Z = \{z_1\}$ sowie die Funktionen $f: X \to Y$ mit $f(x_1) = y_1$ und $g: Y \to Z$ mit $g(y_1) = g(y_2) = z_1$.
 
-		      Da obere beispiel zeigt, auch das $g$ nicht injektiv sein muss da $g(y_1) = g(y_2)$ aber $y_1 \neq y_2$. \checkmark
+		      Es folgt, dass $g \circ f$ surjektiv ist, da für jedes $z \in Z$ ein $x \in X$ existiert, sodass $(g \circ f)(x) = z$. Dies liegt daran, dass $(g \circ f)(x_1) = g(f(x_1)) = g(y_1) = z_1$ für jedes $z_1 \in Z$ gilt.
 
-		\item $g \circ f$ und $h \circ g$ bijektiv, folgt $f$, $g$ und $h$ bijektiv
+		      Jedoch ist $f$ nicht surjektiv, da es für das Element $y_2 \in Y$ kein $x \in X$ gibt, für das $f(x) = y_2$.
+
+		      Dies zeigt, dass aus der Surjektivität von $h$ nicht unbedingt folgt, dass $f$ surjektiv ist.
+
+		      Darüber hinaus zeigt das obige Beispiel, dass $g$ nicht injektiv sein muss, da $g(y_1) = g(y_2)$, aber $y_1 \neq y_2$.
+
+		      Somit ist gezeigt, dass die Surjektivität von $h$ nicht notwendigerweise die Surjektivität von $f$ impliziert, und die Surjektivität von $h$ nicht notwendigerweise die Injektivität von $g$ impliziert. \checkmark
+
+		\item $g \circ f$ und $h \circ g$ bijektiv $\Rightarrow$ $f$, $g$ und $h$ bijektiv
 
 		      Da $g \circ f$ bijektiv ist, ist $f$ injektiv und $g$ surjektiv.
 		      Ebenso ist $g \circ h$ bijektiv, was bedeutet, dass $g$ injektiv und $h$ surjektiv ist.
@@ -123,19 +129,28 @@ Seien $A$, $B$, $C$ Mengen. Geben Sie, in Analogie mit Bsp Z2.4, detaillierte Be
 
 \end{enumerate}
 
-\begin{proof}
+\begin{proof} Aufgabe 3
 
 	\begin{enumerate}
-		\item Betrachten wir die Definition des Graphen einer Funktion $f$ \[
-			      G(f) = \{(x,f(x)) : x \in X\},
-		      \]
+		\item $f: A \rightarrow B$ mit Graph von $f$ gleich $R$
 
-		      Definiere $f : A \rightarrow B; (x, y) \mapsto x + y$.
+		      Wählen wir $f : (x, y) \mapsto x + y$ mit $x \in X$ und $y \in Y$.
+		      Somit ist leicht zu sehen, dass der Graph von $f$ gleich $R$ ist.
+
 		      Somit ist lediglich zu zeigen das $f$ bijektiv, also injektiv und surjektiv, ist.
 
 		      \textbf{$f$ surjektiv}:
 
 		      Um zu Zeigen das $f$ surjektiv müssen wir zeigen das $\forall b \in B \Rightarrow \exists a \in A$ sodass $f(a) = b$.
+		      Aus der Definition der Menge $B$ folgt allerdings leicht da $\forall x + y \Rightarrow \exists x \in X, x \in Y$ mit $f((x,y)) = x + y$.
+
+		      \textbf{$f$ injektiv}:
+
+		      $f$ injektiv folgt $f((x_1,y_1)) = f((x_2, y_2))$ impliziert $(x_1, y_1) = (x_2, y_2)$
+
+              \[
+                x_1 + y_2 = x_2 + y_2 \Rightarrow x_1 = x_2 \land y_1 = y_2
+              \]
 
 
 	\end{enumerate}
