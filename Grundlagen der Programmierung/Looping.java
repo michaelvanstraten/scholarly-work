@@ -50,7 +50,7 @@ public class Looping {
                 if (!checkSmallestTruePalindrome) {
                     System.out.println(n);
                 } else {
-                    // we found our smallest number that would overflow a long value but is an
+                    // we found our smallest number that would overflow a long value but it is an
                     // actual palindrome, print it and exit the program
                     System.out.println(String.format("%d braucht %d Iterationen bis zum Palindrom %d", n,
                             palindrome.iterations, palindrome.value));
@@ -65,7 +65,7 @@ public class Looping {
     }
 
     Palindrome calculatePalindrome(BigInteger number, int maxIterations) {
-        for (int i = 0; i <= maxIterations; i++) {
+        for (int i = 1; i <= maxIterations; i++) {
             // do our iteration calculation of reversing the given number and then adding
             // the reversed version of
             number = number.add(reverse(number));
