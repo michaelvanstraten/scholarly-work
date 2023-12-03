@@ -10,6 +10,28 @@
 
 \begin{problem}[Unterräume von Vektorräumen]
 Sei $K$ ein Körper, $V$ ein $K$-Vektorraum, und seien $U_1$, $U_2$ Unterräume von $V$. Zeigen Sie, dass $U_1 \cup U_2$ genau dann ein Unterraum von $V$ ist, wenn $U_1 \subseteq U_2$ oder $U_2 \subseteq U_1$ gilt.
+\begin{proof}
+	$ $
+
+	$\Rightarrow$ Annahme: $U_1 \cup U_2$ ist ein Unterraum von $V$.
+
+	Betrachten wir zwei beliebige Elemente $u_1 \in U_1$ und $u_2 \in U_2$.
+	Da $U_1 \cup U_2$ ein Vektorraum ist, folgt $u_1 + u_2 \in U_1 \cup U_2$.
+	Somit muss entweder $u_1 + u_2 \in U_1$ oder $u_1 + u_2 \in U_2$ gelten.
+	Durch Umformung erhalten wir entweder $(u_1 + u_2) - u_1 \in U_1$ oder $(u_1 + u_2) - u_2 \in U_2$.
+	Das führt zu $u_2 \in U_1$ oder $u_1 \in U_2$.
+
+	Da $u_1$ und $u_2$ beliebig gewählt wurden, folgt entweder $U_1 \subseteq U_2$ oder $U_2 \subseteq U_1$. \checkmark
+
+	$\Leftarrow$ Annahme: $U_1 \subseteq U_2$ oder $U_2 \subseteq U_1$.
+
+	Wenn $U_1 \subseteq U_2$, dann ist $U_1 \cup U_2 = U_2$.
+	Da $U_2$ ein Vektorraum ist, folgt, dass $U_1 \cup U_2$ ein Unterraum von $V$ ist.
+
+	Ebenso, wenn $U_2 \subseteq U_1$, dann ist $U_2 \cup U_1 = U_1$, und auch in diesem Fall ist $U_1 \cup U_2$ ein Unterraum von $V$.  \checkmark
+
+	Somit ist $U_1 \cup U_2$ genau dann ein Unterraum von $V$, wenn $U_1 \subseteq U_2$ oder $U_2 \subseteq U_1$ gilt.
+\end{proof}
 \end{problem}
 
 \begin{problem}[Lineare Unabhängigkeit in Vektorräumen]
