@@ -55,9 +55,199 @@ Bestimmen Sie eine Basis von $U = \text{Span}\{f_1, f_2, f_3, f_4\} \subset V$.
 \begin{problem}[Unterräume im $\mathbb{R}^3$]
 Geben Sie für jeden der folgenden Unterräume des $\mathbb{R}$-Vektorraums $\mathbb{R}^3$ eine Basis an:
 \begin{enumerate}
-    \item $U_1 = \{(x_1, x_2, x_3) \in \mathbb{R}^3 \mid x_1 + x_2 + x_3 = 0\}$
-    \item $U_2 = \text{Span}\{(2, -3, 1), (1, 1, 3), (-8, 17, 1)\}$
-    \item $U_1 \cap U_2$
+	\item $U_1 = \{(x_1, x_2, x_3) \in \mathbb{R}^3 \mid x_1 + x_2 + x_3 = 0\}$
+	\item $U_2 = \text{Span}\{(2, -3, 1), (1, 1, 3), (-8, 17, 1)\}$
+	\item $U_1 \cap U_2$
 \end{enumerate}
+\begin{proof}
+	$ $
+
+	\begin{enumerate}
+		\item Beachte, dass die Gleichung $x + y + z = 0$ eine Ebene im $\mathbb{R}^3$ darstellt, die durch die Gleichung
+		      \[
+			      \alpha_1 \cdot \begin{pmatrix}
+				      1 \\
+				      0 \\
+				      -1
+			      \end{pmatrix} + \alpha_2 \cdot \begin{pmatrix}
+				      0 \\
+				      1 \\
+				      -1
+			      \end{pmatrix} = \begin{pmatrix}
+				      x \\
+				      y \\
+				      z
+			      \end{pmatrix}
+		      \]
+		      repräsentiert werden kann. Somit lässt sich eine Menge
+		      \[
+			      B = \left\{\begin{pmatrix}
+				      1 \\
+				      0 \\
+				      -1
+			      \end{pmatrix}, \begin{pmatrix}
+				      0 \\
+				      1 \\
+				      -1
+			      \end{pmatrix}\right\}
+		      \]
+		      konstruieren, für die offensichtlich ist, dass sie linear unabhängig ist und teilmenge von $U_1$ ist.
+
+		      Es bleibt zu zeigen, dass $\operatorname{Span} B = U_1$, um zu beweisen, dass $B$ eine Basis von $U_1$ ist.
+
+		      Sei $(x_1, x_2, x_3) \in U_1$ mit $x_1 + x_2 + x_3 = 0 \Leftrightarrow x_3 = - x_1 - x_2$ beliebig, aber fest. Es ist also zu zeigen, dass $\alpha_1, \alpha_2 \in \mathbb{R}$ existieren, sodass
+		      \[
+			      \alpha_1 \cdot \begin{pmatrix}
+				      1 \\
+				      0 \\
+				      -1
+			      \end{pmatrix} + \alpha_2 \cdot \begin{pmatrix}
+				      0 \\
+				      1 \\
+				      -1
+			      \end{pmatrix} = \begin{pmatrix}
+				      x_1 \\
+				      x_2 \\
+				      x_3
+			      \end{pmatrix}
+		      \]
+
+		      Durch einfaches Ausmultiplizieren erhalten wir
+		      \begin{align*}
+			      x_1 & = \alpha_1                                             \\
+			      x_2 & = \alpha_2                                             \\
+			      x_3 & = - \alpha_1 - \alpha_2 = - x_1 - x_2 \tag{\checkmark}
+		      \end{align*}
+
+		      Somit existieren Werte $\alpha_1, \alpha_2 \in \mathbb{R}$ genau dann, wenn $x_1 + x_2 + x_3 = 0$. Daher ist $B$ eine Basis von $U_1$.
+		\item Sei $U_2 = \text{Span}\{(2, -3, 1), (1, 1, 3), (-8, 17, 1)\}$ ein Unterraum des $\mathbb{R}$-Vektorraums $\mathbb{R}^3$.
+
+		      Wir betrachten die Menge $B$:
+
+		      \[
+			      B = \left\{
+			      \begin{pmatrix}
+				      1 \\ 0 \\ 2
+			      \end{pmatrix},
+			      \begin{pmatrix}
+				      0 \\ 1 \\ 1
+			      \end{pmatrix}
+			      \right\}
+		      \]
+
+		      als potenzielle Basis für $U_2$.
+
+		      Um zu zeigen, dass $B$ eine Basis ist, überprüfen wir zwei Bedingungen:
+
+		      1. Die Vektoren in $B$ sind linear unabhängig.
+
+		      2. Der von $B$ erzeugte Raum ist gleich dem Raum $U_2$.
+
+		      Beginnen wir mit der Überprüfung der linearen Unabhängigkeit von $B$:
+
+		      Angenommen, es existieren Skalare $\beta_1$ und $\beta_2$, nicht beide gleich null, sodass
+
+		      \[
+			      \beta_1 \begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix} + \beta_2 \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+		      \]
+
+		      Dies führt zu dem linearen Gleichungssystem:
+
+		      \[
+			      \begin{cases}
+				      \beta_1 = 0 \\
+				      \beta_2 = 0 \\
+				      \beta_1 + \beta_2 = 0
+			      \end{cases}
+		      \]
+
+		      Die Lösung dieses Systems ist $\beta_1 = 0$ und $\beta_2 = 0$, was bedeutet, dass die Vektoren in $B$ linear unabhängig sind.
+
+		      Da die Vektoren in $B$ linear unabhängig sind, überprüfen wir nun, ob der Raum, den sie erzeugen, gleich dem Raum $U_2$ ist.
+
+		      Der Raum, der durch $B$ erzeugt wird, ist der Span der Vektoren $\begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix}$ und $\begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}$. Wir müssen überprüfen, ob jeder Vektor in $U_2$ als Linearkombination dieser beiden Vektoren dargestellt werden kann.
+
+		      Der Vektor $(2, -3, 1)$ kann als $2 \cdot \begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix} + (-5) \cdot \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}$ dargestellt werden.
+
+		      Der Vektor $(1, 1, 3)$ kann als $1 \cdot \begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix} + 1 \cdot \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}$ dargestellt werden.
+
+		      Der Vektor $(-8, 17, 1)$ kann als $-8 \cdot \begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix} + 17 \cdot \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}$ dargestellt werden.
+
+		      Da jeder Vektor in $U_2$ als Linearkombination der Vektoren in $B$ dargestellt werden kann, ist $B$ eine Basis von $U_2$.
+
+		\item Angenommen, die Basen in i) sowie ii) wurden korrekt bestimmt.
+
+		      Unser Ziel ist es, alle Vektoren zu finden, die sowohl in \(U_1\) als auch in \(U_2\) liegen.
+
+		      Dies lässt sich durch die Gleichung
+
+		      \[
+			      \alpha_1 \cdot \begin{pmatrix}
+				      1 \\
+				      0 \\
+				      -1
+			      \end{pmatrix} + \alpha_2 \cdot \begin{pmatrix}
+				      0 \\
+				      1 \\
+				      -1
+			      \end{pmatrix} = \beta_1 \begin{pmatrix}
+				      1 \\ 0 \\ 2
+			      \end{pmatrix} + \beta_2 \begin{pmatrix}
+				      0 \\ 1 \\ 1
+			      \end{pmatrix}
+		      \]
+
+		      ausdrücken.
+
+		      Um die Beziehung der Koeffizienten \(\alpha_1, \alpha_2, \beta_1\) und \(\beta_2\) zu untersuchen, formen wir um:
+
+		      \[
+			      \alpha_1 \cdot \begin{pmatrix}
+				      1 \\
+				      0 \\
+				      -1
+			      \end{pmatrix} + \alpha_2 \cdot \begin{pmatrix}
+				      0 \\
+				      1 \\
+				      -1
+			      \end{pmatrix} - \beta_1 \begin{pmatrix}
+				      1 \\ 0 \\ 2
+			      \end{pmatrix} - \beta_2 \begin{pmatrix}
+				      0 \\ 1 \\ 1
+			      \end{pmatrix} = 0
+		      \]
+
+		      Daraus folgt:
+		      \[
+			      \alpha_1 - \beta_1 = 0 \Rightarrow \alpha_1 = \beta_1
+		      \]
+		      \[
+			      \alpha_2 - \beta_2 = 0 \Rightarrow \alpha_2 = \beta_2
+		      \]
+		      \[
+			      -\alpha_1 - \alpha_2 - 2\beta_1 - \beta_2 = 0
+		      \]
+
+		      Was zu
+		      \[
+			      -3\alpha_1 -3\alpha_2 = 0
+		      \]
+
+		      führt. Die Lösung dieser Gleichung ist:
+		      \[
+			      \alpha_1 = -\alpha_2
+		      \]
+
+		      Daher können wir schlussfolgern, dass die Vektoren, die sowohl in \(U_1\) als auch in \(U_2\) liegen, die Form \(\alpha_1 \cdot \begin{pmatrix}
+			      1 \\
+			      0 \\
+			      -1
+		      \end{pmatrix} + \alpha_2 \cdot \begin{pmatrix}
+			      0 \\
+			      1 \\
+			      -1
+		      \end{pmatrix}\) haben mit der Bedingung, dass \(\alpha_1 - \alpha_2 = 0\).
+	\end{enumerate}
+\end{proof}
 \end{problem}
 \end{document}
