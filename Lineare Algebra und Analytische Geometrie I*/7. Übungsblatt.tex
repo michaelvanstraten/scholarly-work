@@ -34,15 +34,116 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum, und seien $U_1$, $U_2$ Unterräume 
 \end{proof}
 \end{problem}
 
+\pagebreak
+
 \begin{problem}[Lineare Unabhängigkeit in Vektorräumen]
 Sei $K$ ein Körper, $V$ ein $K$-Vektorraum. Zeigen oder widerlegen Sie:
 \begin{enumerate}
-    \item Falls $v_1, \ldots, v_n \in V$ linear unabhängig sind und $\alpha_2, \ldots, \alpha_n \in K$, dann sind die Vektoren $v_1, v_2 + \alpha_2v_1, \ldots, v_n + \alpha_nv_1$ linear unabhängig.
-    \item Falls $v_1, v_2, v_3 \in V$ linear unabhängig sind und $1 + 1 \neq 0$ in $K$, dann sind auch die folgenden Vektoren linear unabhängig: $v_{12} := v_1 + v_2$, $v_{23} := v_2 + v_3$, $v_{13} := v_1 + v_3$.
-    \item Falls $v_1, v_2, v_3 \in V$ linear unabhängig sind und $1 + 1 = 0$ in $K$, dann sind auch die folgenden Vektoren linear unabhängig: $v_{12} := v_1 + v_2$, $v_{23} := v_2 + v_3$, $v_{13} := v_1 + v_3$.
-    \item Für einen Unterkörper $K'$ von $K$ und linear unabhängige Vektoren $v_1, \ldots, v_n$ im $K'$-Vektorraum $V$, sind $v_1, \ldots, v_n$ auch linear unabhängig im $K$-Vektorraum $V$.
+	\item Falls $v_1, \ldots, v_n \in V$ linear unabhängig sind und $\alpha_2, \ldots, \alpha_n \in K$, dann sind die Vektoren $v_1, v_2 + \alpha_2v_1, \ldots, v_n + \alpha_nv_1$ linear unabhängig.
+	\item Falls $v_1, v_2, v_3 \in V$ linear unabhängig sind und $1 + 1 \neq 0$ in $K$, dann sind auch die folgenden Vektoren linear unabhängig: $v_{12} := v_1 + v_2$, $v_{23} := v_2 + v_3$, $v_{13} := v_1 + v_3$.
+	\item Falls $v_1, v_2, v_3 \in V$ linear unabhängig sind und $1 + 1 = 0$ in $K$, dann sind auch die folgenden Vektoren linear unabhängig: $v_{12} := v_1 + v_2$, $v_{23} := v_2 + v_3$, $v_{13} := v_1 + v_3$.
+	\item Für einen Unterkörper $K'$ von $K$ und linear unabhängige Vektoren $v_1, \ldots, v_n$ im $K'$-Vektorraum $V$, sind $v_1, \ldots, v_n$ auch linear unabhängig im $K$-Vektorraum $V$.
 \end{enumerate}
+\begin{proof}
+	$ $
+
+	\begin{enumerate}
+		\item Annahme: $v_1, \ldots, v_n \in V$ sind linear unabhängig und $\alpha_2, \ldots, \alpha_n \in K$.
+		      Wir wollen zeigen, dass die Vektoren $v_1, v_2 + \alpha_2v_1, \ldots, v_n + \alpha_nv_1$ ebenfalls linear unabhängig sind.
+
+		      Betrachten wir die lineare Kombination:
+
+		      \begin{align*}
+			      \lambda_1 v_1 + \lambda_2 (v_2 + \alpha_2 v_1) + \ldots + \lambda_n (v_n + \alpha_n v_1)               & = 0  \\
+			      \lambda_1 v_1 + \lambda_2v_2 + \lambda_2\alpha_2v_1 + \ldots + \lambda_nv_n + \lambda_n\alpha_nv_1     & = 0  \\
+			      (\lambda_1 + \lambda_2\alpha_2 + \ldots + \lambda_n\alpha_n)v_1 + \lambda_2v_2 + \ldots + \lambda_nv_n & = 0.
+		      \end{align*}
+
+		      Da $v_1, \ldots, v_n$ linear unabhängig sind, folgt, dass jeder Koeffizient dieser linearen Kombination gleich null sein muss.
+		      Also:
+
+		      \begin{align*}
+			      \lambda_1 + \lambda_2\alpha_2 + \ldots + \lambda_n\alpha_n & = 0,    \\
+			      \lambda_2                                                  & = 0,    \\
+			                                                                 & \ldots, \\
+			      \lambda_n                                                  & = 0.
+		      \end{align*}
+
+		      Dies impliziert $(\lambda_1 + 0\alpha_2 + \ldots + 0\alpha_n) = 0 \Rightarrow \lambda_1 = 0$.
+		      Somit sind alle Koeffizienten gleich null.
+
+		      Daher sind die Vektoren $v_1, v_2 + \alpha_2v_1, \ldots, v_n + \alpha_nv_1$ linear unabhängig.
+
+		\item Seien \(\{v_1, v_2, v_3\}\) linear unabhängig. Wir möchten herausfinden, ob auch \(\{v_1+v_2, v_2+v_3, v_1+v_3\}\) unabhängig ist.
+
+		      Betrachten wir die lineare Kombination:
+		      \[
+			      \alpha_1(v_1+v_2) + \alpha_2(v_2+v_3) + \alpha_3(v_1+v_3) = 0
+		      \]
+
+		      Durch Ausmultiplizieren und Vereinfachen erhalten wir:
+		      \[
+			      \alpha_1v_1 + \alpha_1v_2 + \alpha_2v_2 + \alpha_2v_3 + \alpha_3v_1 + \alpha_3v_3 = v_1(\alpha_1+\alpha_3) + v_2(\alpha_1+\alpha_2) + v_3(\alpha_2+\alpha_3) = 0
+		      \]
+
+		      Sei \(\delta_1 = \alpha_1 + \alpha_3\), \(\delta_2 = \alpha_1 + \alpha_2\) und \(\delta_3 = \alpha_2 + \alpha_3\). Die Gleichung lautet dann:
+		      \[
+			      \delta_1v_1 + \delta_2v_2 + \delta_3v_3 = 0
+		      \]
+
+		      Nun haben wir gezeigt, dass die Koeffizienten \(\delta_1\), \(\delta_2\) und \(\delta_3\) gleich null sein müssen. Das bedeutet:
+
+		      \begin{align*}
+			      0 & = \delta_1 = \alpha_1 + \alpha_3  \\
+			      0 & = \delta_2 = \alpha_1 + \alpha_2  \\
+			      0 & = \delta_3 = \alpha_2 + \alpha_3.
+		      \end{align*}
+
+		      Wir müssen nun zeigen, dass dies impliziert, dass jede der \(\alpha_i\)'s gleich null ist. Wir betrachten die Gleichungen paarweise:
+
+		      1. Aus \(0 = \alpha_1 + \alpha_3\) folgt \(\alpha_1 = -\alpha_3\).
+
+		      2. Setzen wir dies in \(0 = \alpha_1 + \alpha_2\) ein, erhalten wir \(0 = -\alpha_3 + \alpha_2\), woraus \(\alpha_2 = \alpha_3\) folgt.
+
+		      3. Schließlich, setzen wir \(\alpha_2 = \alpha_3\) in \(0 = \alpha_2 + \alpha_3\) ein und erhalten \(0 = \alpha_3 + \alpha_3\), was zu \(\alpha_3 = 0\) führt. Dann ergibt sich aus \(\alpha_2 = \alpha_3\), dass auch \(\alpha_2 = 0\) ist, und schließlich aus \(\alpha_1 = -\alpha_3\), dass \(\alpha_1 = 0\) ist.
+
+		      Somit haben wir gezeigt, dass jede der \(\alpha_i\)'s gleich null ist, und folglich ist die ursprüngliche lineare Kombination die triviale Lösung. Das beweist, dass \(\{v_1+v_2, v_2+v_3, v_1+v_3\}\) unabhängig ist.
+		\item Angenommen, $\{v_1+v_2, v_2+v_3, v_1+v_3\}$ ist linear unabhängig.
+
+		      Das bedeutet, dass die lineare Kombination
+
+		      \[
+			      \alpha_1(v_1 + v_2) + \alpha_2(v_2 + v_3) + \alpha_3(v_1 + v_3) = 0
+		      \]
+
+		      nur die triviale Lösung $\alpha_1 = \alpha_2 = \alpha_3 = 0$ hat.
+
+		      Nun zeigen wir, dass dies zu einem Widerspruch führt. Betrachten Sie die gegebene Kondition
+
+		      \[
+			      1 + 1 = 0
+		      \]
+
+		      Aufgrund dieser Kondition und der Annahme, dass $\alpha_1 = \alpha_2 = \alpha_3 = 0$, folgt:
+
+		      \begin{align*}
+			      0(v_1 + v_2) + 0(v_2 + v_3) + 0(v_1 + v_3)                                                    & = 0                               \\
+			      \Rightarrow 0v_1 + 0v_2 + 0v_2 + 0v_3 + 0v_1 + 0v_3                                           & = 0                               \\
+			      \Rightarrow (1+1)v_1 + (1+1)v_2 + (1+1)v_2 + (1+1)v_3 + (1+1)v_1 + (1+1)v_3                   & = 0 \quad \text{(Da $1 + 1 = 0$)} \\
+			      \Rightarrow 1v_1 + 1v_1 + 1v_2 + 1v_2 + 1v_2 + 1v_2 + 1v_3 + 1v_3 + 1v_1 + 1v_1 + 1v_3 + 1v_3 & = 0                               \\
+			      \Rightarrow 4v_1 + 4v_2 + 4v_3                                                                & = 0                               \\
+		      \end{align*}
+
+		      Dies führt zu der Gleichung $4v_1 + 4v_2 + 4v_3 = 0$, was impliziert, dass es nicht-triviale Skalare $\alpha_1, \alpha_2, \alpha_3 \in K$ gibt, sodass $\alpha_1 v_1 + \alpha_2 v_2 + \alpha_3 v_3 = 0$.
+		      Somit sind $v_1, v_2, v_3$ nicht linear unabhängig über $K$, was einen Widerspruch zur Annahme der linearen Unabhängigkeit von $\{v_1+v_2, v_2+v_3, v_1+v_3\}$ darstellt.
+		      Daher kann die Annahme nicht korrekt sein, und $\{v_1+v_2, v_2+v_3, v_1+v_3\}$ ist linear abhängig.
+
+		\item
+	\end{enumerate}
+\end{proof}
 \end{problem}
+
+\pagebreak
 
 \begin{problem}[Lineare Abhängigkeit bei Funktionen]
 Sei $V = \text{Abb}(\mathbb{R}^2, \mathbb{R})$ der $\mathbb{R}$-Vektorraum aller Abbildungen von $\mathbb{R}^2$ nach $\mathbb{R}$, und seien $f_1, f_2, f_3, f_4 \in \text{Abb}(\mathbb{R}^2, \mathbb{R})$ definiert durch
@@ -51,71 +152,71 @@ Bestimmen Sie eine Basis von $U = \text{Span}\{f_1, f_2, f_3, f_4\} \subset V$.
 \begin{proof}
 	$ $
 
-    Betrachten wir $B = \{f_1, f_2, f_3, f_4\}$ als eine mögliche Basis von $U$, da $U = \operatorname{Span} B$ muss lediglich gezeigt oder widerlegen werden das $B$ linear unabhängig ist um zu zeigen da $B$ eine oder keine Base von $U$ ist.
+	Betrachten wir $B = \{f_1, f_2, f_3, f_4\}$ als eine mögliche Basis von $U$.
+	Da $U = \operatorname{Span} B$, muss lediglich gezeigt oder widerlegt werden, dass $B$ linear unabhängig ist, um zu zeigen, dass $B$ eine Basis von $U$ ist.
 
-    Wenn $B$ linear unabhängig ist, muss gelten das aus $\alpha_1 f_1 + \alpha_2 f_2 + \alpha_3 f_3 + \alpha_4 f_4 = 0$ folgt $\alpha_1 = \alpha_2 = \alpha_3 = \alpha_4 = $
+	Wenn $B$ linear unabhängig ist, muss gelten, dass aus $\alpha_1 f_1 + \alpha_2 f_2 + \alpha_3 f_3 + \alpha_4 f_4 = 0$ folgt $\alpha_1 = \alpha_2 = \alpha_3 = \alpha_4 = 0$.
 
-    Um zu zeigen, dass eine Funktion die Null Funktion ist muss sie an jeder stelle $f(x) = 0$ sein.
-    Somit nehmen wir uns 4 Werte, und errechnen, ob folgt das $\alpha_{1 \le n \le 4} = 0$.
+	Um zu zeigen, dass eine Funktion die Nullfunktion ist, muss sie an jeder Stelle $f(x) = 0$ sein.
+	Somit nehmen wir 4 Werte und überprüfen, ob folgt, dass $\alpha_{1 \le n \le 4} = 0$.
 
-    Für $x = 0, y = 1$:
-    \begin{align*}
-        \alpha_1 \cdot \max(0, 1) + \alpha_2 \cdot \min(0, 1) + \alpha_3 \cdot 0 + \alpha_4 \cdot 1 & = 0         \\
-        \Rightarrow \alpha_1 + \alpha_4                                                             & = 0         \\
-        \Rightarrow \alpha_1                                                                        & = -\alpha_4
-    \end{align*}
+	Für $x = 0, y = 1$:
+	\begin{align*}
+		\alpha_1 \cdot \max(0, 1) + \alpha_2 \cdot \min(0, 1) + \alpha_3 \cdot 0 + \alpha_4 \cdot 1 & = 0         \\
+		\Rightarrow \alpha_1 + \alpha_4                                                             & = 0         \\
+		\Rightarrow \alpha_1                                                                        & = -\alpha_4
+	\end{align*}
 
-    Für $x = 1, y = 0$:
-    \begin{align*}
-        \alpha_1 \cdot \max(1, 0) + \alpha_2 \cdot \min(1, 0) + \alpha_3 \cdot 1 + \alpha_4 \cdot 0 & = 0         \\
-        \Rightarrow \alpha_1 + \alpha_3                                                             & = 0         \\
-        \Rightarrow \alpha_1                                                                        & = -\alpha_3 \\
-        \Rightarrow \alpha_4                                                                        & = \alpha_3
-    \end{align*}
+	Für $x = 1, y = 0$:
+	\begin{align*}
+		\alpha_1 \cdot \max(1, 0) + \alpha_2 \cdot \min(1, 0) + \alpha_3 \cdot 1 + \alpha_4 \cdot 0 & = 0         \\
+		\Rightarrow \alpha_1 + \alpha_3                                                             & = 0         \\
+		\Rightarrow \alpha_1                                                                        & = -\alpha_3 \\
+		\Rightarrow \alpha_4                                                                        & = \alpha_3
+	\end{align*}
 
-    Für $x = 1, y = 1$:
-    \begin{align*}
-        \alpha_1 \cdot \max(1, 1) + \alpha_2 \cdot \min(1, 1) + \alpha_3 \cdot 1 + \alpha_4 \cdot 1 & = 0 \\
-        \Rightarrow \alpha_1 + \alpha_2 + \alpha_3 + \alpha_4                                       & = 0 \\
-        \Rightarrow \alpha_1 + \alpha_2 + 2 \alpha_3                                                & = 0
-    \end{align*}
+	Für $x = 1, y = 1$:
+	\begin{align*}
+		\alpha_1 \cdot \max(1, 1) + \alpha_2 \cdot \min(1, 1) + \alpha_3 \cdot 1 + \alpha_4 \cdot 1 & = 0 \\
+		\Rightarrow \alpha_1 + \alpha_2 + \alpha_3 + \alpha_4                                       & = 0 \\
+		\Rightarrow \alpha_1 + \alpha_2 + 2 \alpha_3                                                & = 0
+	\end{align*}
 
-    Für $x = 1, y = 2$:
-    \begin{align*}
-        \alpha_1 \cdot \max(1, 2) + \alpha_2 \cdot \min(1, 2) + \alpha_3 \cdot 1 + \alpha_4 \cdot 2 & = 0 \\
-        \Rightarrow 2\alpha_1 + \alpha_2 + \alpha_3 + 2\alpha_4                                     & = 0 \\
-        \Rightarrow 2\alpha_1 + \alpha_2 + 3 \alpha_3                                               & = 0 \\
-        \Rightarrow -\alpha_2 - \alpha_3                                                            & = 0 \\
-        \Rightarrow \alpha_2 = - \alpha_3
-    \end{align*}
+	Für $x = 1, y = 2$:
+	\begin{align*}
+		\alpha_1 \cdot \max(1, 2) + \alpha_2 \cdot \min(1, 2) + \alpha_3 \cdot 1 + \alpha_4 \cdot 2 & = 0 \\
+		\Rightarrow 2\alpha_1 + \alpha_2 + \alpha_3 + 2\alpha_4                                     & = 0 \\
+		\Rightarrow 2\alpha_1 + \alpha_2 + 3 \alpha_3                                               & = 0 \\
+		\Rightarrow -\alpha_2 - \alpha_3                                                            & = 0 \\
+		\Rightarrow \alpha_2 = - \alpha_3
+	\end{align*}
 
-    Somit lässt sich der span von $\{f_1, f_2, f_3, f_4\}$ durch $f_1 = f_3 + f_4 - f_2$, sowie $f_2 = f_3 + f_4 - f_2$ sowie $f_3 = f_4 - f_1 - f_2$, sowie $f_4 = f_3 - f_1 - f_2$ darstellen.
+	Somit lässt sich der Span von $\{f_1, f_2, f_3, f_4\}$ durch $f_1 = f_3 + f_4 - f_2$, $f_2 = f_3 + f_4 - f_2$, $f_3 = f_4 - f_1 - f_2$ und $f_4 = f_3 - f_1 - f_2$ darstellen.
 
-    Wähle somit die base $\{f_2, f_3, f_4\}$ und teste, ob linear unabhängig.
+	Wähle somit die Basis $\{f_2, f_3, f_4\}$ und teste, ob sie linear unabhängig ist.
 
-    Für $x = 0, y = 1$:
-    \begin{align*}
-        \alpha_1 \cdot \min(0, 1) + \alpha_2 \cdot 0 + \alpha_3 \cdot 1 & = 0         \\
-        \Rightarrow \alpha_1 + \alpha_3                                 & = 0         \\
-        \Rightarrow \alpha_1                                            & = -\alpha_3
-    \end{align*}
+	Für $x = 0, y = 1$:
+	\begin{align*}
+		\alpha_1 \cdot \min(0, 1) + \alpha_2 \cdot 0 + \alpha_3 \cdot 1 & = 0         \\
+		\Rightarrow \alpha_1 + \alpha_3                                 & = 0         \\
+		\Rightarrow \alpha_1                                            & = -\alpha_3
+	\end{align*}
 
-    Für $x = 1, y = 0$:
-    \begin{align*}
-        \alpha_1 \cdot \min(1, 0) + \alpha_2 \cdot 1 + \alpha_3 \cdot 0 & = 0         \\
-        \Rightarrow \alpha_1 + \alpha_2                                 & = 0         \\
-        \Rightarrow \alpha_1                                            & = -\alpha_2
-    \end{align*}
+	Für $x = 1, y = 0$:
+	\begin{align*}
+		\alpha_1 \cdot \min(1, 0) + \alpha_2 \cdot 1 + \alpha_3 \cdot 0 & = 0         \\
+		\Rightarrow \alpha_1 + \alpha_2                                 & = 0         \\
+		\Rightarrow \alpha_1                                            & = -\alpha_2
+	\end{align*}
 
-    Für $x = 1, y = 1$:
-    \begin{align*}
-        \alpha_1 \cdot \min(1, 1) + \alpha_2 \cdot 1 + \alpha_3 \cdot 1 & = 0 \\
-        \Rightarrow \alpha_1 + \alpha_2 + \alpha_3                      & = 0 \\
-    \end{align*}
+	Für $x = 1, y = 1$:
+	\begin{align*}
+		\alpha_1 \cdot \min(1, 1) + \alpha_2 \cdot 1 + \alpha_3 \cdot 1 & = 0 \\
+		\Rightarrow \alpha_1 + \alpha_2 + \alpha_3                      & = 0 \\
+	\end{align*}
 
-    Da $\alpha_1 = - \alpha_3$ folgt $\alpha_2 = 0$ und da $\alpha_1 = - \alpha_2$ folgt $\alpha_3 = 0$ und somit auch $\alpha_1 = 0$.
-    Somit ist $\{f_2, f_3, f_4\}$ linear unabhängig und eine Basis von $U$.
-
+	Da $\alpha_1 = - \alpha_3$ folgt $\alpha_2 = 0$, und da $\alpha_1 = - \alpha_2$ folgt $\alpha_3 = 0$, und somit auch $\alpha_1 = 0$.
+	Somit ist $\{f_2, f_3, f_4\}$ linear unabhängig und eine Basis von $U$.
 \end{proof}
 \end{problem}
 
