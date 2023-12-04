@@ -24,6 +24,9 @@
 \setlist[enumerate, 1]{label=\roman*)}
 \setlist[description]{font=\normalfont}
 
+% Reset the equation counter on every call to align to start from 1 every time
+\AtBeginEnvironment{align}{\setcounter{equation}{0}}
+
 % Define commands for lecture, problem set, and submission date
 \newcommand{\Lecture}[1]{\gdef\@Lecture{#1}}
 \newcommand{\Problemset}[1]{\gdef\@Problemset{#1}}
