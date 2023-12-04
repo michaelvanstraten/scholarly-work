@@ -63,14 +63,14 @@
 
 % Configure the page style using fancyhdr
 \pagestyle{fancy}
-\lhead{
+\fancyhead[L]{
 	\@Lecture \\
 	\textbf{Lösungen}:\space\@Problemset. Übungsblatt
 }
-\rhead{
+\fancyhead[R]{
 	\@author \\
 }
-\cfoot{\thepage}
+\fancyfoot[C]{\thepage}
 
 % Create custom 'problem' environment and counter 
 \newcounter{problem}
