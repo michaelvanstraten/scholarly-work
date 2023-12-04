@@ -83,17 +83,14 @@
 }
 \cfoot{\thepage}
 
-% Define a theorem style for problems
-\declaretheoremstyle[
-	headpunct={},
-	headfont=\normalfont\bfseries,
-	headformat={\NAME\space\NUMBER: \NOTE},
-	notebraces={}{},
-	bodyfont=\normalfont,
-	postheadspace=\newline,
-]{problem}
+% Create custom 'problem' environment and counter 
+\newcounter{problem}
+\newenvironment{problem}[2][]{
+	\stepcounter{problem}%
+	\par\noindent\textbf{Aufgabe~\theproblem:}~#1\hfill[\textbf{#2}]\par\noindent%
+}{
+	\pagebreak
+}
 
-% Create a 'problem' environment using the defined style
-\declaretheorem[style=problem,title=Aufgabe, postheadhook=\theorembookmark]{problem}
 
 \xapptocmd{\proof}{\mbox{}\par\nobreak}{}{}
