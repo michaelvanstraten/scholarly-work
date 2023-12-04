@@ -120,5 +120,8 @@
 	}
 }
 
+% Define a custom theorem style for definitions
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
 
 \xapptocmd{\proof}{\mbox{}\par\nobreak}{}{}
