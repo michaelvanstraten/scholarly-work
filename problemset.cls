@@ -100,6 +100,10 @@
 \DeclarePairedDelimiterXPP{\rightopeninterval}[2]{}{\lbrack}{\lbrack}{}{#1, #2}
 \DeclarePairedDelimiterXPP{\closedinterval}[2]{}{\lbrack}{\rbrack}{}{#1, #2}
 
+% Set document spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.5em}
+
 % Create custom 'problem' environment and counter 
 \newcounter{problem}
 \newenvironment{problem}[2][]{
