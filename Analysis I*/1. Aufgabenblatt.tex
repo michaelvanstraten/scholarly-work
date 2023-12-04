@@ -1,13 +1,13 @@
 \documentclass{../problemset}
 
 \Lecture{Analysis I* - Aufgabenblatt 1}
-\Student{Michael van Straten}
+\author{Michael van Straten}
 \Problemset{1}
 
 \begin{document}
 \maketitle
 
-\begin{problem}[Summenformeln]
+\begin{problem}[Summenformeln]{6 Punkte}
 Beweisen Sie folgende Summenformeln für alle $n \in \mathbb{N}$:
 \begin{enumerate}
 	\item[a)]
@@ -72,12 +72,9 @@ Beweisen Sie folgende Summenformeln für alle $n \in \mathbb{N}$:
 		      \end{align}
 	\end{enumerate}
 \end{proof}
-
 \end{problem}
 
-\pagebreak
-
-\section*{Aufgabe 2:}
+\begin{problem}{4 Punkte}
 Wir ergänzen nun die Definition 2.9 des Binomialkoeffizienten $n \choose k$ mit $n \in \mathbb{N}$ und $k \in \mathbb{Z}$ aus der Vorlesung zu $x \choose v$ mit $x \in \mathbb{R}$ und $v \in \mathbb{N}$:
 \[
 	\binom{x}{v} := \prod_{j=1}^{v}\frac{x-j+1}{j} = \frac{x(x-1)\cdot\ldots\cdot(x-v+1)}{v!}.
@@ -134,10 +131,9 @@ Binomialkoeffizienten $\binom{x}{v}$:
 		\binom{x}{k}\binom{k}{l} & = \frac{x(x-1)\cdot\ldots\cdot(x-k+1)}{k!}\frac{k(k-1)\cdot\ldots\cdot(k-l+1)}{l!}
 	\end{align}
 \end{proof}
+\end{problem}
 
-\pagebreak
-
-\section*{Aufgabe 3:}
+\begin{problem}{6 Punkte}
 Beweisen Sie 3.14 a) und b) aus der Vorlesung:
 \newline\newline
 Für alle $n,m \in \mathbb{Z}$ und $x \in \mathbb{R}$ bzw. $x \in \mathbb{R}^* = \mathbb{R}\setminus\{0\}$ im Falle negativer Potenzen gilt
@@ -209,10 +205,9 @@ Für alle $n,m \in \mathbb{Z}$ und $x \in \mathbb{R}$ bzw. $x \in \mathbb{R}^* =
 		{(x^{-n})}^{-m} = {({({(x^{-1})}^n)}^{-1})}^m = {({(\underbrace{{(x^{-1})}^{-1}}_{\mathclap{{(x^{-1})}^{-1} = x \text{ laut Definition des inversen Elements}}})}^n)}^m = {({x}^n)}^m = x^{nm}.
 	\]
 \end{proof}
+\end{problem}
 
-\pagebreak
-
-\section*{Aufgabe 4:}
+\begin{problem}{4 Punkte}
 In der LAAG I* haben Sie kürzlich eine Einführung in die Mengenlehre erhalten. Siehe
 auch unser Analysis I* Skript Z1, und insbesondere Z1.10. \\
 Seien $X$, $Y$ Mengen und $A$, $A^\prime$ Teilmengen von $X$ und $B$, $B^\prime$ Teilmengen von $Y$.
@@ -246,5 +241,6 @@ Seien $X$, $Y$ Mengen und $A$, $A^\prime$ Teilmengen von $X$ und $B$, $B^\prime$
 	      \]
 	      Der Beweis dazu ist ähnliche aber nicht gleich zu dem Beweis in a).
 \end{enumerate}
+\end{problem}
 
 \end{document}

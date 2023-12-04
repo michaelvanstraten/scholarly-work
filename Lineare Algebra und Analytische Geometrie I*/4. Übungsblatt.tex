@@ -2,11 +2,11 @@
 
 \Lecture{Lineare Algebra und Analytische Geometrie I*}
 \Problemset{4}
-\Student{Michael van Straten}
+\author{Michael van Straten}
 
 \begin{document}
 \maketitle
-\begin{problem}[Eigenschaften der Kompositionen]
+\begin{problem}[Eigenschaften der Kompositionen]{7 Punkte}
 Gegeben seien nichtleere Mengen $X$, $Y$ und $Z$ und Abbildungen $f : X \rightarrow Y$ und $g : Y \rightarrow Z$.
 Zeigen oder widerlegen Sie die folgenden Aussagen:
 \begin{enumerate}
@@ -18,11 +18,13 @@ Zeigen oder widerlegen Sie die folgenden Aussagen:
 	\item ist $g \circ f$ surjektiv, so ist auch $g$ surjektiv,
 	\item ist $g \circ f$ surjektiv, so ist auch $f$ surjektiv.
 \end{enumerate}
-\begin{proof} \\\
+\begin{proof}
+	$ $
+
 	\begin{enumerate}
 		\item Lass $x_1,x_2 \in X$, somit is zu zeigen das, wenn $(g \circ f)(x_1) = (g \circ f)(x_2) $ dann folgt $x_1 = x_2$.
 		      Da $g$ injektiv ist gilt, wenn $y_1, y_2 \in Y$ und $g(y_1) = g(y_2)$ dann folgt $y_1 = y_2$.
-		      Es ist zu bemerken das für $f$ injektiv gilt, $x_1, x_2 \in X$ und $f(x_1) = \f(x_2) \Rightarrow x_1 = x_2$.
+		      Es ist zu bemerken das für $f$ injektiv gilt, $x_1, x_2 \in X$ und $f(x_1) = f(x_2) \Rightarrow x_1 = x_2$.
 		      Da $g(y_1) = g(y_2) \Rightarrow y_1 = y_2 \Rightarrow f(x_1) = f(x_2) \Rightarrow x_1 = x_2$, folgt somit, das $g \circ f$ injektiv ist.
 		      Was zu zeigen war. \checkmark
 		\item Es ist zu zeigen das $\forall z \in Z$ folgt $\exists x \in X$ sodass $(g \circ f)(x) = z$.
@@ -67,9 +69,7 @@ Zeigen oder widerlegen Sie die folgenden Aussagen:
 \end{proof}
 \end{problem}
 
-\pagebreak
-
-\begin{problem}[Verlustfreie Kompression]
+\begin{problem}[Verlustfreie Kompression]{4 Punkte}
 Sei $B := \{0, 1\}$. Dadurch ist für ein $n \in \mathbb{N}$ die Menge der Bitstrings der Länge $n$ gegeben durch
 \[B^n = \bigtimes_{i=0}^{n} B = \underbrace{B \times \ldots \times B}_{n-\text{mal}}.\]
 Die Menge der Bitstrings deren Länge kleiner als $n$ ist definieren wir durch
@@ -83,7 +83,9 @@ Nutzen Sie die folgenden Schritte um zu zeigen, dass ein solches Paar $(C, D)$ n
 	\item Zeigen Sie, dass $C$ nicht injektiv sein kann.
 \end{enumerate}
 
-\begin{proof} \\\
+\begin{proof}
+	$ $
+
 	\begin{enumerate}
 		\item Kardinalität von $B^n$: \[
 			      \mid B^n \mid = \underbrace{\mid B \mid \cdot \ldots \cdot \mid B \mid }_{n - \text{mal}} = {|B|}^n = 2^n,
@@ -105,9 +107,7 @@ Nutzen Sie die folgenden Schritte um zu zeigen, dass ein solches Paar $(C, D)$ n
 
 \end{problem}
 
-\pagebreak
-
-\begin{problem}
+\begin{problem}{4 Punkte}
 Sei $G := \{e, a, b, c\}$, $|G| = 4$ und $(G, \cdot)$ eine Gruppe mit neutralem Element $e$. Zeigen Sie, dass
 \begin{enumerate}
 	\item $a \cdot b, b \cdot a \in \{e, c\}$,
@@ -116,7 +116,8 @@ Sei $G := \{e, a, b, c\}$, $|G| = 4$ und $(G, \cdot)$ eine Gruppe mit neutralem 
 \end{enumerate}
 
 \begin{proof}
-	\\\
+	$ $
+
 	\begin{enumerate}
 		\item Da $e$ eindeutig bestimmt ist, und seine Anwendung kommutativ, kann hier zwischen zwei fällen unterschieden werden.
 		      Entweder ist $b$ das inverse element zu $a$ und umgekehrt, in diesem Fall ist $a \cdot b$ und $b \cdot c$ gleich $e$ und somit in $\{e,c\}$.
@@ -135,16 +136,15 @@ Sei $G := \{e, a, b, c\}$, $|G| = 4$ und $(G, \cdot)$ eine Gruppe mit neutralem 
 \end{proof}
 \end{problem}
 
-\pagebreak
-
-\begin{problem}
+\begin{problem} {5 Punkte}
 Sei $(G, \cdot)$ eine Gruppe mit neutralem Element $e \in G$. Zeigen Sie, dass
 \begin{enumerate}
 	\item Falls $g \cdot g = e$ für alle $g \in G$, dann ist $G$ abelsch.
 	\item Für $a \in G$ ist $(G, \circ_a)$ ebenfalls eine Gruppe, wobei $x \circ_a y := x \cdot a \cdot y$ für alle $x, y \in G$.
 \end{enumerate}
 \begin{proof}
-	\\\
+	$ $
+
 	\begin{enumerate}
 		\item Aus $g \cdot g = e$ für alle $g \in G$ folgt: \begin{align*}
 			       & (x \cdot y) \cdot (x \cdot y) = e \tag{$x \cdot y \in G \Longrightarrow \exists g \in G: g \cdot g = e$} \\

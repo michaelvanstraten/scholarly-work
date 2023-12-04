@@ -8,7 +8,7 @@
 \begin{document}
 \maketitle
 
-\begin{problem}[Untergruppenkriterien; Kern als Untergruppe]
+\begin{problem}[Untergruppenkriterien; Kern als Untergruppe]{5 Punkte}
 Sei $(G, \cdot)$ eine Gruppe und $U \subseteq G$ nicht leer. Ist auch $(U, \cdot)$ eine Gruppe, so heißt sie Untergruppe von $(G, \cdot)$.
 
 \begin{enumerate}
@@ -55,10 +55,10 @@ Sei $(G, \cdot)$ eine Gruppe und $U \subseteq G$ nicht leer. Ist auch $(U, \cdot
 
 		      Nehmen wir zwei Elemente aus $\ker(f)$, $a$ und $b$. Somit ist laut Definition von Homomorphismen $f(a \cdot b) = f(a) + f(b)$. Somit folgt
 		      \begin{align}
-			      f(b^{-1}) &= f(b)^{-1} \quad \text{(Homomorphismen bilden inverse auf inverse ab)} \\
-			      f(b \cdot b^{-1}) &= f(b) + f(b)^{-1} \\
-			      f(e_G) &= e_H + f(b)^{-1} \\
-			      f(e_G) &= e_H + e_H \quad \text{(Homomorphismen bilden neutrale Elemente auf neutrale Elemente ab)}
+			      f(b^{-1})         & = f(b)^{-1} \quad \text{(Homomorphismen bilden inverse auf inverse ab)}                     \\
+			      f(b \cdot b^{-1}) & = f(b) + f(b)^{-1}                                                                          \\
+			      f(e_G)            & = e_H + f(b)^{-1}                                                                           \\
+			      f(e_G)            & = e_H + e_H \quad \text{(Homomorphismen bilden neutrale Elemente auf neutrale Elemente ab)}
 		      \end{align}
 		      Somit muss $b^{-1}$ in $\ker(f)$ sein, da $f(b^{-1}) = e_H$. Folglich folgt
 		      \begin{align}
@@ -69,9 +69,7 @@ Sei $(G, \cdot)$ eine Gruppe und $U \subseteq G$ nicht leer. Ist auch $(U, \cdot
 \end{proof}
 \end{problem}
 
-\pagebreak
-
-\begin{problem}[Der erste Isomorphiesatz am Beispiel]
+\begin{problem}[Der erste Isomorphiesatz am Beispiel]{4 Punkte}
 Sei $x \in \mathbb{R}$ und $n \in \mathbb{N}$.
 Wir betrachten die Abbildung $d: (P_{\le n }[x], +) \to (P_{\le n-1}[x], +)$ zwischen den additiven Gruppen der Polynome vom Grad kleiner gleich $n$ und Grad kleiner gleich $n - 1$, die für jedes $p(x) = a_0 + a_1x + a_2x^2 + \ldots + a_nx^n \in P_{\le n}[x]$, $a_j \in \mathbb{R}$, $j \in \{1, \ldots, n\}$ gegeben ist durch \[
 	d(p(x)) = a_1 + 2a_2x + \ldots + na_nx^{n-1} \in P_{\le n-1}[x].
@@ -94,8 +92,8 @@ Sei weiter $P'_{\le n}[x] := \{p(x) \in P_{\le n}[x] \mid p(x) = a_1x + \ldots +
 
 		      Notiere das:
 		      \begin{align}
-			      p(x) &= a_0 + a_1x^1 + a_2x^2 + \ldots + a_nx^n, \\
-			      q(x) &= b_0 + b_1x^1 + b_2x^2 + \ldots + b_nx^n.
+			      p(x) & = a_0 + a_1x^1 + a_2x^2 + \ldots + a_nx^n, \\
+			      q(x) & = b_0 + b_1x^1 + b_2x^2 + \ldots + b_nx^n.
 		      \end{align}
 
 		      Somit ist $p(x) + q(x) =$ \[
@@ -191,9 +189,7 @@ Sei weiter $P'_{\le n}[x] := \{p(x) \in P_{\le n}[x] \mid p(x) = a_1x + \ldots +
 
 \end{problem}
 
-\pagebreak
-
-\begin{problem}[Erster Isomorphiesatz]
+\begin{problem}[Erster Isomorphiesatz]{4 Punkte}
 Seien $(G, \cdot)$ und $(H, +)$ Gruppen und $f: G \to H$ ein surjektiver Gruppenhomomorphismus. Zeigen Sie, dass $G/\ker(f)$ isomorph zu $H$ ist. Zeigen Sie dazu, dass
 \begin{enumerate}
 	\item $F: G/\ker(f) \to H$ definiert durch $F(K) := f(g)$ für ein $g \in K$ wohl definiert ist. Das heißt, der Wert von $F$ hängt nicht von der Wahl von $g \in K$ aus der Definition ab.
@@ -203,9 +199,7 @@ Seien $(G, \cdot)$ und $(H, +)$ Gruppen und $f: G \to H$ ein surjektiver Gruppen
 
 \end{problem}
 
-\pagebreak
-
-\begin{problem}[Einfache Körpererweiterungen]
+\begin{problem}[Einfache Körpererweiterungen]{6 Punkte}
 Sei $(L, +, \cdot)$ ein Körper, $K \subsetneq L$, und $(K, +, \cdot)$ ebenfalls ein Körper bezüglich der gleichen Operationen (man nennt $K$ dann Unterkörper von $L$ analog zur Untergruppe aus Aufgabe 1). Sei weiter $j \in L \setminus K$ mit $j^2 \in K$. Zeigen Sie, dass $K[j] := \{a + bj \in L \mid a, b \in K\}$ mit den Operationen
 \begin{align*}
 	(a + bj) \oplus (c + dj)  & = a + c + j(b + d),       \\
@@ -213,81 +207,81 @@ Sei $(L, +, \cdot)$ ein Körper, $K \subsetneq L$, und $(K, +, \cdot)$ ebenfalls
 \end{align*}
 einen Körper bildet.
 \begin{proof}
-Um zu beweisen, dass $K[j]$ einen Körper bildet, muss gezeigt werden, dass er alle Körperaxiome erfüllt. \\
+	Um zu beweisen, dass $K[j]$ einen Körper bildet, muss gezeigt werden, dass er alle Körperaxiome erfüllt. \\
 
-\textbf{Assoziativität}
+	\textbf{Assoziativität}
 
-Für die Operation $\oplus$:
-\begin{align}
-	((a + bj) \oplus (c + dj)) \oplus (e + fj) & = (a + c) + j(b + d) \oplus (e + fj)         \\
-	& = (a + c + e) + j(b + d + f)                \\
-	& = (a + bj) \oplus ((c + dj) \oplus (e + fj))
-\end{align}
+	Für die Operation $\oplus$:
+	\begin{align}
+		((a + bj) \oplus (c + dj)) \oplus (e + fj) & = (a + c) + j(b + d) \oplus (e + fj)         \\
+		                                           & = (a + c + e) + j(b + d + f)                 \\
+		                                           & = (a + bj) \oplus ((c + dj) \oplus (e + fj))
+	\end{align}
 
-Für die Operation $\otimes$:
-\begin{align}
-	((a + bj) \otimes (c + dj)) \otimes (e + fj) & = (ac + j^2bd + j(ad + bc)) \otimes (e + fj)                   \\
-	& = ace + j^2bde + j(adf + bcf) + j^3bdf                    \\
-	& = (ce + j^2df) + j(cf + de) \otimes (a + bj)                   \\
-	& = (a + bj) \otimes ((c + dj) \otimes (e + fj))
-\end{align}
+	Für die Operation $\otimes$:
+	\begin{align}
+		((a + bj) \otimes (c + dj)) \otimes (e + fj) & = (ac + j^2bd + j(ad + bc)) \otimes (e + fj)   \\
+		                                             & = ace + j^2bde + j(adf + bcf) + j^3bdf         \\
+		                                             & = (ce + j^2df) + j(cf + de) \otimes (a + bj)   \\
+		                                             & = (a + bj) \otimes ((c + dj) \otimes (e + fj))
+	\end{align}
 
-\textbf{Kommutativität}
+	\textbf{Kommutativität}
 
-Für die Operation $\oplus$:
-\begin{align}
-	(a + bj) \oplus (c + dj) & = (a + c) + j(b + d)         \\
-	& = (c + a) + j(d + b)         \\
-	& = (c + dj) \oplus (a + bj)
-\end{align}
+	Für die Operation $\oplus$:
+	\begin{align}
+		(a + bj) \oplus (c + dj) & = (a + c) + j(b + d)       \\
+		                         & = (c + a) + j(d + b)       \\
+		                         & = (c + dj) \oplus (a + bj)
+	\end{align}
 
-Für die Operation $\otimes$:
-\begin{align}
-	(a + bj) \otimes (c + dj) & = ac + j^2bd + j(ad + bc)   \\
-	& = ca + j^2db + j(da + bc)   \\
-	& = (c + dj) \otimes (a + bj)
-\end{align}
+	Für die Operation $\otimes$:
+	\begin{align}
+		(a + bj) \otimes (c + dj) & = ac + j^2bd + j(ad + bc)   \\
+		                          & = ca + j^2db + j(da + bc)   \\
+		                          & = (c + dj) \otimes (a + bj)
+	\end{align}
 
-\textbf{Neutrale Elemente}
+	\textbf{Neutrale Elemente}
 
-Für die Operation $\oplus$ ist das neutrale Element $e_\oplus = (0+0j)$, da \[
-	(a + bj) \oplus (0 + 0j)   = (a + 0) + j(b + 0) = a + bj
-\]
+	Für die Operation $\oplus$ ist das neutrale Element $e_\oplus = (0+0j)$, da \[
+		(a + bj) \oplus (0 + 0j)   = (a + 0) + j(b + 0) = a + bj
+	\]
 
-Für die Operation $\otimes$ ist das neutrale Element $e_\otimes = (1+0j)$, da \[
-	(a + bj) \otimes (1 + 0j)  = ac + j^2b \cdot 0 + j(ad + bc) = a + bj
-\]
+	Für die Operation $\otimes$ ist das neutrale Element $e_\otimes = (1+0j)$, da \[
+		(a + bj) \otimes (1 + 0j)  = ac + j^2b \cdot 0 + j(ad + bc) = a + bj
+	\]
 
-\textbf{Inverse Elemente}
+	\textbf{Inverse Elemente}
 
-Für die Operation $\oplus$ ist das inverse Element $\forall (a + bj) \in K[j]$ gleich $(a^{-1} - b^{-1}j)$, da \[
-	(a + bj) \oplus (a^{-1} - b^{-1}j) = (a + a^{-1}) + j(b - b^{-1}) = 0 + 0j
-\]
+	Für die Operation $\oplus$ ist das inverse Element $\forall (a + bj) \in K[j]$ gleich $(a^{-1} - b^{-1}j)$, da \[
+		(a + bj) \oplus (a^{-1} - b^{-1}j) = (a + a^{-1}) + j(b - b^{-1}) = 0 + 0j
+	\]
 
-Für die Operation $\otimes$ ist das inverse Element $\forall (a + bj) \in K[j]$ gleich $(a{(a^2+(-j^2)b^2)}^{-1} - bj{(a^2+(-j^2)b^2)}^{-1})$.
+	Für die Operation $\otimes$ ist das inverse Element $\forall (a + bj) \in K[j]$ gleich $(a{(a^2+(-j^2)b^2)}^{-1} - bj{(a^2+(-j^2)b^2)}^{-1})$.
 
-\textbf{Distributivgesetze}
+	\textbf{Distributivgesetze}
 
-Für die Operation $\otimes$ über $\oplus$:
-\begin{align}
-	(a + bj) \otimes ((c + dj) \oplus (e + fj)) & = (a + bj) \otimes (ce + j(d + f))                               \\
-	& = ace + j^2b(d + f) + j(ad + af + bce)                              \\
-	& = ace + j^2(bd + bf) + j(ad + af + bce)                              \\
-	& = (ac + j^2bd) + (ae + j^2bf) + j((ad + bc) + (af + be))        \\
-	& = (ac + j^2bd + j(ad + bc)) \oplus (ae + j^2bf + j(af + be))     \\
-	& = ((a + bj) \otimes (c + jd)) \oplus ((a + bj) \otimes (e + fj))
-\end{align}
+	Für die Operation $\otimes$ über $\oplus$:
+	\begin{align}
+		(a + bj) \otimes ((c + dj) \oplus (e + fj)) & = (a + bj) \otimes (ce + j(d + f))                               \\
+		                                            & = ace + j^2b(d + f) + j(ad + af + bce)                           \\
+		                                            & = ace + j^2(bd + bf) + j(ad + af + bce)                          \\
+		                                            & = (ac + j^2bd) + (ae + j^2bf) + j((ad + bc) + (af + be))         \\
+		                                            & = (ac + j^2bd + j(ad + bc)) \oplus (ae + j^2bf + j(af + be))     \\
+		                                            & = ((a + bj) \otimes (c + jd)) \oplus ((a + bj) \otimes (e + fj))
+	\end{align}
 
-Für die Operation $\otimes$ über $\oplus$:
-\begin{align}
-	((c + dj) \oplus (e + fj)) \otimes (a + bj) & = (ce + j(d + f)) \otimes (a + bj)                               \\
-	& = ace + j^2(bd + bf) + j(ad + af + bce)                              \\
-	& = (ac + j^2bd) + (ae + j^2bf) + j((ad + bc) + (af + be))        \\
-	& = (c + dj) \otimes (a + bj) \oplus (e + fj)     \\
-	& = ((c + dj) \otimes (a + bj)) \oplus ((e + fj) \otimes (a + bj))
-\end{align}
+	Für die Operation $\otimes$ über $\oplus$:
+	\begin{align}
+		((c + dj) \oplus (e + fj)) \otimes (a + bj) & = (ce + j(d + f)) \otimes (a + bj)                               \\
+		                                            & = ace + j^2(bd + bf) + j(ad + af + bce)                          \\
+		                                            & = (ac + j^2bd) + (ae + j^2bf) + j((ad + bc) + (af + be))         \\
+		                                            & = (c + dj) \otimes (a + bj) \oplus (e + fj)                      \\
+		                                            & = ((c + dj) \otimes (a + bj)) \oplus ((e + fj) \otimes (a + bj))
+	\end{align}
 
-Damit sind alle Körperaxiome erfüllt, und somit ist gezeigt, dass $K[j]$ ein Körper ist.
+	Damit sind alle Körperaxiome erfüllt, und somit ist gezeigt, dass $K[j]$ ein Körper ist.
 \end{proof}
 \end{problem}
 
