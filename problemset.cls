@@ -20,21 +20,6 @@
 \RequirePackage[hidelinks, bookmarksopen=true]{hyperref}
 \RequirePackage[open]{bookmark}
 
-% Define a command to create a bookmark for theorems
-\newcommand*{\theorembookmark}{%
-	\bookmark[
-		dest=\@currentHref,
-		rellevel=1,
-		keeplevel,
-	]{%
-		\thmt@thmname\space\csname the\thmt@envname\endcsname
-		\ifx\@currentlabelname\@empty
-		\else
-			\space(\@currentlabelname)
-		\fi
-	}%
-}
-
 % Set the label format for the first level of enumerate
 \setlist[enumerate, 1]{label=\roman*)}
 
