@@ -124,4 +124,3 @@
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 
-\xapptocmd{\proof}{\mbox{}\par\nobreak}{}{}
