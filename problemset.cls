@@ -72,6 +72,34 @@
 }
 \fancyfoot[C]{\thepage}
 
+% Define mathematical symbols and operations
+\newcommand{\Id}[1]{\operatorname{Id}_{#1}}
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\nats}{\field{N}}
+\newcommand{\ints}{\field{Z}}
+\newcommand{\reals}{\field{R}}
+\newcommand{\evens}{\field{G}}
+\newcommand{\after}{\circ}
+\newcommand{\with}{\mid}
+\newcommand{\union}{\cup}
+\newcommand{\Union}{\bigcup}
+\newcommand{\intersection}{\cap}
+\newcommand{\Intersection}{\bigcap}
+\newcommand{\powerset}[1]{\mathcal{P}(#1)}
+\newcommand{\symdiff}{\vartriangle}
+
+% Define paired delimiters and intervals
+\DeclarePairedDelimiterXPP{\paren}[1]{}{\lparen}{\rparen}{}{#1}
+\DeclarePairedDelimiterXPP{\seq}[2]{}{\lparen}{\rparen}{_{#2}}{#1}
+\DeclarePairedDelimiterXPP{\set}[1]{}{\lbrace}{\rbrace}{}{#1}
+\DeclarePairedDelimiterXPP{\abs}[1]{}{\lvert}{\rvert}{}{#1}
+\DeclarePairedDelimiterXPP{\card}[1]{}{\lvert}{\rvert}{}{#1}
+\DeclarePairedDelimiterXPP{\inner}[2]{}{\langle}{\rangle}{}{#1, #2}
+\DeclarePairedDelimiterXPP{\openinterval}[2]{}{\rbrack}{\lbrack}{}{#1, #2}
+\DeclarePairedDelimiterXPP{\leftopeninterval}[2]{}{\rbrack}{\rbrack}{}{#1, #2}
+\DeclarePairedDelimiterXPP{\rightopeninterval}[2]{}{\lbrack}{\lbrack}{}{#1, #2}
+\DeclarePairedDelimiterXPP{\closedinterval}[2]{}{\lbrack}{\rbrack}{}{#1, #2}
+
 % Create custom 'problem' environment and counter 
 \newcounter{problem}
 \newenvironment{problem}[2][]{
