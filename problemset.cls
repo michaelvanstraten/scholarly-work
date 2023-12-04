@@ -108,6 +108,7 @@
 \newcounter{problem}
 \newenvironment{problem}[2][]{
 	\stepcounter{problem}
+	\pdfbookmark[problem]{Aufgabe~\theproblem}{problem-\theproblem}
 	\par\noindent\textbf{Aufgabe~\theproblem:}~#1\hfill[\textbf{#2}]\par
 	\fancyhead[R]{
 		\@author \\
