@@ -109,8 +109,15 @@
 \newenvironment{problem}[2][]{
 	\stepcounter{problem}
 	\par\noindent\textbf{Aufgabe~\theproblem:}~#1\hfill[\textbf{#2}]\par
+	\fancyhead[R]{
+		\@author \\
+		\textit{Aufgabe~\theproblem}
+	}
 }{
 	\pagebreak
+	\fancyhead[R]{
+		\@author \\
+	}
 }
 
 
