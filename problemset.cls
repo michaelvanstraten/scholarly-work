@@ -22,6 +22,7 @@
 
 % Set the label format for the first level of enumerate
 \setlist[enumerate, 1]{label=\roman*)}
+\setlist[description]{font=\normalfont}
 
 % Define commands for lecture, problem set, and submission date
 \newcommand{\Lecture}[1]{\gdef\@Lecture{#1}}
