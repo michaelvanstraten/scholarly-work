@@ -1,0 +1,71 @@
+\documentclass{../problemset}
+
+\Lecture{Analysis I}
+\Problemset{6}
+\DoOn{5.12.2023}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Konvergenz und absolute Konvergenz]{10 Punkte}
+\begin{enumerate}
+	\item Untersuchen Sie folgende Reihe auf Konvergenz und absolute Konvergenz:
+	      \[
+		      \sum_{n=1}^{\infty} (-1)^n(\sqrt{n} + 1 - \sqrt{n}),
+	      \]
+	\item Untersuchen Sie folgende Reihe auf Konvergenz und absolute Konvergenz:
+	      \[
+		      \sum_{n=1}^{\infty} \frac{n^2}{3 + \frac{1}{n}\sqrt{n}},
+	      \]
+	\item Untersuchen Sie folgende Reihe auf Konvergenz und absolute Konvergenz:
+	      \[
+		      \sum_{n=2}^{\infty} \frac{2n+1}{5 \cdot 3^n},
+	      \]
+	\item Untersuchen Sie folgende Reihe auf Konvergenz und absolute Konvergenz:
+	      \[
+		      \sum_{n=1}^{\infty} \frac{2^n \cdot n!}{n^n},
+	      \]
+	\item Untersuchen Sie folgende Reihe auf Konvergenz und absolute Konvergenz:
+	      \[
+		      \sum_{n=0}^{\infty} \frac{n + 5}{n^2 - 4n + 1}.
+	      \]
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Binomialreihe]{6 Punkte}
+\begin{enumerate}
+	\item Sei $a \in \mathbb{R}$ und $x \in \mathbb{R}$ mit $|x| < 1$. Untersuchen Sie die folgende Binomialreihe auf Konvergenz und absolute Konvergenz:
+	      \[
+		      B_a(x) := \sum_{n=0}^{\infty} \binom{a}{n}x^n.
+	      \]
+	\item Zeigen Sie für die Binomialreihe aus a), dass für alle $x \in \mathbb{R}$ mit $|x| < 1$ und alle $a, b \in \mathbb{R}$ die folgende Funktionalgleichung gilt:
+	      \[
+		      B_a(x) \cdot B_b(x) = B_{a+b}(x).
+	      \]
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Sinus und Cosinus hyperbolicus]{4 Punkte}
+Beweisen Sie die folgenden Funktionalgleichungen für die Grenzwerte der in der Vorlesung definierten unendlichen Reihen von Sinus hyperbolicus und Cosinus hyperbolicus.
+\begin{enumerate}
+	\item $\cosh(x + y) = \cosh(x) \cosh(y) + \sinh(x) \sinh(y)$,
+	\item $\sinh(x + y) = \cosh(x) \sinh(y) + \sinh(x) \cosh(y)$,
+	\item $(\cosh(x))^2 - (\sinh(x))^2 = 1$.
+\end{enumerate}
+Zusatzfrage: In welchem Sinne gelten diese Funktionalgleichungen auch für die formalen Reihen (als Folgen von Partialsummen)?
+\end{problem}
+
+\begin{problem}[Umordnungen der alternierenden Reihe]{4 Sonderpunkte}
+Betrachten Sie die alternierende harmonische Reihe, die gegen $a \in \mathbb{R}$ konvergiert:
+\[
+	\sum_{n=1}^{\infty} (-1)^{n-1}\frac{1}{n}.
+\]
+\begin{enumerate}
+	\item Finden Sie eine Umordnung dieser Reihe, so dass diese gegen $\frac{3}{2}a$ konvergiert.
+	\item Finden Sie eine Umordnung, so dass diese bestimmt gegen $-\infty$ divergiert.
+	\item Finden Sie eine Umordnung, so dass diese weder konvergiert noch bestimmt gegen $\pm\infty$ divergiert.
+\end{enumerate}
+\end{problem}
+
+\end{document}
