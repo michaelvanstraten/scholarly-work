@@ -114,6 +114,161 @@ Bezeichne $R\leq 3[t]$ den Vektorraum der Polynome über $\mathbb{R}$ mit Grad h
 	      Sei weiter $F_2 := \{0, 1\} \subseteq F_4$. Sie können ohne Beweis annehmen, dass $(F_4, +_{F_4}, \cdot_{F_4})$ ein Körper ist und $F_2$ ein Unterkörper von $F_4$ ist. Geben Sie eine Basis von $F_4$ als Vektorraum über $F_2$ an und berechnen Sie $\dim_{F_2}(F_4)$.
 	\item Berechnen Sie alle Nullstellen des Polynoms $X^2 + X + 1$ über $F_2$ und $F_4$.
 \end{enumerate}
+\begin{proof}
+	$ $
+
+	\begin{enumerate}
+		\item Sei $(L, +, \cdot)$ ein Körper und $K \subseteq L$ ein Unterkörper. Wir wollen zeigen, dass $(L, +, \cdot)$ ein $K$-Vektorraum ist.
+
+		      \begin{enumerate}
+			      \item \textbf{Abgeschlossenheit unter der Addition:} Für alle $u, v \in L$ ist auch $u + v \in L$.
+
+			            Dies folgt direkt aus der Definition der Addition im Körper $L$.
+
+			      \item \textbf{Assoziativität der Addition:} Für alle $u, v, w \in L$ gilt $(u + v) + w = u + (v + w)$.
+
+			            Dies folgt direkt aus der Assoziativität der Addition im Körper $L$.
+
+			      \item \textbf{Existenz des neutralen Elements:} Es gibt ein neutrales Element $0 \in L$ bezüglich der Addition, so dass für alle $u \in L$ gilt $u + 0 = u$.
+
+			            Dies folgt direkt aus der Existenz des neutralen Elements in $L$.
+
+			      \item \textbf{Existenz des inversen Elements:} Für jedes $u \in L$ gibt es ein inverses Element $-u \in L$ bezüglich der Addition, so dass $u + (-u) = 0$.
+
+			            Dies folgt direkt aus der Existenz des inversen Elements in $L$.
+
+			      \item \textbf{Kommutativität der Addition:} Für alle $u, v \in L$ gilt $u + v = v + u$.
+
+			            Dies folgt direkt aus der Kommutativität der Addition in $L$.
+
+			      \item \textbf{Abgeschlossenheit unter der skalaren Multiplikation:} Für alle $a \in K$ und $u \in L$ ist auch $a \cdot u \in L$.
+
+			            Dies folgt aus der Tatsache, dass $K$ ein Unterkörper von $L$ ist.
+
+			      \item \textbf{Assoziativität der skalaren Multiplikation:} Für alle $a, b \in K$ und $u \in L$ gilt $(a \cdot b) \cdot u = a \cdot (b \cdot u)$.
+
+			            Dies folgt aus der Assoziativität der Multiplikation in $K$.
+
+			      \item \textbf{Distributivität des Skalars bezüglich der Vektoraddition:} Für alle $a \in K$ und $u, v \in L$ gilt $a \cdot (u + v) = a \cdot u + a \cdot v$.
+
+			            Dies folgt aus der Distributivität der Multiplikation in $K$.
+
+			      \item \textbf{Distributivität des Skalars bezüglich der Skalarmultiplikation:} Für alle $a, b \in K$ und $u \in L$ gilt $(a + b) \cdot u = a \cdot u + b \cdot u$.
+
+			            Dies folgt ebenfalls aus der Distributivität der Multiplikation in $K$.
+
+			      \item \textbf{Existenz des neutralen Elements:} Es gibt ein neutrales Element $1 \in K$ bezüglich der skalaren Multiplikation, so dass für alle $u \in L$ gilt $1 \cdot u = u$.
+
+			            Dies folgt direkt aus der Definition des neutralen Elements in $K$.
+		      \end{enumerate}
+
+		      Da alle zehn Axiome erfüllt sind, ist $(L, +, \cdot)$ ein $K$-Vektorraum.
+
+		\item Betrachten wir die Multiplikationstabelle für $\field{Z}_4$
+		      \[
+			      \begin{array}{c|cccc}
+				      \cdot_{\field{Z}_4} & 0 & 1 & 2 & 3 \\
+				      \hline
+				      0                   & 0 & 0 & 0 & 0 \\
+				      1                   & 0 & 1 & 2 & 3 \\
+				      2                   & 0 & 2 & 0 & 2 \\
+				      3                   & 0 & 3 & 2 & 1 \\
+			      \end{array}
+		      \]
+
+		      Wir bemerken wir das es für $2 \in \field{Z}_4$ keinen Multiplikativen inverses $2^{-1}$ gibt mit welchem $2 \cdot 2^{-1} = 1$.
+
+		      Somit ist $\field{Z}_4$ kein Körper. \checkmark
+		\item Wählen wir $B := \set{a, b}$ als eine potenzielle Basis für $\field{F}_4$.
+
+		      Zu zeigen ist das $B$ linear unabhängig über $\field{F}_2$ ist sowie das $\operatorname{Span} B = \field{F}_4$.
+
+		      Da $\field{F}_2$ lediglich zwei Elemente besitzt, gibt es nur 4 möglich linear Kombinationen der Elemente aus $B$.
+
+		      \textbf{Fall 1: $\lambda_1 = 0, \lambda_2 = 0$}
+		      \[
+			      0 \cdot a + 0 \cdot b = 0 + 0 = 0
+		      \]
+		      \textbf{Fall 2: $\lambda_1 = 1, \lambda_2 = 0$}
+		      \[
+			      1 \cdot a + 0 \cdot b = a + 0 = a \neq 0
+		      \]
+		      \textbf{Fall 3: $\lambda_1 = 0, \lambda_2 = 1$}
+		      \[
+			      0 \cdot a + 1 \cdot b = 0 + b = b \neq 0
+		      \]
+		      \textbf{Fall 4: $\lambda_1 = 1, \lambda_2 = 1$}
+		      \[
+			      1 \cdot a + 1 \cdot b = a + b = 1 \neq 0
+		      \]
+
+		      Somit folgt aus $\lambda_1 \cdot a + \lambda_2 \cdot b = 0$ das $\lambda_1 = \lambda_2 = 0$, was impliziert $B$ ist Lineare unabhängig. \checkmark
+
+		      Um zu zeigen das $\operatorname{Span} B = \field{F}_4$, können wir zeigen das es für alle $v \in \field{F}_4$ $\lambda_1, \lambda_2 \in \field{F}_2$ mit $\lambda_1 \cdot a + \lambda_2 \cdot b = v$.
+
+		      \textbf{Fall $v = 0 \Rightarrow \lambda_1 = 0, \lambda_2 = 0$}:
+		      \[
+			      0 \cdot a + 0 \cdot b = 0 + 0 = 0
+		      \]
+		      \textbf{Fall $v = 1 \Rightarrow \lambda_1 = 1, \lambda_2 = 1$}:
+		      \[
+			      1 \cdot a + 1 \cdot b = a + b = 1
+		      \]
+		      \textbf{Fall $v = a \Rightarrow \lambda_1 = 1, \lambda_2 = 0$}:
+		      \[
+			      1 \cdot a + 0 \cdot b = a + 0 = a
+		      \]
+		      \textbf{Fall $v = b \Rightarrow \lambda_1 = 0, \lambda_2 = 1$}:
+		      \[
+			      0 \cdot a + 1 \cdot b = 0 + b = b
+		      \]
+
+		      Somit haben wir gezeigt das $B$ linear unabhängig ist und das $\operatorname{Span} B = \field{F}_4$, was zeigt $B$ ist Basis.
+		\item Da $\field{F}_2$ und $\field{F}_4$ jeweils nur wenige endliche Elemente haben lässt sich per hand überprüfen ob diese als Nullstellen für das Polynom $X^2 + X + 1$ infragekommen.
+
+		      \textbf{$\field{F}_2$:}
+		      \begin{itemize}
+			      \item [$X = 0$:]
+			            \[
+				            0^2 + 0 + 1 = 0 \cdot 0 + 0 + 1 = 1 \neq 0
+			            \]
+
+			            \textit{keine Nullstelle}
+
+			      \item [$X = 1$:]
+			            \[
+				            1^2 + 1 + 1 = 1 + 1 + 1 = 0 + 1 = 1 \neq 0
+			            \]
+
+			            \textit{keine Nullstelle}
+
+		      \end{itemize}
+
+		      Somit hat das Polynom $X^2 + X + 1$ keine Nullstellen über $\field{F}_2$.
+
+		      \textbf{$\field{F}_4$:}
+
+		      Für $X = 0$ und $X = 1$ wissen wir bereits das sie keine Nullstellen über $\field{F}_2$ sind und da $\field{F}_2$ unterkörper von $\field{F}_4$ sind diese auch keine Nullstellen in $\field{F}_4$.
+		      \begin{itemize}
+			      \item [$X = a$:]
+			            \[
+				            a^2 + a + 1 = a \cdot a + a + 1 = b + a + 1 = 1 + 1 = 0
+			            \]
+
+			            \textit{Nullstelle} \checkmark
+
+			      \item [$X = b$:]
+			            \[
+				            b^2 + b + 1 = b \cdot b + b + 1 = a + b + 1 = 1 + 1 = 0
+			            \]
+
+			            \textit{Nullstelle} \checkmark
+
+		      \end{itemize}
+
+		      Somit hat das Polynom $X^2 + X + 1$ zwei Nullstellen über $\field{F}_4$ mit $x_0 \in \set{a,b}$.
+	\end{enumerate}
+\end{proof}
 \end{problem}
 
 \end{document}
