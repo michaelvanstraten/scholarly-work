@@ -88,6 +88,7 @@
 \newcommand{\Intersection}{\bigcap}
 \newcommand{\powerset}[1]{\mathcal{P}(#1)}
 \newcommand{\symdiff}{\vartriangle}
+\newcommand{\colvec}[1]{\begin{bmatrix} #1 \end{bmatrix}}
 
 % Define paired delimiters and intervals
 \DeclarePairedDelimiterXPP{\paren}[1]{}{\lparen}{\rparen}{}{#1}
