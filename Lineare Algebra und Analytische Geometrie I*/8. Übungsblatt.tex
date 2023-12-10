@@ -86,6 +86,89 @@ Bezeichne $R\leq 3[t]$ den Vektorraum der Polynome über $\mathbb{R}$ mit Grad h
 	\item Bestimmen Sie eine Basis von $U$ und berechnen Sie $\dim_{\mathbb{R}}(U)$.
 	\item Geben Sie Polynome an, welche die in ii) angegebene Basis von $U$ zu einer Basis von $R\leq 3[t]$ erweitern.
 \end{enumerate}
+\begin{proof}
+	$ $
+
+	\begin{enumerate}
+		\item Um zu zeigen, dass $U$ ein Unterraum von $\mathbb{R}_{\leq 3}[t]$ ist, müssen wir zeigen, dass $U$ unter Vektoraddition und Skalarmultiplikation abgeschlossen ist.
+
+		      \textbf{Vektoraddition}:
+
+		      Seien $p(x), q(x) \in U$. Da $p(x), q(x)$ an den Stellen $x = 0, x = 1$ gleich 0 sind, folgt
+		      $p(x) + q(x)$ ebenfalls an den Stellen $x = 0, x = 1$ gleich 0. Somit ist $U$ unter Vektoraddition geschlossen. \checkmark
+
+		      \textbf{Skalarmultiplikation}:
+
+		      Sei $p(x) \in U$ und $\alpha \in \mathbb{R}$. Da $\alpha \cdot 0 = 0$ ist, ist auch $\alpha p(x)$ an jeder Stelle, an der $p(x)$ gleich null ist, ebenfalls gleich null.
+		      Somit ist $U$ unter Skalarmultiplikation geschlossen. \checkmark
+		\item Betrachten wir einen Vektor $p(t)$ in $\mathbb{R}_{\leq 3}[t]$, der die Form $p(t) = \alpha_0 + \alpha_1t + \alpha_2t^2 + \alpha_3t^3$ hat.
+		      Unter Berücksichtigung der Bedingungen des Unterraums $U$ ergibt sich die Struktur eines Vektors in $U$ als $(-\alpha_2 - \alpha_3)t + \alpha_2t^2 + \alpha_3t^3$.
+
+		      Nun wählen wir zwei Vektoren aus $U$ als potenzielle Basis und überprüfen, ob sie linear unabhängig sind und ob $\operatorname{Span} B = U$ gilt.
+
+		      \[
+			      B := \{2t - t^2 - t^3, t^2 - t^3\}
+		      \]
+
+		      Wir setzen
+
+		      \[
+			      \lambda_1 \cdot (2t - t^2 - t^3) + \lambda_2 \cdot (t^2 - t^3) = 0
+		      \]
+
+		      \textbf{Setze $t = 2$}:
+
+		      \begin{align*}
+			      \lambda_1 \cdot (4 - 4 - 8) + \lambda_2 \cdot (4 - 8) & = 0            \\
+			      -8 \lambda_1 - 4 \lambda_2                            & = 0            \\
+			      \lambda_2                                             & = -2 \lambda_1
+		      \end{align*}
+
+		      \textbf{Setze $t = -1$}:
+
+		      \begin{align*}
+			      \lambda_1 \cdot (-2 - 1 + 1) + \lambda_2 \cdot (1 + 1) & = 0         \\
+			      -2 \lambda_1 + 2 \lambda_2                             & = 0         \\
+			      \lambda_1                                              & = \lambda_2
+		      \end{align*}
+
+		      Da $\lambda_1 = \lambda_2$ und $\lambda_2 = -2 \lambda_1$ folgt, dass $\lambda_1 = \lambda_2 = 0$.
+
+		      Daher ist die Menge $B$ linear unabhängig.
+
+		      Wählen wir nun einen generischen Vektor aus $U$ und sehen, ob er sich durch $B$ darstellen lässt.
+
+		      \[
+			      (-\alpha_2 - \alpha_3)t + \alpha_2t^2 + \alpha_3t^3 = \lambda_1 \cdot (2t - t^2 - t^3) + \lambda_2 \cdot (t^2 - t^3)
+		      \]
+
+		      \textbf{Setze $t = 2$}:
+		      \begin{align*}
+			      2(-\alpha_2 - \alpha_3) + 4\alpha_2 + 8\alpha_3 & = -8 \lambda_1 - 4 \lambda_2 \\
+			      2\alpha_2 + 6\alpha_3                           & =                            \\
+			      \alpha_2 + 3\alpha_3                            & = -4 \lambda_1 - 2 \lambda_2
+		      \end{align*}
+
+		      \textbf{Setze $t = -1$}:
+		      \begin{align*}
+			      (-1)(-\alpha_2 - \alpha_3) + \alpha_2 - \alpha_3 & = -2 \lambda_1 + 2 \lambda_2 \\
+			      2\alpha_2                                        & =                            \\
+			      \alpha_2                                         & = - \lambda_1 + \lambda_2
+		      \end{align*}
+
+		      Somit erhalten wir \[
+			      \lambda_1 = - \frac{1}{2}\alpha_2 - \frac{1}{2}\alpha_3
+		      \]
+		      \[
+			      \lambda_2 = \frac{1}{2}\alpha_2 - \frac{1}{2}\alpha_3
+		      \]
+
+		      Somit ist $\operatorname{Span} B = U$
+
+		      Somit ist $\dim_{\mathbb{R}}(U) = 2$, da $B$ zwei Elemente enthält.
+		\item Um die Basis $B$ von $U$ zu einer Basis von $\mathbb{R}_{\leq 3}[t]$ zu erweitern, wählen wir $1, t \in \mathbb{R}_{\leq 3}[t]$. Damit ist $B \cup \{1, t\}$ die erweiterte Basis.
+	\end{enumerate}
+\end{proof}
 \end{problem}
 
 \begin{problem}[Endliche Körper und Vektorräume]{8 Punkte}
