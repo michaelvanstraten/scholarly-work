@@ -89,6 +89,11 @@
 \newcommand{\powerset}[1]{\mathcal{P}(#1)}
 \newcommand{\symdiff}{\vartriangle}
 \newcommand{\colvec}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\newcommand{\annotated}[3][]{%
+  \overset{%
+    \substack{\hidewidth\text{#2}\hidewidth\\#1\downarrow\\\vspace*{0.5pt}}
+  }{#3}%
+}
 
 % Define paired delimiters and intervals
 \DeclarePairedDelimiterXPP{\paren}[1]{}{\lparen}{\rparen}{}{#1}
