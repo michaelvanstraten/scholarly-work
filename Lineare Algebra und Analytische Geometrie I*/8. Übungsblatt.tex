@@ -1,0 +1,94 @@
+\documentclass{../problemset}
+
+\Lecture{Lineare Algebra und Analytische Geometrie I}
+\Problemset{8}
+\DoOn{10. Dezember 2023}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Basen endlichdimensionaler Vektorräume]{3 Punkte}
+Sei $n \in \mathbb{N}$, $V$ ein $K$-Vektorraum mit $\dim_K(V) = n$ und $B = \{v_1, \ldots, v_n\} \subseteq V$. Zeigen Sie, dass die folgenden Aussagen äquivalent sind:
+\begin{enumerate}
+	\item $B$ ist eine Basis.
+	\item $B$ ist linear unabhängig.
+	\item $B$ ist ein Erzeugendensystem.
+\end{enumerate}
+
+\begin{proof}
+	$ $
+
+	\begin{itemize}
+		\item [	,,i) $\Longrightarrow$ ii)'':]
+		      Da $B$ eine Basis ist, ist $B$ linear unabhängig und ein Erzeugendensystem.
+		\item [,,ii) $\Longrightarrow$ iii)'':]
+		      Angenommen $B$ ist kein Erzeugendensystem.
+
+		      Da $B$ linear unabhängig ist kann $B$ laut des Basisergänzungssatzes zu einem Erzeugendensystem ergänzt werden.
+		      Ausgehend hat $B$ $n$ Elemente, nach der Ergänzung von $B$ zu einem Erzeugendensystem hat $B$ mindestens $n + 1$ Elemente.
+		      Somit haben wir ein linear unabhängiges Erzeugendensystem, eine Basis, mit einer Mindestsanzahl an $n + 1$ Elementen.
+		      Daraus schließen wir das $\dim_K(V) \ge n + 1$, dies steht aber im Wiederspruch mit der Annahme das $\dim_K(V) = n$.
+		      Somit muss unsere Annahme das $B$ kein Erzeugendensystem ist falsch zein. \checkmark
+		\item [	,,iii) $\Longrightarrow$ i)'': ] Angenommen $\dim_K(V) = n$
+		      \begin{itemize}
+			      \item [Fall 1:]
+			            $B$ ist linear unabhängig $\Rightarrow$ $B$ ist eine Basis von $V$ \checkmark
+			      \item [Fall 2:]
+			            $B$ ist linear abhängig $\Rightarrow$ $\exists w \in B$ mit $w = \lambda_1 v_1 + \lambda_2 v_2 + ... + \lambda_{n-1} v_{n - 1}$ $v_i \in B \setminus \set{w}$
+
+			            Für denn Fall das $B \setminus \set w$ nicht linear unabhängig ist wieder hole den Prozess.
+
+			            In beiden fällen, $B \setminus \set w$ linear unabhängig, $B \setminus \set w$ linear abhängig,
+			            erhalten wir eventuell ein Erzeugendensystem welches Lineare unabhängig ist und weniger als $n$ Elemente hat.
+
+			            Dies steht allerdings im Widerspruch mit der Annahme das $\dim_K(V) = n$, was impliziert das $B$ nicht linear abhängig sein kann.
+		      \end{itemize}
+
+		      Da wir Fall 2 somit ausschließen können, folgt $B$ ist eine Basis. \checkmark
+	\end{itemize}
+\end{proof}
+\end{problem}
+
+\begin{problem}[Vektoren mit 0 an der i-ten Stelle]{3 Punkte}
+Sei $K \in \{ \mathbb{R}, \mathbb{C} \}$ und $n \in \mathbb{N}$ mit $n > 1$. Weiter seien $\bar{e}_i := (1, \ldots, 1, 0, 1, \ldots, 1) \in K^n$, $i \in \{1, \ldots, n\}$ die Vektoren mit 0 an der $i$-ten Stelle und 1 sonst. Berechnen Sie $\dim_K(\operatorname{Span}\{\bar{e}_i \mid i \in \{1, \ldots, n\}\})$.
+\end{problem}
+
+\begin{problem}[Unterraum von Polynomen]{6 Punkte}
+Bezeichne $R\leq 3[t]$ den Vektorraum der Polynome über $\mathbb{R}$ mit Grad höchstens drei. Sei weiter $U := \{p(t) \in R\leq 3[t] \mid p(0) = p(1) = 0\}$.
+\begin{enumerate}
+	\item Zeigen Sie, dass $U$ ein Unterraum von $R\leq 3[t]$ ist.
+	\item Bestimmen Sie eine Basis von $U$ und berechnen Sie $\dim_{\mathbb{R}}(U)$.
+	\item Geben Sie Polynome an, welche die in ii) angegebene Basis von $U$ zu einer Basis von $R\leq 3[t]$ erweitern.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Endliche Körper und Vektorräume]{8 Punkte}
+\begin{enumerate}
+	\item Sei $(L, +, \cdot)$ ein Körper und $K \subseteq L$ ein Unterkörper. Zeigen Sie, dass $(L, +, \cdot)$ ein $K$-Vektorraum ist.
+	\item Betrachten Sie die Menge $\mathbb{Z}_4 := \{0, 1, 2, 3\}$ sowie $\operatorname{mod}_4 : \mathbb{Z} \to \mathbb{Z}_4$, $z \mapsto y$ mit $\{y\} = [z] \equiv 4 \cap \mathbb{Z}_4$, das heißt $\operatorname{mod}_4(z)$ wählt den (eindeutigen) Repräsentanten von $[z] \equiv 4$ aus der in $\mathbb{Z}_4$ ist. Seien $+_4 : \mathbb{Z}_4 \times \mathbb{Z}_4 \to \mathbb{Z}_4$ und $\cdot_4 : \mathbb{Z}_4 \times \mathbb{Z}_4 \to \mathbb{Z}_4$ definiert durch
+	      \[ x +_4 y := \operatorname{mod}_4(x + y), \quad x \cdot_4 y := \operatorname{mod}_4(x \cdot y). \]
+	      Zeigen Sie, dass $(\mathbb{Z}_4, +_4, \cdot_4)$ kein Körper ist.
+	\item Sei $F_4 := \{0, 1, a, b\}$ und seien $+_F4 : F_4 \times F_4 \to F_4$ und $\cdot_F4 : F_4 \times F_4 \to F_4$ definiert durch:
+	      \[ \begin{array}{c|cccc}
+			      +_{F_4} & 0 & 1 & a & b \\
+			      \hline
+			      0       & 0 & 1 & a & b \\
+			      1       & 1 & 0 & b & a \\
+			      a       & a & b & 0 & 1 \\
+			      b       & b & a & 1 & 0 \\
+		      \end{array} \quad
+		      \begin{array}{c|cccc}
+			      \cdot_{F_4} & 0 & 1 & a & b \\
+			      \hline
+			      0           & 0 & 0 & 0 & 0 \\
+			      1           & 0 & 1 & a & b \\
+			      a           & 0 & a & b & 1 \\
+			      b           & 0 & b & 1 & a \\
+		      \end{array} \]
+	      Sei weiter $F_2 := \{0, 1\} \subseteq F_4$. Sie können ohne Beweis annehmen, dass $(F_4, +_{F_4}, \cdot_{F_4})$ ein Körper ist und $F_2$ ein Unterkörper von $F_4$ ist. Geben Sie eine Basis von $F_4$ als Vektorraum über $F_2$ an und berechnen Sie $\dim_{F_2}(F_4)$.
+	\item Berechnen Sie alle Nullstellen des Polynoms $X^2 + X + 1$ über $F_2$ und $F_4$.
+\end{enumerate}
+\end{problem}
+
+\end{document}
