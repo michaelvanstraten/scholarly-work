@@ -1,0 +1,100 @@
+\documentclass{../problemset}
+
+\Lecture{Analysis I}
+\Problemset{7}
+\DoOn{12.12.2023}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\setlist[enumerate, 1]{label=\alph*)}
+
+\begin{problem}[Infimum von beschränkten Mengen]{4 Punkte}
+Man beweise: Sei $A \subset \mathbb{R}$ mit $A \neq \emptyset$, und sei $A$ nach unten beschränkt. Dann gilt: $\exists \inf A$.
+Hinweis: Dies ist ein Teil des Satzes 11.7 der Vorlesung, bei dem wir die analoge Aussage für $\sup A$ bewiesen hatten. Sie dürfen ,,spicken", falls nötig. Passen Sie den Beweis der Vorlesung also an den Fall des Infimums an.
+\begin{proof}
+	$ $
+
+	(Ihr Beweis hier)
+\end{proof}
+\end{problem}
+
+\begin{problem}[Funktionsgrenzwerte]{8 Punkte}
+Bestimmen Sie folgende Funktionsgrenzwerte mit den Methoden der bisherigen Vorlesung:
+\begin{enumerate}
+	\item \[
+		      \lim_{x \to 1} \frac{x^n - 1}{x^m - 1} \quad \text{mit} \quad n, m \in \mathbb{N}^*.
+	      \]
+	\item \[
+		      \lim_{x \to -\infty} \frac{a_nx^n + \ldots + a_1x + a_0}{b_mx^m + \ldots + b_1x + b_0} \quad \text{mit} \quad n, m \in \mathbb{N}, a_j, b_k \in \mathbb{R} \quad \text{und} \quad a_n, b_m \neq 0.
+	      \]
+\end{enumerate}
+\begin{proof}
+	$ $
+
+	\begin{enumerate}
+		\item
+		\item
+	\end{enumerate}
+\end{proof}
+\end{problem}
+
+\begin{problem}[Stetigkeit, Injektivität und Monotonie]{8 Punkte}
+Sei $I \subset \mathbb{R}$ ein Intervall und sei $f : I \to \mathbb{R}$ stetig. $f$ heiße streng monoton wachsend (bzw. fallend), falls für alle $x, y \in I$ mit $x < y$ gilt $f(x) < f(y)$ (bzw. $f(x) > f(y)$). $f$ heiße streng monoton, falls $f$ entweder streng monoton wachsend oder streng monoton fallend ist. Beweisen Sie:
+\[f \text{ injektiv} \iff f \text{ streng monoton}.\]
+\begin{proof}
+	$ $
+
+	\begin{itemize}
+		\item [,,$\Longrightarrow$'']:
+
+		      Sei $f$ eine injektive Funktion. 
+
+              Wir möchten zeigen, dass entweder für alle $x, y \in I$ mit $x < y$ gilt:
+		      \[
+			      \forall x, y \in I; x < y \Rightarrow f(x) < f(y)
+		      \]
+		      oder
+		      \[
+			      \forall x, y \in I; x < y \Rightarrow f(x) > f(y).
+		      \]
+
+		      Nehmen wir an, $x, y, z \in I$ seien beliebig mit $x < y < z$ und $f(x) \leq f(y)$ sowie $f(z) \leq f(y)$. 
+              Betrachten wir ein $c \in \text{Im}(f)$ mit $f(x) < c < f(y)$ und $f(z) < c < f(y)$.
+
+		      Da $f$ stetig ist, existieren $m, n \in I$ mit $x < m < y$ und $y < n < z$, sodass $f(m) = c = f(x)$. 
+              Aufgrund der Injektivität von $f$ folgt $m = n$. 
+              Somit haben wir $m < y < n \Rightarrow m < n$ und $m = n$, was zu einem Widerspruch führt ($\Rightarrow\Leftarrow$).
+
+		      Folglich kann, wenn $x < y < z$, nicht gelten $x < z$ und $f(x) \leq f(y)$, woraus $f(y) \geq f(z)$ folgen würde. 
+              Daher ergibt sich, dass $f(y) \leq f(z) \Rightarrow f(x) \leq f(z)$. 
+              Für den Fall $x < z$ und $f(x) \leq f(z)$ kann die Gleichheit von $f(x)$ und $f(z)$ durch die Injektivität von $f$ ausgeschlossen werden, da sonst $x = z$ folgen würde. Somit ist in diesem Fall gezeigt, dass $x < z \Rightarrow f(x) < f(z)$ (streng monoton wachsend).
+
+		      Es bleibt zu beachten, dass der Fall $x, y, z \in I$ mit $x < y < z$ und $f(x) \geq f(y)$ sowie $f(z) \geq f(y)$ betrachtet werden muss. Hier führen jedoch dieselben Argumente dazu, dass $f$ streng monoton fallend sein muss.
+		\item [,,$\Longleftarrow$'']:
+
+		      Sei $f$ streng monoton wachsend (bzw. fallend) somit ist zu zeigen das $\forall x, y \in I$ mit $x \neq y \Rightarrow f(x) \ne f(y)$.
+
+		      Sein $x,y \in I$ beliebig mit $x \ne y$, für den fall das $f$ streng monoton wachsend ist.
+
+		      \begin{itemize}
+			      \item [\textbf{Fall 1:}] $x < y \annotated{$f$ streng monoton wachsend}{\Rightarrow} f(x) < f(y) \Rightarrow f(x) \ne f(y)$ \checkmark
+			      \item [\textbf{Fall 1:}] $x > y \annotated{$f$ streng monoton wachsend}{\Rightarrow} f(x) > f(y) \Rightarrow f(x) \ne f(y)$ \checkmark
+		      \end{itemize}
+
+		      Für den fall $f$ streng monoton fallend, folgt dasselbe argument.
+	\end{itemize}
+\end{proof}
+\end{problem}
+
+\begin{problem}[Supremum stetiger Funktionen*]{4 Sonderpunkte}
+Sei $D \subset \mathbb{R}$, $K \in \mathbb{R}$ und für alle $n \in \mathbb{N}$ sei $f_n : D \to \mathbb{R}$ stetig und auf $D$ durch $K$ beschränkt. Zeigen Sie, dass die durch $f(x) := \sup\{f_n(x) \mid n \in \mathbb{N}\}$ definierte Funktion $f : D \to \mathbb{R}$ im Allgemeinen nicht stetig ist.
+\begin{proof}
+	$ $
+
+	(Ihr Beweis hier)
+\end{proof}
+\end{problem}
+
+\end{document}
