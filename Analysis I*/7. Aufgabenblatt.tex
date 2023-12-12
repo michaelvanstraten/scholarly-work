@@ -16,7 +16,22 @@ Hinweis: Dies ist ein Teil des Satzes 11.7 der Vorlesung, bei dem wir die analog
 \begin{proof}
 	$ $
 
-	(Ihr Beweis hier)
+	Angenommen, das Axiom der Vollständigkeit sei gegeben,
+	welches im Wesentlichen besagt, dass für jede nach oben beschränkte Menge $A$ das Supremum $\sup A$ existiert.
+
+	Betrachten wir nun eine nach unten beschränkte Menge $A$,
+	und sei $-A = \{-a | a \in A\}$.
+
+	\textbf{Behauptung}: Die Menge $-A$ ist nach oben beschränkt.
+	Zur Beweisführung beachten wir,
+	dass für $A$ eine untere Schranke $M$ existiert, so dass $a \geq M$ für alle $a \in A$.
+	Folglich gilt $-a \leq -M$ für alle $-a \in -A$, was darauf hinweist, dass $-A$ nach oben beschränkt ist.
+
+	Gemäß dem Axiom der Vollständigkeit existiere $s = \sup -A$.
+
+	\textbf{Behauptung}: $-s = \inf A$.
+
+	Da $s \geq -a$ für alle $-a \in -A$ gilt, folgt, dass $-s \leq a$ für alle $a \in A$ ist, was $-s$ zu einer unteren Schranke von $A$ macht. Falls $k > -s$, dann ist $-k < s$, was bedeutet, dass $-k$ keine obere Schranke von $-A$ ist. Daraus folgt, dass es ein $e \in -A$ gibt, so dass $-k < e$. Dies führt zu $k > -e$. Da $e \in -A$ bedeutet, dass $-e \in A$ ist, und somit ist $-k$ keine untere Schranke von $A$. Daher ist $-s$ die größte untere Schranke und bestätigt $-s = \inf A$.
 \end{proof}
 \end{problem}
 
@@ -34,7 +49,27 @@ Bestimmen Sie folgende Funktionsgrenzwerte mit den Methoden der bisherigen Vorle
 	$ $
 
 	\begin{enumerate}
-		\item
+		\item Sei $f: D \rightarrow \field{R}$ definiert durch $f(x) = \frac{x^n - 1}{x^m - 1}$ mit $n, m \in \mathbb{N}^*$.
+		      Wir möchten zeigen, dass für jede Folge $x_{k \in \nats}$ mit $\lim_{k \to \infty} x_{k} = 1$ die Funktionsgrenzwerte von $f(x_{k})$ gegen einen konstanten Wert $c$ konvergieren.
+
+		      Beobachten wir, dass die Polynome $x^n - 1$ und $x^m - 1$ beide eine Nullstelle bei $x = 1$ für alle $n, m \in \nats$ besitzen. Daher können wir den Linearfaktor $(x - 1)$ ausklammern:
+
+		      \[
+			      \frac{x^n - 1}{x^m - 1} = \frac{(x - 1)(x^{n-1} + x^{n-2} + \ldots + x + 1)}{(x - 1)(x^{m-1} + x^{m-2} + \ldots + x + 1)} = \frac{x^{n-1} + x^{n-2} + \ldots + x + 1}{x^{m-1} + x^{m-2} + \ldots + x + 1}
+		      \]
+
+              Für die zusammengesetzte Folge $\frac{{x_k}^{n-1} + {x_k}^{n-2} + \ldots + x_k + 1}{{x_k}^{m-1} + {x_k}^{m-2} + \ldots + x_k + 1}$ ergibt sich, basierend auf den in der Vorlesung behandelten Methoden:
+
+		      \[
+                  \lim_{k \to \infty} \frac{{x_k}^{n-1} + {x_k}^{n-2} + \ldots + x_k + 1}{{x_k}^{m-1} + {x_k}^{m-2} + \ldots + x_k + 1} = \frac{\overbrace{1 + 1 + \ldots + 1 + 1}^{n \;\text{mal}}}{\underbrace{1 + 1 + \ldots + 1 + 1}_{m \;\text{mal}}}
+		      \]
+
+		      Somit können wir folgern:
+
+		      \[
+			      \lim_{x \to 1} \frac{x^n - 1}{x^m - 1} = \frac{n}{m}
+		      \]
+
 		\item
 	\end{enumerate}
 \end{proof}
@@ -49,9 +84,9 @@ Sei $I \subset \mathbb{R}$ ein Intervall und sei $f : I \to \mathbb{R}$ stetig. 
 	\begin{itemize}
 		\item [,,$\Longrightarrow$'']:
 
-		      Sei $f$ eine injektive Funktion. 
+		      Sei $f$ eine injektive Funktion.
 
-              Wir möchten zeigen, dass entweder für alle $x, y \in I$ mit $x < y$ gilt:
+		      Wir möchten zeigen, dass entweder für alle $x, y \in I$ mit $x < y$ gilt:
 		      \[
 			      \forall x, y \in I; x < y \Rightarrow f(x) < f(y)
 		      \]
@@ -60,16 +95,16 @@ Sei $I \subset \mathbb{R}$ ein Intervall und sei $f : I \to \mathbb{R}$ stetig. 
 			      \forall x, y \in I; x < y \Rightarrow f(x) > f(y).
 		      \]
 
-		      Nehmen wir an, $x, y, z \in I$ seien beliebig mit $x < y < z$ und $f(x) \leq f(y)$ sowie $f(z) \leq f(y)$. 
-              Betrachten wir ein $c \in \text{Im}(f)$ mit $f(x) < c < f(y)$ und $f(z) < c < f(y)$.
+		      Nehmen wir an, $x, y, z \in I$ seien beliebig mit $x < y < z$ und $f(x) \leq f(y)$ sowie $f(z) \leq f(y)$.
+		      Betrachten wir ein $c \in \text{Im}(f)$ mit $f(x) < c < f(y)$ und $f(z) < c < f(y)$.
 
-		      Da $f$ stetig ist, existieren $m, n \in I$ mit $x < m < y$ und $y < n < z$, sodass $f(m) = c = f(x)$. 
-              Aufgrund der Injektivität von $f$ folgt $m = n$. 
-              Somit haben wir $m < y < n \Rightarrow m < n$ und $m = n$, was zu einem Widerspruch führt ($\Rightarrow\Leftarrow$).
+		      Da $f$ stetig ist, existieren $m, n \in I$ mit $x < m < y$ und $y < n < z$, sodass $f(m) = c = f(x)$.
+		      Aufgrund der Injektivität von $f$ folgt $m = n$.
+		      Somit haben wir $m < y < n \Rightarrow m < n$ und $m = n$, was zu einem Widerspruch führt ($\Rightarrow\Leftarrow$).
 
-		      Folglich kann, wenn $x < y < z$, nicht gelten $x < z$ und $f(x) \leq f(y)$, woraus $f(y) \geq f(z)$ folgen würde. 
-              Daher ergibt sich, dass $f(y) \leq f(z) \Rightarrow f(x) \leq f(z)$. 
-              Für den Fall $x < z$ und $f(x) \leq f(z)$ kann die Gleichheit von $f(x)$ und $f(z)$ durch die Injektivität von $f$ ausgeschlossen werden, da sonst $x = z$ folgen würde. Somit ist in diesem Fall gezeigt, dass $x < z \Rightarrow f(x) < f(z)$ (streng monoton wachsend).
+		      Folglich kann, wenn $x < y < z$, nicht gelten $x < z$ und $f(x) \leq f(y)$, woraus $f(y) \geq f(z)$ folgen würde.
+		      Daher ergibt sich, dass $f(y) \leq f(z) \Rightarrow f(x) \leq f(z)$.
+		      Für den Fall $x < z$ und $f(x) \leq f(z)$ kann die Gleichheit von $f(x)$ und $f(z)$ durch die Injektivität von $f$ ausgeschlossen werden, da sonst $x = z$ folgen würde. Somit ist in diesem Fall gezeigt, dass $x < z \Rightarrow f(x) < f(z)$ (streng monoton wachsend).
 
 		      Es bleibt zu beachten, dass der Fall $x, y, z \in I$ mit $x < y < z$ und $f(x) \geq f(y)$ sowie $f(z) \geq f(y)$ betrachtet werden muss. Hier führen jedoch dieselben Argumente dazu, dass $f$ streng monoton fallend sein muss.
 		\item [,,$\Longleftarrow$'']:
