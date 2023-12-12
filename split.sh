@@ -24,9 +24,10 @@ end)
 for ((i = 0; i < ${#pagenumbers[@]} - 1; ++i)); do
 	start_page=${pagenumbers[i]}
 	end_page=${pagenumbers[i + 1]}
+    ((end_page -= 1))
 
 	# If end_page is 'end', set it to the last page number
-	[ "$end_page" = "end" ] && end_page=$(pdftk "$infile" dump_data | grep '^NumberOfPages: ' | cut -f2 -d' ')
+	[ "$end_page" = -1 ] && end_page=$(pdftk "$infile" dump_data | grep '^NumberOfPages: ' | cut -f2 -d' ')
 
 	output_file="${outputprefix}_${start_page}-${end_page}.pdf"
 
