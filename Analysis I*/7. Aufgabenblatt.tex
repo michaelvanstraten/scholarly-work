@@ -58,10 +58,10 @@ Bestimmen Sie folgende Funktionsgrenzwerte mit den Methoden der bisherigen Vorle
 			      \frac{x^n - 1}{x^m - 1} = \frac{(x - 1)(x^{n-1} + x^{n-2} + \ldots + x + 1)}{(x - 1)(x^{m-1} + x^{m-2} + \ldots + x + 1)} = \frac{x^{n-1} + x^{n-2} + \ldots + x + 1}{x^{m-1} + x^{m-2} + \ldots + x + 1}
 		      \]
 
-              Für die zusammengesetzte Folge $\frac{{x_k}^{n-1} + {x_k}^{n-2} + \ldots + x_k + 1}{{x_k}^{m-1} + {x_k}^{m-2} + \ldots + x_k + 1}$ ergibt sich, basierend auf den in der Vorlesung behandelten Methoden:
+		      Für die zusammengesetzte Folge $\frac{{x_k}^{n-1} + {x_k}^{n-2} + \ldots + x_k + 1}{{x_k}^{m-1} + {x_k}^{m-2} + \ldots + x_k + 1}$ ergibt sich, basierend auf den in der Vorlesung behandelten Methoden:
 
 		      \[
-                  \lim_{k \to \infty} \frac{{x_k}^{n-1} + {x_k}^{n-2} + \ldots + x_k + 1}{{x_k}^{m-1} + {x_k}^{m-2} + \ldots + x_k + 1} = \frac{\overbrace{1 + 1 + \ldots + 1 + 1}^{n \;\text{mal}}}{\underbrace{1 + 1 + \ldots + 1 + 1}_{m \;\text{mal}}}
+			      \lim_{k \to \infty} \frac{{x_k}^{n-1} + {x_k}^{n-2} + \ldots + x_k + 1}{{x_k}^{m-1} + {x_k}^{m-2} + \ldots + x_k + 1} = \frac{\overbrace{1 + 1 + \ldots + 1 + 1}^{n \;\text{mal}}}{\underbrace{1 + 1 + \ldots + 1 + 1}_{m \;\text{mal}}}
 		      \]
 
 		      Somit können wir folgern:
@@ -128,7 +128,13 @@ Sei $D \subset \mathbb{R}$, $K \in \mathbb{R}$ und für alle $n \in \mathbb{N}$ 
 \begin{proof}
 	$ $
 
-	(Ihr Beweis hier)
+	Wähle $f_n: \closedinterval{0}{\infty} \rightarrow \closedinterval{1}{0} := x \mapsto 1 - \frac{1}{x^n}$. Es ist leicht zu erkennen, dass $f$ von oben durch $1$ beschränkt ist.
+
+	Betrachten wir nun die Funktion $f(x) := \sup\{f_n(x) \mid n \in \mathbb{N}\}$ an den Stellen $x = 1$ sowie $x > 1$.
+
+	Für $x = 1$ ist $f(x)$ für alle $n \in \mathbb{N}$ gleich $0$. Für jedes $x > 1$ ist $f(x)$ jedoch gleich $1$, da $\lim_{{n \to \infty}} (1 - \frac{1}{x^n})$ für $x > 1$ gleich $1$ ist.
+
+	Somit ,,springt'' die Funktion am Punkt $x = 1$ von $0$ auf $1$ und ist daher nicht stetig.
 \end{proof}
 \end{problem}
 
