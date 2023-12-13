@@ -1,3 +1,5 @@
+// https://github.com/michaelvanstraten/Mathematics-B.Sc./blob/master/Grundlagen%20der%20Programmierung/KochSchneeflocke.java
+
 /**
  * Klasse KochSchneeflocke zeichnet eine fraktale Schneeflocke.
  * Zum Kompilieren und ausfuehren wird die Klasse StdDraw der

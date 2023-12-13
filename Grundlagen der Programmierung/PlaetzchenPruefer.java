@@ -1,3 +1,5 @@
+// https://github.com/michaelvanstraten/Mathematics-B.Sc./blob/master/Grundlagen%20der%20Programmierung/PlaetzchenPruefer.java
+
 public class PlaetzchenPruefer {
     public static int pruefePlaetzchen(int anzahlPlaetzchen) {
         int numberOfCookies = anzahlPlaetzchen;
