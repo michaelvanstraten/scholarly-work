@@ -1,5 +1,4 @@
 // https://github.com/michaelvanstraten/Mathematics-B.Sc./blob/master/Grundlagen%20der%20Programmierung/Bigs.java
-
 import java.util.Arrays;
 
 class Bigs {
@@ -59,12 +58,12 @@ class Bigs {
     }
 
     // konstruiert das Ziffernfeld, welches den Wert Null repraesentiert
-    static int[] zero() {
+    static int[] Null() {
         return new int[] { 0 };
     }
 
     // konstruiert das Ziffernfeld, welches den Wert Eins repraesentiert
-    static int[] one() {
+    static int[] One() {
         return new int[] { 1 };
     }
 
@@ -111,7 +110,7 @@ class Bigs {
 
     // multipliziert das Ziffernfeld a mit einer int-Zahl
     static int[] times(int[] a, int n) {
-        int[] result = zero();
+        int[] result = Null();
 
         // Multiplication can be performed using repeated addition
         // So we add a n times with itself. If n = 0, result will also be 0
@@ -136,7 +135,7 @@ class Bigs {
 
     // multipliziert zwei Ziffernfelder
     static int[] times(int[] a, int[] b) {
-        int[] result = zero();
+        int[] result = Null();
 
         for (int i = 0; i < b.length; i++) {
             int power = b[i] * (int) Math.pow(10, i);
@@ -161,7 +160,7 @@ class Bigs {
 
     // ist dieses Ziffernfeld ein Palindrom? Bemühen Sie sich um eine
     // Implementation, die ohne ein weiteres Zahlenfeld auskommt !
-    static boolean palindrome(int[] a) {
+    static boolean palindrom(int[] a) {
         // For digit in a up to the half point
         for (int i = 0; i < a.length / 2; i++) {
             // Check if it is equal with its counterpart
@@ -215,7 +214,7 @@ class Bigs {
     // Test auf Korrektheit eines Ziffernfeldes: Feld existiert und enthaelt
     // mindenstens eine Ziffer, alle Positionen liegen zwischen 0 und 9
     // keine fuehrenden Nullen (ausser bei Null selbst)
-    static boolean isDigitArrayValid(int[] a) {
+    static boolean ok(int[] a) {
         if (a.length > 1 && a[a.length - 1] == 0)
             return false;
 
@@ -255,7 +254,7 @@ class Bigs {
     }
 
     public static void main(String[] args) {
-        int[] powerOfTwo = one();
+        int[] powerOfTwo = One();
 
         for (int i = 0; i < 33222; ++i) {
             powerOfTwo = times(powerOfTwo, 2);
