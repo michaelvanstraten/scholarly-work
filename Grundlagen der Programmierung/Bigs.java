@@ -114,6 +114,11 @@ class Bigs {
 
     // multipliziert das Ziffernfeld a mit einer int-Zahl
     static int[] times(int[] a, int n) {
+        // This implements the common double and add algorithm known from elliptic curve
+        // cryptography. Althow this has nothing to do with elliptic curve cryptography
+        // this is faster that just adding a n times with it self, so be specific n /
+        // log_2(n) times faster.
+
         if (n == 0)
             return Null();
         else if (n == 1)
