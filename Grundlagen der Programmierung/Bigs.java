@@ -1,5 +1,5 @@
-
 // https://github.com/michaelvanstraten/Mathematics-B.Sc./blob/master/Grundlagen%20der%20Programmierung/Bigs.java
+
 import java.util.Arrays;
 
 class Bigs {
