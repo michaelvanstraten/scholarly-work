@@ -75,13 +75,9 @@ class Bigs {
 
     // ganzzahliger Quotient bei Division durch 10
     static int[] div10(int[] a) {
-        int[] result = new int[a.length - 1];
-
         // An integer divided by ten, however large, is just the singles digit removed.
         // Here we basically shift our number to the right by 1 to remove it.
-        System.arraycopy(a, 1, result, 0, result.length);
-
-        return result;
+        return shift(a, -1);
     }
 
     // Umwandlung einer int-Zahl in ein Ziffernfeld
@@ -102,11 +98,7 @@ class Bigs {
 
     // kopiert den Wert von a
     static int[] copy(int[] a) {
-        int[] result = new int[a.length];
-
-        System.arraycopy(a, 0, result, 0, result.length);
-
-        return result;
+        return shift(a, 0);
     }
 
     static int[] shift(int[] a, int by) {
@@ -136,13 +128,9 @@ class Bigs {
 
     // multipliziert das Ziffernfeld a mit 10
     static int[] times10(int[] a) {
-        int[] result = new int[a.length + 1];
-
         // Times ten is the same as divide by ten, except shifting the digits to the
-        // left
-        System.arraycopy(a, 0, result, 1, a.length);
-
-        return result;
+        // left by one.
+        return shift(a, 1);
     }
 
     // multipliziert zwei Ziffernfelder
@@ -150,9 +138,7 @@ class Bigs {
         int[] result = Null();
 
         for (int i = 0; i < b.length; i++) {
-            int power = b[i] * (int) Math.pow(10, i);
-
-            result = add(result, times(a, power));
+            result = add(result, shift(times(a, b[i]), i));
         }
 
         return result;
@@ -269,7 +255,7 @@ class Bigs {
         int[] powerOfTwo = One();
 
         for (int i = 0; i < 33222; ++i) {
-        powerOfTwo = times(powerOfTwo, 2);
+            powerOfTwo = times(powerOfTwo, 2);
         }
 
         System.out.println("2^33222 hat " + powerOfTwo.length + " Stellen");
@@ -280,7 +266,7 @@ class Bigs {
         int[] result = copy(base);
 
         for (int i = 1; i < 8978; ++i) {
-        result = times(result, base);
+            result = times(result, base);
         }
 
         System.out.println("13^8978 hat " + result.length + " Stellen");
