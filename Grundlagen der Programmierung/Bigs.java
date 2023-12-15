@@ -1,3 +1,4 @@
+
 // https://github.com/michaelvanstraten/Mathematics-B.Sc./blob/master/Grundlagen%20der%20Programmierung/Bigs.java
 import java.util.Arrays;
 
@@ -104,6 +105,17 @@ class Bigs {
         int[] result = new int[a.length];
 
         System.arraycopy(a, 0, result, 0, result.length);
+
+        return result;
+    }
+
+    static int[] shift(int[] a, int by) {
+        if (a.length + by < 1)
+            return Null();
+
+        int[] result = new int[a.length + by];
+
+        System.arraycopy(a, Math.abs(Math.min(by, 0)), result, Math.max(by, 0), a.length + Math.min(by, 0));
 
         return result;
     }
@@ -257,7 +269,7 @@ class Bigs {
         int[] powerOfTwo = One();
 
         for (int i = 0; i < 33222; ++i) {
-            powerOfTwo = times(powerOfTwo, 2);
+        powerOfTwo = times(powerOfTwo, 2);
         }
 
         System.out.println("2^33222 hat " + powerOfTwo.length + " Stellen");
@@ -268,7 +280,7 @@ class Bigs {
         int[] result = copy(base);
 
         for (int i = 1; i < 8978; ++i) {
-            result = times(result, base);
+        result = times(result, base);
         }
 
         System.out.println("13^8978 hat " + result.length + " Stellen");
