@@ -44,7 +44,7 @@ class Bigs {
     // gibt das Ziffernfeld a in lesbarer dezimaler Form aus
     static void print(int[] a) {
         // For every digit in the list, note here reversed since the number is stored
-        // using big-endian notation
+        // using little-endian notation
         for (int i = a.length; i > 0; i--) {
             // Print the corresponding digit
             System.out.print(a[i - 1]);
