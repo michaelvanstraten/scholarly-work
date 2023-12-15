@@ -1,3 +1,4 @@
+
 // https://github.com/michaelvanstraten/Mathematics-B.Sc./blob/master/Grundlagen%20der%20Programmierung/Bigs.java
 import java.util.Arrays;
 
@@ -113,16 +114,14 @@ class Bigs {
 
     // multipliziert das Ziffernfeld a mit einer int-Zahl
     static int[] times(int[] a, int n) {
-        int[] result = Null();
-
-        // Multiplication can be performed using repeated addition
-        // So we add a n times with itself. If n = 0, result will also be 0
-        while (n > 0) {
-            result = add(result, a);
-            n--;
-        }
-
-        return result;
+        if (n == 0)
+            return Null();
+        else if (n == 1)
+            return a;
+        else if (n % 2 == 1)
+            return add(a, times(a, n - 1));
+        else
+            return times(add(a, a), n / 2);
     }
 
     // multipliziert das Ziffernfeld a mit 10
