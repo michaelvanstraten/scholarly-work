@@ -1,0 +1,44 @@
+\documentclass{../problemset}
+
+\usepackage{multicol}
+
+\Lecture{Lineare Algebra und Analytische Geometrie I}
+\Problemset{9}
+\DoOn{17. Dezember 2023}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Charakterisierungen direkter Summen]{5 Punkte}
+\begin{enumerate}
+	\item Sei $V$ ein Vektorraum, $r \in \mathbb{N}$ und $U_1, \ldots, U_r \subseteq V$ Untervektorräume von $V$. Zeigen Sie, dass folgende Aussagen äquivalent sind:
+	      \begin{enumerate}
+		      \item Für $u \in U_1 + \ldots + U_r$ existieren eindeutig bestimmte $u_i \in U_i$, $i \in \{1, \ldots, r\}$ mit $u = u_1 + \ldots + u_r$.
+		      \item Für $u_1 \in U_1, \ldots, u_r \in U_r$ mit $u_1 + \ldots + u_r = 0$ gilt $u_1 = \ldots = u_r = 0$.
+		      \item Für $i \in \{1, \ldots, r\}$ gilt $U_i \cap (U_1 + \ldots + U_{i-1} + U_{i+1} + \ldots + U_r) = \{0\}$.
+	      \end{enumerate}
+	\item Finden Sie Gegenbeispiele, die zeigen, dass die Bedingungen aus i) zu keiner der folgenden Aussagen äquivalent sind:
+	      \begin{multicols}{2}
+		      \begin{enumerate}[start=4]
+			      \item $U_1 \cap \ldots \cap U_k = \{0\}$.
+			      \item $U_i \cap U_j = \{0\}$, $i, j \in \{1, \ldots, k\}$, $i \neq j$.
+		      \end{enumerate}
+	      \end{multicols}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Gemeinsame Komplemente von Untervektorräumen]{8 Punkte}
+Sei $V$ ein endlich erzeugter $K$-Vektorraum und seien $U_1$ und $U_2$ Unterräume von $V$ mit $\dim(U_1) = \dim(U_2)$. Zeigen Sie, dass $U_1$ und $U_2$ ein gemeinsames Komplement haben, d.h. es gibt einen Unterraum $W$ von $V$ mit $V = U_1 \oplus W = U_2 \oplus W$.
+\end{problem}
+
+\begin{problem}[Schnitte mit linearen Hyperebenen]{7 Punkte}
+Sei $n \in \mathbb{N}$ und $V$ ein Vektorraum mit $\dim(V) = n$. Zeigen Sie:
+\begin{enumerate}
+	\item Sei $H \subseteq V$ ein Unterraum mit $\dim(H) = n - 1$ (ein solcher Unterraum heißt lineare Hyperebene von $V$) und $U \subseteq V$ ein weiterer Unterraum, so gilt $\dim(U \cap H) \geq \dim(U) - 1$.
+	\item Seien $k \in \mathbb{N}$ und $H_1, \ldots, H_k \subseteq V$ Unterräume mit $\dim(H_1) = \ldots = \dim(H_k) = n - 1$, so gilt $\dim(H_1 \cap \ldots \cap H_k) \geq n - k$.
+	\item Sei $k \in \mathbb{N}$, $U \subseteq V$ ein Unterraum mit $\dim(U) = n - k$, so existieren Unterräume $H_1, \ldots, H_k \subseteq V$ mit $\dim(H_1) = \ldots = \dim(H_k) = n - 1$ und $U = H_1 \cap \ldots \cap H_k$.
+\end{enumerate}
+\end{problem}
+
+\end{document}
