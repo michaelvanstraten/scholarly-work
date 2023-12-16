@@ -107,6 +107,9 @@ class Bigs {
 
         int[] result = new int[a.length + by];
 
+        // I don't know how smart the jvm is, but this should be faster than a if
+        // condition checking for the sign of `by` since there is no branch prediction
+        // that can fail here.
         System.arraycopy(a, Math.abs(Math.min(by, 0)), result, Math.max(by, 0), a.length + Math.min(by, 0));
 
         return result;
