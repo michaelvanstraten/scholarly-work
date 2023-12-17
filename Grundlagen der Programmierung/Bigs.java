@@ -241,15 +241,12 @@ class Bigs {
             digits[digit]++;
         }
 
-        int maxValue = digits[0];
         int maxDigit = 0;
         // For every digit we have
         for (int i = 0; i < digits.length; i++) {
             // Check if it has more occurrence than the currently selected
-            if (digits[i] > maxValue) {
+            if (digits[i] > digits[maxDigit]) {
                 // If so, set our new maximum
-                maxValue = digits[i];
-                // And update the digit
                 maxDigit = i;
             }
         }
