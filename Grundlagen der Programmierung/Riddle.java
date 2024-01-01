@@ -1,15 +1,28 @@
 public class Riddle {
-  int[] currentSolution;
-  int solutionCount;
-  boolean countOnly;
+  static int[] currentSolution;
+  static int solutionCount;
+  static boolean countOnly;
 
-  public Riddle(int n) {
-    solutionCount = 0;
-    currentSolution = new int[n * 2];
-    countOnly = n > 9;
+  public static void main(String[] args) {
+    if (args.length != 1) {
+      fail();
+    }
+
+    int N = Integer.parseInt(args[0]);
+
+    if (!(0 < N && N <= 15)) {
+      fail();
+    }
+
+    currentSolution = new int[N * 2];
+    countOnly = N > 9;
+
+    solve();
+    if (solutionCount == 0) System.out.println("keine Loesung");
+    else System.out.println(String.format("%d Loesungen", solutionCount));
   }
 
-  public boolean isPossible(int i, int n) {
+  public static boolean isPossible(int i, int n) {
     if (!(currentSolution[i] == 0
         && currentSolution.length > i + n + 1
         && currentSolution[i + n + 1] == 0)) return false;
@@ -21,7 +34,7 @@ public class Riddle {
     return true;
   }
 
-  private void solve() {
+  static void solve() {
     for (int i = 0; i < currentSolution.length; i++) {
       if (currentSolution[i] == 0) {
         for (int n = 1; n <= currentSolution.length / 2; n++) {
@@ -43,28 +56,11 @@ public class Riddle {
     }
   }
 
-  private void printSolution() {
+  static void printSolution() {
     for (int i = 0; i < currentSolution.length; i++) {
       System.out.print(currentSolution[i]);
     }
     System.out.println();
-  }
-
-  public static void main(String[] args) {
-    if (args.length != 1) {
-      fail();
-    }
-
-    int N = Integer.parseInt(args[0]);
-
-    if (!(0 < N && N <= 15)) {
-      fail();
-    }
-
-    Riddle riddle = new Riddle(N);
-    riddle.solve();
-    if (riddle.solutionCount == 0) System.out.println("keine Loesung");
-    else System.out.println(String.format("%d Loesungen", riddle.solutionCount));
   }
 
   private static void fail() {
