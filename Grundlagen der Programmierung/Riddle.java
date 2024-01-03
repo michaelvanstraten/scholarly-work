@@ -1,6 +1,6 @@
 public class Riddle {
-  static int[] currentSolution;
-  static int solutionCount;
+  static int[] pairPositions, currentSolution, previosSolution;
+  static int pairPosition, numberOfPairs, numberOfSlots, solutionCount;
   static boolean countOnly;
 
   public static void main(String[] args) {
@@ -8,52 +8,65 @@ public class Riddle {
       fail();
     }
 
-    int N = Integer.parseInt(args[0]);
+    numberOfPairs = Integer.parseInt(args[0]);
+    numberOfSlots = numberOfPairs * 2;
 
-    if (!(0 < N && N <= 15)) {
+    if (numberOfPairs > 15 || numberOfPairs < 0) {
       fail();
     }
 
-    currentSolution = new int[N * 2];
-    countOnly = N > 9;
+    currentSolution = new int[numberOfSlots];
+    previosSolution = new int[numberOfSlots];
+    pairPositions = new int[numberOfPairs];
+    countOnly = numberOfPairs > 9;
 
-    solve();
+    solve(1);
+
     if (solutionCount == 0) System.out.println("keine Loesung");
     else System.out.println(String.format("%d Loesungen", solutionCount));
   }
 
-  public static boolean isPossible(int i, int n) {
-    if (!(currentSolution[i] == 0
-        && currentSolution.length > i + n + 1
-        && currentSolution[i + n + 1] == 0)) return false;
-
-    for (int j = 0; j < currentSolution.length; j++) {
-      if (currentSolution[j] == n) return false;
+  static void solve(int pair) {
+    boolean foundPosition = pairFits(pair);
+    while (!foundPosition && pairPosition + pair + 1 < numberOfSlots) {
+      pairPosition++;
+      foundPosition = pairFits(pair);
     }
 
-    return true;
+    if (foundPosition) {
+      currentSolution[pairPosition] = currentSolution[pairPosition + pair + 1] = pair;
+      if (pair < numberOfPairs) {
+        pairPositions[pair - 1] = pairPosition;
+        pairPosition = 0;
+        solve(pair + 1);
+      } else {
+        boolean isDuplicate = true;
+        for (int i = 0, j = numberOfSlots - 1; isDuplicate && i < j; ) {
+          isDuplicate = currentSolution[i] == previosSolution[j];
+          i++;
+          j--;
+        }
+        if (isDuplicate) return;
+
+        solutionCount++;
+        System.arraycopy(currentSolution, 0, previosSolution, 0, numberOfSlots);
+        printSolution();
+        currentSolution[pairPosition] = currentSolution[pairPosition + pair + 1] = 0;
+        pairPosition++;
+        solve(pair);
+      }
+    } else if (pair > 1) {
+      pair--;
+      pairPosition = pairPositions[pair - 1];
+      currentSolution[pairPosition] = currentSolution[pairPosition + pair + 1] = 0;
+      pairPosition++;
+      solve(pair);
+    }
   }
 
-  static void solve() {
-    for (int i = 0; i < currentSolution.length; i++) {
-      if (currentSolution[i] == 0) {
-        for (int n = 1; n <= currentSolution.length / 2; n++) {
-          if (isPossible(i, n)) {
-            currentSolution[i] = n;
-            currentSolution[i + n + 1] = n;
-            solve();
-            currentSolution[i] = 0;
-            currentSolution[i + n + 1] = 0;
-          }
-        }
-        return;
-      }
-    }
-
-    solutionCount++;
-    if (!countOnly) {
-      printSolution();
-    }
+  static boolean pairFits(int pair) {
+    return pairPosition + pair + 1 < numberOfSlots
+        && (currentSolution[pairPosition] == 0 && currentSolution[pairPosition + pair + 1] == 0);
   }
 
   static void printSolution() {
