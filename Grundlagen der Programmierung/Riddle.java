@@ -1,7 +1,7 @@
 public class Riddle {
   static int[] pairPositions, currentSolution, previosSolution;
-  static int pairPosition, numberOfPairs, numberOfSlots, solutionCount;
-  static boolean countOnly;
+  static int pair, pairPosition, numberOfPairs, numberOfSlots, solutionCount;
+  static boolean finished, printSolutions;
 
   public static void main(String[] args) {
     if (args.length != 1) {
@@ -18,15 +18,18 @@ public class Riddle {
     currentSolution = new int[numberOfSlots];
     previosSolution = new int[numberOfSlots];
     pairPositions = new int[numberOfPairs];
-    countOnly = numberOfPairs > 9;
+    printSolutions = numberOfPairs < 10;
 
-    solve(1);
+    pair = 1;
+    while (!finished) {
+      solve();
+    }
 
     if (solutionCount == 0) System.out.println("keine Loesung");
     else System.out.println(String.format("%d Loesungen", solutionCount));
   }
 
-  static void solve(int pair) {
+  static void solve() {
     boolean foundPosition = pairFits(pair);
     while (!foundPosition && pairPosition + pair + 1 < numberOfSlots) {
       pairPosition++;
@@ -38,7 +41,7 @@ public class Riddle {
       if (pair < numberOfPairs) {
         pairPositions[pair - 1] = pairPosition;
         pairPosition = 0;
-        solve(pair + 1);
+        pair++;
       } else {
         boolean isDuplicate = true;
         for (int i = 0, j = numberOfSlots - 1; isDuplicate && i < j; ) {
@@ -46,21 +49,25 @@ public class Riddle {
           i++;
           j--;
         }
-        if (isDuplicate) return;
 
+        if (isDuplicate) {
+          finished = true;
+          return;
+        }
+       
         solutionCount++;
         System.arraycopy(currentSolution, 0, previosSolution, 0, numberOfSlots);
-        printSolution();
+        if (printSolutions) {
+          printSolution();
+        }
         currentSolution[pairPosition] = currentSolution[pairPosition + pair + 1] = 0;
         pairPosition++;
-        solve(pair);
       }
     } else if (pair > 1) {
       pair--;
       pairPosition = pairPositions[pair - 1];
       currentSolution[pairPosition] = currentSolution[pairPosition + pair + 1] = 0;
       pairPosition++;
-      solve(pair);
     }
   }
 
