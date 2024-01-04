@@ -94,6 +94,7 @@
     \substack{\hidewidth\text{#2}\hidewidth\\#1\downarrow\\\vspace*{0.5pt}}
   }{#3}%
 }
+\newcommand{\qouted}[1]{,,#1''}
 
 % Define paired delimiters and intervals
 \DeclarePairedDelimiterXPP{\paren}[1]{}{\lparen}{\rparen}{}{#1}
