@@ -1,0 +1,64 @@
+\documentclass{../problemset}
+
+\Lecture{Analysis I}
+\Problemset{9}
+\DoOn{9.1.2024}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\setlist[enumerate, 1]{label=\alph*)}
+
+\begin{problem}[Abzählbarkeit und Überabzählbarkeit]{10 Punkte}
+\begin{enumerate}
+	\item Wir betrachten $n$ abzählbare Mengen $A_1, A_2, \ldots, A_n$ und setzen
+	      \[ A := A_1 \times A_2 \times \ldots \times A_n := \{(a_1, a_2, \ldots, a_n) \,|\, a_j \in A_j, j = 1, 2, \ldots, n\}. \]
+	      Entscheiden Sie, ob $A$ abzählbar oder überabzählbar ist (mit Beweis).
+	\item Es seien $B_k$, $k \in \mathbb{N}$, abzählbare Mengen. Entscheiden Sie, ob
+	      \[ B := \bigcup_{k \in \mathbb{N}} B_k \]
+	      abzählbar oder überabzählbar ist (mit Beweis).
+	\item Sei $M$ eine unendliche Menge. Zeigen Sie, dass eine abzählbar unendliche Menge $M_0 \subset M$ existiert, so dass $M \setminus M_0$ zu $M$ gleichmächtig ist.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Komplexe Zahlen]{4 Punkte}
+\begin{enumerate}
+	\item Beweisen Sie, dass für zwei komplexe Zahlen $z$ und $w$ das folgende Gesetz gilt:
+	      \[ |z + w|^2 + |z - w|^2 = 2(|z|^2 + |w|^2) \]
+	      Was bedeutet diese Formel geometrisch?
+	\item Unter welcher Bedingung liegt in der komplexen Ebene der Punkt $z = x + iy$ im Inneren eines Kreises mit dem Radius $R$ und dem Mittelpunkt $c = a + ib$?
+	\item Zeigen Sie: $z \in \mathbb{C} \Rightarrow \exists r \in \mathbb{R}^+_0$ und $\exists w \in \mathbb{C}$ mit $|w| = 1$ so dass $z = rw$.
+	\item Beweisen Sie, dass für zwei komplexe Zahlen $z$ und $w$ das folgende Gesetz gilt:
+	      \[ |z| - |w| \leq |z - w| \]
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Cauchy-Folgen in $\mathbb{Q}$]{6 Punkte}
+Seien $(a_n)$ und $(b_n)$ Cauchy-Folgen in $\mathbb{Q}$. Zeigen Sie:
+\begin{enumerate}
+	\item $(a_n + b_n)$ ist eine Cauchy-Folge in $\mathbb{Q}$.
+	\item $(a_n \cdot b_n)$ ist eine Cauchy-Folge in $\mathbb{Q}$.
+	\item Die Folge $(a_n)$ ist beschränkt.
+	\item Sei $\forall n \in \mathbb{N},\, a_n \neq 0$. Es gebe $c \in \mathbb{Q}^+$ und $N \in \mathbb{N}$ so dass $\forall n \geq N,\, |a_n| \geq c$. Dann ist auch $(a_n^{-1})$ eine Cauchy-Folge in $\mathbb{Q}$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Nichtarchimedisch angeordneter Körper*]{8 Weihnachtspunkte}
+In der Vorlesung wurde erwähnt, dass für einen Körper im Allgemeinen das archimedische Axiom unabhängig von den Anordnungsaxiomen ist. Es gibt nämlich angeordnete Körper, die nichtarchimedisch sind. In dieser Aufgabe sollen Sie ein Beispiel finden und analysieren, indem Sie ggf. wieder eine kleine Literaturrecherche machen und die Informationen, die Sie finden, sauber aufschreiben und gegebenenfalls im Detail ausarbeiten.
+\begin{enumerate}
+	\item Zeigen Sie zunächst, dass die Menge der rationalen Funktionen über $\mathbb{R}$ mit geeigneten Verknüpfungen einen Körper bilden.
+	\item Finden Sie heraus, welche Anordnung des Körpers aus a) nicht archimedisch ist. (Hinweis: Betrachten Sie für die Definition der Ordnungsrelation die relative Lage von zwei rationalen Funktionen 'im Unendlichen' - kann es unendlich viele Stellen geben, an denen zwei unterschiedliche rationale Funktionen gleich sind?)
+	\item Beweisen Sie nun im Detail, dass Ihr Vorschlag aus b) eine Anordnung des Körpers der rationalen Funktionen liefert.
+	\item Beweisen Sie abschließend, dass die Anordnung aus a), b) nichtarchimedisch ist.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Weihnachtsaufgaben*]{4+8 Weihnachtspunkte}
+\begin{enumerate}
+	\item Ferdi bekommt auch dieses Weihnachten wieder sehr viele Geschenke, nämlich abzählbar unendlich viele. Die Pakete, die alle würfelförmig sind, stellt Ferdi mit dem Größten, das einen Meter hoch ist, beginnend nach Größe geordnet in einer Reihe unter dem Tannenbaum auf. Er stellt dabei fest, dass jedes Paket jeweils ein Drittel so breit ist wie das vorherige. Wie weit müssen die Äste des Tannenbaums mindestens ragen, wenn alle Pakete unterm Baum Platz finden? Beim Auspacken stellt Ferdi fest, dass er beim nachfolgenden Paket immer nur jeweils die Hälfte der Zeit braucht. Wie lange hat Ferdi für das erste Paket gebraucht, wenn er, gierig wie er ist, schon nach 2 Minuten alles ausgepackt hat?
+	\item Heini bekommt zu Weihnachten von seinem Patenonkel, der unter Heinis Streichen viel leiden musste, einen Würfel von einem Kubikmeter Größe geschenkt. Heini braucht zum Auspacken eine Minute, und im Allgemeinen hängt die Zeit, die Heini zum Auspacken braucht, proportional von der Oberfläche des Päckchens ab. Als er das Paket geöffnet hat, ist in dem Karton wieder ein eingepackter Würfel und $\frac{7}{8}$ m³ Luft. Und so geht es weiter. Nach dem $n$-ten Auspacken findet Heini wieder ein würfelförmiges Päckchen und $\frac{3n^2+3n+1}{n^3\cdot(n+1)^3}$ m³ gähnende Leere. Heini versucht, die leeren Kartons aufeinander zu stapeln. Gelingt ihm das? Zudem machen die Eltern sich Sorgen, ob Heini denn rechtzeitig zum Abendspaziergang zum Onkel mit dem Auspacken fertig sein wird. Packt Heini noch an Neujahr aus? Und warum ist Heini nachher so enttäuscht, dass er nicht mehr mit zum Onkel will?
+\end{enumerate}
+\end{problem}
+
+\end{document}
