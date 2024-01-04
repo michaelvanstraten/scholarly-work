@@ -23,7 +23,7 @@
 % Set the label format for the first level of enumerate
 \setlist[enumerate, 1]{label=\roman*)}
 \setlist[itemize]{align=left}
-\setlist[description]{font=\normalfont}
+\setlist[description]{font=\normalfont\bfseries, style=nextline}
 
 % Reset the equation counter on every call to align to start from 1 every time
 \AtBeginEnvironment{align}{\setcounter{equation}{0}}
