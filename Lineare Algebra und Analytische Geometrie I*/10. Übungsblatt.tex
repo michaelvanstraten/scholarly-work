@@ -1,0 +1,68 @@
+\documentclass{../problemset}
+
+\Lecture{Lineare Algebra und Analytische Geometrie I}
+\Problemset{10}
+\DoOn{7. Januar 2024}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Polynomfunktionen und Koeffizientenvergleich]{7 Punkte}
+Hinweis: Sei $n \in \mathbb{N}$. Im Beispiel 3.13 der Vorlesung wurde argumentiert, dass die Monomfunktionen
+\[ p_k(x) := x^k \in \text{Abb}(\mathbb{R}, \mathbb{R}), \quad k \in \{0, \ldots, n\} \]
+linear unabhängig sind. Die Gleichheit in Abb($\mathbb{R}, \mathbb{R}$), die der linearen Unabhängigkeit dabei zugrunde liegt, ist dabei die Gleichheit von Werten der Funktionen in $\mathbb{R}$ bei allen möglichen Einsetzungen von Argumenten in $\mathbb{R}$.
+
+Linearkombinationen von $\{p_k\}_{k\in\{0,\ldots,n\}}$ über $\mathbb{R}$ sind Funktionen der Form $x \mapsto a_0 + a_1x + \ldots + a_nx^n$ für $a_i \in \mathbb{R}$, $i \in \{0, \ldots, n\}$. Die Ausdrücke auf der rechten Seite dieser Zuweisung sind Elemente des Polynomraums $\mathbb{R}[x]$ in der Unbekannten $x$. Für Polynome wurde die Gleichheit allerdings über die Gleichheit ihrer Koeffizienten definiert.
+
+Dies führt auf die Frage, welche auch in den Übungen bereits diskutiert wurde, ob die beiden Formen der Gleichheit kompatibel sind. Der Struktursatz für Vektorräume liefert hier eine positive Antwort zumindest für den endlich dimensionalen Untervektorraum der Polynome vom Grad kleiner oder gleich $n$.
+
+Sei $n \in \mathbb{N}$, $K := \mathbb{R}$ und für $k \in \{0, \ldots, n\}$ sei $p_k \in \text{Abb}(K, K)$ definiert durch $p(x) := x^k$. Sei weiter $U := \text{Span}\{p_k\}_{k\in\{0,\ldots,n\}} \subseteq \text{Abb}(K, K)$.
+
+i) Berechnen Sie ohne einen Koeffizientenvergleich zu nutzen $\dim_K(U)$ und zeigen oder widerlegen Sie $U \cong K^{n+1}$.
+
+ii) Wiederholen Sie i) für $K = F3$ und $n \leq 2$.
+
+iii) Wiederholen Sie i) für $K = F3$ und $n > 2$.
+
+Hinweis: $F3 := \{0, 1, 2\}$ bildet mit den Operationen $+_{F3}$ und $\cdot_{F3}$ einen Körper. Diese sind definiert durch
+\[ x +_{F3} y := \text{mod}_3(x +_{\mathbb{Z}} y), \quad x \cdot_{F3} y := \text{mod}_3(x \cdot_{\mathbb{Z}} y) \]
+wobei
+\[ \text{mod}_3 : \mathbb{Z} \rightarrow F3, \quad z \mapsto y \text{ mit } \{y\} = [z] \equiv 3 \cap F3. \]
+Das heißt $\text{mod}_3(z)$ wählt den (eindeutigen) Repräsentanten von $[z] \equiv 3$ aus der in $F3$ ist.
+
+Auf jedem Blatt wollen wir ein hoffentlich anregendes und unterhaltsames Video mit Ihnen teilen. Das Video dieser Woche könnte Ihnen einen Bärendienst erweisen, wenn Sie über Weihnachten Ihren Verwandten erklären wollen, wofür man Mathematik überhaupt braucht. Oder aber es führt zu einer besonders fairen und amüsanten Verteilung des Desserts. https://www.youtube.com/watch?v=kaMKInkV7Vs
+\end{problem}
+
+\begin{problem}[Endomorphismen und Untervektorräume]{7 Punkte}
+Seien $n, m \in \mathbb{N}$, $V$ ein $K$-Vektorraum mit $\dim_K(V) = n$ und $U \subseteq V$ ein Untervektorraum von $V$ mit $\dim_K(U) = m$. Weiter seien $W_1$ und $W_2$ Untervektorräume von $\text{End}(V) := L(V, V)$ definiert durch
+\[ W_1 := \{f \in \text{End}(V) \mid f|_U = 0\}, \quad W_2 := \{f \in \text{End}(V) \mid \text{im}(f) \subseteq U\}. \]
+
+Berechnen Sie:
+
+i) $\dim_K(\text{End}(V))$,
+
+ii) $\dim_K(W_1)$,
+
+iii) $\dim_K(W_2)$,
+
+iv) $\dim_K(W_1 \cap W_2)$,
+
+v) $\dim_K(W_1 + W_2)$.
+\end{problem}
+
+\begin{problem}[Projektionen]{6 Punkte}
+Sei $V$ ein $K$-Vektorraum und $P : V \rightarrow V$ ein idempotenter Vektorraum-Homomorphismus, d.h. $P \circ P = P$. Eine solche Abbildung $P$ heißt auch Projektion.
+
+Zeigen Sie:
+
+i) $\text{Re} : \mathbb{C} \rightarrow \mathbb{C}$ ist eine Projektion und berechnen Sie $\text{im}(\text{Re})$, $\text{ker}(\text{Re})$, $\text{im}(\text{Re}^\perp)$ und $\text{ker}(\text{Re}^\perp)$, wobei $\text{Re}^\perp := \text{Id}_\mathbb{C} - \text{Re}$.
+
+ii) $\text{Id}_V - P$ ist eine Projektion.
+
+iii) $\text{im}(P) = \text{ker}(\text{Id}_V - P)$ und $\text{ker}(P) = \text{im}(\text{Id}_V - P)$.
+
+iv) $V = \text{ker}(P) \oplus \text{im}(P)$.
+\end{problem}
+
+\end{document}
