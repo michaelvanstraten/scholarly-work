@@ -75,6 +75,7 @@
 
 % Define mathematical symbols and operations
 \newcommand{\Id}[1]{\operatorname{Id}_{#1}}
+\newcommand{\im}{\operatorname{im}}
 \newcommand{\field}[1]{\mathbb{#1}}
 \newcommand{\nats}{\field{N}}
 \newcommand{\ints}{\field{Z}}
