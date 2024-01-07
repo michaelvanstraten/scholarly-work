@@ -52,17 +52,58 @@ v) $\dim_K(W_1 + W_2)$.
 \end{problem}
 
 \begin{problem}[Projektionen]{6 Punkte}
-Sei $V$ ein $K$-Vektorraum und $P : V \rightarrow V$ ein idempotenter Vektorraum-Homomorphismus, d.h. $P \circ P = P$. Eine solche Abbildung $P$ heißt auch Projektion.
+Sei $V$ ein $K$-Vektorraum und $P : V \to V$ ein idempotenter Vektorraum-Homomorphismus, d.h.
+$P \circ P = P$. Eine solche Abbildung $P$ heißt auch Projektion. Zeigen Sie:
+\begin{enumerate}
+	\item $\text{Re} : \mathbb{C} \to \mathbb{C}$ ist eine Projektion und berechnen Sie $\text{im}(\text{Re})$, $\ker(\text{Re})$, $\text{im}(\text{Re}^\perp)$ und $\ker(\text{Re}^\perp)$, wobei $\text{Re}^\perp := \text{Id}_\mathbb{C} - \text{Re}$.
+	\item $\text{Id}_V - P$ ist eine Projektion.
+	\item $\text{im}(P) = \ker(\text{Id}_V - P)$ und $\ker(P) = \text{im}(\text{Id}_V - P)$.
+	\item $V = \ker(P) \oplus \text{im}(P)$.
+\end{enumerate}
 
-Zeigen Sie:
+\begin{proof}
+	$ $
 
-i) $\text{Re} : \mathbb{C} \rightarrow \mathbb{C}$ ist eine Projektion und berechnen Sie $\text{im}(\text{Re})$, $\text{ker}(\text{Re})$, $\text{im}(\text{Re}^\perp)$ und $\text{ker}(\text{Re}^\perp)$, wobei $\text{Re}^\perp := \text{Id}_\mathbb{C} - \text{Re}$.
+	\begin{enumerate}
+		\item $\text{Re} : \mathbb{C} \to \mathbb{C}$ ist eine Projektion und berechnen Sie $\text{im}(\text{Re})$, $\ker(\text{Re})$, $\text{im}(\text{Re}^\perp)$ und $\ker(\text{Re}^\perp)$, wobei $\text{Re}^\perp := \text{Id}_\mathbb{C} - \text{Re}$.
 
-ii) $\text{Id}_V - P$ ist eine Projektion.
+		      Für $\operatorname{Re} := a + ib \mapsto a + i \cdot 0$, mit $z \in \field{C}$ und $z := a + ib$, $a,b \in \reals$ ist $
+			      \operatorname{Re} \circ \operatorname{Re} (a + ib) = \operatorname{Re}(a + i \cdot 0) = a \Rightarrow \operatorname{Re}$ ist eine
+		      Projektion \checkmark.
 
-iii) $\text{im}(P) = \text{ker}(\text{Id}_V - P)$ und $\text{ker}(P) = \text{im}(\text{Id}_V - P)$.
+              \begin{enumerate}
+                \item $\operatorname{im}(\operatorname{Re}) = \reals$ \checkmark
+                \item $\ker(\operatorname{Re}) = \set{z \in \field{C} \mid \operatorname{Re}(z) = 0} = \set{0 + ib \mid b \in \reals}$ \checkmark
+                \item $\operatorname{im}(\operatorname{Re}^\perp) = \set{ z - \operatorname{Re}(z) \mid z \in \field{C}} = \set { a + ib - (a - i \cdot 0) \mid a,b \in \reals} = \set{ z \in \field{C} \mid \operatorname{Re}(z) = 0}$ \checkmark
+                \item $\operatorname{ker}(\operatorname{Re}^\perp) = \set{ z \in \field{C} \mid z - \operatorname{Re} = 0} = \reals $ \checkmark
 
-iv) $V = \text{ker}(P) \oplus \text{im}(P)$.
+              \end{enumerate}
+
+		\item $\text{im}(P) = \ker(\text{Id}_V - P)$ und $\ker(P) = \text{im}(\text{Id}_V - P)$.
+
+		      Bemerken wir das um im Kern von $P$ zu sein die Bedingung $Id_V - P = 0$ gelten muss. Formen wir um erhalten wir $P = Id_V$ also
+		      alle Elemente aus $v \in V$ für die $P(v) = v$ dies ist allerdings genau die Bedingung um im Bild von $P$ zu sein ($P(v) = v
+			      \Rightarrow P(P(v)) = P(v)$) \checkmark.
+
+		      Damit allerdings ein $v \in V$ im Bild von $Id_V - P$ ist muss $v = Id_V(v) - P(v)$ gelten. Formen wir um erhalten wir \[
+			      v = Id_V(v) - P(v) \Rightarrow v = v - P(v) \Rightarrow 0 = 0 - P(v) \Rightarrow P(v) = 0,
+		      \] was allerdings die Bedingung ist um im Kern von $P$ zu sein \checkmark.
+
+		\item $V = \ker(P) \oplus \text{im}(P)$.
+
+		      Zeigen wir zunächst das $\ker{P} \cap \im{P} = \set{0}$.
+
+		      Wie wir bereits in der vorherigen teilaufgabe bemerkt haben muss, für $v \in V$ im $\ker P$ gelten das $\Id_V(v) - P(v) = 0$
+		      kombinieren wir dies mit der Bedingung, um im Bild von $P$ zu sein, erhalten wir $v = P(v) = \Id{V}(v) - P(v) = 0$. Somit ist der
+		      einziege Vektor der diese Bedingung erfüllt $v = 0$ was impliziert, dass die Summer $\ker(P) \oplus \text{im}(P)$ direkt ist.
+
+		      Um zu Zeigen das $V = \ker(P) + \im{P}$ ist wählen wir ein generisches $v \in V$. Bemerken wir das \[
+			      P(v - P(v)) = P(v) - P(P(v)) = P(v) - P(v) = 0
+		      \] also $v - P(v) \in \ker(P)$. Wählen wir nun $P(v) \in \im(P)$ somit erhalten wir $v - P(v) + P(v) = v$ oder $v$ ist die Summe von
+		      einem Element aus dem Kern sowie dem Bild von $P$ \checkmark.
+
+	\end{enumerate}
+\end{proof}
 \end{problem}
 
 \end{document}
