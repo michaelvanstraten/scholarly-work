@@ -56,9 +56,124 @@ In der Vorlesung wurde erwähnt, dass für einen Körper im Allgemeinen das arch
 
 \begin{problem}[Weihnachtsaufgaben*]{4+8 Weihnachtspunkte}
 \begin{enumerate}
-	\item Ferdi bekommt auch dieses Weihnachten wieder sehr viele Geschenke, nämlich abzählbar unendlich viele. Die Pakete, die alle würfelförmig sind, stellt Ferdi mit dem Größten, das einen Meter hoch ist, beginnend nach Größe geordnet in einer Reihe unter dem Tannenbaum auf. Er stellt dabei fest, dass jedes Paket jeweils ein Drittel so breit ist wie das vorherige. Wie weit müssen die Äste des Tannenbaums mindestens ragen, wenn alle Pakete unterm Baum Platz finden? Beim Auspacken stellt Ferdi fest, dass er beim nachfolgenden Paket immer nur jeweils die Hälfte der Zeit braucht. Wie lange hat Ferdi für das erste Paket gebraucht, wenn er, gierig wie er ist, schon nach 2 Minuten alles ausgepackt hat?
-	\item Heini bekommt zu Weihnachten von seinem Patenonkel, der unter Heinis Streichen viel leiden musste, einen Würfel von einem Kubikmeter Größe geschenkt. Heini braucht zum Auspacken eine Minute, und im Allgemeinen hängt die Zeit, die Heini zum Auspacken braucht, proportional von der Oberfläche des Päckchens ab. Als er das Paket geöffnet hat, ist in dem Karton wieder ein eingepackter Würfel und $\frac{7}{8}$ m³ Luft. Und so geht es weiter. Nach dem $n$-ten Auspacken findet Heini wieder ein würfelförmiges Päckchen und $\frac{3n^2+3n+1}{n^3\cdot(n+1)^3}$ m³ gähnende Leere. Heini versucht, die leeren Kartons aufeinander zu stapeln. Gelingt ihm das? Zudem machen die Eltern sich Sorgen, ob Heini denn rechtzeitig zum Abendspaziergang zum Onkel mit dem Auspacken fertig sein wird. Packt Heini noch an Neujahr aus? Und warum ist Heini nachher so enttäuscht, dass er nicht mehr mit zum Onkel will?
+	\item Ferdi bekommt auch dieses Weihnachten wieder sehr viele Geschenke, nämlich abzählbar unendlich viele. Die Pakete, die alle
+	      würfelförmig sind, stellt Ferdi mit dem Größten, das einen Meter hoch ist, beginnend nach Größe geordnet in einer Reihe unter dem
+	      Tannenbaum auf. Er stellt dabei fest, dass jedes Paket jeweils ein Drittel so breit ist wie das vorherige. Wie weit müssen die
+	      Äste des Tannenbaums mindestens ragen, wenn alle Pakete unterm Baum Platz finden? Beim Auspacken stellt Ferdi fest, dass er beim
+	      nachfolgenden Paket immer nur jeweils die Hälfte der Zeit braucht. Wie lange hat Ferdi für das erste Paket gebraucht, wenn er,
+	      gierig wie er ist, schon nach 2 Minuten alles ausgepackt hat?
+	\item Heini bekommt zu Weihnachten von seinem Patenonkel, der unter Heinis Streichen viel leiden musste, einen Würfel von einem
+	      Kubikmeter Größe geschenkt. Heini braucht zum Auspacken eine Minute, und im Allgemeinen hängt die Zeit, die Heini zum Auspacken
+	      braucht, proportional von der Oberfläche des Päckchens ab. Als er das Paket geöffnet hat, ist in dem Karton wieder ein
+	      eingepackter Würfel und $\frac{7}{8}$ m³ Luft. Und so geht es weiter. Nach dem $n$-ten Auspacken findet Heini wieder ein
+	      würfelförmiges Päckchen und $\frac{3n^2+3n+1}{n^3\cdot(n+1)^3}$ m³ gähnende Leere. Heini versucht, die leeren Kartons aufeinander
+	      zu stapeln. Gelingt ihm das? Zudem machen die Eltern sich Sorgen, ob Heini denn rechtzeitig zum Abendspaziergang zum Onkel mit
+	      dem Auspacken fertig sein wird. Packt Heini noch an Neujahr aus? Und warum ist Heini nachher so enttäuscht, dass er nicht mehr
+	      mit zum Onkel will?
 \end{enumerate}
+
+\begin{proof}
+	$ $
+
+	\begin{enumerate}
+		\item Fredi bekommt viele Geschenke
+
+		      1. Um herauszufinden, wie weit die Äste des Tannenbaums mindestens ragen müssen, verwenden wir die geometrische Reihe:
+
+		      \[
+			      \sum_{n=0}^{\infty} {\left(\frac{1}{3}\right)}^n
+		      \]
+
+		      Diese ist eine geometrische Folge mit einem Verhältnis von \(x = \frac{1}{3}\), die für \(x < 1\) gegen \(\frac{1}{1 - x}\)
+		      konvergiert. Daher ergibt sich:
+
+		      \[
+			      \sum_{n=0}^{\infty} {\left(\frac{1}{3}\right)}^n = \frac{1}{1 - \frac{1}{3}} = \frac{1}{\frac{2}{3}} = \frac{3}{2}
+		      \]
+
+		      Daher müssen die Äste des Tannenbaums mindestens 1,5 Meter lang sein.
+
+		      2. Um herauszufinden, wie lange Ferdi für das erste Paket gebraucht hat, verwenden wir die Tatsache, dass er bereits nach 2 Minuten alles ausgepackt hat und für jedes nachfolgende Paket nur die Hälfte der Zeit benötigt.
+		      Wir setzen $t$ als die Zeit für das erste Paket:
+
+		      \[
+			      \sum_{n=0}^{\infty} t {\left(\frac{1}{2}\right)}^n = t \sum_{n=0}^{\infty} {\left(\frac{1}{2}\right)}^n = 2t = 2 \Rightarrow t = 1
+		      \]
+
+		      Ferdi hat also 1 Minute gebraucht, um das erste Paket auszupacken.
+		      \[
+			      \sum_{n=0}^{\infty} {\left(\frac{1}{3}\right)}^n
+		      \]
+
+		\item Heini's Patenonkel ist ein echter Ganster
+
+		      Da Heini nach dem $n$-ten Auspacken immer noch ein weiteres Paket in der Box findet, handelt es sich um eine unendliche Folge von
+		      Paketen.
+
+		      Betrachten wir das Volumen der ersten $n$ Geschenke, die Heini auspackt.
+
+		      Für $n = 0$ haben wir das Volumen bereits aus der Aufgabenstellung vorgegeben mit 1.
+
+		      Für $n = 1$, also die erste Box nach dem Auspacken, erhält Heini eine Box und $\frac{7}{8}$ Luft. Da die vorherige Box ein
+		      Volumen von 1 hatte, hat die jetzt ausgepackte Box ein Volumen von $1 - \frac{7}{8} = \frac{1}{8}$. Also erkennen wir, dass die
+		      Box $n$ ein Volumen von
+
+		      \[
+			      1 - \sum_{k=1}^n \frac{3k^2 + 3k + 1}{k^3{(k+1)}^3}
+		      \]
+
+		      hat. Via Partialsummenzerlegung, die wir bereits ausführlich in der Vorlesung behandelt haben, können wir das obige zu
+
+		      \[
+			      \frac{1}{{(n+1)}^3}
+		      \]
+
+		      vereinfachen und somit das Volumen für Box $n$ erhalten.
+
+		      Um nun zu bestimmen, ob es Heini gelingt, die Kartons zu stapeln, berechnen wir die Seitenlänge des Kartons $n$. Beachte, dass
+		      die Seitenlänge eines Würfels die dritte Wurzel seines Volumens ist, also
+
+		      \[
+			      \frac{1}{n+1}
+		      \]
+
+		      Summieren wir nun die Seitenlängen aller Würfel:
+
+		      \[
+			      \sum_{n=0}^{\infty} \frac{1}{n+1} = \sum_{n=1}^{\infty} \frac{1}{n}
+		      \]
+
+		      Wir bemerken, dass dies die harmonische Reihe ist, die jedoch bekannterweise konvergiert. Daher gelingt es Heini leider nicht,
+		      alle Geschenke zu stapeln.
+
+		      Um nun herauszufinden, ob er rechtzeitig mit dem Auspacken fertig wird, betrachten wir die Oberfläche eines Würfels:
+
+		      \[
+			      6 \frac{1}{{(n+1)}^2}
+		      \]
+
+		      und summieren sie erneut:
+
+		      \[
+			      \sum_{n=0}^{\infty} 6 \frac{1}{{(n+1)}^2} = 6 \sum_{n=1}^{\infty} \frac{1}{{(n)}^2}
+		      \]
+
+		      Wie wir bereits aus der Vorlesung wissen, konvergiert $\sum_{n=1}^{\infty} \frac{1}{{(n)}^p}$ für $p \ge 2$. Und mit ein wenig
+		      Online-Recherche erhalten wir, dass
+
+		      \[
+			      \sum_{n=1}^{\infty} \frac{1}{{(n)}^2} = \frac{\pi^2}{6}
+		      \]
+
+		      Also hat Heini in $\pi^2$ Minuten alles ausgepackt, und ist hoffentlich vor dem Abendspaziergang und auf jeden Fall vor Neujahr
+		      fertig.
+
+		      Es ist zu bemerken, dass $a_n = \frac{1}{{(n+1)}^3}$ eine Nullfolge bildet, was erklären kann, warum Heini am Ende so enttäuscht
+		      ist.
+
+	\end{enumerate}
+
+\end{proof}
 \end{problem}
 
 \end{document}
