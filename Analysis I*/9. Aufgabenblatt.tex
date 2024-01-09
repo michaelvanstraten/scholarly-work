@@ -27,10 +27,63 @@
 	\item Beweisen Sie, dass für zwei komplexe Zahlen $z$ und $w$ das folgende Gesetz gilt:
 	      \[ |z + w|^2 + |z - w|^2 = 2(|z|^2 + |w|^2) \]
 	      Was bedeutet diese Formel geometrisch?
-	\item Unter welcher Bedingung liegt in der komplexen Ebene der Punkt $z = x + iy$ im Inneren eines Kreises mit dem Radius $R$ und dem Mittelpunkt $c = a + ib$?
-	\item Zeigen Sie: $z \in \mathbb{C} \Rightarrow \exists r \in \mathbb{R}^+_0$ und $\exists w \in \mathbb{C}$ mit $|w| = 1$ so dass $z = rw$.
+
+	      \begin{proof}
+		      $ $
+
+		      Seien $z$ und $w$ komplexe Zahlen mit $z = a + bi$ und $w = c + di$, wobei $a, b, c, d \in \mathbb{R}$. Dann gilt:
+
+		      \begin{align*}
+			      |z + w|^2 + |z - w|^2 & = |(a + bi) + (c + di)|^2 + |(a + bi) - (c + di)|^2 \\
+			                            & = |(a + c) + (b + d)i|^2 + |(a - c) + (b - d)i|^2   \\
+			                            & = (a + c)^2 + (b + d)^2 + (a - c)^2 + (b - d)^2     \\
+			                            & = 2(a^2 + b^2 + c^2 + d^2)                          \\
+			                            & = 2(|a + bi|^2 + |c + di|^2)                        \\
+			                            & = 2(|z|^2 + |w|^2).
+		      \end{align*}
+		      Dies zeigt $|z + w|^2 + |z - w|^2 = 2(|z|^2 + |w|^2)$.
+
+		      Geometrisch entspricht diese Formel einem Parallelogramm in der komplexen Ebene, dessen Ecken von den Punkten $z$ und $w$ auf
+		      einer Diagonalen gebildet werden.
+	      \end{proof}
+
+	\item Unter welcher Bedingung liegt in der komplexen Ebene der Punkt $z = x + iy$ im Inneren eines Kreises mit dem Radius $R$ und dem
+	      Mittelpunkt $c = a + ib$?
+
+	      Der Punkt $z = x + iy$ liegt innerhalb des Kreises mit Mittelpunkt $c$ und Radius $R$, wenn der euklidische Abstand zwischen den
+	      Punkten $z$ und $c$ kleiner als $R$ ist, d.h., wenn $\sqrt{(x - a)^2 + (y - b)^2} < R$. Wenn $\sqrt{(x - a)^2 + (y - b)^2} = R$
+	      ist, liegt der Punkt auf dem Rand des Kreises.
+
+	\item Zeigen Sie: $z \in \mathbb{C} \Rightarrow \exists r \in \mathbb{R}^+_0$ und $\exists w \in \mathbb{C}$ mit $|w| = 1$ so dass $z =
+		      rw$.
+
+	      Für $z := a + ib$ mit $a,b \in \mathbb{R}$ ist $|z| = \sqrt{a^2 + b^2} \in \mathbb{R}$, daher ist auch $\frac{1}{\sqrt{a^2 +
+				      b^2}} \in \mathbb{R}$ und somit existiert $r = \frac{1}{\sqrt{a^2 + b^2}}$. Wir wählen $w$ als $w : = zr = \frac{a}{\sqrt{a^2 +
+				      b^2}} + \frac{b}{\sqrt{a^2 + b^2}}i$. Dann ergibt sich:
+
+	      \[
+		      |w| = \left|\frac{a}{\sqrt{a^2 + b^2}} + \frac{b}{\sqrt{a^2 + b^2}}i\right| = \sqrt{\left(\frac{a}{\sqrt{a^2 + b^2}}\right)^2 + \left(\frac{b}{\sqrt{a^2 + b^2}}\right)^2} = \sqrt{\frac{a^2 + b^2}{a^2 + b^2}} = 1
+	      \]
+
+	      Somit existieren für alle $z \in \mathbb{C}$ ein $w \in \mathbb{C}$ und $r \in \mathbb{R}^+_0$ mit $|w| = 1$ und $z = rw$.
+
 	\item Beweisen Sie, dass für zwei komplexe Zahlen $z$ und $w$ das folgende Gesetz gilt:
-	      \[ |z| - |w| \leq |z - w| \]
+	      \[ ||z| - |w|| \leq |z - w| \]
+
+	      \begin{proof}
+		      $ $
+
+		      Durch Anwendung der Dreiecksungleichung auf $|z| = |z+w-w|$ und $|w| = |w+z-z|$ erhalten wir:
+
+		      $|z| \leq |z+w| + |w| \Leftrightarrow |z| - |w| \leq |z+w|$
+
+		      Analog dazu:
+
+		      $|w| \leq |w+z| + |z| \Leftrightarrow |w| - |z| \leq |z+w|$
+
+		      Was zeigt $||z| - |w|| \leq |z - w|$.
+	      \end{proof}
+
 \end{enumerate}
 \end{problem}
 
