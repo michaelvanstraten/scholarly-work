@@ -1,7 +1,7 @@
 public class Riddle {
   static int[] currentSolution, previosSolution;
   static int numberOfPairs, numberOfSlots, solutionCount;
-  static boolean printSolutions;
+  static boolean printSolutions, foundLastSolution;
 
   public static void main(String[] args) {
     if (args.length != 1) {
@@ -26,22 +26,20 @@ public class Riddle {
     else System.out.println(String.format("%d Loesungen", solutionCount));
   }
 
-  static boolean solve(int numberOfPairs) {
-    if (numberOfPairs == 0) return checkInSolution();
-
-    for (int i = 0; i + numberOfPairs + 1 < numberOfSlots; i++) {
+  static void solve(int numberOfPairs) {
+    for (int i = 0; i + numberOfPairs + 1 < numberOfSlots && !foundLastSolution; i++) {
       if ((currentSolution[i] == 0 && currentSolution[i + numberOfPairs + 1] == 0)) {
         currentSolution[i] = currentSolution[i + numberOfPairs + 1] = numberOfPairs;
-        if (solve(numberOfPairs - 1)) return true;
+
+        if (numberOfPairs == 1) checkInSolution();
+        else solve(numberOfPairs - 1);
         currentSolution[i] = currentSolution[i + numberOfPairs + 1] = 0;
       }
     }
-
-    return false;
   }
 
-  static boolean checkInSolution() {
-    boolean foundLastSolution = true;
+  static void checkInSolution() {
+    foundLastSolution = true;
     for (int i = 0, j = numberOfSlots - 1; foundLastSolution && i < j; ) {
       foundLastSolution = currentSolution[i] == previosSolution[j];
       i++;
@@ -57,8 +55,6 @@ public class Riddle {
         printSolution();
       }
     }
-
-    return foundLastSolution;
   }
 
   static void printSolution() {
