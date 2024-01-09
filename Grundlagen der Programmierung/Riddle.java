@@ -48,9 +48,7 @@ public class Riddle {
 
     if (!foundLastSolution) {
       solutionCount++;
-      for (int i = 0; i < numberOfSlots; i++) {
-        previosSolution[i] = currentSolution[i];
-      }
+      System.arraycopy(currentSolution, 0, previosSolution, 0, currentSolution.length);
       if (printSolutions) {
         printSolution();
       }
