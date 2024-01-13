@@ -79,8 +79,14 @@ public class Riddle {
     // space) but the problem wants us to print solution found from starting at the lowest to
     // highest pair, this is no problem since both are mirror images of one another, just reverse
     // print it.
-    for (int i = numberOfSlots - 1; i >= 0; i--) {
-      System.out.print(currentSolution[i]);
+    if (currentSolution[0] < currentSolution[numberOfSlots - 1]) {
+      for (int i = 0; i < currentSolution.length; i++) {
+        System.out.print(currentSolution[i]);
+      }
+    } else {
+      for (int i = numberOfSlots - 1; i >= 0; i--) {
+        System.out.print(currentSolution[i]);
+      }
     }
     System.out.println();
   }
