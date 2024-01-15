@@ -36,7 +36,7 @@ public class Riddle {
   }
 
   static void solve(int numberOfPairs) {
-    // For easy position our pair could possible fit into,
+    // For each position our pair could possible fit into,
     for (int i = 0; i + numberOfPairs + 1 < numberOfSlots && !foundLastSolution; i++) {
       // check if the pair fits
       if ((currentSolution[i] == 0 && currentSolution[i + numberOfPairs + 1] == 0)) {
