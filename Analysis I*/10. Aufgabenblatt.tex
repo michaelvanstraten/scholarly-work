@@ -318,31 +318,110 @@ a) Gegeben sei die Abbildung $f : \mathbb{C}^* = \mathbb{C} \setminus \{0\} \rig
 
 b) Gegeben sei eine weitere Abbildung $g : \mathbb{C}^* \rightarrow
 	\mathbb{C}$, $z \mapsto \frac{1}{\overline{z}}$. Verdeutlichen Sie geometrisch,
-warum diese Abbildung "Inversion an der Einheitskreislinie" genannt wird!
+warum diese Abbildung ,,Inversion an der Einheitskreislinie'' genannt wird!
 Welche Fixpunkte ($g(z) = z$) besitzt die Abbildung g?
 
-% \begin{tikzpicture}
-% 	\begin{axis}[
-% 			ylabel={$\operatorname{Im}(z)$},
-% 			xlabel={$\operatorname{Re}(z)$},
-% 			zlabel={$T(z)$},
-% 			every axis y label/.append style={at=(ticklabel* cs:0)},
-% 			every axis x label/.append style={at=(ticklabel* cs:1)},
-% 			xmin=-2, xmax=2,
-% 			ymin=-2, ymax=2,
-% 			zmin=-2, zmax=2,
-% 			y dir=reverse,
-% 			width=20cm,
-% 		]
-% 		\addplot3[
-% 			surf,
-% 			colormap/cool,
-% 			samples=75,
-% 			domain=-2:2,
-% 			y domain=-2:2,
-% 		] {(x-y)/(x^2+y^2)};
-% 	\end{axis}
-% \end{tikzpicture}
+\begin{proof}
+	\leavevmode
+	\begin{enumerate}
+		\item Betrachten wir zunächst was mit einem generischen Punkt $z \in \field{C}$
+		      passiert, wenn wir $f$ auf $z$ anwenden.
+
+		      \[
+			      f(z) = \frac{1}{z} = \frac{\bar{z}}{z \bar{z}} = \frac{\bar{z}}{{|z|}^2}
+		      \] also wird $z$ auf sein konjugiertes komplexes abgebilded und dann durch seinen
+		      quadrierten Betrag skaliert.
+
+		      Visualisiert für einen konkreten Punkt $z = 1 + 2i$, sieht die transformation
+		      durch $f$ wie folgt aus.
+
+		      \begin{center}
+			      \begin{tikzpicture}
+				      \begin{axis}[
+						      axis equal,
+						      ylabel={$\operatorname{Im}(z)$},
+						      xlabel={$\operatorname{Re}(z)$},
+						      xtick distance=1,
+						      ytick distance=1,
+						      xmin=-1, xmax=2,
+						      ymin=-4, ymax=4,
+					      ]
+					      \addplot[mark=*] coordinates {(1,2)} node[above right] {$z$};
+					      \draw[dotted] (0,0) -- (1, -2) -- (1, 2);
+					      \addplot[mark=*] coordinates {(1,-2)} node[below right] {$\bar{z}$};
+					      \addplot[mark=*] coordinates {(0.2, -0.4)} node[below right] {$\frac{1}{z}$};
+					      \draw[dashed] (0,0) circle [radius=1];
+				      \end{axis}
+			      \end{tikzpicture}
+		      \end{center}
+
+		      Somit spiegelt $f$ $z$ zunächst über die reale Zahlenebene und dann verschiebt
+		      sie $\bar{z}$ inverse proportional entlang seiner Achse.
+
+		\item Für $g$ Betrachten wir wiederum einen generischen Punkt $z \in \field{C}$. \[
+			      g(z) = \frac{1}{\bar{z}} = \frac{z}{\bar{z}z} = \frac{z}{{|z|}^2}
+		      \]
+
+		      Diese Abbildung ist relative ähnlich zu $f$ nur das hier $z$ nicht gespiegelt
+		      wird.
+
+		      Visualisiert für einen konkreten Punkt $z = 1 + 2i$, sieht die transformation
+		      durch $g$ wie folgt aus.
+
+		      \begin{tikzpicture}
+			      \begin{axis}[
+					      axis equal,
+					      ylabel={$\operatorname{Im}(z)$},
+					      xlabel={$\operatorname{Re}(z)$},
+					      xtick distance=1,
+					      ytick distance=1,
+					      xmin=-1, xmax=2,
+					      ymin=-4, ymax=4,
+				      ]
+				      \addplot[mark=*] coordinates {(1,2)} node[above right] {$z$};
+				      \addplot[mark=*] coordinates {(1,-2)} node[below right] {$\bar{z}$};
+				      \draw[dotted] (0,0) -- (1, 2) -- (1, -2);
+				      \addplot[mark=*] coordinates {(0.2, 0.4)} node[above right] {$\frac{1}{\bar{z}}$};
+				      \draw[dashed] (0,0) circle [radius=1];
+			      \end{axis}
+		      \end{tikzpicture}
+
+		      Betrachten wir nun die Fixpunkte $g(z) = z$ erhalten wir \[
+			      z = \frac{1}{\bar{z}} \Rightarrow z \bar{z} = 1 \Rightarrow \sqrt{z \bar{z}} = 1
+		      \] also alle Punkte $z \in \field{C}$ mit einem Betrag von $1$ oder vereinfacht,
+		      alle Punkte die auf der Einheitskreislinie liegen.
+
+		      Somit ergibt sich die Bezeichnung ,,Inversion an der Einheitskreislinie'',
+		      durch die eigenschaft der Funktion Punkte die innerhalb des Einheitskreises
+		      liegen außerhalb des Einheitskreises zu projizieren und Punkte außerhalb in das
+		      Innere des Einheitskreises. Nur die Punkte auf der Einheitskreislinie bleiben
+		      unberührt.
+
+		      % \begin{center}
+			     %  \begin{tikzpicture}
+				    %   \begin{axis}[
+						  %     ylabel={$\operatorname{Im}(z)$},
+						  %     xlabel={$\operatorname{Re}(z)$},
+						  %     zlabel={$g(z)$},
+						  %     every axis y label/.append style={at=(ticklabel* cs:0)},
+						  %     every axis x label/.append style={at=(ticklabel* cs:1)},
+						  %     xmin=-2, xmax=2,
+						  %     ymin=-2, ymax=2,
+						  %     zmin=-2, zmax=2,
+					   %    ]
+					   %    \addplot3[
+						  %     surf,
+						  %     colormap/cool,
+						  %     samples=50,
+						  %     domain=-2:2,
+						  %     y domain=-2:2,
+					   %    ] {(x+y)/(x^2+y^2)};
+				    %   \end{axis}
+			     %  \end{tikzpicture}
+		      % \end{center}
+
+	\end{enumerate}
+\end{proof}
 \end{problem}
 
 \begin{problem}[Simple Gleichung, komplexe Lösungen?]{4 Sonderpunkte}
