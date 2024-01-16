@@ -9,7 +9,7 @@
 
 \pgfplotsset{
     compat=1.18,
-    width=10cm,
+    width=10 cm,
     axis lines=center,
     grid = major,
     grid style=dotted,
@@ -24,8 +24,8 @@
 \begin{problem}[Komplexe Zahlen]{4 Punkte}
 Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden komplexen Zahlen und zeichnen Sie die Zahlen in der komplexen Zahlenebene!
 \begin{enumerate}
-	\item ${\left(\frac{1+i\sqrt{3}}{1-i\sqrt{3}}\right)}^{204}$
-	\item $(1 + i)^{2n} + (1 - i)^{2n}$
+	\item ${\left(\frac{1+i\sqrt{3}}{1-i\sqrt{3}}\right)}^{204}$,
+	\item $(1 + i)^{2n} + (1 - i)^{2n}$.
 \end{enumerate}
 \begin{proof}
 	\leavevmode
@@ -73,7 +73,7 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
 			      \end{tikzpicture}
 		      \end{center}
 
-		      Betrachten wir nun den Winkel zwischen dem Punkt und $(1, 0)$. Er ergibt sich
+		      Betrachten wir jetzt den Winkel zwischen dem Punkt und $(1, 0)$. Er ergibt sich
 		      als Bogen von $120^\circ$ oder $\frac{2\pi}{3}$ Radian.
 
 		      \begin{center}
@@ -156,11 +156,11 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
 			      (1 + i)^{2n} + (1 - i)^{2n} = {(2i)}^n + {(-2i)}^n = 2^ni^n(1+ {(-1)}^n).
 		      \]
 
-		      Betrachten wir nun die folgenden fälle.
+		      Betrachten wir soeben die folgenden fälle.
 
 		      \begin{description}
-			      \item[$n$ Gerade]
-			            Für $n$ gerade ist $1+ {(-1)}^n = 2$ und $i^n = {(-1)}^\frac{n}{2}$ also $2^ni^n(1+ {(-1)}^n) = 2^{n+1}{(-1)}^{\frac{n}{2}}$
+			      \item[$n$ gerade]
+			            ist $1+ {(-1)}^n = 2$ und $i^n = {(-1)}^\frac{n}{2}$ also $2^ni^n(1+ {(-1)}^n) = 2^{n+1}{(-1)}^{\frac{n}{2}}$
 
 			            Somit sehen wir das der Imaginärteil immer gleich null ist. Der Betrag,
 			            Realteil hingegen hängt proportional von $n$ ab also \[
@@ -169,9 +169,10 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
 
 			            Das Argument hingegen beträgt $\pi \frac{n}{2}$ da somit $2^{n+1}
 				            e^{i\pi\frac{n}{2}} = 2^{n+1} {(e^{i\pi})}^\frac{n}{2} =
-				            2^{n+1}{(-1)}^{\frac{n}{2}}$
-			      \item[$n$ Ungerade]
-			            Für $n$ Ungerade erhalten wir $1+ {(-1)}^n = 0$ und somit Real-, Imaginärteil sowie Betrag von $(1 + i)^{2n} + (1 - i)^{2n}$ gleich
+				            2^{n+1}{(-1)}^{\frac{n}{2}}$.
+
+			      \item[$n$ ungerade]
+			            erhalten wir $1+ {(-1)}^n = 0$ und somit Real-, Imaginärteil sowie Betrag von $(1 + i)^{2n} + (1 - i)^{2n}$ gleich
 			            null sowie Argument beliebig.
 		      \end{description}
 
@@ -216,6 +217,7 @@ Skizzieren Sie die folgenden Teilmengen $A_k \subset \mathbb{C}$:
 		      \begin{center}
 			      \begin{tikzpicture}
 				      \begin{axis}[
+						      axis equal,
 						      ylabel={$\operatorname{Im}(z)$},
 						      xlabel={$\operatorname{Re}(z)$},
 						      xmin=-0.25, xmax=1,
@@ -238,6 +240,7 @@ Skizzieren Sie die folgenden Teilmengen $A_k \subset \mathbb{C}$:
 		      \begin{center}
 			      \begin{tikzpicture}
 				      \begin{axis}[
+						      axis equal,
 						      ylabel={$\operatorname{Im}(z)$},
 						      xlabel={$\operatorname{Re}(z)$},
 						      xmin=-0.25, xmax=1.5,
@@ -254,14 +257,15 @@ Skizzieren Sie die folgenden Teilmengen $A_k \subset \mathbb{C}$:
 		      \end{center}
 		\item Setzen wir wiederum unsere definition von $z$ ein erhalten wir für
 		      $\overline{z}z + z - 3\overline{z} + 1 = 0$ \[
-                  a^{2}+b^{2}+a+b-3(a-b) + 1 = 0
+			      a^{2}+b^{2}+a+b-3(a-b) + 1 = 0
 		      \] oder \[
-		          \pm \sqrt{ -a^2 +2a + 3 } - 2.
+			      b = \pm \sqrt{ -a^2 +2a + 3 } - 2.
 		      \]
 
 		      \begin{center}
 			      \begin{tikzpicture}
 				      \begin{axis}[
+						      axis equal,
 						      ylabel={$\operatorname{Im}(z)$},
 						      xlabel={$\operatorname{Re}(z)$},
 						      xmin=-0.25, xmax=1.5,
@@ -315,11 +319,11 @@ Die obere Halbebene ist die Menge aller komplexen Zahlen mit positivem Imaginär
 
 	\textbf{Surjektiv}
 
-	Um zu zeigen, das $T$ Surjektiv ist muss gezeigt werden das $\forall z \in H$
+	Um zu zeigen, das $T$ surjektiv ist muss gezeigt werden das $\forall z \in H$
 	ein $z^\prime$ in $H$ existiert mit $T(z^\prime) = z$. Wählen wir $z^\prime = -
-		\frac{1}{z}$, wie bereits zu begin des Beweises gezeigt wurde gilt $\forall z
-		\in H$ $T(z) \in H$, somit $z^\prime \in H$. Wenn wir nun $T$ auf $z^\prime$ an
-	erhalten wir $T(z^\prime) = -\frac{1}{-\frac{1}{z}} = z$ Somit $\exists
+		\frac{1}{z}$, wie bereits zu begin des Beweises gezeigt wurde, gilt $\forall z
+		\in H$ $T(z) \in H$, somit $z^\prime \in H$, wenn wir nun $T$ auf $z^\prime$ an
+	erhalten wir $T(z^\prime) = -\frac{1}{-\frac{1}{z}} = z$. Somit $\exists
 		z^\prime \in H$ $\forall z \in H$ mit $T(z^\prime) = z$.
 
 \end{proof}
@@ -330,8 +334,8 @@ a) Gegeben sei die Abbildung $f : \mathbb{C}^* = \mathbb{C} \setminus \{0\} \rig
 
 b) Gegeben sei eine weitere Abbildung $g : \mathbb{C}^* \rightarrow
 	\mathbb{C}$, $z \mapsto \frac{1}{\overline{z}}$. Verdeutlichen Sie geometrisch,
-warum diese Abbildung ,,Inversion an der Einheitskreislinie'' genannt wird!
-Welche Fixpunkte ($g(z) = z$) besitzt die Abbildung g?
+warum diese Abbildung \qouted{Inversion an der Einheitskreislinie} genannt
+wird! Welche Fixpunkte ($g(z) = z$) besitzt die Abbildung g?
 
 \begin{proof}
 	\leavevmode
@@ -403,33 +407,36 @@ Welche Fixpunkte ($g(z) = z$) besitzt die Abbildung g?
 		      \] also alle Punkte $z \in \field{C}$ mit einem Betrag von $1$ oder vereinfacht,
 		      alle Punkte die auf der Einheitskreislinie liegen.
 
-		      Somit ergibt sich die Bezeichnung ,,Inversion an der Einheitskreislinie'',
+		      Somit ergibt sich die Bezeichnung \qouted{Inversion an der Einheitskreislinie},
 		      durch die eigenschaft der Funktion Punkte die innerhalb des Einheitskreises
 		      liegen außerhalb des Einheitskreises zu projizieren und Punkte außerhalb in das
 		      Innere des Einheitskreises. Nur die Punkte auf der Einheitskreislinie bleiben
 		      unberührt.
 
+		      Ich habe mir die Freiheit genommen das Ganze einmal zeichnen zu lassen, bitte
+		      bemerke, dass wir hier $z := a + ib$ als $a + b$ darstellen.
+
 		      % \begin{center}
-			     %  \begin{tikzpicture}
-				    %   \begin{axis}[
-						  %     ylabel={$\operatorname{Im}(z)$},
-						  %     xlabel={$\operatorname{Re}(z)$},
-						  %     zlabel={$g(z)$},
-						  %     every axis y label/.append style={at=(ticklabel* cs:0)},
-						  %     every axis x label/.append style={at=(ticklabel* cs:1)},
-						  %     xmin=-2, xmax=2,
-						  %     ymin=-2, ymax=2,
-						  %     zmin=-2, zmax=2,
-					   %    ]
-					   %    \addplot3[
-						  %     surf,
-						  %     colormap/cool,
-						  %     samples=50,
-						  %     domain=-2:2,
-						  %     y domain=-2:2,
-					   %    ] {(x+y)/(x^2+y^2)};
-				    %   \end{axis}
-			     %  \end{tikzpicture}
+		      %  \begin{tikzpicture}
+		      %   \begin{axis}[
+		      %     ylabel={$\operatorname{Im}(z)$},
+		      %     xlabel={$\operatorname{Re}(z)$},
+		      %     zlabel={$g(z)$},
+		      %     every axis y label/.append style={at=(ticklabel* cs:0)},
+		      %     every axis x label/.append style={at=(ticklabel* cs:1)},
+		      %     xmin=-2, xmax=2,
+		      %     ymin=-2, ymax=2,
+		      %     zmin=-2, zmax=2,
+		      %    ]
+		      %    \addplot3[
+		      %     surf,
+		      %     colormap/cool,
+		      %     samples=50,
+		      %     domain=-2:2,
+		      %     y domain=-2:2,
+		      %    ] {(x+y)/(x^2+y^2)};
+		      %   \end{axis}
+		      %  \end{tikzpicture}
 		      % \end{center}
 
 	\end{enumerate}
