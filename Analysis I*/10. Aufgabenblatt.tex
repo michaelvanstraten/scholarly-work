@@ -10,7 +10,6 @@
 \pgfplotsset{
     compat=1.18,
     width=10cm,
-    axis equal,
     axis lines=center,
     grid = major,
     grid style=dotted,
@@ -44,6 +43,7 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
 		      \begin{center}
 			      \begin{tikzpicture}
 				      \begin{axis}[
+						      axis equal,
 						      ylabel={$\operatorname{Im}(z)$},
 						      xlabel={$\operatorname{Re}(z)$},
 						      xmin=-1.5, xmax=1.5,
@@ -61,6 +61,7 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
 		      \begin{center}
 			      \begin{tikzpicture}
 				      \begin{axis}[
+						      axis equal,
 						      ylabel={$\operatorname{Im}(z)$},
 						      xlabel={$\operatorname{Re}(z)$},
 						      xmin=-1.5, xmax=1.5,
@@ -78,6 +79,7 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
 		      \begin{center}
 			      \begin{tikzpicture}
 				      \begin{axis}[
+						      axis equal,
 						      ylabel={$\operatorname{Im}(z)$},
 						      xlabel={$\operatorname{Re}(z)$},
 						      xmin=-1.5, xmax=1.5,
@@ -104,6 +106,7 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
 		      \begin{center}
 			      \begin{tikzpicture}
 				      \begin{axis}[
+						      axis equal,
 						      ylabel={$\operatorname{Im}(z)$},
 						      xlabel={$\operatorname{Re}(z)$},
 						      xmin=-1.5, xmax=1.75,
@@ -158,6 +161,15 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
 		      \begin{description}
 			      \item[$n$ Gerade]
 			            Für $n$ gerade ist $1+ {(-1)}^n = 2$ und $i^n = {(-1)}^\frac{n}{2}$ also $2^ni^n(1+ {(-1)}^n) = 2^{n+1}{(-1)}^{\frac{n}{2}}$
+
+			            Somit sehen wir das der Imaginärteil immer gleich null ist. Der Betrag,
+			            Realteil hingegen hängt proportional von $n$ ab also \[
+				            |(1 + i)^{2n} + (1 - i)^{2n}|  = \operatorname{Re}((1 + i)^{2n} + (1 - i)^{2n}) = 2^{n+1}{(-1)}^{\frac{n}{2}}.
+			            \].
+
+			            Das Argument hingegen beträgt $\pi \frac{n}{2}$ da somit $2^{n+1}
+				            e^{i\pi\frac{n}{2}} = 2^{n+1} {(e^{i\pi})}^\frac{n}{2} =
+				            2^{n+1}{(-1)}^{\frac{n}{2}}$
 			      \item[$n$ Ungerade]
 			            Für $n$ Ungerade erhalten wir $1+ {(-1)}^n = 0$ und somit Real-, Imaginärteil sowie Betrag von $(1 + i)^{2n} + (1 - i)^{2n}$ gleich
 			            null sowie Argument beliebig.
