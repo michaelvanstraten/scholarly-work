@@ -1,0 +1,194 @@
+\documentclass{../problemset}
+
+\Lecture{Analysis I}
+\Problemset{11}
+\DoOn{23.1.2024}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\setlist[enumerate, 1]{label=\alph*)}
+
+\begin{problem}[Tangens und Kotangens]{8 Punkte}
+\begin{enumerate}
+	\item Zeigen Sie: Für alle $z, w \in \mathbb{C}$, für die $\cot z$, $\cot w$ und $\cot(z + w)$ definiert sind, gilt das Additionstheorem des Kotangens:
+	      \[ \cot(z + w) = \frac{\cot z \cot w - 1}{\cot z + \cot w} . \]
+
+	\item Drücken Sie auch $\cot(z-w)$ in Analogie mit a) durch $\cot z$ und $\cot w$ aus (mit Beweis).
+
+	\item Wie lauten die entsprechenden Formeln für $\tan(z \pm w)$? (Mit Beweis).
+
+	\item Drücken Sie die Funktion $\tan : \mathbb{R}\setminus\{x \in \mathbb{R} | \cos x = 0\} \to \mathbb{R}$, $x \mapsto \tan x$ nur durch $\sin x$ aus (also ohne Verwendung weiterer trigonometrischer Funktionen) aus (mit Beweis).
+\end{enumerate}
+
+\begin{proof}
+	\leavevmode
+
+	\begin{enumerate}
+		\item Für alle $z, w \in \mathbb{C}$ mit $\cot z \coloneqq \frac{\cos z}{\sin z}$ gilt
+		      \begin{align*}
+			      \cot (z + w) & = \frac{\cos (z + w)}{\sin (z + w)}                                                                                                                 \\
+			                   & = \frac{\cos (z + w)}{\sin z \sin w} \cdot \frac{\sin z \sin w}{\sin (z + w)}                                                                       \\
+			                   & = \frac{\cos z \cos w - \sin z \sin w}{\sin z \sin w} \cdot \frac{\sin z \sin w}{\sin z \cos w + \cos z \sin w}                                     \\
+			                   & = \frac{\cos z \cos w}{\sin z \sin w} - \frac{\sin z \sin w}{\sin z \sin w} \cdot \frac{\sin z \sin w}{\sin z \cos w + \cos z \sin w}               \\
+			                   & = \frac{\cos z}{\sin z} \cdot \frac{\cos w}{\sin w} - \frac{\sin z \sin w}{\sin z \sin w} \cdot \frac{\sin z \sin w}{\sin z \cos w + \cos z \sin w} \\
+			                   & = \cot z \cot w - \frac{\sin z \sin w}{\sin z \sin w} \cdot \frac{\sin z \sin w}{\sin z \cos w + \cos z \sin w}                                     \\
+			                   & = \cot z \cot w - 1 \cdot \frac{\sin z \sin w}{\sin z \cos w + \cos z \sin w}                                                                       \\
+			                   & = \frac{\cot z \cot w - 1}{\frac{\sin z \cos w + \cos z \sin w}{\sin z \sin w}}                                                                     \\
+			                   & = \frac{\cot z \cot w - 1}{\frac{\cos z \sin w}{\sin z \sin w} + \frac{\sin z \cos w}{\sin z \sin w}}                                               \\
+			                   & = \frac{\cot z \cot w - 1}{\frac{\cos z }{\sin z} + \frac{\cos w}{\sin w}}                                                                          \\
+			                   & = \frac{\cot z \cot w - 1}{\cot z + \cot w}.
+		      \end{align*}
+
+		\item Für alle $z, w \in \mathbb{C}$ mit $\cot z \coloneqq \frac{\cos z}{\sin z}$ gilt
+		      \[
+			      \cot (-z) = \frac{\cos (-z)}{\sin (-z)} = \frac{\cos z}{\sin (-z)} = \frac{\cos z}{ - \sin z} = - \frac{\cos z}{ \sin z} = - \cot z
+		      \]
+		      und somit
+		      \[
+			      \cot(z - w) = \cot(z + (-w)) = \frac{\cot z \cot (-w) - 1}{\cot z + \cot (-w)} = \frac{\cot z \cdot -\cot w - 1}{\cot z - \cot w} = \frac{\cot z \cdot \cot w + 1}{\cot w  - \cot z}.
+		      \]
+
+		\item Für alle $z, w \in \mathbb{C}$ mit $\tan z \coloneqq \frac{\sin z}{\cos z}$ gilt
+		      \[
+			      \tan z = \frac{1}{\cot z}
+		      \] und somit
+		      \[
+			      \tan (z \pm w) = \frac{1}{\frac{\cot z \cot w \mp 1}{\cot w \pm \cot z }} = \frac{\cot w \pm \cot z }{\cot z \cot w \mp 1}.
+		      \]
+
+		      Nutzen wir Kommentar 15.40 \qouted{$\cot x = \tan (\frac{\pi}{2} - x)$} ergibt sich
+		      \[
+			      \tan (z \pm w) = \frac{ \tan (\frac{\pi}{2} - w) \pm \tan (\frac{\pi}{2} - z)}{\tan (\frac{\pi}{2} - z) + \tan (\frac{\pi}{2} - w) \mp 1}.
+		      \]
+
+		\item Für $z \in \field{C}$ und der trigonometrischen Identität $\cos^2 z + \sin^2 z = 1$ erhalten wir \[
+			      \cos z = \sqrt{ 1 - \sin^2 z }
+		      \]
+
+		      Somit folgt für $\tan z \coloneqq \frac{\sin z}{\cos z}$ \[
+			      \tan z = \frac{\sin z}{\sqrt{1 - \sin^2 z}}.
+		      \]
+
+		      \textit{Ich bin hier davon ausgegangen das wir $\cos z = \sin (\frac{\pi}{2} - z)$ nicht nutzen sollen.}
+	\end{enumerate}
+
+\end{proof}
+
+\end{problem}
+
+\begin{problem}[Grenzwerte]{6 Punkte}
+Untersuchen Sie, für welche ganzen Zahlen $k \in \mathbb{Z}$ die Grenzwerte der folgenden komplexen Funktionen existieren und geben Sie diese ggf. an:
+
+\begin{enumerate}
+	\item $\lim_{z \to 0} \frac{\cosh(z) - 1}{z^k}$
+
+	\item $\lim_{z \to 0} z^k \cdot \frac{\sin(1/z)}{z}$
+\end{enumerate}
+
+\begin{proof}
+	\leavevmode
+	\begin{enumerate}
+		\item Für $k \in \ints$ und $f_k(z) \coloneqq \frac{\cosh(z) - 1}{z^k}$ gilt \[
+			      \frac{\cosh(z) - 1}{z^k} = \frac{\frac{e^z + e^{-z}}{2} - 1}{z^k} = \frac{e^z + e^{-z}}{2z^k} - \frac{1}{z^k}
+		      \] und somit folgt
+		      \begin{align*}
+			      \lim_{z \to 0} f_k(z) & = \lim_{z \to 0} \left[ \frac{e^z + e^{-z}}{2z^k} - \frac{1}{z^k} \right]                               \\
+			                            & = \frac{\lim_{z \to 0} \left[ e^z + e^{-z} \right]}{\lim_{z \to 0} 2z^k} - \lim_{z \to 0} \frac{1}{z^k} \\
+			                            & = \frac{1 + 1}{\lim_{z \to 0} 2z^k} - \lim_{z \to 0} \frac{1}{z^k}                                      \\
+			                            & = \frac{2}{\lim_{z \to 0} 2z^k} - \lim_{z \to 0} \frac{1}{z^k}                                          \\
+			                            & = \frac{2}{2 \lim_{z \to 0} z^k} - \lim_{z \to 0} \frac{1}{z^k}                                         \\
+			                            & = \frac{1}{\lim_{z \to 0} z^k} - \lim_{z \to 0} \frac{1}{z^k}                                           \\
+			                            & = \lim_{z \to 0} \frac{1}{z^k} - \lim_{z \to 0} \frac{1}{z^k}                                           \\
+			                            & = 0.
+		      \end{align*}
+
+		\item Für $k \in \ints$ und $g_k(z) \coloneqq z^k \cdot \frac{\sin(1/z)}{z}$ gilt \[
+			      g_k(z) = z^k \cdot \frac{\sin(1/z)}{z} = z^{k - 2} \cdot z \cdot z \frac{\sin(1/z)}{z} = z^{k - 2} \cdot z \sin(1/z) = z^{k - 2} \frac{\sin(1/z)}{\frac{1}{z}}
+		      \] und somit folgt für $\lim_{ z \to 0} g_k(z)$ \[
+			      \lim_{z \to 0} z^{k - 2} \frac{\sin(1/z)}{\frac{1}{z}} = \lim_{z \to 0} z^{k - 2} \lim_{z \to 0} \frac{\sin(1/z)}{\frac{1}{z}} = \lim_{z \to 0} z^{k - 2} \cdot 1 = \lim_{z \to 0} z^{k - 2}.
+		      \]
+
+		      Somit divergiert wir für den Fall $k \le 1$ $\lim_{z \to 0} g_k(z)$ und für den fall $k > 1$ konvergiert $\lim_{z \to 0} g_k(z)$ gegen null.
+
+		      \textit{Es sollte angemerkt werden das für den spezial fall $k = 2$ $\lim_{z \to 0} z^0$ laut unserer definition zwar gleich eins ist dies allerdings im wiederspruch mit der Stetigkeit der Funktion steht,
+			      wenn man $k$ als eine weitere variable betrachtet.}
+
+	\end{enumerate}
+\end{proof}
+\end{problem}
+
+\begin{problem}[Areafunktionen]{6 Punkte}
+Beweisen Sie die folgenden Beziehungen zwischen den Umkehrfunktionen der Hyperbelfunktionen $\cosh x$, $\tanh x$, $\coth x$ und der Logarithmusfunktion:
+
+\begin{enumerate}
+	\item $\text{arcosh}(x) = \log(x + \sqrt{x^2 - 1})$, $x \in \mathbb{R}$, $x \geq 1$.
+
+	\item $\text{artanh}(x) = \frac{1}{2} \log\left(\frac{1+x}{1-x}\right)$, $x \in \mathbb{R}$, $|x| < 1$.
+
+	\item $\text{arcoth}(x) = \frac{1}{2} \log\left(\frac{x+1}{x-1}\right)$, $x \in \mathbb{R}$, $|x| > 1$.
+\end{enumerate}
+
+\begin{proof}
+	\begin{enumerate}
+		\item Für $\text{arcosh}(x) := \cosh^{-1}(x)$ gilt somit $\text{arcosh}(\cosh(x)) = \Id_{\field{C}}(x) = x$ und so folgt
+		      \begin{align*}
+			      \log (\cosh(x) + \sqrt{\cosh(x)^2 - 1}) & = \log\left(\frac{1}{2}(e^x + e^{-x}) + \sqrt{{\left(\frac{1}{2}(e^x + e^{-x})\right)}^2 - 1}\right) \\
+			                                              & = \log\left(\frac{1}{2}(e^x + e^{-x}) + \sqrt{\frac{1}{4}{(e^x + e^{-x})}^2 - 1}\right)              \\
+			                                              & = \log\left(\frac{1}{2}(e^x + e^{-x}) + \sqrt{\frac{1}{4}(e^{2x} + 2e^xe^{-x} + e^{-2x}) - 1}\right) \\
+			                                              & = \log\left(\frac{1}{2}(e^x + e^{-x}) + \sqrt{\frac{1}{4}(e^{2x} + 2\cdot 1 + e^{-2x}) - 1}\right)   \\
+		      \end{align*}
+
+		\item Für $\text{artanh}(x) := \tan^{-1}(x)$ gilt somit $\text{artanh}(\tan(x)) = \Id_{\field{C}}(x) = x$ und so folgt
+            \begin{align*}
+                \frac{1}{2} \log \left(\frac{1 + \tan(x)}{1 - \tan(x)}\right) &= \frac{1}{2} \log \left(\frac{1 + 2\tan x + \tan^2 x }{1 - \tan^2 x }\right)
+            \end{align*}
+	\end{enumerate}
+\end{proof}
+
+\end{problem}
+
+\begin{problem}[Ableiten, 2024mal?*]{4 Sonderpunkte}
+Gegeben sei die Funktion $f(x) = x^2 e^x$. Finden Sie (mit Beweis) deren 2024-te Ableitung!
+
+\begin{proof}
+	Differenzieren wir $f(x)$ zunächst dreimal
+	\begin{align*}
+		(f(x))^{(1)} = e^xx^2 + e^x2x = e^x(x^2 + 2x + 0)                  \\
+		(f(x))^{(2)} = e^x(x^2 + 2x + 0) + e^x(2x + 2) = e^x(x^2 + 4x + 2) \\
+		(f(x))^{(3)} = e^x(x^2 + 4x + 2) + e^x(2x + 4) = e^x(x^2 + 6x + 6) \\
+		(f(x))^{(4)} = e^x(x^2 + 6x + 6) + e^x(2x + 6) = e^x(x^2 + 8x + 12).
+	\end{align*}
+
+	Dies lässt annähmen das $(f(x))^{(n)} = e^x(x^2 + 2nx + n(n-1)$ ist was noch zu Beweisen ist.
+
+	\textbf{\textit{Beweisen durch Induktion}}
+
+	Für den Fall $n = 1$, ergibt sich aus der obigen Berechnung das unsere Induktionsannahme hält.
+
+	Angenommen unsere Annahme sei bereits für ein $n \in \nats$ Beweisen. Nun gilt es zu zeigen das diese auch für den fall $n + 1$ hält.
+
+	\begin{align*}
+		(f(x))^{(n + 1)} = \frac{d (f(x))^{(n)}}{dx} & = e^x(x^2 + 2nx + n(n-1)) + e^x(2x + 2n) \\
+		                                             & = e^x(x^2 + 2nx + 2x + 2n + n(n-1))      \\
+		                                             & = e^x(x^2 + (2n + 2)x + 2n + n(n-1))     \\
+		                                             & = e^x(x^2 + 2(n + 1)x + 2n + n(n-1))     \\
+		                                             & = e^x(x^2 + 2(n + 1)x + 2n + n^2 -n)     \\
+		                                             & = e^x(x^2 + 2(n + 1)x + n^2 - n)         \\
+		                                             & = e^x(x^2 + 2(n + 1)x + n(n + 1))        \\
+		                                             & = e^x(x^2 + 2(n + 1)x + (n + 1)n.
+	\end{align*}
+
+	Somit gilt $(f(x))^{(n)} = e^x(x^2 + 2nx + n(n-1))$.
+
+	Setzen wir ein, erhalten wir für den wert $n = 2024$
+	\[
+		(f(x))^{(2024)} = e^x(x^2 + 2 \cdot 2024x + 2024 \cdot (2024 - 1)) = e^x(x^2 + 4048x + 4.094.552).
+	\]
+
+
+\end{proof}
+\end{problem}
+
+\end{document}
