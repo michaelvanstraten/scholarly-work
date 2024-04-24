@@ -1,0 +1,136 @@
+\documentclass{problemset}
+
+\Lecture{Analysis II}
+\Problemset{1}
+\DoOn{23.04.2024}
+\author{Michael van Straten}
+
+\setlist[enumerate, 1]{label=\alph*)}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Funktionenschar und gleichmäßige Konvergenz]{6 Punkte}
+
+Für jede natürliche Zahl $n$ ist die Funktion $f_n(x)$ auf dem abgeschlossenen
+Intervall $[0, 1]$ definiert. Berechnen Sie $f(x) = \lim\limits_{n \to \infty}
+    f_n(x)$ für $x \in [0, 1]$! In welchen Fällen konvergiert die Funktionenfolge
+gleichmäßig?
+
+\begin{enumerate}
+    \item $f_n(x) = \frac{x}{1 + n^2x^2}$
+    \item $f_n(x) = \frac{nx}{1 + n^2x^2}$.
+\end{enumerate}
+
+\begin{proof}
+    \leavevmode
+    \begin{enumerate}
+        \item Angenommen \(f(x) = 0\) so folgt das \(\forall x \in \left[0,1\right]\),
+              \(\forall \epsilon \ge 0\):
+              \begin{itemize}
+                  \item [\textbf{Fall \(x = 0\)}]
+                        mit jedem \(N \in \nats\) für alle \(n \ge N\) folgt das \[
+                            |f_n(x) - 0| < \epsilon.
+                        \]
+                  \item [\textbf{Fall \(x \neq 0\)}]
+                        ein \(N \in \nats\) existiert mit \[
+                            N > \sqrt{\frac{x - \epsilon}{\epsilon x^2}}
+                        \] sodas, \(\forall n \ge N\) folgt
+                        \begin{align*}
+                            \sqrt{\frac{x - \epsilon}{\epsilon x^2}} < n        \\
+                            \Rightarrow \frac{x - \epsilon}{\epsilon x^2} < n^2 \\
+                            \Rightarrow x - \epsilon < n^2 \epsilon x^2         \\
+                            \Rightarrow x < \epsilon (1 + n^2 x^2)              \\
+                            \Rightarrow \frac{x}{(1 + n^2 x^2)} < \epsilon.
+                        \end{align*}
+              \end{itemize}
+              Was zeigt das \(f_n(x)\) punktweise gegen \(f(x)\) konvergiert.
+
+              In diesem fall konvergiert \(f_n(x)\) sogar gleichmäßig gegen \(f(x)\).
+              Betrachten wir hierfür die erste Ableitung von \(f_n(x)\) und setzen diese null
+              erhalten wir \[
+                  \frac{\partial y}{\partial x} f_n(x) = \frac{1 - n^2 x^2}{{(1 + n^2 x^2)}^2} = 0 = \pm \frac{1}{n}.
+              \]
+              Den fall \(-\frac{1}{n}\) können wir jedoch ausschließen da \(x \in
+              \left[0,1\right]\). Evaluieren wir \(f_n(x)\) an der Stelle \(x = \frac{1}{n}\)
+              erhalten wir den wert \(\frac{1}{2n}\). Da für \(x = \frac{1}{n}\) \[
+                  \frac{\partial^2 y}{\partial x^2} f_n(x) < 0 \land \frac{\partial^3 y}{\partial x^3} f_n(x) \neq 0
+              \] folgt somit das es sich bei \(x\) um den einzigen Hochpunkt im Intervall
+              \(\left[0, 1\right]\) handelt.
+
+              Wählen wir somit \(\forall \epsilon > 0\) \(N > \frac{1}{\epsilon}\) so folgt
+              das \(\forall n \ge N\) gilt \[
+                  \left| f_n(x) \right|_{x \in [0,1]} < \epsilon,
+              \] was zeigt das \(f_n(x)\) gleichmäßig nach \(f(x)\) konvergiert.
+
+        \item Die Punktweise Konvergenz gegen \(0\) kann Analog zu a gezeigt werden.
+
+              Betrachten wir allerdings die erste Ableitung von \(f_n(x)\) und setzen diese
+              null erhalten wir \[
+                  \frac{\partial y}{\partial x} f_n(x) = \frac{n - n^3 x^2}{{(1 + n^2 x^2)}^2} = 0 = \pm \frac{1}{n}.
+              \]
+              Den fall \(-\frac{1}{n}\) können wir jedoch ausschließen da \(x \in
+              \left[0,1\right]\). Evaluieren wir \(f_n(x)\) an der Stelle \(x = \frac{1}{n}\)
+              erhalten wir allerdings den wert \(\frac{1}{2}\). Somit \(\exists x \in [0,1]\)
+              mit dem \(\forall n \in \nats\) gilt \(\abs{f_n(x) - 0} = \frac{1}{2}\). Somit
+              konvergiert \(f_n(x)\) in diesem fall nicht gleichmäßig nach \(0\).
+    \end{enumerate}
+\end{proof}
+\end{problem}
+
+\begin{problem}[Konvergenzradien]{9 Punkte}
+
+Sei $z \in \mathbb{C}$. Bestimmen Sie die Konvergenzradien der Potenzreihen
+$\sum\limits_{n=1}^{\infty} a_n z^n$, wenn die Koeffizienten durch
+\begin{enumerate}
+    \item $a_n = \frac{1}{3 + n}$
+    \item $c \in \mathbb{R}$, $a_n = {c^n}^2$
+    \item $a_n = {\left(1 + \frac{1}{n}\right)^n}^n$
+\end{enumerate}
+gegeben sind.
+
+\begin{proof}
+    \leavevmode
+    \begin{enumerate}
+        \item Für \(z \in \field{C}\) folgt das die Reihe \[
+                  \sum_{n=1}^{\infty} \frac{1}{3 + n} z^n
+              \] nach Quotentein Kriterium \[
+                  \lim_{n \to \infty} \mid \frac{z^{n+1}}{4+n}\frac{3 + n}{z^n} \mid = \mid z \mid \lim_{n \to \infty} \mid \frac{3+n}{4+n} \mid = \mid z \mid
+              \] für \(\mid z \mid < 1\) konvergiert.
+
+        \item Für \(z \in \field{C}\) folgt das die Reihe \[
+                  \sum_{n=1}^{\infty} c^{n^2} z^n
+              \] nach Quotentein Kriterium \[
+                  \lim_{n \to \infty} \mid \frac{z^{n+1} {c^n+1}^2}{z^n {c^n}^2} \mid = \mid z \mid \lim_{n \to \infty} \mid c^{2n+1} \mid
+              \] für \(\abs{z} < \abs{c-c^2}\) und \(\sqrt{c} < 1\) konvergiert.
+
+        \item Für \(z \in \field{C}\) folgt das die Reihe \[
+                  \sum_{n=1}^{\infty} {\left(1 + \frac{1}{n}\right)^n}^n z^n
+              \] nach Wurzel Kriterium \[
+                  \limsup_{n \to \infty} \sqrt[n]{\abs{{{\left(1 + \frac{1}{n}\right)}^n}^n z^n}} = \abs{z} \limsup_{n \to \infty} \sqrt[n]{\abs{{\left(1 + \frac{1}{n}\right)}^n}} = \abs{z} e
+              \] für \(\abs{z} < \frac{1}{e}\) konvergiert.
+
+              In dieser Aufgabe war mit unklar wie $a_n = {\left(1 + \frac{1}{n}\right)^n}^n$
+              Formal gemeint ist. Für den fall das \(a_n = {({\left(1 +
+                      \frac{1}{n}\right)^n})}^n\), folgt der obere Konvergenzradius, für den fall
+              \(a_n = {\left(1 + \frac{1}{n}\right)}^{(n^n)}\), folgt ebenfalls simple aus
+              dem Wurzel Kriterium \(\abs{z} = 0\).
+    \end{enumerate}
+
+\end{proof}
+\end{problem}
+
+\begin{problem}[Arkus-Sinus-Reihe]{5 Punkte}
+
+Bestimmen Sie die Taylor-Reihe von $\arcsin x$ um den Entwicklungspunkt $a =
+    0$.
+\end{problem}
+
+\begin{problem}[Eine abschreckende Taylor-Reihe*]{4 Sonderpunkte}
+
+Zeigen Sie, dass die Taylor-Reihe der durch $f : \mathbb{R} \to \mathbb{R}$, $x
+    \mapsto f(x) := \sum\limits_{k=0}^{\infty} e^{-k} \cos(k^2x)$ definierten
+Funktion um $a = 0$ nirgends (außer im Entwicklungspunkt $0$) konvergiert.
+\end{problem}
+
+\end{document}
