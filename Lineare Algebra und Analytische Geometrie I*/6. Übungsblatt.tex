@@ -13,53 +13,56 @@ Sei $(K, +, \cdot)$ ein Körper und sei $(R, \oplus, \otimes)$ ein Ring.
 Die neutralen Elemente bzgl. $\cdot$ und $\otimes$ seien mit $1_K$ und $1_R$ bezeichnet.
 Weiterhin sei $\varphi: K \to R$ ein einserhaltender Homomorphismus von Ringen, d.h., für alle $\alpha, \beta \in K$ gilt
 \[
-	\varphi(\alpha) \oplus \varphi(\beta) = \varphi(\alpha + \beta),
+    \varphi(\alpha) \oplus \varphi(\beta) = \varphi(\alpha + \beta),
 \]
 \[
-	\varphi(\alpha) \otimes \varphi(\beta) = \varphi(\alpha \cdot \beta),
+    \varphi(\alpha) \otimes \varphi(\beta) = \varphi(\alpha \cdot \beta),
 \]
 \[
-	\varphi(1_K) = 1_R. \label{def:presevesone}
+    \varphi(1_K) = 1_R. \label{def:presevesone}
 \]
-Zeigen Sie, dass $(R, \oplus, \odot)$ einen Vektorraum über $K$ bildet, wobei die Skalarmultiplikation wie folgt definiert ist:
+Zeigen Sie, dass $(R, \oplus, \odot)$ einen Vektorraum über $K$ bildet, wobei
+die Skalarmultiplikation wie folgt definiert ist:
 \[
-	\odot: K \times R \to R, (\alpha, x) \mapsto \varphi(\alpha) \otimes x. \label{def:scalar}
+    \odot: K \times R \to R, (\alpha, x) \mapsto \varphi(\alpha) \otimes x. \label{def:scalar}
 \]
 \begin{proof}
-	$(R, \oplus, \odot)$ bildet einen Vektorraum über $K$
+    $(R, \oplus, \odot)$ bildet einen Vektorraum über $K$
 
-	Um zu zeigen, das $(R, \oplus, \odot)$ einen Vektorraum über $K$ bildet muss gezeigt werden, dass
-	$(R, \oplus)$ eine kommutative Gruppe bildet. Sowie das die folgenden Eigenschaften der Skalarmultiplikation erfüllt sind: \begin{align}
-		\alpha \odot (u \oplus v) = (\alpha \odot u) \oplus (\alpha \odot v) \\
-		(\alpha + \beta) \odot v = (\alpha \odot v) \oplus (\beta \odot v)   \\
-		(\alpha \cdot \beta) \odot v = \alpha \odot (\beta \odot v)          \\
-		1 \odot v = v
-	\end{align}
+    Um zu zeigen, das $(R, \oplus, \odot)$ einen Vektorraum über $K$ bildet muss
+    gezeigt werden, dass $(R, \oplus)$ eine kommutative Gruppe bildet. Sowie das
+    die folgenden Eigenschaften der Skalarmultiplikation erfüllt sind: \begin{align}
+        \alpha \odot (u \oplus v) = (\alpha \odot u) \oplus (\alpha \odot v) \\
+        (\alpha + \beta) \odot v = (\alpha \odot v) \oplus (\beta \odot v)   \\
+        (\alpha \cdot \beta) \odot v = \alpha \odot (\beta \odot v)          \\
+        1 \odot v = v
+    \end{align}
 
-	Da $(R, \oplus, \otimes)$ ein Ring ist, muss $(R, \oplus)$ eine kommutative Gruppe bilden, laut den Kriterien der Ring Struktur. \checkmark
+    Da $(R, \oplus, \otimes)$ ein Ring ist, muss $(R, \oplus)$ eine kommutative
+    Gruppe bilden, laut den Kriterien der Ring Struktur. \checkmark
 
-	\textbf{1}: \begin{align*}
-		\alpha \odot (u \oplus v) & \stackrel{\ref{def:scalar}}{=} \varphi(\alpha) \otimes (u \oplus v)     \\
-		                          & = (\varphi(\alpha) \otimes u) \oplus (\varphi(\alpha) \otimes v)        \\
-		                          & \stackrel{\ref{def:scalar}}{=} (\alpha \odot u) \oplus (\alpha \odot v)
-	\end{align*}
+    \textbf{1}: \begin{align*}
+        \alpha \odot (u \oplus v) & \stackrel{\ref{def:scalar}}{=} \varphi(\alpha) \otimes (u \oplus v)     \\
+                                  & = (\varphi(\alpha) \otimes u) \oplus (\varphi(\alpha) \otimes v)        \\
+                                  & \stackrel{\ref{def:scalar}}{=} (\alpha \odot u) \oplus (\alpha \odot v)
+    \end{align*}
 
-	\textbf{2}: \begin{align*}
-		(\alpha + \beta) \odot v & \stackrel{\ref{def:scalar}}{=} \varphi(\alpha + \beta) \otimes v       \\
-		                         & = (\varphi(\alpha) \oplus \varphi(\beta)) \otimes v                    \\
-		                         & = (\varphi(\alpha) \otimes v) \oplus (\varphi(\beta) \otimes v)        \\
-		                         & \stackrel{\ref{def:scalar}}{=} (\alpha \odot v) \oplus (\beta \odot v)
-	\end{align*}
+    \textbf{2}: \begin{align*}
+        (\alpha + \beta) \odot v & \stackrel{\ref{def:scalar}}{=} \varphi(\alpha + \beta) \otimes v       \\
+                                 & = (\varphi(\alpha) \oplus \varphi(\beta)) \otimes v                    \\
+                                 & = (\varphi(\alpha) \otimes v) \oplus (\varphi(\beta) \otimes v)        \\
+                                 & \stackrel{\ref{def:scalar}}{=} (\alpha \odot v) \oplus (\beta \odot v)
+    \end{align*}
 
-	\textbf{3}: \begin{align*}
-		(\alpha \cdot \beta) \odot v & \stackrel{\ref{def:scalar}}{=} \varphi(\alpha \cdot \beta) \otimes v \\
-		                             & = \varphi(\alpha) \otimes \varphi(\beta) \otimes v                   \\
-		                             & = \varphi(\alpha) \otimes (\varphi(\beta) \otimes v)                 \\
-		                             & = \varphi(\alpha) \otimes (\beta \odot v)                            \\
-		                             & = \alpha \odot (\beta \odot v)                                       \\
-	\end{align*}
+    \textbf{3}: \begin{align*}
+        (\alpha \cdot \beta) \odot v & \stackrel{\ref{def:scalar}}{=} \varphi(\alpha \cdot \beta) \otimes v \\
+                                     & = \varphi(\alpha) \otimes \varphi(\beta) \otimes v                   \\
+                                     & = \varphi(\alpha) \otimes (\varphi(\beta) \otimes v)                 \\
+                                     & = \varphi(\alpha) \otimes (\beta \odot v)                            \\
+                                     & = \alpha \odot (\beta \odot v)                                       \\
+    \end{align*}
 
-	\textbf{4}: Da $\varphi$ ein einserhaltender Homomorphismus ist, gilt folgendes $\varphi(1_K) \odot v \stackrel{\ref{def:presevesone}}{=} 1_R \otimes v = v$. \checkmark
+    \textbf{4}: Da $\varphi$ ein einserhaltender Homomorphismus ist, gilt folgendes $\varphi(1_K) \odot v \stackrel{\ref{def:presevesone}}{=} 1_R \otimes v = v$. \checkmark
 \end{proof}
 \end{problem}
 
@@ -71,79 +74,83 @@ Zeigen Sie, dass es keine Abbildung $\otimes: \mathbb{C} \times \mathbb{R} \to \
 \textbf{Hinweis:} Betrachten Sie $(z \otimes v - (z \cdot_{\mathbb{C}} v)) \otimes v$ für $v \in \mathbb{R}$, $v \neq 0_{\mathbb{R}}$ und $z \in \mathbb{C} \setminus \mathbb{R}$.
 
 \begin{proof}
-	Angenommen, eine solche Abbildung existierte, dann würde die Vektorraumstruktur vollständig durch den Wert von \(i \cdot 1\) bestimmt werden. Denn für jede von Null verschiedene reale Zahl \(\alpha\) und jede komplexe Zahl \(a+bi\) gilt
-	\[
-		(a+bi) \cdot \alpha = a \cdot \alpha + b \cdot (i \cdot \alpha) = a \alpha + b(i \cdot (\alpha \cdot 1)) = a \alpha + b \alpha (i \cdot 1).
-	\]
-	Angenommen, \(i \cdot 1 = r\). Dann wäre \((r-i) \cdot 1 = 0\), was im Widerspruch zu den Eigenschaften eines Vektorraums steht, da \(r-i \neq 0\) und \(1 \neq \mathbf{0}\). Daher existiert keine solche Vektorraumstruktur.
+    Angenommen, eine solche Abbildung existierte, dann würde die Vektorraumstruktur vollständig durch den Wert von \(i \cdot 1\) bestimmt werden. Denn für jede von Null verschiedene reale Zahl \(\alpha\) und jede komplexe Zahl \(a+bi\) gilt
+    \[
+        (a+bi) \cdot \alpha = a \cdot \alpha + b \cdot (i \cdot \alpha) = a \alpha + b(i \cdot (\alpha \cdot 1)) = a \alpha + b \alpha (i \cdot 1).
+    \]
+    Angenommen, \(i \cdot 1 = r\). Dann wäre \((r-i) \cdot 1 = 0\), was im
+    Widerspruch zu den Eigenschaften eines Vektorraums steht, da \(r-i \neq 0\) und
+    \(1 \neq \mathbf{0}\). Daher existiert keine solche Vektorraumstruktur.
 \end{proof}
 \end{problem}
 
 \begin{problem}[Beispiele für Untervektorräume]{5 Punkte}
 \begin{enumerate}
-	\item Sind die folgenden Teilmengen Untervektorräume von $\mathbb{R}^2$?
-	      \begin{enumerate}[label=\alph*)]
-		      \item $W_2 := \{(x_1, x_2) \in \mathbb{R}^2 \mid a_1x_1 + a_2x_2 = b\}$, $a_1, a_2, b \in \mathbb{R}$,
-		      \item $W_5 := \{(x_1, x_2) \in \mathbb{R}^2 \mid x_1x_2 \geq 0\}$.
-	      \end{enumerate}
-	\item Sei $x \in \mathbb{R}$. Bezeichne $\mathbb{R}[x] := P[x]$ den Vektorraum der Polynome über $\mathbb{R}$.
-	      Sind die folgenden Teilmengen Untervektorräume von $R[x]$?
-	      \begin{enumerate}[label=\alph*)]
-		      \item $U_1 := \{p(x) \in R[x] \mid p(0) = 0\}$,
-		      \item $U_2 := \{p(x) \in R[x] \mid p(0) = 0 \text{ und } p(1) = 0\}$,
-		      \item $U_3 := \{p(x) \in R[x] \mid p(0) = 2\}$.
-	      \end{enumerate}
+    \item Sind die folgenden Teilmengen Untervektorräume von $\mathbb{R}^2$?
+          \begin{enumerate}[label=\alph*)]
+              \item $W_2 := \{(x_1, x_2) \in \mathbb{R}^2 \mid a_1x_1 + a_2x_2 = b\}$, $a_1, a_2, b \in \mathbb{R}$,
+              \item $W_5 := \{(x_1, x_2) \in \mathbb{R}^2 \mid x_1x_2 \geq 0\}$.
+          \end{enumerate}
+    \item Sei $x \in \mathbb{R}$. Bezeichne $\mathbb{R}[x] := P[x]$ den Vektorraum der
+          Polynome über $\mathbb{R}$. Sind die folgenden Teilmengen Untervektorräume von
+          $R[x]$?
+          \begin{enumerate}[label=\alph*)]
+              \item $U_1 := \{p(x) \in R[x] \mid p(0) = 0\}$,
+              \item $U_2 := \{p(x) \in R[x] \mid p(0) = 0 \text{ und } p(1) = 0\}$,
+              \item $U_3 := \{p(x) \in R[x] \mid p(0) = 2\}$.
+          \end{enumerate}
 \end{enumerate}
 \begin{proof}
-	Um zu beweisen, das $U \subseteq V$ ein Untervektorraum von $V$ über $K$ ist, müssen die folgenden drei Eigenschaften gelten \begin{align}
-		U \neq \emptyset,                       \\
-		x, y \in U \Longrightarrow x + y \in U, \\
-		a \in K \land x \in U \Longrightarrow a \odot v \in U.
-	\end{align}
+    Um zu beweisen, das $U \subseteq V$ ein Untervektorraum von $V$ über $K$ ist, müssen die folgenden drei Eigenschaften gelten \begin{align}
+        U \neq \emptyset,                       \\
+        x, y \in U \Longrightarrow x + y \in U, \\
+        a \in K \land x \in U \Longrightarrow a \odot v \in U.
+    \end{align}
 
-	\begin{enumerate}
-		\item Untervektorräume von $\mathbb{R}^2$
+    \begin{enumerate}
+        \item Untervektorräume von $\mathbb{R}^2$
 
-		      \begin{enumerate}[label=\alph*)]
-			      \item $W_2$ ist ein Untervektorraum von $\mathbb{R}^2$ da:
+              \begin{enumerate}[label=\alph*)]
+                  \item $W_2$ ist ein Untervektorraum von $\mathbb{R}^2$ da:
 
-			            \textbf{1}: $(0, 0) \in \mathbb{R}^2$ und $0 \in \mathbb{R}$ somit $a_1 \cdot 0 + a_2 \cdot 0 = 0 \Longrightarrow (0, 0) \in W_2$ was impliziert $W_2 \neq \emptyset$. \checkmark
+                        \textbf{1}: $(0, 0) \in \mathbb{R}^2$ und $0 \in \mathbb{R}$ somit $a_1 \cdot 0 + a_2 \cdot 0 = 0 \Longrightarrow (0, 0) \in W_2$ was impliziert $W_2 \neq \emptyset$. \checkmark
 
-			            \textbf{2}: $(x_1, x_2), (y_1, y_2) \in \mathbb{R}^2$ und $(x_1, x_2) + (y_1+y_2) = (x_1 + y_1, x_2 + y_2)$ sowie \[
-				            a_1(x_1+y_1) + a_2(x_2+y_2) = b \in \mathbb{R},
-			            \] da $a_1,a_2,x_1,x_2,y_1,y_2 \in \mathbb{R}$ und $\mathbb{R}$ Körper somit geschlossen unter Addition und Multiplikation.
+                        \textbf{2}: $(x_1, x_2), (y_1, y_2) \in \mathbb{R}^2$ und $(x_1, x_2) + (y_1+y_2) = (x_1 + y_1, x_2 + y_2)$ sowie \[
+                            a_1(x_1+y_1) + a_2(x_2+y_2) = b \in \mathbb{R},
+                        \] da $a_1,a_2,x_1,x_2,y_1,y_2 \in \mathbb{R}$ und $\mathbb{R}$ Körper somit
+                        geschlossen unter Addition und Multiplikation.
 
-			            \textbf{3}: Nehme $s \in \mathbb{R}$ und $(x_1, x_2) \in \mathbb{R}^2$ somit folgt $s \odot (x_1, x_2) = (s \cdot x_1, s \cdot x_2)$ sowie \[
-				            a_1(s \cdot x_1) + a_2(s \cdot x_2) = b \in \mathbb{R},
-			            \] da $a_1,a_2, s,x_1,x_2 \in \mathbb{R}$ und $\mathbb{R}$ Körper somit geschlossen unter Addition und Multiplikation.
-			      \item $W_5$ ist kein Untervektorraum von $\mathbb{R}^2$ da:
+                        \textbf{3}: Nehme $s \in \mathbb{R}$ und $(x_1, x_2) \in \mathbb{R}^2$ somit folgt $s \odot (x_1, x_2) = (s \cdot x_1, s \cdot x_2)$ sowie \[
+                            a_1(s \cdot x_1) + a_2(s \cdot x_2) = b \in \mathbb{R},
+                        \] da $a_1,a_2, s,x_1,x_2 \in \mathbb{R}$ und $\mathbb{R}$ Körper somit
+                        geschlossen unter Addition und Multiplikation.
+                  \item $W_5$ ist kein Untervektorraum von $\mathbb{R}^2$ da:
 
-			            \textbf{2}: $(1, 2) \in W_5$ und $(-2, -1) \in W_5$ aber $(1, 2) + (-2, -1) = (-1, 1) \not\in W_5$
-		      \end{enumerate}
-		\item Untervektorräume von $\mathbb{R}^2$
+                        \textbf{2}: $(1, 2) \in W_5$ und $(-2, -1) \in W_5$ aber $(1, 2) + (-2, -1) = (-1, 1) \not\in W_5$
+              \end{enumerate}
+        \item Untervektorräume von $\mathbb{R}^2$
 
-		      \begin{enumerate}
-			      \item [a), b)] $U_1$ und $U_2$ sind Untervektorräume von $\mathbb{R}[x]$ da:
+              \begin{enumerate}
+                  \item [a), b)] $U_1$ und $U_2$ sind Untervektorräume von $\mathbb{R}[x]$ da:
 
-			            \textbf{1}: \textbf{Nullpolynom} $\in \mathbb{R}[x]$ und $\textbf{Nullpolynom}(x) = 0 \; \forall x \in \mathbb{R}$ somit $U_1, U_2 \neq \emptyset$. \checkmark
+                        \textbf{1}: \textbf{Nullpolynom} $\in \mathbb{R}[x]$ und $\textbf{Nullpolynom}(x) = 0 \; \forall x \in \mathbb{R}$ somit $U_1, U_2 \neq \emptyset$. \checkmark
 
-			            \textbf{2}: Nehme $p_1(x), p_2(x) \in \mathbb{R}[x]$ mit $p_1(a) = p_2(a) = 0, \forall a \in N \subseteq \mathbb{R}$.
-			            Da $p_1(x)$ sowie $p_2(x)$ an jeder stelle, $a \in N$ gleich null ist und $0 + 0 = 0$ ist das Polynom $p_1(x) + p_2(x)$ ebenfalls an jeder stelle $a \in N$ gleich null.
-			            Im fall $U_1$ entspricht $N = \set{0}$ und im Fall $U_2$ entspricht $N = \set{0, 1}$.
-			            Somit ist die Vektoraddition von zwei Polynomen, die an denselben Stellen $N$ gleich null sind geschlossen ($U_1, U_2$). \checkmark
+                        \textbf{2}: Nehme $p_1(x), p_2(x) \in \mathbb{R}[x]$ mit $p_1(a) = p_2(a) = 0, \forall a \in N \subseteq \mathbb{R}$.
+                        Da $p_1(x)$ sowie $p_2(x)$ an jeder stelle, $a \in N$ gleich null ist und $0 + 0 = 0$ ist das Polynom $p_1(x) + p_2(x)$ ebenfalls an jeder stelle $a \in N$ gleich null.
+                        Im fall $U_1$ entspricht $N = \set{0}$ und im Fall $U_2$ entspricht $N = \set{0, 1}$.
+                        Somit ist die Vektoraddition von zwei Polynomen, die an denselben Stellen $N$ gleich null sind geschlossen ($U_1, U_2$). \checkmark
 
-			            \textbf{3}: Nehme $a \in \mathbb{R}$ $p(x) \in \mathbb{R}[x]$ mit $p(b)= 0, \forall b \in N \subseteq \mathbb{R}$.
-			            Da für alle $b \in N$ $p(b) = 0$ und $a * 0 = 0$ $\forall a \in \mathbb{R}$, ist auch das Polynom $a \odot p(x)$ an allen stellen $b \in N$ gleich null.
-			            Im fall $U_1$ entspricht $N = \set{0}$ und im Fall $U_2$ entspricht $N = \set{0, 1}$.
-			            Somit ist die Skalarmultiplikation eines Polynoms, welches an den Stellen $N$ gleich null ist geschlossen ($U_1, U_2$). \checkmark
-			      \item [c)] $U_3$ ist kein Untervektorraum von $\mathbb{R}[x]$ da:
+                        \textbf{3}: Nehme $a \in \mathbb{R}$ $p(x) \in \mathbb{R}[x]$ mit $p(b)= 0, \forall b \in N \subseteq \mathbb{R}$.
+                        Da für alle $b \in N$ $p(b) = 0$ und $a * 0 = 0$ $\forall a \in \mathbb{R}$, ist auch das Polynom $a \odot p(x)$ an allen stellen $b \in N$ gleich null.
+                        Im fall $U_1$ entspricht $N = \set{0}$ und im Fall $U_2$ entspricht $N = \set{0, 1}$.
+                        Somit ist die Skalarmultiplikation eines Polynoms, welches an den Stellen $N$ gleich null ist geschlossen ($U_1, U_2$). \checkmark
+                  \item [c)] $U_3$ ist kein Untervektorraum von $\mathbb{R}[x]$ da:
 
-			            \textbf{2}: Nehme $p_1(x), p_2(x) \in U_3$ da $p_1(0) = p_2(0) = 2$ und $2 + 2 = 4$
-			            ist das Polynom $p_1(x) + p_2(x)$ an der Stelle null, vier und nicht zwei, somit ist $p_1(x) + p_2(x) \not \in U_3$
-			            woraus folgt $U_3$ ist kein Untervektorraum von $\mathbb{R}[x]$.
-		      \end{enumerate}
-	\end{enumerate}
-
+                        \textbf{2}: Nehme $p_1(x), p_2(x) \in U_3$ da $p_1(0) = p_2(0) = 2$ und $2 + 2 = 4$
+                        ist das Polynom $p_1(x) + p_2(x)$ an der Stelle null, vier und nicht zwei, somit ist $p_1(x) + p_2(x) \not \in U_3$
+                        woraus folgt $U_3$ ist kein Untervektorraum von $\mathbb{R}[x]$.
+              \end{enumerate}
+    \end{enumerate}
 
 \end{proof}
 \end{problem}
@@ -151,94 +158,104 @@ Zeigen Sie, dass es keine Abbildung $\otimes: \mathbb{C} \times \mathbb{R} \to \
 \begin{problem}[Eigenschaften von Unterräumen]{5 Punkte}
 Sei $K$ ein Körper, $V$ ein $K$-Vektorraum und $U_1, U_2 \subseteq V$.
 \begin{enumerate}
-	\item Zeigen Sie eine der folgenden Aussagen:
-	      \begin{enumerate}[label=\alph*)]
-		      \item $U_1 \subseteq \operatorname{Span} U_1$,
-		      \item $U_1 \supseteq \operatorname{Span} U_1$, falls $U_1$ Untervektorraum von $V$,
-		      \item $\operatorname{Span} U_1 = \operatorname{Span} \operatorname{Span} U_1$,
-		      \item $\operatorname{Span} U_1 \subseteq \operatorname{Span} U_2$, falls $U_1 \subset U_2$.
-	      \end{enumerate}
-	\item Zeigen oder widerlegen Sie zwei der folgenden Aussagen:
-	      \begin{enumerate}[label=\alph*)]
-		      \item $\operatorname{Span} U_1 \cap \operatorname{Span} U_2 \subseteq \operatorname{Span}(U_1 \cap U_2)$,
-		      \item $\operatorname{Span} U_1 \cap \operatorname{Span} U_2 \supseteq \operatorname{Span}(U_1 \cap U_2)$,
-		      \item $\operatorname{Span} U_1 \cup \operatorname{Span} U_2 \subseteq \operatorname{Span}(U_1 \cup U_2)$,
-		      \item $\operatorname{Span} U_1 \cup \operatorname{Span} U_2 \supseteq \operatorname{Span}(U_1 \cup U_2)$.
-	      \end{enumerate}
-	\item Für $M, N \subseteq V$ ist $M + N := \{v_1 + v_2 \mid v_1 \in M, v_2 \in N\}$. Zeigen oder widerlegen
+    \item Zeigen Sie eine der folgenden Aussagen:
+          \begin{enumerate}[label=\alph*)]
+              \item $U_1 \subseteq \operatorname{Span} U_1$,
+              \item $U_1 \supseteq \operatorname{Span} U_1$, falls $U_1$ Untervektorraum von $V$,
+              \item $\operatorname{Span} U_1 = \operatorname{Span} \operatorname{Span} U_1$,
+              \item $\operatorname{Span} U_1 \subseteq \operatorname{Span} U_2$, falls $U_1 \subset U_2$.
+          \end{enumerate}
+    \item Zeigen oder widerlegen Sie zwei der folgenden Aussagen:
+          \begin{enumerate}[label=\alph*)]
+              \item $\operatorname{Span} U_1 \cap \operatorname{Span} U_2 \subseteq \operatorname{Span}(U_1 \cap U_2)$,
+              \item $\operatorname{Span} U_1 \cap \operatorname{Span} U_2 \supseteq \operatorname{Span}(U_1 \cap U_2)$,
+              \item $\operatorname{Span} U_1 \cup \operatorname{Span} U_2 \subseteq \operatorname{Span}(U_1 \cup U_2)$,
+              \item $\operatorname{Span} U_1 \cup \operatorname{Span} U_2 \supseteq \operatorname{Span}(U_1 \cup U_2)$.
+          \end{enumerate}
+    \item Für $M, N \subseteq V$ ist $M + N := \{v_1 + v_2 \mid v_1 \in M, v_2 \in N\}$.
+          Zeigen oder widerlegen
 
-	      Sie zwei der folgenden Aussagen:
-	      \begin{enumerate}[label=\alph*)]
-		      \item $\operatorname{Span}(U_1 + U_2) \subseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$,
-		      \item $\operatorname{Span}(U_1 + U_2) \supseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$,
-		      \item $\operatorname{Span}(U_1 + U_2) \supseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$, falls $U_1$ und $U_2$ Untervektorräume von $V$.
-	      \end{enumerate}
+          Sie zwei der folgenden Aussagen:
+          \begin{enumerate}[label=\alph*)]
+              \item $\operatorname{Span}(U_1 + U_2) \subseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$,
+              \item $\operatorname{Span}(U_1 + U_2) \supseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$,
+              \item $\operatorname{Span}(U_1 + U_2) \supseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$, falls $U_1$ und $U_2$ Untervektorräume von $V$.
+          \end{enumerate}
 \end{enumerate}
 \begin{proof}
-	Eigenschaften von Untervektorräumen
-	\begin{enumerate}
-		\item Zu zeigen ist das für $U_1 \subseteq V$ gilt $U_1 \subseteq$ Span $U_1$.
+    Eigenschaften von Untervektorräumen
+    \begin{enumerate}
+        \item Zu zeigen ist das für $U_1 \subseteq V$ gilt $U_1 \subseteq$ Span $U_1$.
 
-		      Betrachten wir die definition der Menge Span $U_1 := \set{\lambda_1 v_1 + \ldots + \lambda_n v_n \mid \lambda_{n \in \mathbb{N}} \in K \; v_{n \in \mathbb{N}} \in U_1}$.
+              Betrachten wir die definition der Menge Span $U_1 := \set{\lambda_1 v_1 +
+                      \ldots + \lambda_n v_n \mid \lambda_{n \in \mathbb{N}} \in K \; v_{n \in
+                              \mathbb{N}} \in U_1}$.
 
-		      Da $V$ ein Vektorraum ist $\exists 0 \in K$, sodass $\forall v \in V$ gilt $0 \times v = 0$, sowie ein $1 \in K$ sodass $\forall v \in V$ gilt $1 \times v = v$.
+              Da $V$ ein Vektorraum ist $\exists 0 \in K$, sodass $\forall v \in V$ gilt $0
+                  \times v = 0$, sowie ein $1 \in K$ sodass $\forall v \in V$ gilt $1 \times v =
+                  v$.
 
-		      Nehmen wir uns einen beliebigen $v_u \in U_1$, somit existiert eine Linearkombination in Span $U_1$ mit \[
-			      \lambda_1 v_1 + \ldots + \lambda_n v_n \mid \lambda_u = 1 \land \lambda_{n \ne u} = 0 \; v_{n \in \mathbb{N}} \in U_1 = 0 \times v_1 + \ldots + 1 \times v_u + \ldots 0 \times v_n = v_u.
-		      \]
+              Nehmen wir uns einen beliebigen $v_u \in U_1$, somit existiert eine
+              Linearkombination in Span $U_1$ mit \[
+                  \lambda_1 v_1 + \ldots + \lambda_n v_n \mid \lambda_u = 1 \land \lambda_{n \ne u} = 0 \; v_{n \in \mathbb{N}} \in U_1 = 0 \times v_1 + \ldots + 1 \times v_u + \ldots 0 \times v_n = v_u.
+              \]
 
-		      Da \(v_u\) beliebig gewählt wurde, gilt dies für jeden \(v \in U_1\), was zeigt das $U_1 \subseteq$ Span $U_1$. \checkmark
-		\item Wiederlegung zweier Aussagen
+              Da \(v_u\) beliebig gewählt wurde, gilt dies für jeden \(v \in U_1\), was zeigt
+              das $U_1 \subseteq$ Span $U_1$. \checkmark
+        \item Wiederlegung zweier Aussagen
 
-		      \textbf{a)}
+              \textbf{a)}
 
-		      Lass \(U_1, U_2 \in R^2\) zwei triviale Basen mit \(U_1 = \left\{\begin{pmatrix}
-			      1 \\ 0
-		      \end{pmatrix},
-		      \begin{pmatrix}
-			      0 \\ 1
-		      \end{pmatrix}\right\}\) und \(U_2 = \left\{\begin{pmatrix}
-			      2 \\ 0
-		      \end{pmatrix},
-		      \begin{pmatrix}
-			      0 \\ 2
-		      \end{pmatrix}\right\}\).
+              Lass \(U_1, U_2 \in R^2\) zwei triviale Basen mit \(U_1 = \left\{\begin{pmatrix}
+                  1 \\ 0
+              \end{pmatrix},
+              \begin{pmatrix}
+                  0 \\ 1
+              \end{pmatrix}\right\}\) und \(U_2 = \left\{\begin{pmatrix}
+                  2 \\ 0
+              \end{pmatrix},
+              \begin{pmatrix}
+                  0 \\ 2
+              \end{pmatrix}\right\}\).
 
-		      Bemerke das \(\operatorname{Span} U_1\) und \(\operatorname{Span} U_2\) gleich \(R^2\) da \(U_1, U_2\) Basen von \(R^2\)
-		      und \(U_1 \cap U_2 = \emptyset \).
+              Bemerke das \(\operatorname{Span} U_1\) und \(\operatorname{Span} U_2\) gleich
+              \(R^2\) da \(U_1, U_2\) Basen von \(R^2\) und \(U_1 \cap U_2 = \emptyset \).
 
-		      Somit ist der Schnitt von \(\operatorname{Span} U_1 = \operatorname{Span} U_2 = R^2\) gleich \(R^2\) und \(\operatorname{Span} \emptyset = \emptyset\).
+              Somit ist der Schnitt von \(\operatorname{Span} U_1 = \operatorname{Span} U_2 =
+              R^2\) gleich \(R^2\) und \(\operatorname{Span} \emptyset = \emptyset\).
 
-		      Da \(R^2 \not \subseteq \emptyset\), trivialerweise, ist die Aussagen \(\operatorname{Span} U_1 \cap \operatorname{Span} U_2 \subseteq \operatorname{Span}(U_1 \cap U_2)\) widerlegt. \checkmark
+              Da \(R^2 \not \subseteq \emptyset\), trivialerweise, ist die Aussagen
+              \(\operatorname{Span} U_1 \cap \operatorname{Span} U_2 \subseteq
+              \operatorname{Span}(U_1 \cap U_2)\) widerlegt. \checkmark
 
-		      \textbf{d)}
+              \textbf{d)}
 
-		      Lass \(U_1, U_2 \in R^2\) mit \(U_1 = \left\{\begin{pmatrix}
-			      1 \\0
-		      \end{pmatrix}\right\}\) und \(U_2 = \left\{\begin{pmatrix}
-			      0 \\1
-		      \end{pmatrix}\right\}\).
-		      Somit bildet \(U_1 \cup U_2\) eine triviale Basis des \(R^2\) mit \(\operatorname{Span} U_1 \cup U_2 = R^2\).
+              Lass \(U_1, U_2 \in R^2\) mit \(U_1 = \left\{\begin{pmatrix}
+                  1 \\0
+              \end{pmatrix}\right\}\) und \(U_2 = \left\{\begin{pmatrix}
+                  0 \\1
+              \end{pmatrix}\right\}\).
+              Somit bildet \(U_1 \cup U_2\) eine triviale Basis des \(R^2\) mit \(\operatorname{Span} U_1 \cup U_2 = R^2\).
 
-		      Es ist jedoch leicht zu sehen das der Vektor \(\begin{pmatrix}
-			      1 \\ 1
-		      \end{pmatrix}\) nicht in der Vereinigung von \(\operatorname{Span} U_1\) und \(\operatorname{Span} U_2\) ist.
-		      \textbf{Begründung}: Naja, der \(\operatorname{Span} U_1\) und der \(\operatorname{Span} U_2\) bilden für sich die \(X\) und \(Y\)
-		      Achsen des \(R^2\) ab und somit kann ein Vektor in deren Vereinigung liegt entweder nur auf der \(X\) oder nur auf der \(Y\) Achse liegen.
-		      Der Vektor \(\begin{pmatrix}
-			      1 \\ 1
-		      \end{pmatrix}\) liegt hingegen auf der Winkelhalbierenden von Q1 und kann somit nicht auf einer der beiden Achsen liegen. \checkmark
-		\item Beweis oder Wiederlegung zweier Aussagen
-		      \begin{enumerate}[label=\alph*)]
-			      \item $\operatorname{Span}(U_1 + U_2) \subseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$ da
+              Es ist jedoch leicht zu sehen das der Vektor \(\begin{pmatrix}
+                  1 \\ 1
+              \end{pmatrix}\) nicht in der Vereinigung von \(\operatorname{Span} U_1\) und \(\operatorname{Span} U_2\) ist.
+              \textbf{Begründung}: Naja, der \(\operatorname{Span} U_1\) und der \(\operatorname{Span} U_2\) bilden für sich die \(X\) und \(Y\)
+              Achsen des \(R^2\) ab und somit kann ein Vektor in deren Vereinigung liegt entweder nur auf der \(X\) oder nur auf der \(Y\) Achse liegen.
+              Der Vektor \(\begin{pmatrix}
+                  1 \\ 1
+              \end{pmatrix}\) liegt hingegen auf der Winkelhalbierenden von Q1 und kann somit nicht auf einer der beiden Achsen liegen. \checkmark
+        \item Beweis oder Wiederlegung zweier Aussagen
+              \begin{enumerate}[label=\alph*)]
+                  \item $\operatorname{Span}(U_1 + U_2) \subseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$ da
 
+                  \item $\operatorname{Span}(U_1 + U_2) \not\supseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$ da:
 
-			      \item $\operatorname{Span}(U_1 + U_2) \not\supseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$ da:
-
-			            Nehme $v \in V$ und $U_1 = \set{v}$ $U_2 = \set {-v}$, somit ist $U_1 + U_2 = \emptyset = \operatorname{Span} \emptyset$
-			            aber $\operatorname{Span} U_1 + \operatorname{Span} U_2 \neq \emptyset$. \checkmark
-		      \end{enumerate}
-	\end{enumerate}
+                        Nehme $v \in V$ und $U_1 = \set{v}$ $U_2 = \set {-v}$, somit ist $U_1 + U_2 =
+                            \emptyset = \operatorname{Span} \emptyset$ aber $\operatorname{Span} U_1 +
+                            \operatorname{Span} U_2 \neq \emptyset$. \checkmark
+              \end{enumerate}
+    \end{enumerate}
 \end{proof}
 \end{problem}
 \end{document}

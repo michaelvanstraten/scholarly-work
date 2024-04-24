@@ -13,108 +13,108 @@
 
 \section*{Aufgabe: 1}
 \begin{proof}
-	\begin{enumerate}
-		\item [a)]
-		      \begin{align*}
-			      xw = yz                                \\
-			       & \Leftrightarrow
-			      xw*y^{-1}*w^{-1} = yz * y^{-1}*w^{-1}  \\
-			       & \Leftrightarrow
-			      x*y^{-1}*w*w^{-1} = z*w^{-1} y* y^{-1} \\
-			       & \Leftrightarrow
-			      x*y^{-1}*1 = z*w^{-1} *1               \\
-			       & \Leftrightarrow
-			      x*y^{-1} = z*w^{-1}                    \\
-			       & \Leftrightarrow
-			      \frac{x}{y} = \frac{z}{w}              \\
-		      \end{align*}
-		\item [b)]
-		      \begin{align*}
-			      \frac{x}{y} \frac{z}{w} & = x * y^{-1} * z * w^{-1}     \\
-			                              & = x * z * y^{-1} * w^{-1}     \\
-			                              & = (x * z) * (y^{-1} * w^{-1}) \\
-			                              & = (x * z) * {(y * w)}^{-1}    \\
-			                              & = \frac{xz}{yw}               \\
-		      \end{align*}
-		\item [c)]
-		      \begin{align*}
-			      \frac{\frac{x}{y}}{\frac{z}{w}} & = \frac{x*y^{-1}}{z * w^{-1}}         \\
-			                                      & = x*y^{-1} * {(z * w^{-1})}^{-1}      \\
-			                                      & = x*y^{-1} * z^{-1} * {(w^{-1})}^{-1} \\
-			                                      & = x*y^{-1} * z^{-1} * w               \\
-			                                      & = x * w * z^{-1} * y^{-1}             \\
-			                                      & = x * w * {(z * y)}^{-1}              \\
-			                                      & = \frac{xw}{zy}                       \\
-		      \end{align*}
-		\item [d)]
-		      \begin{align*}
-			      \frac{x}{y} + \frac{z}{w} & = \frac{x}{y}\frac{w}{w} + \frac{z}{w}\frac{y}{y} \\
-			                                & = \frac{xw}{yw} + \frac{zy}{wy}                   \\
-			                                & = x*w * {(y*w)}^{-1} + z*y*{(wy)}^{-1}            \\
-			                                & = (xw + zy){(wy)}^{-1}                            \\
-			                                & = \frac{xw+zy}{wy}
-		      \end{align*}
-	\end{enumerate}
+    \begin{enumerate}
+        \item [a)]
+              \begin{align*}
+                  xw = yz                                \\
+                   & \Leftrightarrow
+                  xw*y^{-1}*w^{-1} = yz * y^{-1}*w^{-1}  \\
+                   & \Leftrightarrow
+                  x*y^{-1}*w*w^{-1} = z*w^{-1} y* y^{-1} \\
+                   & \Leftrightarrow
+                  x*y^{-1}*1 = z*w^{-1} *1               \\
+                   & \Leftrightarrow
+                  x*y^{-1} = z*w^{-1}                    \\
+                   & \Leftrightarrow
+                  \frac{x}{y} = \frac{z}{w}              \\
+              \end{align*}
+        \item [b)]
+              \begin{align*}
+                  \frac{x}{y} \frac{z}{w} & = x * y^{-1} * z * w^{-1}     \\
+                                          & = x * z * y^{-1} * w^{-1}     \\
+                                          & = (x * z) * (y^{-1} * w^{-1}) \\
+                                          & = (x * z) * {(y * w)}^{-1}    \\
+                                          & = \frac{xz}{yw}               \\
+              \end{align*}
+        \item [c)]
+              \begin{align*}
+                  \frac{\frac{x}{y}}{\frac{z}{w}} & = \frac{x*y^{-1}}{z * w^{-1}}         \\
+                                                  & = x*y^{-1} * {(z * w^{-1})}^{-1}      \\
+                                                  & = x*y^{-1} * z^{-1} * {(w^{-1})}^{-1} \\
+                                                  & = x*y^{-1} * z^{-1} * w               \\
+                                                  & = x * w * z^{-1} * y^{-1}             \\
+                                                  & = x * w * {(z * y)}^{-1}              \\
+                                                  & = \frac{xw}{zy}                       \\
+              \end{align*}
+        \item [d)]
+              \begin{align*}
+                  \frac{x}{y} + \frac{z}{w} & = \frac{x}{y}\frac{w}{w} + \frac{z}{w}\frac{y}{y} \\
+                                            & = \frac{xw}{yw} + \frac{zy}{wy}                   \\
+                                            & = x*w * {(y*w)}^{-1} + z*y*{(wy)}^{-1}            \\
+                                            & = (xw + zy){(wy)}^{-1}                            \\
+                                            & = \frac{xw+zy}{wy}
+              \end{align*}
+    \end{enumerate}
 \end{proof}
 
 \pagebreak
 
 \section*{Aufgabe: 2}
 \begin{enumerate}
-	\item [a)] Untersuchen Sie die Konvergenz der folgenden drei Folgen $(an)$, $(bn)$ und $(cn)$, und
-	      bestimmen Sie die Grenzwerte, falls sie existieren:
-	      \begin{align*}
-		      a_n & = \frac{13n^5 +7n^3 +4}{3n^5 + n^2 + 1}                                        \\
-		          & = \frac{13 + \frac{7}{n^2} + \frac{4}{n^5}}{3 + \frac{1}{n^3} + \frac{1}{n^5}} \\
-	      \end{align*}
-	      \begin{displaymath}
-		      \lim_{n \rightarrow \infty} \frac{13 + \frac{7}{n^2} + \frac{4}{n^5}}{3 + \frac{1}{n^3} \frac{1}{n^5}} = \frac{13}{3}
-	      \end{displaymath}
-	      \begin{align*}
-		      b_n & = \frac{n^2 + n + 9}{n^3 +1}                                            \\
-		          & = \frac{\frac{1}{n} + \frac{4}{n^2} + \frac{9}{n^3}}{1 + \frac{1}{n^3}} \\
-	      \end{align*}
-	      \begin{displaymath}
-		      \lim_{n \rightarrow \infty} \frac{\frac{1}{n} + \frac{4}{n^2} + \frac{9}{n^3}}{1 + \frac{1}{n^3}} = 0
-	      \end{displaymath}
-	      \begin{align*}
-		      c_n & = \frac{n^4 + 17}{n^2 + 1}                                 \\
-		          & = \frac{1 + \frac{17}{n^4}}{\frac{1}{n^2} + \frac{1}{n^4}} \\
-	      \end{align*}
-	      \begin{displaymath}
-		      \lim_{n \rightarrow \infty} \frac{1 + \frac{17}{n^4}}{\frac{1}{n^2} + \frac{1}{n^4}} = \infty
-	      \end{displaymath}
-	\item [b)]
-	      $\forall \alpha,\beta,\gamma,\delta \in \mathbb{R},n \in \mathbb{N}$ ist die Folge unendlich, wenn $\delta \ne 0$ und: \[
-		      \gamma * n + \delta \ne 0 \Rightarrow \gamma * n \ne -\delta,
-	      \] somit muss $\gamma$ kein Teiler von $\delta$ sein sonst $\exists n \in \mathbb{N}: \gamma * n = -\delta$.
+    \item [a)] Untersuchen Sie die Konvergenz der folgenden drei Folgen $(an)$, $(bn)$ und $(cn)$, und
+          bestimmen Sie die Grenzwerte, falls sie existieren:
+          \begin{align*}
+              a_n & = \frac{13n^5 +7n^3 +4}{3n^5 + n^2 + 1}                                        \\
+                  & = \frac{13 + \frac{7}{n^2} + \frac{4}{n^5}}{3 + \frac{1}{n^3} + \frac{1}{n^5}} \\
+          \end{align*}
+          \begin{displaymath}
+              \lim_{n \rightarrow \infty} \frac{13 + \frac{7}{n^2} + \frac{4}{n^5}}{3 + \frac{1}{n^3} \frac{1}{n^5}} = \frac{13}{3}
+          \end{displaymath}
+          \begin{align*}
+              b_n & = \frac{n^2 + n + 9}{n^3 +1}                                            \\
+                  & = \frac{\frac{1}{n} + \frac{4}{n^2} + \frac{9}{n^3}}{1 + \frac{1}{n^3}} \\
+          \end{align*}
+          \begin{displaymath}
+              \lim_{n \rightarrow \infty} \frac{\frac{1}{n} + \frac{4}{n^2} + \frac{9}{n^3}}{1 + \frac{1}{n^3}} = 0
+          \end{displaymath}
+          \begin{align*}
+              c_n & = \frac{n^4 + 17}{n^2 + 1}                                 \\
+                  & = \frac{1 + \frac{17}{n^4}}{\frac{1}{n^2} + \frac{1}{n^4}} \\
+          \end{align*}
+          \begin{displaymath}
+              \lim_{n \rightarrow \infty} \frac{1 + \frac{17}{n^4}}{\frac{1}{n^2} + \frac{1}{n^4}} = \infty
+          \end{displaymath}
+    \item [b)]
+          $\forall \alpha,\beta,\gamma,\delta \in \mathbb{R},n \in \mathbb{N}$ ist die Folge unendlich, wenn $\delta \ne 0$ und: \[
+              \gamma * n + \delta \ne 0 \Rightarrow \gamma * n \ne -\delta,
+          \] somit muss $\gamma$ kein Teiler von $\delta$ sein sonst $\exists n \in \mathbb{N}: \gamma * n = -\delta$.
 \end{enumerate}
 
 \pagebreak
 
 \section*{Aufgabe: 3}
 \begin{proof}
-	\begin{displaymath}
-		x \in A  \Leftrightarrow x \in B
-	\end{displaymath}
-	\begin{enumerate}[label=\roman*)]
-		\item 	Für $\forall x > 0$: \begin{align*}
-			      x + \frac{3}{x} + 4 \ge 0 & \Leftrightarrow x^2 +  4x + 3 \ge 0             \\
-			                                & \Leftrightarrow {(x + 2)}^2  - 1 \ge 0          \\
-			                                & \Leftrightarrow {(x + 2)}^2  - 1 \ge 4 -1 \ge 0 \\,
-		      \end{align*}
+    \begin{displaymath}
+        x \in A  \Leftrightarrow x \in B
+    \end{displaymath}
+    \begin{enumerate}[label=\roman*)]
+        \item 	Für $\forall x > 0$: \begin{align*}
+                  x + \frac{3}{x} + 4 \ge 0 & \Leftrightarrow x^2 +  4x + 3 \ge 0             \\
+                                            & \Leftrightarrow {(x + 2)}^2  - 1 \ge 0          \\
+                                            & \Leftrightarrow {(x + 2)}^2  - 1 \ge 4 -1 \ge 0 \\,
+              \end{align*}
 
-		\item 	und $\forll x < 0$: \begin{align*}
-			      x + \frac{3}{x} + 4 \le 0 & \Leftrightarrow x^2 +  4x + 3 \le 0                                                                   \\
-			                                & \Leftrightarrow {(x + 2)}^2  - 1 \le 0                                                                \\
-			                                & \Leftrightarrow {(x + 2)}^2  \le 1                                                                    \\
-			                                & \Leftrightarrow \underbrace{ \mid x+2 \mid \le -1}_{\Rightarrow\Leftarrow} \lor \mid x + 2 \mid \le 1 \\
-			                                & \Leftrightarrow -1 \le x + 2 \le 1                                                                    \\
-			                                & \Leftrightarrow -3 \le x  \le -1,                                                                     \\
-		      \end{align*}
+        \item 	und $\forall x < 0$: \begin{align*}
+                  x + \frac{3}{x} + 4 \le 0 & \Leftrightarrow x^2 +  4x + 3 \le 0                                                                   \\
+                                            & \Leftrightarrow {(x + 2)}^2  - 1 \le 0                                                                \\
+                                            & \Leftrightarrow {(x + 2)}^2  \le 1                                                                    \\
+                                            & \Leftrightarrow \underbrace{ \mid x+2 \mid \le -1}_{\Rightarrow\Leftarrow} \lor \mid x + 2 \mid \le 1 \\
+                                            & \Leftrightarrow -1 \le x + 2 \le 1                                                                    \\
+                                            & \Leftrightarrow -3 \le x  \le -1,                                                                     \\
+              \end{align*}
 
-	\end{enumerate}
-	Somit folge aus i) $\land$ ii) $x \in A \Leftrightarrow x \in B$.
+    \end{enumerate}
+    Somit folge aus i) $\land$ ii) $x \in A \Leftrightarrow x \in B$.
 \end{proof}
 
 

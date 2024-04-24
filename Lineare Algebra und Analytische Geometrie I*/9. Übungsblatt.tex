@@ -12,64 +12,75 @@
 
 \begin{problem}[Charakterisierungen direkter Summen]{5 Punkte}
 \begin{enumerate}
-	\item Sei $V$ ein Vektorraum, $r \in \mathbb{N}$ und $U_1, \ldots, U_r \subseteq V$ Untervektorräume von $V$. Zeigen Sie, dass folgende Aussagen äquivalent sind:
-	      \begin{enumerate}
-		      \item Für $u \in U_1 + \ldots + U_r$ existieren eindeutig bestimmte $u_i \in U_i$, $i \in \{1, \ldots, r\}$ mit $u = u_1 + \ldots + u_r$.
-		      \item Für $u_1 \in U_1, \ldots, u_r \in U_r$ mit $u_1 + \ldots + u_r = 0$ gilt $u_1 = \ldots = u_r = 0$.
-		      \item Für $i \in \{1, \ldots, r\}$ gilt $U_i \cap (U_1 + \ldots + U_{i-1} + U_{i+1} + \ldots + U_r) = \{0\}$.
-	      \end{enumerate}
-	\item Finden Sie Gegenbeispiele, die zeigen, dass die Bedingungen aus i) zu keiner der folgenden Aussagen äquivalent sind:
-	      \begin{multicols}{2}
-		      \begin{enumerate}[resume*]
-			      \item $U_1 \cap \ldots \cap U_k = \{0\}$.
-			      \item $U_i \cap U_j = \{0\}$, $i, j \in \{1, \ldots, k\}$, $i \neq j$.
-		      \end{enumerate}
-	      \end{multicols}
+    \item Sei $V$ ein Vektorraum, $r \in \mathbb{N}$ und $U_1, \ldots, U_r \subseteq V$
+          Untervektorräume von $V$. Zeigen Sie, dass folgende Aussagen äquivalent sind:
+          \begin{enumerate}
+              \item Für $u \in U_1 + \ldots + U_r$ existieren eindeutig bestimmte $u_i \in U_i$, $i
+                        \in \{1, \ldots, r\}$ mit $u = u_1 + \ldots + u_r$.
+              \item Für $u_1 \in U_1, \ldots, u_r \in U_r$ mit $u_1 + \ldots + u_r = 0$ gilt $u_1 =
+                        \ldots = u_r = 0$.
+              \item Für $i \in \{1, \ldots, r\}$ gilt $U_i \cap (U_1 + \ldots + U_{i-1} + U_{i+1} +
+                        \ldots + U_r) = \{0\}$.
+          \end{enumerate}
+    \item Finden Sie Gegenbeispiele, die zeigen, dass die Bedingungen aus i) zu keiner
+          der folgenden Aussagen äquivalent sind:
+          \begin{multicols}{2}
+              \begin{enumerate}[resume*]
+                  \item $U_1 \cap \ldots \cap U_k = \{0\}$.
+                  \item $U_i \cap U_j = \{0\}$, $i, j \in \{1, \ldots, k\}$, $i \neq j$.
+              \end{enumerate}
+          \end{multicols}
 \end{enumerate}
 \begin{proof}
-	$ $
+    $ $
 
-	\begin{enumerate}
-		\item
-		      \begin{description}
-			      \item[\qouted{a) $\Longrightarrow$ b)}]
+    \begin{enumerate}
+        \item
+              \begin{description}
+                  \item[\qouted{a) $\Longrightarrow$ b)}]
 
-			            Da $0$ im Untervektorraum $U_1 + \ldots + U_r$ enthalten ist und die Nullvektorenaddition offensichtlich den Nullvektor ergibt,
-			            folgt aus der Eindeutigkeit der Darstellung,
-			            dass für beliebige Vektoren $u_1 \in U_1, \ldots, u_r \in U_r$ mit $u_1 + \ldots + u_r = 0$ die Gleichheit $u_1 = \ldots = u_r = 0$ gilt. \checkmark
+                        Da $0$ im Untervektorraum $U_1 + \ldots + U_r$ enthalten ist und die
+                        Nullvektorenaddition offensichtlich den Nullvektor ergibt, folgt aus der
+                        Eindeutigkeit der Darstellung, dass für beliebige Vektoren $u_1 \in U_1,
+                            \ldots, u_r \in U_r$ mit $u_1 + \ldots + u_r = 0$ die Gleichheit $u_1 = \ldots
+                            = u_r = 0$ gilt. \checkmark
 
-			      \item[\qouted{$\neg$ c) $\Longrightarrow \neg$ b)}]
+                  \item[\qouted{$\neg$ c) $\Longrightarrow \neg$ b)}]
 
-			            Angenommen, es existiert ein $u_i \in U_i$ mit
-			            \[
-				            u_i = u_1 + \ldots + u_{i-1} + u_{i+1} + \ldots u_r \neq 0.
-			            \]
-			            Dies würde implizieren, dass $0 = u_1 + \ldots + u_{i-1} - u_i + u_{i+1} + \ldots + v_r$ mit $u_i \neq 0$ ist.
+                        Angenommen, es existiert ein $u_i \in U_i$ mit
+                        \[
+                            u_i = u_1 + \ldots + u_{i-1} + u_{i+1} + \ldots u_r \neq 0.
+                        \]
+                        Dies würde implizieren, dass $0 = u_1 + \ldots + u_{i-1} - u_i + u_{i+1} +
+                            \ldots + v_r$ mit $u_i \neq 0$ ist.
 
-			            Somit ergibt sich aus $\neg c$ und $\neg b$ die Gültigkeit von $b \Rightarrow c$.
+                        Somit ergibt sich aus $\neg c$ und $\neg b$ die Gültigkeit von $b \Rightarrow
+                            c$.
 
-			      \item[\qouted{c) $\Longrightarrow$ a)}]
+                  \item[\qouted{c) $\Longrightarrow$ a)}]
 
-			            Wählen wir ein $u \in U_1 + \ldots + U_r$ und prüfen, ob es eindeutig bestimmt ist:
-			            \begin{align*}
-				            u & = u_1 + \ldots + u_r                  \\
-				            u & = \tilde{u}_1 + \ldots + \tilde{u}_r.
-			            \end{align*}
-			            Daraus folgt:
-			            \begin{align*}
-				            0                             & = u_1 - \tilde{u}_1 + \ldots + u_r - \tilde{u}_r  \\
-				            \Rightarrow \tilde{u}_1 - u_1 & = u_2 - \tilde{u}_2 + \ldots + u_r - \tilde{u}_r.
-			            \end{align*}
-			            Da $U_i \cap (U_1 + \ldots + U_{i-1} + U_{i+1} \ldots + U_r) = \{0\}$, folgt $\tilde{u}_1 - u_1 = 0$.
-			            Somit erhalten wir erneut:
-			            \[
-				            0 = u_2 - \tilde{u}_2 + \ldots + u_r - \tilde{u}_r.
-			            \]
-			            Diesen Schritt wiederholen wir $r-1$ mal.
+                        Wählen wir ein $u \in U_1 + \ldots + U_r$ und prüfen, ob es eindeutig bestimmt
+                        ist:
+                        \begin{align*}
+                            u & = u_1 + \ldots + u_r                  \\
+                            u & = \tilde{u}_1 + \ldots + \tilde{u}_r.
+                        \end{align*}
+                        Daraus folgt:
+                        \begin{align*}
+                            0                             & = u_1 - \tilde{u}_1 + \ldots + u_r - \tilde{u}_r  \\
+                            \Rightarrow \tilde{u}_1 - u_1 & = u_2 - \tilde{u}_2 + \ldots + u_r - \tilde{u}_r.
+                        \end{align*}
+                        Da $U_i \cap (U_1 + \ldots + U_{i-1} + U_{i+1} \ldots + U_r) = \{0\}$, folgt $\tilde{u}_1 - u_1 = 0$.
+                        Somit erhalten wir erneut:
+                        \[
+                            0 = u_2 - \tilde{u}_2 + \ldots + u_r - \tilde{u}_r.
+                        \]
+                        Diesen Schritt wiederholen wir $r-1$ mal.
 
-			            Daraus folgt $u_i = \tilde{u}_i$, was wiederum bedeutet, dass $u$ eindeutig bestimmt ist. \checkmark
-		      \end{description}
-	\end{enumerate}
+                        Daraus folgt $u_i = \tilde{u}_i$, was wiederum bedeutet, dass $u$ eindeutig
+                        bestimmt ist. \checkmark
+              \end{description}
+    \end{enumerate}
 \end{proof}
 \end{problem}
 
@@ -80,31 +91,38 @@ Sei $V$ ein endlich erzeugter $K$-Vektorraum und seien $U_1$ und $U_2$ Unterräu
 \begin{problem}[Schnitte mit linearen Hyperebenen]{7 Punkte}
 Sei $n \in \mathbb{N}$ und $V$ ein Vektorraum mit $\dim(V) = n$. Zeigen Sie:
 \begin{enumerate}
-	\item Sei $H \subseteq V$ ein Unterraum mit $\dim(H) = n - 1$ (ein solcher Unterraum heißt lineare Hyperebene von $V$) und $U \subseteq V$ ein weiterer Unterraum, so gilt $\dim(U \cap H) \geq \dim(U) - 1$.
-	\item Seien $k \in \mathbb{N}$ und $H_1, \ldots, H_k \subseteq V$ Unterräume mit $\dim(H_1) = \ldots = \dim(H_k) = n - 1$, so gilt $\dim(H_1 \cap \ldots \cap H_k) \geq n - k$.
-	\item Sei $k \in \mathbb{N}$, $U \subseteq V$ ein Unterraum mit $\dim(U) = n - k$, so existieren Unterräume $H_1, \ldots, H_k \subseteq V$ mit $\dim(H_1) = \ldots = \dim(H_k) = n - 1$ und $U = H_1 \cap \ldots \cap H_k$.
+    \item Sei $H \subseteq V$ ein Unterraum mit $\dim(H) = n - 1$ (ein solcher Unterraum
+          heißt lineare Hyperebene von $V$) und $U \subseteq V$ ein weiterer Unterraum,
+          so gilt $\dim(U \cap H) \geq \dim(U) - 1$.
+    \item Seien $k \in \mathbb{N}$ und $H_1, \ldots, H_k \subseteq V$ Unterräume mit
+          $\dim(H_1) = \ldots = \dim(H_k) = n - 1$, so gilt $\dim(H_1 \cap \ldots \cap
+              H_k) \geq n - k$.
+    \item Sei $k \in \mathbb{N}$, $U \subseteq V$ ein Unterraum mit $\dim(U) = n - k$, so
+          existieren Unterräume $H_1, \ldots, H_k \subseteq V$ mit $\dim(H_1) = \ldots =
+              \dim(H_k) = n - 1$ und $U = H_1 \cap \ldots \cap H_k$.
 \end{enumerate}
 
 \begin{proof}
-	$ $
-	\begin{enumerate}
-		\item Aus der Vorlesung ist uns bekannt, dass $\dim(U+H) = \dim(H) + \dim(U) - \dim(U \cap H)$ gilt.
-		      Dies lässt sich auch als \[
-			      \dim(U \cap H) + \dim(U + H) - n = \dim(U) - 1
-		      \] formulieren.
+    $ $
+    \begin{enumerate}
+        \item Aus der Vorlesung ist uns bekannt, dass $\dim(U+H) = \dim(H) + \dim(U) - \dim(U
+                  \cap H)$ gilt. Dies lässt sich auch als \[
+                  \dim(U \cap H) + \dim(U + H) - n = \dim(U) - 1
+              \] formulieren.
 
-		      Da $\max(\dim(U + H)) = n$, wobei $\dim(V) = n$, ergibt sich $\max(\dim(U + H) - n) = 0$.
-		      Daher folgt $\dim(U \cap H) \ge \dim(U \cap H) + \dim(U + H) - n$, und daraus ergibt sich $\dim(U \cap H) \geq \dim(U) - 1$.
+              Da $\max(\dim(U + H)) = n$, wobei $\dim(V) = n$, ergibt sich $\max(\dim(U + H)
+                  - n) = 0$. Daher folgt $\dim(U \cap H) \ge \dim(U \cap H) + \dim(U + H) - n$,
+              und daraus ergibt sich $\dim(U \cap H) \geq \dim(U) - 1$.
 
-		\item Angenommen, die Induktionsbehauptung gilt für $k-1$ Hyperebenen.
+        \item Angenommen, die Induktionsbehauptung gilt für $k-1$ Hyperebenen.
 
-		      Sei $L = \bigcap_{i=1}^{k-1} H_i$. Dann folgt
-		      \begin{align*}
-			      n \ge \dim(L + H_k) & = \dim L + \dim H_k \annotated{Induktions Hypothese}{\ge} (n - (k-1)) + (n-1) - \dim(L \cap H_k) \\
-			                          & \Rightarrow \dim(L \cap H_k) \ge n - k + 1 + n - 1 - n = n - k.
-		      \end{align*}
+              Sei $L = \bigcap_{i=1}^{k-1} H_i$. Dann folgt
+              \begin{align*}
+                  n \ge \dim(L + H_k) & = \dim L + \dim H_k \annotated{Induktions Hypothese}{\ge} (n - (k-1)) + (n-1) - \dim(L \cap H_k) \\
+                                      & \Rightarrow \dim(L \cap H_k) \ge n - k + 1 + n - 1 - n = n - k.
+              \end{align*}
 
-	\end{enumerate}
+    \end{enumerate}
 \end{proof}
 \end{problem}
 

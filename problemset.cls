@@ -40,36 +40,36 @@
 
 % Set up document title and metadata
 \AtBeginDocument{
-	\title{\@Problemset. Aufgabenblatt - \@Lecture}
-	\hypersetup{
-		pdftitle={\@title},
-		pdfauthor={\@author},
-	}
+    \title{\@Problemset. Aufgabenblatt - \@Lecture}
+    \hypersetup{
+        pdftitle={\@title},
+        pdfauthor={\@author},
+    }
 }
 
 % Redefine the maketitle command
 \renewcommand{\maketitle}{
-	\thispagestyle{empty}
-	\begin{center}
-		\Large
-		\@Lecture
-		\medbreak
-		\normalsize
-		\textbf{Lösungen}: \@Problemset . Übungsblatt \\
-		Abgabe: \@DoOn \\
-		\@author
-	\end{center}
-	\rule{\textwidth}{.5pt}
+    \thispagestyle{empty}
+    \begin{center}
+        \Large
+        \@Lecture
+        \medbreak
+        \normalsize
+        \textbf{Lösungen}: \@Problemset . Übungsblatt \\
+        Abgabe: \@DoOn \\
+        \@author
+    \end{center}
+    \rule{\textwidth}{.5pt}
 }
 
 % Configure the page style using fancyhdr
 \pagestyle{fancy}
 \fancyhead[L]{
-	\@Lecture \\
-	\textbf{Lösungen}:\space\@Problemset. Übungsblatt
+    \@Lecture \\
+    \textbf{Lösungen}:\space\@Problemset. Übungsblatt
 }
 \fancyhead[R]{
-	\@author \\
+    \@author \\
 }
 \fancyfoot[C]{\thepage}
 
@@ -91,9 +91,9 @@
 \newcommand{\symdiff}{\vartriangle}
 \newcommand{\colvec}[1]{\begin{bmatrix} #1 \end{bmatrix}}
 \newcommand{\annotated}[3][]{%
-	\overset{%
-		\substack{\hidewidth\text{#2}\hidewidth\\#1\downarrow\\\vspace*{0.5pt}}
-	}{#3}%
+    \overset{%
+        \substack{\hidewidth\text{#2}\hidewidth\\#1\downarrow\\\vspace*{0.5pt}}
+    }{#3}%
 }
 \newcommand{\qouted}[1]{,,#1''}
 
@@ -113,24 +113,23 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{.5em}
 
-% Create custom 'problem' environment and counter 
+% Create custom 'problem' environment and counter
 \newcounter{problem}
 \newenvironment{problem}[2][]{
-	\stepcounter{problem}
-	\pdfbookmark[section]{Aufgabe~\theproblem}{problem-\theproblem}
-	\par\noindent\textbf{Aufgabe~\theproblem:}~#1\hfill[\textbf{#2}]\par
-	\fancyhead[R]{
-		\@author \\
-		\textit{Aufgabe~\theproblem}
-	}
+    \stepcounter{problem}
+    \pdfbookmark[section]{Aufgabe~\theproblem}{problem-\theproblem}
+    \par\noindent\textbf{Aufgabe~\theproblem:}~#1\hfill[\textbf{#2}]\par
+    \fancyhead[R]{
+        \@author \\
+        \textit{Aufgabe~\theproblem}
+    }
 }{
-	\pagebreak
-	\fancyhead[R]{
-		\@author \\
-	}
+    \pagebreak
+    \fancyhead[R]{
+        \@author \\
+    }
 }
 
 % Define a custom theorem style for definitions
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
-

@@ -16,176 +16,177 @@
 
 \section*{Aufgabe 1:}
 \begin{enumerate}
-	\item [i)] Es sei $A := \{\emptyset, \pi\}$, $B := \mathcal{P}(A)$ und $C := \mathcal{P}(B)$. Entscheiden Sie den Wahrheitsgehalt von jeder der folgenden Aussagen. \newline
-	      \renewcommand{\arraystretch}{1.5}
-	      \begin{tabularx}{\textwidth}{ X X X }
-		      a) $\{\pi\} \in A$ (falsch)       & d) $\{\pi\} \in B$ (wahr)           & g) $\{\{ \pi \}\} \in C$ (wahr)                     \\
-		      b) $\{\pi\} \subseteq A$ (wahr)   & e) $\emptyset \subseteq B$ (wahr)   & h) $\{A\} \in C$ (wahr)                             \\
-		      c) $A \subseteq \{\pi\}$ (falsch) & f) $\{\{\pi\}\} \subseteq B$ (wahr) & i) $\{\emptyset, \{\emptyset\}\} = B \cap C$ (wahr)
-	      \end{tabularx}
+    \item [i)] Es sei $A := \{\emptyset, \pi\}$, $B := \mathcal{P}(A)$ und $C := \mathcal{P}(B)$. Entscheiden Sie den Wahrheitsgehalt von jeder der folgenden Aussagen. \newline
+          \renewcommand{\arraystretch}{1.5}
+          \begin{tabularx}{\textwidth}{ X X X }
+              a) $\{\pi\} \in A$ (falsch)       & d) $\{\pi\} \in B$ (wahr)           & g) $\{\{ \pi \}\} \in C$ (wahr)                     \\
+              b) $\{\pi\} \subseteq A$ (wahr)   & e) $\emptyset \subseteq B$ (wahr)   & h) $\{A\} \in C$ (wahr)                             \\
+              c) $A \subseteq \{\pi\}$ (falsch) & f) $\{\{\pi\}\} \subseteq B$ (wahr) & i) $\{\emptyset, \{\emptyset\}\} = B \cap C$ (wahr)
+          \end{tabularx}
 
-	\item [ii)] Sein $M$ und $N$ Mengen. Zeigen Sie, dass \begin{enumerate}
-		      \item [a)] $\mathcal{P}(M) \cap \mathcal{P}(N) \subseteq \mathcal{P}(M \cap N)$,
-		      \item [b)] $\mathcal{P}(M) \cup \mathcal{P}(N) \subseteq \mathcal{P}(M \cup N)$.
-	      \end{enumerate}
-	      \begin{definition}
-		      \begin{displaymath}
-			      \mathcal{P}(M) := \{X\,|\,X \subseteq M\}
-		      \end{displaymath}
-	      \end{definition}
+    \item [ii)] Sein $M$ und $N$ Mengen. Zeigen Sie, dass \begin{enumerate}
+              \item [a)] $\mathcal{P}(M) \cap \mathcal{P}(N) \subseteq \mathcal{P}(M \cap N)$,
+              \item [b)] $\mathcal{P}(M) \cup \mathcal{P}(N) \subseteq \mathcal{P}(M \cup N)$.
+          \end{enumerate}
+          \begin{definition}
+              \begin{displaymath}
+                  \mathcal{P}(M) := \{X\,|\,X \subseteq M\}
+              \end{displaymath}
+          \end{definition}
 
-	      \begin{proof}
-		      $\mathcal{P}(M) \cap \mathcal{P}(N) \subseteq \mathcal{P}(M \cap N)$
-		      \newline
-		      Lass $X$ eine beliebige Menge sein so das $X \subseteq M$ und $X \subseteq N$.
-		      Laut Definition der Potenzmenge ist somit $X$ in der Menge $\mathcal{P}(M)$ sowie $\mathcal{P}(N)$.
-		      Da $X$ eine Teilmenge von $M$ sowie $N$ ist, ist $X$ auch eine Teilmenge von dem Schnitt $M \cap N$.
-		      Daher $X$ somit eine Teilmenge von $M \cap N$ ist, ist $X$, laut Definition der Potenzmenge, ebenfalls in der Menge $\mathcal{P}(M \cap N)$ enthalten.
-		      Da die Menge $X$ beliebig gewählt wurde, ist somit $\mathcal{P}(M) \cap \mathcal{P}(N)$ eine Teilmenge von $\mathcal{P}(M \cap N)$, was zu zeigen war.
-	      \end{proof}
-	      \begin{proof}
-		      $\mathcal{P}(M) \cup \mathcal{P}(N) \subseteq \mathcal{P}(M \cup N)$
-		      \newline
-		      Lass $X$ eine beliebige Menge sein so das $X \subseteq M$ oder $X \subseteq N$.
-		      Laut Definition der Potenzmenge ist somit $X$ in der Menge $\mathcal{P}(M)$ oder in $\mathcal{P}(N)$.
-		      Da $X$ eine Teilmenge von $M$ oder $N$ ist, ist $X$ auch eine Teilmenge von der Vereinigung $M \cup N$.
-		      Daher $X$ somit eine Teilmenge von $M \cup N$ ist, ist $X$, laut Definition der Potenzmenge, ebenfalls in der Menge $\mathcal{P}(M \cup N)$ enthalten.
-		      Da $X$ beliebig gewählt wurde, ist somit $\mathcal{P}(M) \cup \mathcal{P}(N)$ eine Teilmenge von $\mathcal{P}(M \cup N)$, was zu zeigen war.
-	      \end{proof}
+          \begin{proof}
+              $\mathcal{P}(M) \cap \mathcal{P}(N) \subseteq \mathcal{P}(M \cap N)$
+              \newline
+              Lass $X$ eine beliebige Menge sein so das $X \subseteq M$ und $X \subseteq N$.
+              Laut Definition der Potenzmenge ist somit $X$ in der Menge $\mathcal{P}(M)$ sowie $\mathcal{P}(N)$.
+              Da $X$ eine Teilmenge von $M$ sowie $N$ ist, ist $X$ auch eine Teilmenge von dem Schnitt $M \cap N$.
+              Daher $X$ somit eine Teilmenge von $M \cap N$ ist, ist $X$, laut Definition der Potenzmenge, ebenfalls in der Menge $\mathcal{P}(M \cap N)$ enthalten.
+              Da die Menge $X$ beliebig gewählt wurde, ist somit $\mathcal{P}(M) \cap \mathcal{P}(N)$ eine Teilmenge von $\mathcal{P}(M \cap N)$, was zu zeigen war.
+          \end{proof}
+          \begin{proof}
+              $\mathcal{P}(M) \cup \mathcal{P}(N) \subseteq \mathcal{P}(M \cup N)$
+              \newline
+              Lass $X$ eine beliebige Menge sein so das $X \subseteq M$ oder $X \subseteq N$.
+              Laut Definition der Potenzmenge ist somit $X$ in der Menge $\mathcal{P}(M)$ oder in $\mathcal{P}(N)$.
+              Da $X$ eine Teilmenge von $M$ oder $N$ ist, ist $X$ auch eine Teilmenge von der Vereinigung $M \cup N$.
+              Daher $X$ somit eine Teilmenge von $M \cup N$ ist, ist $X$, laut Definition der Potenzmenge, ebenfalls in der Menge $\mathcal{P}(M \cup N)$ enthalten.
+              Da $X$ beliebig gewählt wurde, ist somit $\mathcal{P}(M) \cup \mathcal{P}(N)$ eine Teilmenge von $\mathcal{P}(M \cup N)$, was zu zeigen war.
+          \end{proof}
 
-	      In dem fall $\mathcal{P}(M) \cap \mathcal{P}(N) \subseteq \mathcal{P}(M \cap N)$, gilt sogar $\mathcal{P}(M) \cap \mathcal{P}(N) = \mathcal{P}(M \cap N)$.
+          In dem fall $\mathcal{P}(M) \cap \mathcal{P}(N) \subseteq \mathcal{P}(M \cap
+              N)$, gilt sogar $\mathcal{P}(M) \cap \mathcal{P}(N) = \mathcal{P}(M \cap N)$.
 \end{enumerate}
 
 \pagebreak
 
 \section*{Aufgabe 2:}
 Sei $M$ eine Menge und $R$ eine reflexive, symmetrische und antisymmetrische Relation auf $M$. Zeigen Sie, dass \[
-	R = Id_M := \{(x,y) \in M \times M\,|\,x=y \}.
+    R = Id_M := \{(x,y) \in M \times M\,|\,x=y \}.
 \]
 \begin{proof} $R$ ist reflexive, symmetrische und antisymmetrische:
-	\begin{enumerate}
-		\item [a)] \underline{reflexive}: Für alle $x \in M$ gilt $x \sim x$: \newline
-		      Für jedes $x \in M$ gilt $x \sim x$ da $x$ immer gleich $x$ ist.
-		      \newline\newline
-		      Somit ist $R$ reflexive.
-		\item [b)] \underline{symmetrische}: Für alle $x, y \in M$ gilt $x \sim y \Leftrightarrow y \sim x$: \newline
-		      Für jedes $x,y \in M$ existiert ein geordnetes paar $(x,y)$ in der Menge $M \times M$ sowie ein paar $(y, x)$ für welches gilt $x = y$ und $y = x$.
-		      Und somit sind sowohl die Relation $x \sim y$ und $y \sim x$ in $R$. Daraus folgt, $R$ ist symmetrisch.
-		\item [c)] \underline{antisymmetrische}: Für alle $x, y \in M$ gilt $x \sim y$ und $y \sim x$ $\Rightarrow x = y$: \newline
-		      Aus \textit{b} wissen wir bereits das zwei solche paar $(x,y)$ und $(y, x)$ in $R$ existiert und das $x = y$ ist.
-		      Somit ist $R$ antisymmetrische.
-	\end{enumerate}
+    \begin{enumerate}
+        \item [a)] \underline{reflexive}: Für alle $x \in M$ gilt $x \sim x$: \newline
+              Für jedes $x \in M$ gilt $x \sim x$ da $x$ immer gleich $x$ ist.
+              \newline\newline
+              Somit ist $R$ reflexive.
+        \item [b)] \underline{symmetrische}: Für alle $x, y \in M$ gilt $x \sim y \Leftrightarrow y \sim x$: \newline
+              Für jedes $x,y \in M$ existiert ein geordnetes paar $(x,y)$ in der Menge $M \times M$ sowie ein paar $(y, x)$ für welches gilt $x = y$ und $y = x$.
+              Und somit sind sowohl die Relation $x \sim y$ und $y \sim x$ in $R$. Daraus folgt, $R$ ist symmetrisch.
+        \item [c)] \underline{antisymmetrische}: Für alle $x, y \in M$ gilt $x \sim y$ und $y \sim x$ $\Rightarrow x = y$: \newline
+              Aus \textit{b} wissen wir bereits das zwei solche paar $(x,y)$ und $(y, x)$ in $R$ existiert und das $x = y$ ist.
+              Somit ist $R$ antisymmetrische.
+    \end{enumerate}
 \end{proof}
 
 \pagebreak
 
 \section*{Aufgabe 3:}
 Sei $M$ eine Menge und $\le_{M}$ eine partielle Ordnung auf $M$. Zeigen Sie, dass \[
-	\le_{M^2} := \left\{((x_1,x_2), (y_1,y_2))\in M^2 \times M^2\ \begin{array}{|ccc}
-		x_1 \neq y_1 \text{ und } x_1 \le_{M} y_1 \\
-		\text{ oder }                             \\
-		x_1 = y_1 \text{ und } x_2 \le_{M} y_2
-	\end{array} \right\}
+    \le_{M^2} := \left\{((x_1,x_2), (y_1,y_2))\in M^2 \times M^2\ \begin{array}{|ccc}
+        x_1 \neq y_1 \text{ und } x_1 \le_{M} y_1 \\
+        \text{ oder }                             \\
+        x_1 = y_1 \text{ und } x_2 \le_{M} y_2
+    \end{array} \right\}
 \] eine partielle Ordnung auf $M^2$ definiert.
 \begin{proof} $\le_{M^2}$ definiert eine partielle Ordnung \newline
-	Um zu zeigen das $\le_{M^2}$ eine partielle auf $M^2$ definiert müssen die folgenden drei eigenschaften erfüllt sein.
-	\begin{enumerate}
-		\item [a)] \underline{reflexive}: Für alle $x \in M^2$ gilt $x \sim x$. \newline
-		      Es ist zu beweisen, dass die Relation $(x_1, x_2) \sim (x_1, x_2)$ existiert.
-		      Laut Voraussetzung von $\le_{M^2}$ können wir denn fall $x_1 \neq y_1$ ausschließen da $x_1$ immer gleich $x_1$.
-		      Es muss also nur die Relation $x_2 \le_M x_2$ existierten.
-		      Da $\le_M$ eine partielle Ordnung definiert muss allerdings für alle $x \in M$ $x \le_M x$ gelten.
-		      Damit existiert die Relation $(x_1, x_2) \le_{M^2} (x_1, x_2)$ für alle $(x_1,x_2) \in M^2$.
-		      \newline\newline
-		      Somit ist $\le_{M^2}$ reflexive.
-		\item [b)] \underline{antisymmetrische}: Für alle $x, y \in M^2$ gilt, wenn $x \sim y$ und $y \sim x$ $\Rightarrow x = y$ \newline
-		\item [c)] \underline{transitive}: Für alle $x,y,z \in Q$ gilt, wenn $x \sim y$ und $y \sim z$ $\Rightarrow x \sim z$ \newline
-	\end{enumerate}
+    Um zu zeigen das $\le_{M^2}$ eine partielle auf $M^2$ definiert müssen die folgenden drei eigenschaften erfüllt sein.
+    \begin{enumerate}
+        \item [a)] \underline{reflexive}: Für alle $x \in M^2$ gilt $x \sim x$. \newline
+              Es ist zu beweisen, dass die Relation $(x_1, x_2) \sim (x_1, x_2)$ existiert.
+              Laut Voraussetzung von $\le_{M^2}$ können wir denn fall $x_1 \neq y_1$ ausschließen da $x_1$ immer gleich $x_1$.
+              Es muss also nur die Relation $x_2 \le_M x_2$ existierten.
+              Da $\le_M$ eine partielle Ordnung definiert muss allerdings für alle $x \in M$ $x \le_M x$ gelten.
+              Damit existiert die Relation $(x_1, x_2) \le_{M^2} (x_1, x_2)$ für alle $(x_1,x_2) \in M^2$.
+              \newline\newline
+              Somit ist $\le_{M^2}$ reflexive.
+        \item [b)] \underline{antisymmetrische}: Für alle $x, y \in M^2$ gilt, wenn $x \sim y$ und $y \sim x$ $\Rightarrow x = y$ \newline
+        \item [c)] \underline{transitive}: Für alle $x,y,z \in Q$ gilt, wenn $x \sim y$ und $y \sim z$ $\Rightarrow x \sim z$ \newline
+    \end{enumerate}
 \end{proof}
 
 \pagebreak
 
 \section*{Aufgabe 4:}
 Wir betrachten die folgende Relation $\sim$ auf $Q := \mathbb{Z} \times \mathbb{Z}\setminus\{0\}$ \[
-	\sim := \{((n_1,d_1),(n_2,d_2)) \in Q \times Q\ |\ n_1d_2 = n_2d_1\}.
+    \sim := \{((n_1,d_1),(n_2,d_2)) \in Q \times Q\ |\ n_1d_2 = n_2d_1\}.
 \]
 Beweise oder widerlegen Sie die folgenden Aussagen:
 \begin{enumerate}
-	\item [i)]
-	      \renewcommand{\arraystretch}{1.5}
-	      \begin{tabularx}{\textwidth}{ X X X }
-		      a) $(3,6) \sim (9,18)$ & c) $(3,6) \sim (-3, 6)$   & e) $(3, 6) \sim (-3, -6)$ \\
-		      b) $(0,3) \sim (0,-2)$ & d) $(-4,12) \sim (1, -3)$ & f) $(1, 10) \sim (10, 1)$
-	      \end{tabularx}
-	\item [ii)] Für alle $(n,d) \in Q$ und $k \in \mathbb{Z}\setminus\{0\}$ gilt $(n,d) \sim (kn,kd)$
-	\item [iii)] $\sim$ ist eine partielle Ordnung auf $Q$
-	\item [iv)] $\sim$ ist eine Äquivalenzrelation auf $Q$
+    \item [i)]
+          \renewcommand{\arraystretch}{1.5}
+          \begin{tabularx}{\textwidth}{ X X X }
+              a) $(3,6) \sim (9,18)$ & c) $(3,6) \sim (-3, 6)$   & e) $(3, 6) \sim (-3, -6)$ \\
+              b) $(0,3) \sim (0,-2)$ & d) $(-4,12) \sim (1, -3)$ & f) $(1, 10) \sim (10, 1)$
+          \end{tabularx}
+    \item [ii)] Für alle $(n,d) \in Q$ und $k \in \mathbb{Z}\setminus\{0\}$ gilt $(n,d) \sim (kn,kd)$
+    \item [iii)] $\sim$ ist eine partielle Ordnung auf $Q$
+    \item [iv)] $\sim$ ist eine Äquivalenzrelation auf $Q$
 \end{enumerate}
 \begin{proof} \ \newline
-	\begin{enumerate}
-		\item [i)]
-		      \renewcommand{\arraystretch}{1.5}
-		      \begin{tabularx}{\textwidth}{ X X X }
-			      a) $3*18 = 6*9 = 54$ (wahr)  & c) $3*6 = 6*(-3)$ (falsch)  & e) $3*(-6) = 6 * (-3)$ (wahr) \\
-			      b) $0*(-2) = 3*0 = 0$ (wahr) & d) $(-4)*(-3)= 12*1$ (wahr) & f) $1*10 = 10*1$ (wahr)
-		      \end{tabularx}
-		\item [ii)] Für ein $(n,d) \in Q$ und $k \in \mathbb{Z}\setminus\{0\}$ gilt $(n,d) \not\sim (kn,kd)$, daraus folgt
-		      \begin{align}
-			      nkd & \neq dkn                            \\
-			      nd  & \neq dn \tag{da $k \neq 0$}         \\
-			      nd  & \neq nd \tag{\textbf{Widerspruch!}}
-		      \end{align}
-		      somit gilt für alle $(n,d) \in Q$ und $k \in \mathbb{Z}\setminus\{0\}$ $(n,d) \sim (kn,kd)$.
-		\item [iii)] $\sim$ ist eine partielle Ordnung auf $Q$: \newline
-		      Damit $\sim$ eine partielle auf Q definiert muss es die folgenden drei Eigenschaften erfüllen.
-		      \begin{enumerate}
-			      \item [a)] \underline{reflexive}: Für alle $x \in Q$ gilt $x \sim x$: \newline
-			            Für alle $(n_1,d_1) \in Q$ gilt $(n_1, d_1) \sim (n_1, d_1)$ da \begin{align}
-				            n_1*d_1 = d_1*n_1 \\
-				            n_1*d_1 = n_1*d_1
-			            \end{align} somit ist $\sim$ reflexive. \checkmark
-			      \item [b)] \underline{antisymmetrische}: Für alle $x, y \in Q$ gilt, wenn $x \sim y$ und $y \sim x$ $\Rightarrow x = y$: \newline
-			            Aus \underline{4. i) a)} wissen wir das, dass paar $((3,6),(9,18))$ in $\sim$ enthalten ist, wenn nun $((9,18),(3,6))$ Teil von $\sim$ ist muss laut Voraussetzung $(3,6) = (9,18)$ sein.
-			            $9*6 = 18 * 3 = 54$, somit ist $(9,18) \sim (3,6)$.
-			            Da $(3,6) \neq (9,18)$ ist $\sim$ somit nicht antisymmetrische.
-			      \item [c)] \underline{transitive}: Für alle $x,y,z \in Q$ gilt, wenn $x \sim y$ und $y \sim z$ dann $x \sim z$ \newline
-			            Lass $(n_1,d_1), (n_2,d_2), (n_3, d_3) \in Q$ für die gilt $n_1*d_2 = d_1*n_2$ und $n_2*d_3=d_2*n_3$.
-			            Für Transitivität ist zu beweisen das $n_1*d_3=d_1*n_3$, starten wir mit $(n_1, d_1) \sim (n_2, d_2)$ so gilt: \[
-				            n_1*d_2 = d_1*n_2.
-			            \]
-			            Da $n_2*d_3=d_2*n_3$ können wir beiden Seiten der zwei Gleichungen mit ein an der multiplizieren und erhalten \[
-				            n_1*n_2*d_2*d_3 = d_1*d_2*n_2*n_3.
-			            \]
-			            Beide Seiten beinhalten den Term $n_2*d_2$ und da die Ausgangsmenge die $0$ nicht enthielt können diese weggekürzten.
-			            Wir erhalten den Term \[
-				            n_1*d_3 = d_1*n_3
-			            \] was zu zeigen war. \checkmark
-		      \end{enumerate}
-		      Die Relation erfüllt somit nicht die Eigenschaften einer partiellen Ordnung.
-		\item [iv)] $\sim$ ist eine Äquivalenzrelation auf $Q$ \newline
-		      Damit $\sim$ eine Äquivalenzrelation auf $Q$ definiert muss sie die folgenden drei Eigenschaften haben.
-		      \begin{enumerate}
-			      \item [a)] \underline{reflexive}: Für alle $x \in Q$ gilt $x \sim x$ \newline
-			            Bereits bewiesen in \underline{4. iii) a)}
-			      \item [b)] \underline{symmetrisch}: Für alle $x,y \in Q$ gilt, wenn $x \sim y$ dann $y \sim x$: \newline
-			            Angenommen wir haben zwei paare $(n_1,d_1),(n_2,d_2) \in Q$ für die gilt $n_1*d_2=d_1*n_2$.
-			            Somit ist zu beweisen das dann auch \[
-				            n_2*d_1 = d_2*n_1
-			            \] gilt.
-			            \newline\newline
-			            Laut assoziative gesetzt ist $a*b = b*a$ und somit dürfen wir auf beiden Seiten $d_k$ mit $n_k$ vertauschen.
-			            \[
-				            d_2*n_1=n_2*d_1.
-			            \]
-			            Da $a = b$ dasselbe ist, wie $b = a$ dürfen wir beide Seiten vertauschen \[
-				            n_2*d_1 = d_2*n_1.
-			            \]
-			            Somit existiert die Relation $(n_2,d_2) \sim (n_1, d_1)$, was zu zeigen war.
-			      \item [c)] \underline{transitive}: Für alle $x,y,z \in Q$ gilt, wenn $x \sim y$ und $y \sim z$ dann $x \sim z$ \newline
-			            Bereits bewiesen in \underline{4. iii) c)}
-		      \end{enumerate}
-		      Da $\sim$ reflexive, symmetrisch und transitive ist, ist sie eine Äquivalenzrelation.
-	\end{enumerate}
+    \begin{enumerate}
+        \item [i)]
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabularx}{\textwidth}{ X X X }
+                  a) $3*18 = 6*9 = 54$ (wahr)  & c) $3*6 = 6*(-3)$ (falsch)  & e) $3*(-6) = 6 * (-3)$ (wahr) \\
+                  b) $0*(-2) = 3*0 = 0$ (wahr) & d) $(-4)*(-3)= 12*1$ (wahr) & f) $1*10 = 10*1$ (wahr)
+              \end{tabularx}
+        \item [ii)] Für ein $(n,d) \in Q$ und $k \in \mathbb{Z}\setminus\{0\}$ gilt $(n,d) \not\sim (kn,kd)$, daraus folgt
+              \begin{align}
+                  nkd & \neq dkn                            \\
+                  nd  & \neq dn \tag{da $k \neq 0$}         \\
+                  nd  & \neq nd \tag{\textbf{Widerspruch!}}
+              \end{align}
+              somit gilt für alle $(n,d) \in Q$ und $k \in \mathbb{Z}\setminus\{0\}$ $(n,d) \sim (kn,kd)$.
+        \item [iii)] $\sim$ ist eine partielle Ordnung auf $Q$: \newline
+              Damit $\sim$ eine partielle auf Q definiert muss es die folgenden drei Eigenschaften erfüllen.
+              \begin{enumerate}
+                  \item [a)] \underline{reflexive}: Für alle $x \in Q$ gilt $x \sim x$: \newline
+                        Für alle $(n_1,d_1) \in Q$ gilt $(n_1, d_1) \sim (n_1, d_1)$ da \begin{align}
+                            n_1*d_1 = d_1*n_1 \\
+                            n_1*d_1 = n_1*d_1
+                        \end{align} somit ist $\sim$ reflexive. \checkmark
+                  \item [b)] \underline{antisymmetrische}: Für alle $x, y \in Q$ gilt, wenn $x \sim y$ und $y \sim x$ $\Rightarrow x = y$: \newline
+                        Aus \underline{4. i) a)} wissen wir das, dass paar $((3,6),(9,18))$ in $\sim$ enthalten ist, wenn nun $((9,18),(3,6))$ Teil von $\sim$ ist muss laut Voraussetzung $(3,6) = (9,18)$ sein.
+                        $9*6 = 18 * 3 = 54$, somit ist $(9,18) \sim (3,6)$.
+                        Da $(3,6) \neq (9,18)$ ist $\sim$ somit nicht antisymmetrische.
+                  \item [c)] \underline{transitive}: Für alle $x,y,z \in Q$ gilt, wenn $x \sim y$ und $y \sim z$ dann $x \sim z$ \newline
+                        Lass $(n_1,d_1), (n_2,d_2), (n_3, d_3) \in Q$ für die gilt $n_1*d_2 = d_1*n_2$ und $n_2*d_3=d_2*n_3$.
+                        Für Transitivität ist zu beweisen das $n_1*d_3=d_1*n_3$, starten wir mit $(n_1, d_1) \sim (n_2, d_2)$ so gilt: \[
+                            n_1*d_2 = d_1*n_2.
+                        \]
+                        Da $n_2*d_3=d_2*n_3$ können wir beiden Seiten der zwei Gleichungen mit ein an
+                        der multiplizieren und erhalten \[
+                            n_1*n_2*d_2*d_3 = d_1*d_2*n_2*n_3.
+                        \]
+                        Beide Seiten beinhalten den Term $n_2*d_2$ und da die Ausgangsmenge die $0$
+                        nicht enthielt können diese weggekürzten. Wir erhalten den Term \[
+                            n_1*d_3 = d_1*n_3
+                        \] was zu zeigen war. \checkmark
+              \end{enumerate}
+              Die Relation erfüllt somit nicht die Eigenschaften einer partiellen Ordnung.
+        \item [iv)] $\sim$ ist eine Äquivalenzrelation auf $Q$ \newline
+              Damit $\sim$ eine Äquivalenzrelation auf $Q$ definiert muss sie die folgenden drei Eigenschaften haben.
+              \begin{enumerate}
+                  \item [a)] \underline{reflexive}: Für alle $x \in Q$ gilt $x \sim x$ \newline
+                        Bereits bewiesen in \underline{4. iii) a)}
+                  \item [b)] \underline{symmetrisch}: Für alle $x,y \in Q$ gilt, wenn $x \sim y$ dann $y \sim x$: \newline
+                        Angenommen wir haben zwei paare $(n_1,d_1),(n_2,d_2) \in Q$ für die gilt $n_1*d_2=d_1*n_2$.
+                        Somit ist zu beweisen das dann auch \[
+                            n_2*d_1 = d_2*n_1
+                        \] gilt. \newline\newline Laut assoziative gesetzt ist $a*b = b*a$ und somit
+                        dürfen wir auf beiden Seiten $d_k$ mit $n_k$ vertauschen.
+                        \[
+                            d_2*n_1=n_2*d_1.
+                        \]
+                        Da $a = b$ dasselbe ist, wie $b = a$ dürfen wir beide Seiten vertauschen \[
+                            n_2*d_1 = d_2*n_1.
+                        \]
+                        Somit existiert die Relation $(n_2,d_2) \sim (n_1, d_1)$, was zu zeigen war.
+                  \item [c)] \underline{transitive}: Für alle $x,y,z \in Q$ gilt, wenn $x \sim y$ und $y \sim z$ dann $x \sim z$ \newline
+                        Bereits bewiesen in \underline{4. iii) c)}
+              \end{enumerate}
+              Da $\sim$ reflexive, symmetrisch und transitive ist, ist sie eine Äquivalenzrelation.
+    \end{enumerate}
 \end{proof}
 
 \end{document}

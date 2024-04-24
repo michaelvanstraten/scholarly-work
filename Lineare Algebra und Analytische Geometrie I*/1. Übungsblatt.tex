@@ -8,60 +8,60 @@
 \AtBeginEnvironment{align}{\setcounter{equation}{0}}
 
 \begin{document}
-    \maketitle
-    \section*{Aufgabe 1: Mengenoperationen und Gleichheit von Mengen}
-    Gegeben seien die Mengen $M$, $N$ und $L$. Zeigen Sie:
-    \begin{enumerate}
-        \item[i)] $M \cap (N \cap L) = (M \cap N) \cap L$,
-        \item[ii)] $M \cap (N \cup L) = (M \cap N) \cup (M \cap L)$,
-        \item[iii)] $M \setminus (N \cap L) = (M \setminus N) \cup (M \setminus L)$.
-    \end{enumerate} 
-    \textbf{Lösungen:}
-    \begin{enumerate}
-        \item[i)]  
-        \begin{align*}
-            M \cap (N \cap L) &\Leftrightarrow \tag{Umformung zu Aussagenlogik} \\
-            x \in M \land (x \in N \land x \in L) &\Leftrightarrow \tag{Assoziativgesetze [LM21, Aufgabe 2.1 (a)]} \\ 
-            (x \in M \land x \in N) \land x \in L &\Leftrightarrow \tag{Zurückformung zu Mengen} \\
-            (M \cap N) \cap L 
-        \end{align*}
-        \item[ii)]  
-        \begin{align*}
-            M \cap (N \cup L) &\Leftrightarrow \tag{Umformung zu Aussagenlogik} \\
-            x \in M \land (x \in N \lor x \in L) &\Leftrightarrow \tag{Distributivgesetze [LM21, Aufgabe 2.1 (c)]} \\
-            (x \in M \land x \in N) \lor (x \in M \land x \in L) &\Leftrightarrow \tag{Zurückformung zu Mengen} \\
-            (M \cap N) \cup (M \cap L) 
-        \end{align*}
-        \item[iii)]  
-        \begin{align*}
-            M \setminus (N \cap L) &\Leftrightarrow \tag{Umformung zu Aussagenlogik} \\
-            x \in M \land \neg (x \in N \land x \in L) &\Leftrightarrow \tag{\textit{De Morganschen Gesetze}} \\
-            x \in M \land (x \notin N \lor x \notin L) &\Leftrightarrow \tag{Distributivgesetze [LM21, Aufgabe 2.1 (c)]} \\
-            (x \in M \land x \notin N) \lor (x \in M \land x \notin L) &\Leftrightarrow \tag{Zurückformung zu Mengen} \\
-            (M \setminus N) \cup (M \setminus L) 
-        \end{align*}
-    \end{enumerate}
-    \section*{Aufgabe 2: Äquivalenz von Aussage}
-    Gegeben sein Mengen $A$ und $B$ Zeigen Sie die Äquivalenz der folgenden Aussagen:
-    \begin{enumerate}
-        \item[i)] $ A \subseteq B $, 
-        \item[ii)] $ A \cup B = B $,
-        \item[iii)] $ A \cap B = A $.
-    \end{enumerate}
-    \textbf{Lösungen:}
-    \begin{enumerate}
-        \item $ A \subseteq B \Leftrightarrow A \cup B = B $ \\ 
-            Gehen wir davon aus, dass $A$ eine Teilmenge von $B$ ist. 
-            Somit gibt es für jedes Element in $A$ ein Element in $B$. 
-            Schauen wir uns nun die Vereinigung von $A$ und $B$ an. 
-            Da jedes Element von $A$ ebenfalls in $B$ ist, muss die Vereinigung von $A$ und $B$ gleich $B$ sein.  
-            Wenn jedoch die Vereinigung von $A$ und $B$ gleich $B$ ist, muss $A$ eine Teilmenge von $B$ sein.
-        \item $ A \cup B = B \Leftrightarrow A \cap B = A $ \\
-            Wenn $ A \cup B $ gleich der Menge $B$ ist, muss nach 1. $A$ eine Teilmenge von $B$ sein.  
-            Da $A$ eine Teilmenge von $B$ ist, muss jedes Element in $A$ auch in $B$ enthalten sein. 
-            Somit ist der Durchschnitt von $A$ und $B$ gleich $A$ nach Definition des Durchschnitts zweier Mengen. 
-            Ist jedoch der Durchschnitt von $A$ und $B$ gleich $A$, so muss $A$ eine Teilmenge von $B$ sein,
-            da für jedes Element in $A$ es ein Element in $B$ nach Definition der Teilmenge geben muss.
-    \end{enumerate}
+\maketitle
+\section*{Aufgabe 1: Mengenoperationen und Gleichheit von Mengen}
+Gegeben seien die Mengen $M$, $N$ und $L$. Zeigen Sie:
+\begin{enumerate}
+    \item[i)] $M \cap (N \cap L) = (M \cap N) \cap L$,
+    \item[ii)] $M \cap (N \cup L) = (M \cap N) \cup (M \cap L)$,
+    \item[iii)] $M \setminus (N \cap L) = (M \setminus N) \cup (M \setminus L)$.
+\end{enumerate}
+\textbf{Lösungen:}
+\begin{enumerate}
+    \item[i)]
+          \begin{align*}
+              M \cap (N \cap L)                     & \Leftrightarrow \tag{Umformung zu Aussagenlogik}                \\
+              x \in M \land (x \in N \land x \in L) & \Leftrightarrow \tag{Assoziativgesetze [LM21, Aufgabe 2.1 (a)]} \\
+              (x \in M \land x \in N) \land x \in L & \Leftrightarrow \tag{Zurückformung zu Mengen}                   \\
+              (M \cap N) \cap L
+          \end{align*}
+    \item[ii)]
+          \begin{align*}
+              M \cap (N \cup L)                                    & \Leftrightarrow \tag{Umformung zu Aussagenlogik}                 \\
+              x \in M \land (x \in N \lor x \in L)                 & \Leftrightarrow \tag{Distributivgesetze [LM21, Aufgabe 2.1 (c)]} \\
+              (x \in M \land x \in N) \lor (x \in M \land x \in L) & \Leftrightarrow \tag{Zurückformung zu Mengen}                    \\
+              (M \cap N) \cup (M \cap L)
+          \end{align*}
+    \item[iii)]
+          \begin{align*}
+              M \setminus (N \cap L)                                     & \Leftrightarrow \tag{Umformung zu Aussagenlogik}                 \\
+              x \in M \land \neg (x \in N \land x \in L)                 & \Leftrightarrow \tag{\textit{De Morganschen Gesetze}}            \\
+              x \in M \land (x \notin N \lor x \notin L)                 & \Leftrightarrow \tag{Distributivgesetze [LM21, Aufgabe 2.1 (c)]} \\
+              (x \in M \land x \notin N) \lor (x \in M \land x \notin L) & \Leftrightarrow \tag{Zurückformung zu Mengen}                    \\
+              (M \setminus N) \cup (M \setminus L)
+          \end{align*}
+\end{enumerate}
+\section*{Aufgabe 2: Äquivalenz von Aussage}
+Gegeben sein Mengen $A$ und $B$ Zeigen Sie die Äquivalenz der folgenden Aussagen:
+\begin{enumerate}
+    \item[i)] $ A \subseteq B $,
+    \item[ii)] $ A \cup B = B $,
+    \item[iii)] $ A \cap B = A $.
+\end{enumerate}
+\textbf{Lösungen:}
+\begin{enumerate}
+    \item $ A \subseteq B \Leftrightarrow A \cup B = B $ \\
+          Gehen wir davon aus, dass $A$ eine Teilmenge von $B$ ist.
+          Somit gibt es für jedes Element in $A$ ein Element in $B$.
+          Schauen wir uns nun die Vereinigung von $A$ und $B$ an.
+          Da jedes Element von $A$ ebenfalls in $B$ ist, muss die Vereinigung von $A$ und $B$ gleich $B$ sein.
+          Wenn jedoch die Vereinigung von $A$ und $B$ gleich $B$ ist, muss $A$ eine Teilmenge von $B$ sein.
+    \item $ A \cup B = B \Leftrightarrow A \cap B = A $ \\
+          Wenn $ A \cup B $ gleich der Menge $B$ ist, muss nach 1. $A$ eine Teilmenge von $B$ sein.
+          Da $A$ eine Teilmenge von $B$ ist, muss jedes Element in $A$ auch in $B$ enthalten sein.
+          Somit ist der Durchschnitt von $A$ und $B$ gleich $A$ nach Definition des Durchschnitts zweier Mengen.
+          Ist jedoch der Durchschnitt von $A$ und $B$ gleich $A$, so muss $A$ eine Teilmenge von $B$ sein,
+          da für jedes Element in $A$ es ein Element in $B$ nach Definition der Teilmenge geben muss.
+\end{enumerate}
 \end{document}
 

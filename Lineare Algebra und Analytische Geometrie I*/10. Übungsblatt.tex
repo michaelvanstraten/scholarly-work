@@ -16,79 +16,97 @@ $p_k(x) := x^k \in \text{Abb}(\mathbb{R}, \mathbb{R})$, $k \in \{0, \ldots, n\}$
 die der linearen Unabhängigkeit dabei zugrunde liegt, ist dabei die Gleichheit von Werten der
 Funktionen in $\mathbb{R}$ bei allen möglichen Einsetzungen von Argumenten in $\mathbb{R}$.
 
-Linearkombinationen von $\{p_k\}_{k\in\{0,\ldots,n\}}$ über $\mathbb{R}$ sind Funktionen der Form $x \mapsto a_0 + a_1x + \ldots
-	+ a_nx^n$ für $a_i \in \mathbb{R}$, $i \in \{0, \ldots, n\}$. Die Ausdrücke auf der rechten Seite dieser Zuweisung sind Elemente
-des Polynomraums $\mathbb{R}[x]$ in der Unbekannten $x$. asdad asdad Für Polynome wurde die Gleichheit allerdings über die
-Gleichheit ihrer Koeffizienten definiert.
+Linearkombinationen von $\{p_k\}_{k\in\{0,\ldots,n\}}$ über $\mathbb{R}$ sind
+Funktionen der Form $x \mapsto a_0 + a_1x + \ldots + a_nx^n$ für $a_i \in
+    \mathbb{R}$, $i \in \{0, \ldots, n\}$. Die Ausdrücke auf der rechten Seite
+dieser Zuweisung sind Elemente des Polynomraums $\mathbb{R}[x]$ in der
+Unbekannten $x$. asdad asdad Für Polynome wurde die Gleichheit allerdings über
+die Gleichheit ihrer Koeffizienten definiert.
 
-Dies führt auf die Frage, welche auch in den Übungen bereits diskutiert wurde, ob die beiden Formen der Gleichheit kompatibel
-sind. Der Struktursatz für Vektorräume liefert hier eine positive Antwort zumindest für den endlich dimensionalen Untervektorraum
-der Polynome vom Grad kleiner oder gleich $n$.
+Dies führt auf die Frage, welche auch in den Übungen bereits diskutiert wurde,
+ob die beiden Formen der Gleichheit kompatibel sind. Der Struktursatz für
+Vektorräume liefert hier eine positive Antwort zumindest für den endlich
+dimensionalen Untervektorraum der Polynome vom Grad kleiner oder gleich $n$.
 
-Sei $n \in \mathbb{N}$, $K := \mathbb{R}$ und für $k \in \{0, \ldots, n\}$ sei $p_k \in \text{Abb}(K, K)$ definiert durch $p(x)
-	:= x^k$. Sei weiter $U := \text{Span}\{p_k\}_{k\in\{0,\ldots,n\}} \subseteq \text{Abb}(K, K)$.
+Sei $n \in \mathbb{N}$, $K := \mathbb{R}$ und für $k \in \{0, \ldots, n\}$ sei
+$p_k \in \text{Abb}(K, K)$ definiert durch $p(x) := x^k$. Sei weiter $U :=
+    \text{Span}\{p_k\}_{k\in\{0,\ldots,n\}} \subseteq \text{Abb}(K, K)$.
 
 \begin{enumerate}
-	\item Berechnen Sie ohne einen Koeffizientenvergleich zu nutzen $\dim_K(U)$ und zeigen oder widerlegen Sie $U \cong K^{n+1}$.
-	\item Wiederholen Sie i) für $K = F_3$ und $n \leq 2$.
-	\item Wiederholen Sie i) für $K = F_3$ und $n > 2$.
+    \item Berechnen Sie ohne einen Koeffizientenvergleich zu nutzen $\dim_K(U)$ und
+          zeigen oder widerlegen Sie $U \cong K^{n+1}$.
+    \item Wiederholen Sie i) für $K = F_3$ und $n \leq 2$.
+    \item Wiederholen Sie i) für $K = F_3$ und $n > 2$.
 \end{enumerate}
 
 \begin{proof}
-	$ $
-	\begin{enumerate}
-		\item \textbf{Annahme}: $U \cong K^{n+1}$
+    $ $
+    \begin{enumerate}
+        \item \textbf{Annahme}: $U \cong K^{n+1}$
 
-		      Um zu zeigen das $U \cong K^{n+1}$, genügt es, $\dim_K(U) = n + 1$ zu beweisen, da bereits in der Vorlesung bewiesen wurde, dass
-		      jeder Vektorraum der Dimension $n$ isomorph zum Vektorraum $K^n$ ist.
+              Um zu zeigen das $U \cong K^{n+1}$, genügt es, $\dim_K(U) = n + 1$ zu beweisen,
+              da bereits in der Vorlesung bewiesen wurde, dass jeder Vektorraum der Dimension
+              $n$ isomorph zum Vektorraum $K^n$ ist.
 
-		      Unsere zu zeigende Annahme lautet daher, dass die Menge $\{p_k\}_{k=0}^{n}$ linear unabhängig ist, da diese Menge offensichtlich
-		      den Vektorraum $U$ erzeugt.
+              Unsere zu zeigende Annahme lautet daher, dass die Menge $\{p_k\}_{k=0}^{n}$
+              linear unabhängig ist, da diese Menge offensichtlich den Vektorraum $U$
+              erzeugt.
 
-		      \textbf{Annahme}: $\{p_k\}_{k=0}^{n}$ ist linear unabhängig.
+              \textbf{Annahme}: $\{p_k\}_{k=0}^{n}$ ist linear unabhängig.
 
-		      Für den Fall, dass $U = \Span{x^0}$ ist, ist die lineare Unabhängigkeit trivial.
+              Für den Fall, dass $U = \operatorname{Span}{x^0}$ ist, ist die lineare
+              Unabhängigkeit trivial.
 
-		      Nehmen wir an, dass $\{p_k\}_ck=0c^{n}$ bereits für ein $n$ linear unabhängig ist. Wir müssen nun zeigen, dass
-		      $\{p_k\}_{k=0}^{n+1}$ ebenfalls linear unabhängig ist.
+              Nehmen wir an, dass $\{p_k\}_ck=0c^{n}$ bereits für ein $n$ linear unabhängig
+              ist. Wir müssen nun zeigen, dass $\{p_k\}_{k=0}^{n+1}$ ebenfalls linear
+              unabhängig ist.
 
-		      Betrachten wir die Gleichung mit $a_i \in K$:
-		      \[
-			      a_0 x^0 + a_1 x^1 + \ldots + a_{n+1} x^{n+1} = 0.
-		      \]
+              Betrachten wir die Gleichung mit $a_i \in K$:
+              \[
+                  a_0 x^0 + a_1 x^1 + \ldots + a_{n+1} x^{n+1} = 0.
+              \]
 
-		      Für den Wert $x = 0$ ergibt sich $a_0 = 0$.
+              Für den Wert $x = 0$ ergibt sich $a_0 = 0$.
 
-		      Formen wir die Gleichung nun um:
-		      \begin{align}
-			      a_1 x^1 + a_2 x^2 + \ldots + a_{n+1}x^{n+1} = x(a_1 + a_2 x + \ldots + a_{n+1}x^n) = 0.
-		      \end{align}
+              Formen wir die Gleichung nun um:
+              \begin{align}
+                  a_1 x^1 + a_2 x^2 + \ldots + a_{n+1}x^{n+1} = x(a_1 + a_2 x + \ldots + a_{n+1}x^n) = 0.
+              \end{align}
 
-		      Diese Gleichung ist jedoch nur in zwei Fällen null, nämlich wenn $x = 0$ oder aufgrund der linearen Unabhängigkeit von
-		      $\{p_k\}_{k=0}^{n}$ $a_i = 0$ für alle $i$.
+              Diese Gleichung ist jedoch nur in zwei Fällen null, nämlich wenn $x = 0$ oder
+              aufgrund der linearen Unabhängigkeit von $\{p_k\}_{k=0}^{n}$ $a_i = 0$ für alle
+              $i$.
 
-		      Somit ist $\{p_k\}_{k=0}^{n+1}$ linear unabhängig.
+              Somit ist $\{p_k\}_{k=0}^{n+1}$ linear unabhängig.
 
-		      Daher ergibt sich eine Basis, was wiederum $\dim_K(U) = n + 1$ für alle $n \in \nats$ impliziert. \checkmark
+              Daher ergibt sich eine Basis, was wiederum $\dim_K(U) = n + 1$ für alle $n \in
+                  \nats$ impliziert. \checkmark
 
-		\item Wiederholen Sie i) für $K = \field{F}_3$ und $n \leq 2$.
+        \item Wiederholen Sie i) für $K = \field{F}_3$ und $n \leq 2$.
 
-		      Bemerken wir, dass alle Polynome mit einem Grad von $n \leq 2$ die Form $a_0x^0 + a_1x^1 + a_2x^2$ haben.
+              Bemerken wir, dass alle Polynome mit einem Grad von $n \leq 2$ die Form $a_0x^0
+                  + a_1x^1 + a_2x^2$ haben.
 
-		      Wenn wir $x = 0$ setzen, ergibt sich $a_0 = 0$. Somit haben wir $a_1x^1 = - a_2x^2$. Jetzt überprüfen wir, ob es außer der
-		      trivialen Lösung noch weitere Werte für $a_i$ gibt, die diese Gleichung erfüllen.
+              Wenn wir $x = 0$ setzen, ergibt sich $a_0 = 0$. Somit haben wir $a_1x^1 = -
+                  a_2x^2$. Jetzt überprüfen wir, ob es außer der trivialen Lösung noch weitere
+              Werte für $a_i$ gibt, die diese Gleichung erfüllen.
 
-		      Wenn $a_1 = a_2$, dann ergibt sich $x^1 = - x^2$, was für $x = 1$ nicht erfüllt ist.
+              Wenn $a_1 = a_2$, dann ergibt sich $x^1 = - x^2$, was für $x = 1$ nicht erfüllt
+              ist.
 
-		      Wenn $a_1 = 1$, dann ergibt sich $x^1 = -2x^2$, was für $x = 2$ nicht erfüllt ist.
+              Wenn $a_1 = 1$, dann ergibt sich $x^1 = -2x^2$, was für $x = 2$ nicht erfüllt
+              ist.
 
-		      Wenn $a_1 = 2$, dann ergibt sich $2x^1 = -x^2$, was ebenfalls für $x = 2$ nicht erfüllt ist.
+              Wenn $a_1 = 2$, dann ergibt sich $2x^1 = -x^2$, was ebenfalls für $x = 2$ nicht
+              erfüllt ist.
 
-		      Daher bleibt nur die triviale Lösung für $a_0x^0 + a_1x^1 + a_2x^2 = 0$ übrig, bei der $a_i = 0$ ist. Dies impliziert, dass die
-		      Funktionen $x^0, x^1$ und $x^2$ linear unabhängig sind und somit eine Basis bilden.
+              Daher bleibt nur die triviale Lösung für $a_0x^0 + a_1x^1 + a_2x^2 = 0$ übrig,
+              bei der $a_i = 0$ ist. Dies impliziert, dass die Funktionen $x^0, x^1$ und
+              $x^2$ linear unabhängig sind und somit eine Basis bilden.
 
-		      Folglich gilt für $K = F_3$ und $n \leq 2$ $\dim_K(U) = n + 1$ wie in ii sowie $U \cong K^{n+1}$.
-	\end{enumerate}
+              Folglich gilt für $K = F_3$ und $n \leq 2$ $\dim_K(U) = n + 1$ wie in ii sowie
+              $U \cong K^{n+1}$.
+    \end{enumerate}
 \end{proof}
 
 \end{problem}
@@ -99,37 +117,38 @@ mit $\dim_K(U) = m$. Weiter seien $W_1$ und $W_2$ Untervektorräume von $\text{E
 durch
 \[ W_1 := \{f \in \text{End}(V) \mid f|_U = 0\}, \quad W_2 := \{f \in \text{End}(V) \mid \text{im}(f) \subseteq U\}. \]
 Berechnen Sie \begin{enumerate}
-	\begin{multicols}{3}
-		\item $\dim_K(\text{End}(V))$,
-		\item $\dim_K(W_1)$,
-		\item $\dim_K(W_2)$,
-		\item $\dim_K(W_1 \cap W_2)$,
-		\item $\dim_K(W_1 + W_2)$.
-	\end{multicols}
+    \begin{multicols}{3}
+        \item $\dim_K(\text{End}(V))$,
+        \item $\dim_K(W_1)$,
+        \item $\dim_K(W_2)$,
+        \item $\dim_K(W_1 \cap W_2)$,
+        \item $\dim_K(W_1 + W_2)$.
+    \end{multicols}
 \end{enumerate}
 
 \begin{proof}
-	$ $
+    $ $
 
-	\begin{enumerate}
-		\item $\dim_K(\text{End}(V))$,
+    \begin{enumerate}
+        \item $\dim_K(\text{End}(V))$,
 
-		      Für jedes $e_i$ müssen die n Komponenten von ${e_i}'$, dem Bild von $e_i$, angegeben werden. Es gibt n Basisvektoren $e_i$, daher
-		      erhält man $\dim_K(\text{End}(V)) = n \times n = n^2$.
+              Für jedes $e_i$ müssen die n Komponenten von ${e_i}'$, dem Bild von $e_i$,
+              angegeben werden. Es gibt n Basisvektoren $e_i$, daher erhält man
+              $\dim_K(\text{End}(V)) = n \times n = n^2$.
 
-		\item $\dim_K(W_1)$,
+        \item $\dim_K(W_1)$,
 
-		      $W_1$ ist der Untervektorraum von $\text{End}(V)$, der aus den linearen Abbildungen besteht, die auf $U$ verschwinden. Das bedeutet, dass die Abbildungen in $W_1$ auf $U$ den Nullvektor abbilden. Wenn $U$ eine Dimension von $m$ hat, gibt es $m$ unabhängige Basisvektoren in $U$. Für jede dieser Basisvektoren gibt es $n-m$ unabhängige Basisvektoren in $V$, die nicht in $U$ enthalten sind. Daher gibt es insgesamt $m \cdot (n-m)$ unabhängige lineare Abbildungen, die auf $U$ verschwinden, und somit ist $\dim_K(W_1) = m \cdot (n-m)$.
+              $W_1$ ist der Untervektorraum von $\text{End}(V)$, der aus den linearen Abbildungen besteht, die auf $U$ verschwinden. Das bedeutet, dass die Abbildungen in $W_1$ auf $U$ den Nullvektor abbilden. Wenn $U$ eine Dimension von $m$ hat, gibt es $m$ unabhängige Basisvektoren in $U$. Für jede dieser Basisvektoren gibt es $n-m$ unabhängige Basisvektoren in $V$, die nicht in $U$ enthalten sind. Daher gibt es insgesamt $m \cdot (n-m)$ unabhängige lineare Abbildungen, die auf $U$ verschwinden, und somit ist $\dim_K(W_1) = m \cdot (n-m)$.
 
-		\item $\dim_K(W_2)$,
+        \item $\dim_K(W_2)$,
 
-		      $W_2$ ist der Untervektorraum von $\text{End}(V)$, der aus den linearen Abbildungen besteht, deren Bild in $U$ enthalten ist. Das bedeutet, dass die Abbildungen in $W_2$ von $V$ nach $U$ abbilden. Da $\dim_K(U) = m$, gibt es $m$ unabhängige Basisvektoren in $U$, und es gibt $n-m$ unabhängige Basisvektoren in $V$, die nicht in $U$ enthalten sind. Daher gibt es insgesamt $m \cdot (n-m)$ unabhängige lineare Abbildungen, deren Bild in $U$ enthalten ist, und somit ist $\dim_K(W_2) = m \cdot (n-m)$.
+              $W_2$ ist der Untervektorraum von $\text{End}(V)$, der aus den linearen Abbildungen besteht, deren Bild in $U$ enthalten ist. Das bedeutet, dass die Abbildungen in $W_2$ von $V$ nach $U$ abbilden. Da $\dim_K(U) = m$, gibt es $m$ unabhängige Basisvektoren in $U$, und es gibt $n-m$ unabhängige Basisvektoren in $V$, die nicht in $U$ enthalten sind. Daher gibt es insgesamt $m \cdot (n-m)$ unabhängige lineare Abbildungen, deren Bild in $U$ enthalten ist, und somit ist $\dim_K(W_2) = m \cdot (n-m)$.
 
-		\item $\dim_K(W_1 \cap W_2)$,
+        \item $\dim_K(W_1 \cap W_2)$,
 
-		      $W_1 \cap W_2$ ist der Schnitt der beiden Untervektorräume $W_1$ und $W_2$. Dies bedeutet, dass die Abbildungen in $W_1 \cap W_2$ sowohl auf $U$ verschwinden als auch ihr Bild in $U$ haben müssen. Daher enthält $W_1 \cap W_2$ nur die Nullabbildung. Da der Nullvektor der einzige Vektor in $W_1 \cap W_2$ ist, ist $\dim_K(W_1 \cap W_2) = 0$.
+              $W_1 \cap W_2$ ist der Schnitt der beiden Untervektorräume $W_1$ und $W_2$. Dies bedeutet, dass die Abbildungen in $W_1 \cap W_2$ sowohl auf $U$ verschwinden als auch ihr Bild in $U$ haben müssen. Daher enthält $W_1 \cap W_2$ nur die Nullabbildung. Da der Nullvektor der einzige Vektor in $W_1 \cap W_2$ ist, ist $\dim_K(W_1 \cap W_2) = 0$.
 
-	\end{enumerate}
+    \end{enumerate}
 \end{proof}
 \end{problem}
 
@@ -137,54 +156,61 @@ Berechnen Sie \begin{enumerate}
 Sei $V$ ein $K$-Vektorraum und $P : V \to V$ ein idempotenter Vektorraum-Homomorphismus, d.h.
 $P \circ P = P$. Eine solche Abbildung $P$ heißt auch Projektion. Zeigen Sie:
 \begin{enumerate}
-	\item $\text{Re} : \mathbb{C} \to \mathbb{C}$ ist eine Projektion und berechnen Sie $\text{im}(\text{Re})$, $\ker(\text{Re})$, $\text{im}(\text{Re}^\perp)$ und $\ker(\text{Re}^\perp)$, wobei $\text{Re}^\perp := \text{Id}_\mathbb{C} - \text{Re}$.
-	\item $\text{Id}_V - P$ ist eine Projektion.
-	\item $\text{im}(P) = \ker(\text{Id}_V - P)$ und $\ker(P) = \text{im}(\text{Id}_V - P)$.
-	\item $V = \ker(P) \oplus \text{im}(P)$.
+    \item $\text{Re} : \mathbb{C} \to \mathbb{C}$ ist eine Projektion und berechnen Sie $\text{im}(\text{Re})$, $\ker(\text{Re})$, $\text{im}(\text{Re}^\perp)$ und $\ker(\text{Re}^\perp)$, wobei $\text{Re}^\perp := \text{Id}_\mathbb{C} - \text{Re}$.
+    \item $\text{Id}_V - P$ ist eine Projektion.
+    \item $\text{im}(P) = \ker(\text{Id}_V - P)$ und $\ker(P) = \text{im}(\text{Id}_V - P)$.
+    \item $V = \ker(P) \oplus \text{im}(P)$.
 \end{enumerate}
 
 \begin{proof}
-	$ $
+    $ $
 
-	\begin{enumerate}
-		\item $\text{Re} : \mathbb{C} \to \mathbb{C}$ ist eine Projektion und berechnen Sie $\text{im}(\text{Re})$, $\ker(\text{Re})$, $\text{im}(\text{Re}^\perp)$ und $\ker(\text{Re}^\perp)$, wobei $\text{Re}^\perp := \text{Id}_\mathbb{C} - \text{Re}$.
+    \begin{enumerate}
+        \item $\text{Re} : \mathbb{C} \to \mathbb{C}$ ist eine Projektion und berechnen Sie $\text{im}(\text{Re})$, $\ker(\text{Re})$, $\text{im}(\text{Re}^\perp)$ und $\ker(\text{Re}^\perp)$, wobei $\text{Re}^\perp := \text{Id}_\mathbb{C} - \text{Re}$.
 
-		      Für $\operatorname{Re} := a + ib \mapsto a + i \cdot 0$, mit $z \in \field{C}$ und $z := a + ib$, $a,b \in \reals$ ist $
-			      \operatorname{Re} \circ \operatorname{Re} (a + ib) = \operatorname{Re}(a + i \cdot 0) = a \Rightarrow \operatorname{Re}$ ist eine
-		      Projektion \checkmark.
+              Für $\operatorname{Re} := a + ib \mapsto a + i \cdot 0$, mit $z \in \field{C}$
+              und $z := a + ib$, $a,b \in \reals$ ist $ \operatorname{Re} \circ
+                  \operatorname{Re} (a + ib) = \operatorname{Re}(a + i \cdot 0) = a \Rightarrow
+                  \operatorname{Re}$ ist eine Projektion \checkmark.
 
-		      \begin{enumerate}
-			      \item $\operatorname{im}(\operatorname{Re}) = \reals$ \checkmark
-			      \item $\ker(\operatorname{Re}) = \set{z \in \field{C} \mid \operatorname{Re}(z) = 0} = \set{0 + ib \mid b \in \reals}$ \checkmark
-			      \item $\operatorname{im}(\operatorname{Re}^\perp) = \set{ z - \operatorname{Re}(z) \mid z \in \field{C}} = \set { a + ib - (a - i \cdot 0) \mid a,b \in \reals} = \set{ z \in \field{C} \mid \operatorname{Re}(z) = 0}$ \checkmark
-			      \item $\operatorname{ker}(\operatorname{Re}^\perp) = \set{ z \in \field{C} \mid z - \operatorname{Re} = 0} = \reals $ \checkmark
+              \begin{enumerate}
+                  \item $\operatorname{im}(\operatorname{Re}) = \reals$ \checkmark
+                  \item $\ker(\operatorname{Re}) = \set{z \in \field{C} \mid \operatorname{Re}(z) = 0} = \set{0 + ib \mid b \in \reals}$ \checkmark
+                  \item $\operatorname{im}(\operatorname{Re}^\perp) = \set{ z - \operatorname{Re}(z) \mid z \in \field{C}} = \set { a + ib - (a - i \cdot 0) \mid a,b \in \reals} = \set{ z \in \field{C} \mid \operatorname{Re}(z) = 0}$ \checkmark
+                  \item $\operatorname{ker}(\operatorname{Re}^\perp) = \set{ z \in \field{C} \mid z - \operatorname{Re} = 0} = \reals $ \checkmark
 
-		      \end{enumerate}
+              \end{enumerate}
 
-		\item $\text{im}(P) = \ker(\text{Id}_V - P)$ und $\ker(P) = \text{im}(\text{Id}_V - P)$.
+        \item $\text{im}(P) = \ker(\text{Id}_V - P)$ und $\ker(P) = \text{im}(\text{Id}_V - P)$.
 
-		      Bemerken wir das um im Kern von $P$ zu sein die Bedingung $Id_V - P = 0$ gelten muss. Formen wir um erhalten wir $P = Id_V$ also
-		      alle Elemente aus $v \in V$ für die $P(v) = v$ dies ist allerdings genau die Bedingung um im Bild von $P$ zu sein ($P(v) = v
-			      \Rightarrow P(P(v)) = P(v)$) \checkmark.
+              Bemerken wir das um im Kern von $P$ zu sein die Bedingung $Id_V - P = 0$ gelten
+              muss. Formen wir um erhalten wir $P = Id_V$ also alle Elemente aus $v \in V$
+              für die $P(v) = v$ dies ist allerdings genau die Bedingung um im Bild von $P$
+              zu sein ($P(v) = v \Rightarrow P(P(v)) = P(v)$) \checkmark.
 
-		      Damit allerdings ein $v \in V$ im Bild von $Id_V - P$ ist muss $v = Id_V(v) - P(v)$ gelten. Formen wir um erhalten wir \[
-			      v = Id_V(v) - P(v) \Rightarrow v = v - P(v) \Rightarrow 0 = 0 - P(v) \Rightarrow P(v) = 0,
-		      \] was allerdings die Bedingung ist um im Kern von $P$ zu sein \checkmark.
+              Damit allerdings ein $v \in V$ im Bild von $Id_V - P$ ist muss $v = Id_V(v) -
+                  P(v)$ gelten. Formen wir um erhalten wir \[
+                  v = Id_V(v) - P(v) \Rightarrow v = v - P(v) \Rightarrow 0 = 0 - P(v) \Rightarrow P(v) = 0,
+              \] was allerdings die Bedingung ist um im Kern von $P$ zu sein \checkmark.
 
-		\item $V = \ker(P) \oplus \text{im}(P)$.
+        \item $V = \ker(P) \oplus \text{im}(P)$.
 
-		      Zeigen wir zunächst das $\ker{P} \cap \im{P} = \set{0}$.
+              Zeigen wir zunächst das $\ker{P} \cap \im{P} = \set{0}$.
 
-		      Wie wir bereits in der vorherigen teilaufgabe bemerkt haben muss, für $v \in V$ im $\ker P$ gelten das $\Id_V(v) - P(v) = 0$
-		      kombinieren wir dies mit der Bedingung, um im Bild von $P$ zu sein, erhalten wir $v = P(v) = \Id{V}(v) - P(v) = 0$. Somit ist der
-		      einziege Vektor der diese Bedingung erfüllt $v = 0$ was impliziert, dass die Summer $\ker(P) \oplus \text{im}(P)$ direkt ist.
+              Wie wir bereits in der vorherigen teilaufgabe bemerkt haben muss, für $v \in V$
+              im $\ker P$ gelten das $\Id_V(v) - P(v) = 0$ kombinieren wir dies mit der
+              Bedingung, um im Bild von $P$ zu sein, erhalten wir $v = P(v) = \Id{V}(v) -
+                  P(v) = 0$. Somit ist der einziege Vektor der diese Bedingung erfüllt $v = 0$
+              was impliziert, dass die Summer $\ker(P) \oplus \text{im}(P)$ direkt ist.
 
-		      Um zu Zeigen das $V = \ker(P) + \im{P}$ ist wählen wir ein generisches $v \in V$. Bemerken wir das \[
-			      P(v - P(v)) = P(v) - P(P(v)) = P(v) - P(v) = 0
-		      \] also $v - P(v) \in \ker(P)$. Wählen wir nun $P(v) \in \im(P)$ somit erhalten wir $v - P(v) + P(v) = v$ oder $v$ ist die Summe von
-		      einem Element aus dem Kern sowie dem Bild von $P$ \checkmark.
+              Um zu Zeigen das $V = \ker(P) + \im{P}$ ist wählen wir ein generisches $v \in
+                  V$. Bemerken wir das \[
+                  P(v - P(v)) = P(v) - P(P(v)) = P(v) - P(v) = 0
+              \] also $v - P(v) \in \ker(P)$. Wählen wir nun $P(v) \in \im(P)$ somit erhalten
+              wir $v - P(v) + P(v) = v$ oder $v$ ist die Summe von einem Element aus dem Kern
+              sowie dem Bild von $P$ \checkmark.
 
-	\end{enumerate}
+    \end{enumerate}
 \end{proof}
 \end{problem}
 
