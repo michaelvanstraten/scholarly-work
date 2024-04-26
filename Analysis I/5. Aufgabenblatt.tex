@@ -1,8 +1,8 @@
 \documentclass{problemset}
 
-\Lecture{Analysis I} 
-\Problemset{5} 
-\DoOn{28.11.2023} 
+\Lecture{Analysis I}
+\Problemset{5}
+\DoOn{28.11.2023}
 \author{Michael van Straten}
 
 \setlist[enumerate, 1]{label=\alph*)}
@@ -16,33 +16,33 @@
 \begin{problem}[Aussagenlogik und Mengentheoreme]{6 Punkte}
 Seien $A$, $B$, $C$ Mengen. Geben Sie, in Analogie mit Bsp Z2.4, detaillierte Beweise mithilfe der Aussagenlogik zu folgenden beiden Mengentheoremen (siehe Z1):
 \begin{enumerate}
-	\item $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$
-	\item $A \setminus (B \cup C) = (A \setminus B) \setminus C$
+    \item $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$
+    \item $A \setminus (B \cup C) = (A \setminus B) \setminus C$
 \end{enumerate}
 \begin{proof}
-	$ $
-	\begin{enumerate}
-		\item $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$
+    $ $
+    \begin{enumerate}
+        \item $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$
 
-		      Sei $x$ ein beliebiges Element.
-		      \begin{align*}
-			      x \in A \setminus (B \cup C) & \Longrightarrow x \in A \land x \not \in (B \cup C)                             \\
-			                                   & \Longrightarrow x \in A \land (x \not \in B \land x \not \in C)                 \\
-			                                   & \Longrightarrow (x \in A \land x \not \in B) \land (x \in A \land x \not \in C) \\
-			                                   & \Longrightarrow (x \in A \setminus B) \land (x \in A \setminus C)               \\
-			                                   & \Longrightarrow x \in (A \setminus B) \cap (A \setminus C) \tag{\checkmark}     \\
-		      \end{align*}
+              Sei $x$ ein beliebiges Element.
+              \begin{align*}
+                  x \in A \setminus (B \cup C) & \Longrightarrow x \in A \land x \not \in (B \cup C)                             \\
+                                               & \Longrightarrow x \in A \land (x \not \in B \land x \not \in C)                 \\
+                                               & \Longrightarrow (x \in A \land x \not \in B) \land (x \in A \land x \not \in C) \\
+                                               & \Longrightarrow (x \in A \setminus B) \land (x \in A \setminus C)               \\
+                                               & \Longrightarrow x \in (A \setminus B) \cap (A \setminus C) \tag{\checkmark}     \\
+              \end{align*}
 
-		\item $A \setminus (B \cup C) = (A \setminus B) \setminus C$
+        \item $A \setminus (B \cup C) = (A \setminus B) \setminus C$
 
-		      Sei $x$ ein beliebiges Element.
-		      \begin{align*}
-			      x \in A \setminus (B \cup C) & \Longrightarrow x \in A \land x \not\in (B \cup C)                 \\
-			                                   & \Longrightarrow x \in A \land (x \not\in B \land x \not\in C)      \\
-			                                   & \Longrightarrow x \in (A \setminus B) \land x \not\in C            \\
-			                                   & \Longrightarrow x \in (A \setminus B) \setminus C \tag{\checkmark} \\
-		      \end{align*}
-	\end{enumerate}
+              Sei $x$ ein beliebiges Element.
+              \begin{align*}
+                  x \in A \setminus (B \cup C) & \Longrightarrow x \in A \land x \not\in (B \cup C)                 \\
+                                               & \Longrightarrow x \in A \land (x \not\in B \land x \not\in C)      \\
+                                               & \Longrightarrow x \in (A \setminus B) \land x \not\in C            \\
+                                               & \Longrightarrow x \in (A \setminus B) \setminus C \tag{\checkmark} \\
+              \end{align*}
+    \end{enumerate}
 \end{proof}
 \end{problem}
 
@@ -50,72 +50,72 @@ Seien $A$, $B$, $C$ Mengen. Geben Sie, in Analogie mit Bsp Z2.4, detaillierte Be
 
 \begin{problem}[Abbildungen und Verknüpfungen]{8 Punkte}
 \begin{enumerate}
-	\item Seien $f: X \to Y$, $g: Y \to Z$ und $h = g \circ f$, also $h: X \to Z$.
-	      \begin{enumerate}
-		      \item Beweisen Sie, dass aus $h$ injektiv folgt, dass $f$ injektiv ist.
-		      \item Beweisen Sie, dass $h$ surjektiv $\Rightarrow$ $g$ surjektiv.
-		      \item Gilt $h$ surjektiv $\Rightarrow$ $f$ surjektiv? Gilt $h$ surjektiv $\Rightarrow$ $g$ injektiv? Wenn nicht, dann geben Sie Gegenbeispiele!
-		      \item Seien nun noch vier Mengen $A$, $B$, $C$ und $D$ zusammen mit drei Abbildungen $f: A \to B$, $g: B \to C$ und $h: C \to D$ gegeben. Beweisen Sie, dass aus der Bijektivit¨at von $g \circ f$ und $h \circ g$ folgt, dass $f$, $g$ und $h$ alle bijektiv sind!
-	      \end{enumerate}
+    \item Seien $f: X \to Y$, $g: Y \to Z$ und $h = g \circ f$, also $h: X \to Z$.
+          \begin{enumerate}
+              \item Beweisen Sie, dass aus $h$ injektiv folgt, dass $f$ injektiv ist.
+              \item Beweisen Sie, dass $h$ surjektiv $\Rightarrow$ $g$ surjektiv.
+              \item Gilt $h$ surjektiv $\Rightarrow$ $f$ surjektiv? Gilt $h$ surjektiv $\Rightarrow$ $g$ injektiv? Wenn nicht, dann geben Sie Gegenbeispiele!
+              \item Seien nun noch vier Mengen $A$, $B$, $C$ und $D$ zusammen mit drei Abbildungen $f: A \to B$, $g: B \to C$ und $h: C \to D$ gegeben. Beweisen Sie, dass aus der Bijektivit¨at von $g \circ f$ und $h \circ g$ folgt, dass $f$, $g$ und $h$ alle bijektiv sind!
+          \end{enumerate}
 
 \end{enumerate}
 
 \begin{proof} $ $
-	\begin{enumerate}
-		\item $h = g \circ f$ injektiv $\Rightarrow$ $f$ injektiv
+    \begin{enumerate}
+        \item $h = g \circ f$ injektiv $\Rightarrow$ $f$ injektiv
 
-		      Angenommen, $f(x) = f(y)$. Um die Injektivität von $f$ zu zeigen, muss gezeigt werden, dass daraus $x = y$ folgt.
+              Angenommen, $f(x) = f(y)$. Um die Injektivität von $f$ zu zeigen, muss gezeigt werden, dass daraus $x = y$ folgt.
 
-		      Betrachten wir $g$ angewendet auf $f(x)$ und $f(y)$. Da $g$ eine Abbildung ist, muss sie eindeutig sein. Daher gilt:
-		      \[
-			      g(f(x)) = g(f(y)).
-		      \]
+              Betrachten wir $g$ angewendet auf $f(x)$ und $f(y)$. Da $g$ eine Abbildung ist, muss sie eindeutig sein. Daher gilt:
+              \[
+                  g(f(x)) = g(f(y)).
+              \]
 
-		      Aufgrund der Annahme $h = g \circ f$ haben wir auch $h(x) = h(y)$.
-		      Da $h$ injektiv ist, folgt $x = y$. Somit ist $f$ injektiv. \checkmark
-		\item $h = g \circ f$ bijektiv $\Rightarrow$ $g$ bijektiv
+              Aufgrund der Annahme $h = g \circ f$ haben wir auch $h(x) = h(y)$.
+              Da $h$ injektiv ist, folgt $x = y$. Somit ist $f$ injektiv. \checkmark
+        \item $h = g \circ f$ bijektiv $\Rightarrow$ $g$ bijektiv
 
-		      Wir betrachten die zusammengesetzte Funktion \(g \circ f: X \to Z\) als eine surjektive Abbildung. Nach Definition bedeutet dies, dass für jedes \(z \in Z\) ein \(x \in X\) existiert, so dass \(g \circ f(x) = z\).
+              Wir betrachten die zusammengesetzte Funktion \(g \circ f: X \to Z\) als eine surjektive Abbildung. Nach Definition bedeutet dies, dass für jedes \(z \in Z\) ein \(x \in X\) existiert, so dass \(g \circ f(x) = z\).
 
-		      Wir faktorisieren nun \(g \circ f\) durch \(Y\):
+              Wir faktorisieren nun \(g \circ f\) durch \(Y\):
 
-		      \[ X \overset{f}{\to} Y \overset{g}{\to} Z; \]
+              \[ X \overset{f}{\to} Y \overset{g}{\to} Z; \]
 
-		      Daher gilt für alle \(x \in X\), dass \(f(x) \in Y\). Somit existiert ein \(y = f(x) \in Y\) mit \(g(y) = g(f(x)) = g \circ f(x) = z\).
+              Daher gilt für alle \(x \in X\), dass \(f(x) \in Y\). Somit existiert ein \(y = f(x) \in Y\) mit \(g(y) = g(f(x)) = g \circ f(x) = z\).
 
-		      Da dies für jedes \(z \in Z\) gilt, ergibt sich:
+              Da dies für jedes \(z \in Z\) gilt, ergibt sich:
 
-		      \[ g: Y \to Z \]
+              \[ g: Y \to Z \]
 
-		      Die Funktion \(g\) ist somit ebenfalls surjektiv.
+              Die Funktion \(g\) ist somit ebenfalls surjektiv.
 
-		\item $h$ surjektiv $\not\Rightarrow$ $f$ surjektiv und $h$ surjektiv $\not\Rightarrow$ $g$ injektiv.
+        \item $h$ surjektiv $\not\Rightarrow$ $f$ surjektiv und $h$ surjektiv $\not\Rightarrow$ $g$ injektiv.
 
-		      Betrachten wir die Mengen $X = \{x_1\}$, $Y = \{y_1, y_2\}$ und $Z = \{z_1\}$ sowie die Funktionen $f: X \to Y$ mit $f(x_1) = y_1$ und $g: Y \to Z$ mit $g(y_1) = g(y_2) = z_1$.
+              Betrachten wir die Mengen $X = \{x_1\}$, $Y = \{y_1, y_2\}$ und $Z = \{z_1\}$ sowie die Funktionen $f: X \to Y$ mit $f(x_1) = y_1$ und $g: Y \to Z$ mit $g(y_1) = g(y_2) = z_1$.
 
-		      Es folgt, dass $g \circ f$ surjektiv ist, da für jedes $z \in Z$ ein $x \in X$ existiert, sodass $(g \circ f)(x) = z$. Dies liegt daran, dass $(g \circ f)(x_1) = g(f(x_1)) = g(y_1) = z_1$ für jedes $z_1 \in Z$ gilt.
+              Es folgt, dass $g \circ f$ surjektiv ist, da für jedes $z \in Z$ ein $x \in X$ existiert, sodass $(g \circ f)(x) = z$. Dies liegt daran, dass $(g \circ f)(x_1) = g(f(x_1)) = g(y_1) = z_1$ für jedes $z_1 \in Z$ gilt.
 
-		      Jedoch ist $f$ nicht surjektiv, da es für das Element $y_2 \in Y$ kein $x \in X$ gibt, für das $f(x) = y_2$.
+              Jedoch ist $f$ nicht surjektiv, da es für das Element $y_2 \in Y$ kein $x \in X$ gibt, für das $f(x) = y_2$.
 
-		      Dies zeigt, dass aus der Surjektivität von $h$ nicht unbedingt folgt, dass $f$ surjektiv ist.
+              Dies zeigt, dass aus der Surjektivität von $h$ nicht unbedingt folgt, dass $f$ surjektiv ist.
 
-		      Darüber hinaus zeigt das obige Beispiel, dass $g$ nicht injektiv sein muss, da $g(y_1) = g(y_2)$, aber $y_1 \neq y_2$.
+              Darüber hinaus zeigt das obige Beispiel, dass $g$ nicht injektiv sein muss, da $g(y_1) = g(y_2)$, aber $y_1 \neq y_2$.
 
-		      Somit ist gezeigt, dass die Surjektivität von $h$ nicht notwendigerweise die Surjektivität von $f$ impliziert, und die Surjektivität von $h$ nicht notwendigerweise die Injektivität von $g$ impliziert. \checkmark
+              Somit ist gezeigt, dass die Surjektivität von $h$ nicht notwendigerweise die Surjektivität von $f$ impliziert, und die Surjektivität von $h$ nicht notwendigerweise die Injektivität von $g$ impliziert. \checkmark
 
-		\item $g \circ f$ und $h \circ g$ bijektiv $\Rightarrow$ $f$, $g$ und $h$ bijektiv
+        \item $g \circ f$ und $h \circ g$ bijektiv $\Rightarrow$ $f$, $g$ und $h$ bijektiv
 
-		      Da $g \circ f$ bijektiv ist, ist $f$ injektiv und $g$ surjektiv.
-		      Ebenso ist $g \circ h$ bijektiv, was bedeutet, dass $g$ injektiv und $h$ surjektiv ist.
-		      Daher ist $g$ bijektiv.
+              Da $g \circ f$ bijektiv ist, ist $f$ injektiv und $g$ surjektiv.
+              Ebenso ist $g \circ h$ bijektiv, was bedeutet, dass $g$ injektiv und $h$ surjektiv ist.
+              Daher ist $g$ bijektiv.
 
-		      Da $g$ bijektiv ist, existiert die inverse Funktion $g^{-1}$, die ebenfalls bijektiv ist.
-		      Somit kann $f$ als die Komposition zweier bijektiver Funktionen geschrieben werden: $f = g^{-1} \circ (g \circ f)$.
-		      Da die Komposition zweier bijektiver Funktionen wieder bijektiv ist, folgt, dass $f$ bijektiv ist.
+              Da $g$ bijektiv ist, existiert die inverse Funktion $g^{-1}$, die ebenfalls bijektiv ist.
+              Somit kann $f$ als die Komposition zweier bijektiver Funktionen geschrieben werden: $f = g^{-1} \circ (g \circ f)$.
+              Da die Komposition zweier bijektiver Funktionen wieder bijektiv ist, folgt, dass $f$ bijektiv ist.
 
-		      Analog dazu lässt sich zeigen, dass auch $h$ bijektiv ist: $h = (h \circ g) \circ g^{-1}$.
+              Analog dazu lässt sich zeigen, dass auch $h$ bijektiv ist: $h = (h \circ g) \circ g^{-1}$.
 
-	\end{enumerate}
+    \end{enumerate}
 \end{proof}
 \end{problem}
 
@@ -123,66 +123,66 @@ Seien $A$, $B$, $C$ Mengen. Geben Sie, in Analogie mit Bsp Z2.4, detaillierte Be
 
 \begin{problem}[Graphen]{6 Punkte}
 \begin{enumerate}
-	\item Seien $X := \{0, 1, 2, 3, 4\}$ und $Y := \{0, 5, 10, 15\}$, sowie $A := X \times Y = \{(x, y) \mid x \in X, y \in Y\}$ und $B := \{x + y \mid x \in X, y \in Y\}$ gegeben. Definiere dann $R \subset A \times B$ durch $R := \{((x, y), x + y) \mid x \in X, y \in Y\}$.
-	      Zeigen Sie, dass es eine bijektive Abbildung $f : A \to B$ gibt, so dass $R$ der Graph von $f$ ist.
+    \item Seien $X := \{0, 1, 2, 3, 4\}$ und $Y := \{0, 5, 10, 15\}$, sowie $A := X \times Y = \{(x, y) \mid x \in X, y \in Y\}$ und $B := \{x + y \mid x \in X, y \in Y\}$ gegeben. Definiere dann $R \subset A \times B$ durch $R := \{((x, y), x + y) \mid x \in X, y \in Y\}$.
+          Zeigen Sie, dass es eine bijektive Abbildung $f : A \to B$ gibt, so dass $R$ der Graph von $f$ ist.
 
-	\item Sei $X$ eine nichtleere Menge. Welche Eigenschaften muss $X$ haben, damit $X \times X$ der Graph einer Abbildung von $X$ nach $X$ ist?
+    \item Sei $X$ eine nichtleere Menge. Welche Eigenschaften muss $X$ haben, damit $X \times X$ der Graph einer Abbildung von $X$ nach $X$ ist?
 
 \end{enumerate}
 
 \begin{proof} $ $
-	\begin{enumerate}
-		\item $f: A \rightarrow B$ mit Graph von $f$ gleich $R$
+    \begin{enumerate}
+        \item $f: A \rightarrow B$ mit Graph von $f$ gleich $R$
 
-		      Wählen wir \(f: (x, y) \mapsto x + y\) für \(x \in X\) und \(y \in Y\).
-		      Es ist offensichtlich, dass der Graph von \(f\) genau \(R\) ist.
+              Wählen wir \(f: (x, y) \mapsto x + y\) für \(x \in X\) und \(y \in Y\).
+              Es ist offensichtlich, dass der Graph von \(f\) genau \(R\) ist.
 
-		      Nun müssen wir zeigen, dass \(f\) bijektiv ist, das heißt, \(f\) injektiv und surjektiv ist.
+              Nun müssen wir zeigen, dass \(f\) bijektiv ist, das heißt, \(f\) injektiv und surjektiv ist.
 
-		      \textbf{\(f\) surjektiv}:
+              \textbf{\(f\) surjektiv}:
 
-		      Um zu zeigen, dass \(f\) surjektiv ist, müssen wir zeigen, dass für jedes \(b \in B\) ein \(a \in A\) existiert, so dass \(f(a) = b\).
-		      Aus der Definition der Menge \(B\) folgt leicht, dass für jedes \(x + y \in B\) ein \((x, y) \in A\) existiert, wobei \(f((x, y)) = x + y\).
+              Um zu zeigen, dass \(f\) surjektiv ist, müssen wir zeigen, dass für jedes \(b \in B\) ein \(a \in A\) existiert, so dass \(f(a) = b\).
+              Aus der Definition der Menge \(B\) folgt leicht, dass für jedes \(x + y \in B\) ein \((x, y) \in A\) existiert, wobei \(f((x, y)) = x + y\).
 
-		      \textbf{\(f\) injektiv}:
+              \textbf{\(f\) injektiv}:
 
-		      Annahme: \(f\) ist injektiv, das heißt, es existieren \((x_1, y_1)\) und \((x_2, y_2)\) in \(A\) mit \(f((x_1, y_1)) = f((x_2, y_2))\) und \((x_1, y_1) = (x_2, y_2)\).
+              Annahme: \(f\) ist injektiv, das heißt, es existieren \((x_1, y_1)\) und \((x_2, y_2)\) in \(A\) mit \(f((x_1, y_1)) = f((x_2, y_2))\) und \((x_1, y_1) = (x_2, y_2)\).
 
-		      Um zu zeigen, dass für alle \(x_1, x_2 \in X := \{0, 1, 2, 3, 4\}\) und \(y_1, y_2 \in Y := \{0, 5, 10, 15\}\) gilt: Wenn \(x_1 + y_1 = x_2 + y_2\), dann folgt \(x_1 = x_2\) und \(y_1 = y_2\), können wir dies durch Fallunterscheidung demonstrieren.
+              Um zu zeigen, dass für alle \(x_1, x_2 \in X := \{0, 1, 2, 3, 4\}\) und \(y_1, y_2 \in Y := \{0, 5, 10, 15\}\) gilt: Wenn \(x_1 + y_1 = x_2 + y_2\), dann folgt \(x_1 = x_2\) und \(y_1 = y_2\), können wir dies durch Fallunterscheidung demonstrieren.
 
-		      Es gibt nur eine begrenzte Anzahl von Kombinationen für \(x_1, x_2, y_1, y_2\) in den gegebenen Mengen \(X\) und \(Y\). Wir können die möglichen Fälle durchgehen:
+              Es gibt nur eine begrenzte Anzahl von Kombinationen für \(x_1, x_2, y_1, y_2\) in den gegebenen Mengen \(X\) und \(Y\). Wir können die möglichen Fälle durchgehen:
 
-		      1. \(x_1 = 0\): In diesem Fall ist \(y_1\) beliebig, und wir haben \(0 + y_1 = x_2 + y_2\). Die einzige Möglichkeit für \(x_2\) und \(y_2\), um dies zu erfüllen, ist \(x_2 = 0\) und \(y_2 = y_1\). Daher folgt \(x_1 = x_2\) und \(y_1 = y_2\).
+              1. \(x_1 = 0\): In diesem Fall ist \(y_1\) beliebig, und wir haben \(0 + y_1 = x_2 + y_2\). Die einzige Möglichkeit für \(x_2\) und \(y_2\), um dies zu erfüllen, ist \(x_2 = 0\) und \(y_2 = y_1\). Daher folgt \(x_1 = x_2\) und \(y_1 = y_2\).
 
-		      2. \(x_1 = 1\): In diesem Fall ist \(y_1\) beliebig, und wir haben \(1 + y_1 = x_2 + y_2\). Die einzige Möglichkeit für \(x_2\) und \(y_2\), um dies zu erfüllen, ist \(x_2 = 1\) und \(y_2 = y_1\). Daher folgt \(x_1 = x_2\) und \(y_1 = y_2\).
+              2. \(x_1 = 1\): In diesem Fall ist \(y_1\) beliebig, und wir haben \(1 + y_1 = x_2 + y_2\). Die einzige Möglichkeit für \(x_2\) und \(y_2\), um dies zu erfüllen, ist \(x_2 = 1\) und \(y_2 = y_1\). Daher folgt \(x_1 = x_2\) und \(y_1 = y_2\).
 
-		      3. \(x_1 = 2\): Ebenso wie in den vorherigen Fällen folgt \(x_1 = x_2\) und \(y_1 = y_2\).
+              3. \(x_1 = 2\): Ebenso wie in den vorherigen Fällen folgt \(x_1 = x_2\) und \(y_1 = y_2\).
 
-		      4. \(x_1 = 3\): Wiederholung des obigen Arguments.
+              4. \(x_1 = 3\): Wiederholung des obigen Arguments.
 
-		      5. \(x_1 = 4\): Wiederholung des obigen Arguments.
+              5. \(x_1 = 4\): Wiederholung des obigen Arguments.
 
-		      Da in jedem Fall \(x_1 = x_2\) und \(y_1 = y_2\) folgt, wenn \(x_1 + y_1 = x_2 + y_2\), haben wir gezeigt, dass die gegebene Aussage für alle \(x_1, x_2 \in X\) und \(y_1, y_2 \in Y\) gilt.
+              Da in jedem Fall \(x_1 = x_2\) und \(y_1 = y_2\) folgt, wenn \(x_1 + y_1 = x_2 + y_2\), haben wir gezeigt, dass die gegebene Aussage für alle \(x_1, x_2 \in X\) und \(y_1, y_2 \in Y\) gilt.
 
-		      Dann ergibt sich:
+              Dann ergibt sich:
 
-		      \[
-			      x_1 + y_1 = x_2 + y_2 \Rightarrow x_1 = x_2 \land y_1 = y_2
-		      \]
+              \[
+                  x_1 + y_1 = x_2 + y_2 \Rightarrow x_1 = x_2 \land y_1 = y_2
+              \]
 
-		      Damit ist gezeigt, dass \(f\) bijektiv ist.
+              Damit ist gezeigt, dass \(f\) bijektiv ist.
 
-		\item Eigenschaften einer Abbildung mit Graphen $X \times X$
+        \item Eigenschaften einer Abbildung mit Graphen $X \times X$
 
-		      Damit der Graph einer Abbildung, bezeichnet als $f: X \rightarrow X$, gleich dem kartesischen Produkt $X \times X$ ist, muss die Menge $X$ einelementig sein.
-		      Andernfalls wäre die Abbildung nicht eindeutig definiert, was bedeutet, dass für einen bestimmten $x$-Wert mehr als genau ein Wert $f(x)$ existieren würde.
+              Damit der Graph einer Abbildung, bezeichnet als $f: X \rightarrow X$, gleich dem kartesischen Produkt $X \times X$ ist, muss die Menge $X$ einelementig sein.
+              Andernfalls wäre die Abbildung nicht eindeutig definiert, was bedeutet, dass für einen bestimmten $x$-Wert mehr als genau ein Wert $f(x)$ existieren würde.
 
-		      Um dies zu verdeutlichen, betrachten wir ein Beispiel: Angenommen, $X = \{a, b\}$.
-		      Dann ist das kartesische Produkt $X \times X = \{(a, a), (a, b), (b, a), (b, b)\}$. In diesem Fall kann jedes Element von $X \times X$ als Paar $(x, y)$ dargestellt werden, wobei $x$ und $y$ Elemente von $X$ sind. Wenn $X$ mehr als ein Element enthält, besteht die Möglichkeit, dass verschiedene Paare unterschiedlichen Abbildungswerten zugeordnet werden können, was der Voraussetzung einer Abbildung widerspricht.
+              Um dies zu verdeutlichen, betrachten wir ein Beispiel: Angenommen, $X = \{a, b\}$.
+              Dann ist das kartesische Produkt $X \times X = \{(a, a), (a, b), (b, a), (b, b)\}$. In diesem Fall kann jedes Element von $X \times X$ als Paar $(x, y)$ dargestellt werden, wobei $x$ und $y$ Elemente von $X$ sind. Wenn $X$ mehr als ein Element enthält, besteht die Möglichkeit, dass verschiedene Paare unterschiedlichen Abbildungswerten zugeordnet werden können, was der Voraussetzung einer Abbildung widerspricht.
 
-		      Daher muss die Menge $X$ einelementig sein, damit der Graph der Abbildung mit $X \times X$ übereinstimmt.
+              Daher muss die Menge $X$ einelementig sein, damit der Graph der Abbildung mit $X \times X$ übereinstimmt.
 
-	\end{enumerate}
+    \end{enumerate}
 \end{proof}
 
 \end{problem}
@@ -194,14 +194,14 @@ Seien $A$, $B$ nichtleere Mengen und $f : A \to B$, $g : B \to A$ injektive Abbi
 \[ F(C) := A \setminus g(B \setminus f(C)). \]
 
 \begin{enumerate}
-	\item Nehmen Sie zunächst an, es gebe eine nichtleere Teilmenge $C \subset A$ mit $F(C) = C$. Zeigen Sie, dass dann eine bijektive Abbildung von $A$ nach $B$ existiert.
-	\item Lassen Sie nun die Zusatzannahme aus a) fallen, und beweisen Sie, dass solch eine Menge $C \subset A$ mit $F(C) = C$ existiert. (Dann haben Sie zusammen mit Ihrem Resultat aus a) bewiesen: Wenn jede von zwei Mengen $A$ und $B$ injektiv in die jeweils andere abgebildet werden kann, dann existiert eine Bijektion von $A$ auf $B$.)
+    \item Nehmen Sie zunächst an, es gebe eine nichtleere Teilmenge $C \subset A$ mit $F(C) = C$. Zeigen Sie, dass dann eine bijektive Abbildung von $A$ nach $B$ existiert.
+    \item Lassen Sie nun die Zusatzannahme aus a) fallen, und beweisen Sie, dass solch eine Menge $C \subset A$ mit $F(C) = C$ existiert. (Dann haben Sie zusammen mit Ihrem Resultat aus a) bewiesen: Wenn jede von zwei Mengen $A$ und $B$ injektiv in die jeweils andere abgebildet werden kann, dann existiert eine Bijektion von $A$ auf $B$.)
 \end{enumerate}
 
 \begin{proof}
-	\begin{enumerate}
-		\item
-	\end{enumerate}
+    \begin{enumerate}
+        \item
+    \end{enumerate}
 \end{proof}
 \end{problem}
 

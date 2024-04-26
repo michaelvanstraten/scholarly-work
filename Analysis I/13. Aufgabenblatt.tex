@@ -23,7 +23,7 @@ Berechne die folgenden Integrale mittels Riemannscher Summen:
 
 \begin{proof} \leavevmode
 
-    Es sei vorgemerkt das die selbe definition von $\mu$ sowie $\mathscr{Z}$ wie in der Vorlesung verwendet wird 
+    Es sei vorgemerkt das die selbe definition von $\mu$ sowie $\mathscr{Z}$ wie in der Vorlesung verwendet wird
     merklich \[
         \mathscr{Z} \coloneqq ((x_k)_{0 \le k \le n}, (\xi_k)_{1 \le k \le n})
     \] und \[
@@ -34,40 +34,40 @@ Berechne die folgenden Integrale mittels Riemannscher Summen:
 
     \begin{enumerate}
         \item Wählen wir zunächst \[
-                x_k = \frac{ak}{n}, \xi_k = x_{k-1}
-            \] somit folgt $0 = x_0 < x_1 < \dots < x_a = a$.
+                  x_k = \frac{ak}{n}, \xi_k = x_{k-1}
+              \] somit folgt $0 = x_0 < x_1 < \dots < x_a = a$.
 
-            Wählen wir nun \[
-                x_k - x_{k - 1} = \frac{a}{n}
-            \] so folgt \[
-                \lim_{n \to \infty} \mu(\mathscr{Z}) = 0.
-            \]
+              Wählen wir nun \[
+                  x_k - x_{k - 1} = \frac{a}{n}
+              \] so folgt \[
+                  \lim_{n \to \infty} \mu(\mathscr{Z}) = 0.
+              \]
 
-            Definieren wir nun unsere Riemann-Summe \[
-                a_n \coloneqq \sum_{k=1}^{n} \frac{a}{n} e^{\frac{a(k-1)}{n}}
-            \] somit folgt \begin{align*}
-                a_n = \sum_{k=1}^{n} \frac{a}{n} e^{\frac{a(k-1)}{n}} & = \sum_{k=1}^{n} \frac{a}{n} e^{\frac{a(k-1)}{n}} \\
-                                                                      & = \sum_{k = 0}^{n} \frac{a}{n} e^{\frac{ak}{n}} \\
-                                                                      & = \frac{a}{n} \sum_{k = 0}^{n} e^{\frac{ak}{n}} \\
-                                                                      & = \frac{a}{n} \sum_{k = 0}^{n} {\left(e^{\frac{a}{n}}\right)}^{k} \\
-                                                                      & = \frac{a(1 - e^\frac{a(n+1)}{n})}{a(1 - e^{\frac{a}{n}})} \\
-                                                                      & =  \frac{a(1 - e^{a + \frac{a}{n}})}{n(1 - e^{\frac{a}{n}})} \\
-                                                                      & =  \frac{a(e^{a + \frac{a}{n}} - 1)}{n(e^{\frac{a}{n}} - 1)}.
-            \end{align*}
+              Definieren wir nun unsere Riemann-Summe \[
+                  a_n \coloneqq \sum_{k=1}^{n} \frac{a}{n} e^{\frac{a(k-1)}{n}}
+              \] somit folgt \begin{align*}
+                  a_n = \sum_{k=1}^{n} \frac{a}{n} e^{\frac{a(k-1)}{n}} & = \sum_{k=1}^{n} \frac{a}{n} e^{\frac{a(k-1)}{n}}                 \\
+                                                                        & = \sum_{k = 0}^{n} \frac{a}{n} e^{\frac{ak}{n}}                   \\
+                                                                        & = \frac{a}{n} \sum_{k = 0}^{n} e^{\frac{ak}{n}}                   \\
+                                                                        & = \frac{a}{n} \sum_{k = 0}^{n} {\left(e^{\frac{a}{n}}\right)}^{k} \\
+                                                                        & = \frac{a(1 - e^\frac{a(n+1)}{n})}{a(1 - e^{\frac{a}{n}})}        \\
+                                                                        & =  \frac{a(1 - e^{a + \frac{a}{n}})}{n(1 - e^{\frac{a}{n}})}      \\
+                                                                        & =  \frac{a(e^{a + \frac{a}{n}} - 1)}{n(e^{\frac{a}{n}} - 1)}.
+              \end{align*}
 
-            Zeigen wir nur zunächst das \[
-                \lim_{n \to \infty} n(e^\frac{a}{n} - 1) \neq 0
-            \] $\Longrightarrow$ \[
-                \lim_{n \to \infty} n(e^\frac{a}{n} - 1) = \lim_{n \to \infty} \frac{e^\frac{a}{n} - 1}{\frac{1}{n}} \overset{\operatorname{H}}{=} \lim_{n \to \infty} ae^\frac{a}{n} = a. \checkmark
-            \]
+              Zeigen wir nur zunächst das \[
+                  \lim_{n \to \infty} n(e^\frac{a}{n} - 1) \neq 0
+              \] $\Longrightarrow$ \[
+                  \lim_{n \to \infty} n(e^\frac{a}{n} - 1) = \lim_{n \to \infty} \frac{e^\frac{a}{n} - 1}{\frac{1}{n}} \overset{\operatorname{H}}{=} \lim_{n \to \infty} ae^\frac{a}{n} = a. \checkmark
+              \]
 
-            Somit lässt sich die Quotientenregel anwenden um $\lim_{n \to \infty} a_n$ zu bestimmen $\Longrightarrow$ \[
-                \lim_{n \to \infty} a_n = \frac{\lim_{n \to \infty} a(e^{a + \frac{a}{n}} - 1)}{\lim_{n \to \infty} n(e^{\frac{a}{n}} - 1)} = \frac{a(e^a - 1)}{a} = e^a - 1.
-            \]
+              Somit lässt sich die Quotientenregel anwenden um $\lim_{n \to \infty} a_n$ zu bestimmen $\Longrightarrow$ \[
+                  \lim_{n \to \infty} a_n = \frac{\lim_{n \to \infty} a(e^{a + \frac{a}{n}} - 1)}{\lim_{n \to \infty} n(e^{\frac{a}{n}} - 1)} = \frac{a(e^a - 1)}{a} = e^a - 1.
+              \]
 
-            Somit folgt \[
-                \int_{0}^{a} e^x \,dx = e^a - 1.
-            \]
+              Somit folgt \[
+                  \int_{0}^{a} e^x \,dx = e^a - 1.
+              \]
     \end{enumerate}
 \end{proof}
 \end{problem}
@@ -78,8 +78,8 @@ Sei $f: [a, b] \to [c, d]$ eine Treppenfunktion und $g: [c, d] \to \mathbb{R}$ e
 
 \begin{proof}
     Für $f$ eine Treppenfunktion wissen wir $\exists x_k$ mit $a = x_0 < \dots < x_n = b$ so das für $\forall \xi_k \in (x_{k-1}, k_n)$ $f(\xi_k) = c_k$ mit $c_k \in [c,d]$.
-    
-    Da $g: [c,d] \rightarrow \reals$ gilt $\forall \xi_k \in (x_{k-1}, x_k)$ $g(f(\xi)) = g(c_k)$ mit $c_k \in [c,d]$, somit folgt $g \circ f$ konstant auf den offen Intervallen $x_{k-1}, x_k$ womit folgt $g \circ f$ Treppenfunktion. 
+
+    Da $g: [c,d] \rightarrow \reals$ gilt $\forall \xi_k \in (x_{k-1}, x_k)$ $g(f(\xi)) = g(c_k)$ mit $c_k \in [c,d]$, somit folgt $g \circ f$ konstant auf den offen Intervallen $x_{k-1}, x_k$ womit folgt $g \circ f$ Treppenfunktion.
 \end{proof}
 
 
@@ -89,15 +89,15 @@ Sei $f: [a, b] \to [c, d]$ eine Treppenfunktion und $g: [c, d] \to \mathbb{R}$ e
 Ziel dieser Übung ist es zu zeigen, dass Verknüpfungen von Riemann-integrierbaren Funktionen im Allgemeinen nicht Riemann-integrierbar sind. Dazu betrachten wir die Riemann-integrierbare Modifizierte Dirichlet-Funktion:
 
 \[ g: [0, 1] \to [0, 1], \quad x \mapsto g(x) = \begin{cases}
-    0 & \text{falls } x \text{ irrational}, \\
-    \frac{1}{q} & \text{falls } x = \frac{p}{q} \text{ mit teilerfremden } p \in \mathbb{N}, q \in \mathbb{N}^*.
-\end{cases} \]
+        0           & \text{falls } x \text{ irrational},                                                            \\
+        \frac{1}{q} & \text{falls } x = \frac{p}{q} \text{ mit teilerfremden } p \in \mathbb{N}, q \in \mathbb{N}^*.
+    \end{cases} \]
 
 Finden Sie eine Riemann-integrierbare Funktion $f: [0, 1] \to \mathbb{R}$, so dass $f \circ g$ nicht Riemann-integrierbar ist. Hinweis: Siehe auch Aufgabe 2 der Präsenzübung 14.
 
 \begin{proof}
-    Bemerken wir das für alle $M \in \nats$ ein $q \in \ints^*$ mit $q > M$ somit folgt $\frac{1}{q} \in \field{Q}$ sowie 
-    Betrachten wir zunächst ein $\frac{p}{q} \in \field{Q}$ mit $\frac{p}{q}$ teilerfremden. 
+    Bemerken wir das für alle $M \in \nats$ ein $q \in \ints^*$ mit $q > M$ somit folgt $\frac{1}{q} \in \field{Q}$ sowie
+    Betrachten wir zunächst ein $\frac{p}{q} \in \field{Q}$ mit $\frac{p}{q}$ teilerfremden.
 
     Somit folgt \[
         (g \circ g)\left(\frac{p}{q}\right) = q,
