@@ -39,9 +39,9 @@
 \def\@DoOn{1. Januar 1970 00:00 Uhr}
 
 % Set up document title and metadata
-\AtBeginDocument{
+\AtBeginDocument{%
     \title{\@Problemset. Aufgabenblatt - \@Lecture}
-    \hypersetup{
+    \hypersetup{%
         pdftitle={\@title},
         pdfauthor={\@author},
     }
@@ -64,11 +64,11 @@
 
 % Configure the page style using fancyhdr
 \pagestyle{fancy}
-\fancyhead[L]{
+\fancyhead[L]{%
     \@Lecture \\
     \textbf{Lösungen}:\space\@Problemset. Übungsblatt
 }
-\fancyhead[R]{
+\fancyhead[R]{%
     \@author \\
 }
 \fancyfoot[C]{\thepage}
