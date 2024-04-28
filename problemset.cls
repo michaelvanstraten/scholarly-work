@@ -108,6 +108,9 @@
 \DeclarePairedDelimiterXPP{\rightopeninterval}[2]{}{\lbrack}{\lbrack}{}{#1, #2}
 \DeclarePairedDelimiterXPP{\closedinterval}[2]{}{\lbrack}{\rbrack}{}{#1, #2}
 
+\DeclareMathOperator{\Eig}{Eig}
+\DeclareMathOperator{\Span}{Span}
+
 % Set document spacing
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{.5em}
