@@ -1,0 +1,131 @@
+\documentclass{problemset}
+
+\Lecture{Lineare Algebra und Analytische Geometrie II}
+\Problemset{2}
+\DoOn{28. April 2024 23:59 Uhr}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Eigenwerte und Kompositionen]{5 Punkte}
+Sei $K$ ein Körper, $V$ ein $K$-Vektorraum und $F, G \in \text{End}(V)$. Zeigen Sie:
+\begin{enumerate}
+    \item Ist $v \in V$ ein Eigenvektor von $F \circ G$ und $G(v) \neq 0$, so
+          ist $G(v)$ ein Eigenvektor von $G \circ F$ zum gleichen Eigenwert.
+    \item Ist $\text{dim}(V) < \infty$, so haben $F \circ G$ und $G \circ F$
+          die selben Eigenwerte.
+    \item Aussage ii) gilt im Allgemeinen nicht, falls $\text{dim}(V) =
+              \infty$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}{5 Punkte}
+Berechnen Sie das charakteristische Polynom, die Eigenwerte, Eigenvektoren und
+Eigenräume für \[
+    A = \begin{pmatrix}
+        0 & -3 & 3 & 0 \\ -3 & 0 & 3 & 0 \\ -1 & -1 & 2 & 2 \\ -2 & -2 & 4 & 1
+    \end{pmatrix} \in \reals^{4 \times 4}.
+\]
+\begin{proof}
+    Sei \(\lambda \in R\) ein Eigenwerte von \(A\) mit dem dazugehörigen
+    Eigenvektor \(v \in \reals^4\). So folgt aus \(Av = \lambda v\), \[
+        0 = \det(A - \lambda I)
+        \annotated{Laplacescher Entwicklungssatz}{=} \sum_{i=1}^{4} (-1)^{i+4} \cdot a_{i4} \cdot \det(A_{i4})
+        = \lambda (\lambda - 3)^2(\lambda + 3)
+    \] das charakteristische Polynom der Matrix \(A\).
+
+    Die Eigenwerte der Matrix \(A\) lassen sich somit auf \(\lambda_1 = 0,
+    \lambda_2 = 3, \lambda_3 = 3, \lambda_4 = -3\) bestimmen.
+
+    Substituieren wir nun \(\lambda_i\) für \(\lambda\) in, \[
+        (A - \lambda I)(v) = 0
+    \] erhalten wir \[
+        v_1 = \begin{pmatrix}
+            1 \\ 1 \\ 0 \\ 1
+        \end{pmatrix},
+        v_2 = \begin{pmatrix}
+            1 \\ 0 \\ 1 \\ 1
+        \end{pmatrix},
+        v_3 = \begin{pmatrix}
+            -1 \\ 1 \\ 0 \\ 0
+        \end{pmatrix},
+        v_4 = \begin{pmatrix}
+            1 \\ 1 \\ 1 \\ 0
+        \end{pmatrix}
+    \] als die respektieren Eigenvektor für \(\lambda_i\).
+
+    Die Eigenräume für \(\lambda_i\) folgen somit mit, \begin{align*}
+        \Eig(0, A)  & = \Span( v_1 )      \\
+        \Eig(3, A)  & = \Span( v_2, v_3 ) \\
+        \Eig(-3, A) & = \Span( v_4 ).
+    \end{align*}
+\end{proof}
+\end{problem}
+
+\begin{problem}[Eigenwerte reeller Matrizen in $\mathbb{C}$]{5 Punkte}
+Sei $n \in \mathbb{N}$ und $A \in \mathbb{C}^{n \times n}$ eine Matrix mit
+reellen Einträgen. Sei weiter $\lambda \in \mathbb{C} \setminus \mathbb{R}$ ein
+Eigenwert von $A$ mit Eigenvektor $v \in \mathbb{C}^n$. Zeigen Sie: $\lambda$
+ist ebenfalls ein Eigenwert von $A$ zum Eigenvektor $v = (v_1, \dots, v_n)$.
+
+\begin{definition}[Konjugierte Matrize]
+    Ist \(A = (a_{ij}) \in \field{C}^{m \times n}\) eine komplexe Matrize,
+    \[
+        A=
+        \begin{pmatrix}
+            a_{11} & \dots & a_{1n} \\
+            \vdots &       & \vdots \\
+            a_{m1} & \dots & a_{mn}
+        \end{pmatrix}
+    \]
+    dann ist die zugehörige konjugierte Matrize \(\bar{A} \in \field{C}^{m
+        \times n}\) definiert als \[
+        \bar{A} = (\bar{a}_{ij}) = \begin{pmatrix}
+            \bar{a}_{11} & \dots & \bar{a}_{1n} \\
+            \vdots       &       & \vdots       \\
+            \bar{a}_{m1} & \dots & \bar{a}_{mn}
+        \end{pmatrix}.
+    \]
+
+    Ist \(a_{ij} \in \reals\) folgt sofort \(\bar{A} = A\).
+\end{definition}
+
+\begin{definition}[Real und Imaginär teil einer komplexen Matrize]
+    Ist \(A = (a_{ij}) \in \field{C}^{m \times n}\) eine komplexe Matrize,
+    dann ist der real beziehungweise imaginärt teil der Matrize wiefolgt definiert, \[
+        \Re(A) = (\Re(a_{ij})) = \begin{pmatrix}
+            \Re(a_{11}) & \dots & \Re(a_{n})  \\
+            \vdots      &       & \vdots      \\
+            \Re(a_{m1}) & \dots & \Re(a_{mn})
+        \end{pmatrix}, \Im(A) = (\Im(a_{ij})) = \begin{pmatrix}
+            \Im(a_{11}) & \dots & \Im(a_{n})  \\
+            \vdots      &       & \vdots      \\
+            \Im(a_{m1}) & \dots & \Im(a_{mn})
+        \end{pmatrix}.
+    \]
+
+    Es ist somit leicht zu sehen das \(A = \Re(A) + i \cdot \Im(A)\).
+\end{definition}
+
+\begin{proof}
+    Sei \(A \in \field{C}^{m \times n}, v \in C^{n \times 1}\). Wir definieren nun
+    \(A_\Re \coloneq \Re(A), A_\Im \coloneq \Im(A)\) sowie \(v_\Re \coloneq \Re(v),
+    v_\Im \coloneq \Im(v)\) somit folgt, \begin{align}
+        \overline{Av} & = \overline{A \cdot (v_\Re + i \cdot v_\Im)}                                                                                                                \\
+                      & = \overline{A \cdot v_\Re} + \overline{A \cdot i \cdot v_\Im}                                                                                               \\
+                      & = \overline{(A_\Re + i \cdot A_\Im) \cdot v_\Re} + \overline{(A_\Re + i \cdot A_\Im) \cdot i \cdot v_\Im}                                                   \\
+                      & = \overline{A_\Re \cdot v_\Re} + \overline{i \cdot A_\Im \cdot v_\Re} + \overline{A_\Re \cdot i \cdot v_\Im} + \overline{i \cdot A_\Im \cdot i \cdot v_\Im} \\
+                      & = A_\Re \cdot v_\Re  - i \cdot A_\Im \cdot v_\Re - A_\Re \cdot i \cdot v_\Im + i \cdot A_\Im \cdot i \cdot v_\Im                                            \\
+                      & = A_\Re \cdot v_\Re  - A_\Re \cdot i \cdot v_\Im - (i \cdot A_\Im \cdot v_\Re - i \cdot A_\Im \cdot i \cdot v_\Im)                                          \\
+                      & = A_\Re \cdot \bar{v} - i \cdot A_\Im \cdot \bar{v}                                                                                                         \\
+                      & = \bar{A}\bar{v}.
+    \end{align}
+
+    Für \(\lambda \in \field{C}^{1 \times 1}\) und \(A \in \reals^{m,n}\) folgt
+    sofort \(Av = \lambda v \Rightarrow \overline{Av} = \overline{\lambda v}
+    \Rightarrow A\bar{v} = \bar{\lambda}\bar{v}\).
+\end{proof}
+\end{problem}
+
+\end{document}
