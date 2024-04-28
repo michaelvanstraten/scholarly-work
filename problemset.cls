@@ -2,8 +2,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{problemset}[Custom class for problem sets]
 
-% Load the KOMA-Script article class with A4 paper size
-\LoadClass[a4paper]{scrartcl}
+\LoadClass[12, a4paper]{article}
 
 % Required packages
 \RequirePackage[ngerman]{babel}
