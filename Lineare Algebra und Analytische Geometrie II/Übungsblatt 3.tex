@@ -1,0 +1,132 @@
+\documentclass{problemset}
+
+\Lecture{Lineare Algebra und Analytische Geometrie II}
+\Problemset{3}
+\DoOn{5. Mai 2024}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Spuren von Matrizen]{5 Punkte}
+Sei $n \in \mathbb{N}$, $K$ ein Körper. Dann heißt $\operatorname{tr} : K^{n,n} \to K$,
+\[ \operatorname{tr}(A) := \sum_{i=1}^{n} a_{ii}, \]
+die Spur (engl.\ trace) von $A$. Zeigen Sie:
+\begin{enumerate}
+    \item Die Abbildung $\operatorname{tr}$ ist linear.
+    \item Für $A \in K^{n,n}$ gilt $\operatorname{tr}(A) =
+              \operatorname{tr}(A^T)$.
+    \item Für $A, B \in K^{n,n}$ gilt $\operatorname{tr}(AB) =
+              \operatorname{tr}(BA)$.
+    \item Sind $A, B \in K^{n,n}$ ähnlich, dann gilt $\operatorname{tr}(A) =
+              \operatorname{tr}(B)$.
+    \item Ist $A$ diagonalisierbar und $\Lambda$ die Menge der Eigenwerte von
+          $A$ und $f(x) := Ax$, dann gilt $\operatorname{tr}(A) = \sum_{\lambda
+                  \in \Lambda} a(f, \lambda)\lambda$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Begleitmatrizen von Polynomen]{5 Punkte}
+Sei $n \in \mathbb{N}$. Für ein Polynom $p(x) := (-1)^n(a_0 + a_1x + \dots + a_{n-1}x^{n-1} + x^n) \in \mathbb{R}[x]$ heißt
+\[ A := \begin{pmatrix}
+        0      & 0      & \cdots & 0      & -a_0     \\
+        1      & 0      & \cdots & 0      & -a_1     \\
+        0      & 1      & \cdots & 0      & -a_2     \\
+        \vdots & \vdots & \ddots & \vdots & \vdots   \\
+        0      & 0      & \cdots & 1      & -a_{n-1}
+    \end{pmatrix} \in \mathbb{R}^{n,n} \]
+die Begleitmatrix von $p$. Zeigen Sie:
+\begin{enumerate}
+    \item Das charakteristische Polynom von $A$ erfüllt $p(A) = p$.
+    \item Falls die Nullstellen $\lambda_1, \dots, \lambda_n$ von $p$ paarweise
+          verschieden und reell sind, so ist $A$ diagonalisierbar und es gilt
+          $A = V^{-1}DV$ mit
+          \[ D := \begin{pmatrix}
+                  \lambda_1 & 0         & \cdots & 0         \\
+                  0         & \lambda_2 & \cdots & 0         \\
+                  \vdots    & \vdots    & \ddots & \vdots    \\
+                  0         & 0         & \cdots & \lambda_n
+              \end{pmatrix} \quad \text{und} \quad V := \begin{pmatrix}
+                  1      & \lambda_1 & \lambda_2 & \cdots & \lambda_{n-1} \\
+                  1      & \lambda_2 & \lambda_3 & \cdots & \lambda_{n}   \\
+                  \vdots & \vdots    & \vdots    & \ddots & \vdots        \\
+                  1      & \lambda_n & \lambda_n & \cdots & \lambda_{n-1}
+              \end{pmatrix}.
+          \]
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Eigenwerte symmetrischer Matrizen]{5 Punkte}
+Zeigen Sie:
+\begin{enumerate}
+    \item Ist $A \in \mathbb{R}^{2,2}$ symmetrisch, so ist $A$
+          diagonalisierbar.
+    \item Ist $n \in \mathbb{N}$ und $A \in \mathbb{C}^{n,n}$ symmetrisch mit
+          $\operatorname{Im}(a_{ij}) = 0$, $i, j \in \{1, \dots, n\}$, dann
+          gilt $\operatorname{Im}(\lambda) = 0$ für jeden Eigenwert $\lambda$
+          von $A$.
+\end{enumerate}
+\begin{proof}
+    \leavevmode
+    \begin{enumerate}
+        \item
+              Betrachten wir eine Matrix in \(R^{2,2}\)
+              \begin{equation*}
+                  A \coloneq \begin{pmatrix}
+                      a & b \\
+                      c & d
+                  \end{pmatrix}.
+              \end{equation*}
+              Für \(A\) diagonalisierbar folgt das \(b = c\).
+              Sei \(\lambda\) ein Eigenwert der Matrix \(A\) mit dem
+              dazugehörigem Eigenvektor \(v \in R^2\) folgt aus \(Av = \lambda v\)
+              \begin{align*}
+                              & \det(A - \lambda I) = (a - \lambda)(d - \lambda) - b^2 = 0                                  \\
+                  \Rightarrow & (a - \lambda)(d - \lambda) = b^2                                                            \\
+                  \Rightarrow & ad + \lambda(- a - d) + \lambda^2 = b^2                                                     \\
+                  \Rightarrow & - \lambda(- a - d) + \lambda^2 = b^2 - ad                                                   \\
+                  \Rightarrow & \frac{1}{4}{(-a - d)}^2 - \lambda(- a - d) + \lambda^2 = b^2 + \frac{1}{4}{(-a - d)}^2 - ad \\
+                  \Rightarrow & {\left(\frac{1}{2}(-a - d) + \lambda\right)}^2  = b^2 + \frac{1}{4}{(-a - d)}^2 - ad        \\
+                  \Rightarrow & \frac{1}{2}(-a - d) + \lambda  = \pm \sqrt{b^2 + \frac{1}{4}{(-a - d)}^2 - ad}              \\
+                  \Rightarrow & \lambda  = \frac{1}{2}(a + d) \pm \sqrt{b^2 + \frac{1}{4}{(-a - d)}^2 - ad}                 \\
+                  \Rightarrow & \lambda  = \frac{1}{2}((a + d) \pm 2\sqrt{b^2 + \frac{1}{4}{(-a - d)}^2 - ad})              \\
+                  \Rightarrow & \lambda  = \frac{1}{2}\left((a + d) \pm \sqrt{4b^2 + {(-a - d)}^2 - 4ad}\right)             \\
+                  \Rightarrow & \lambda  = \frac{1}{2}\left((a + d) \pm \sqrt{4b^2 + a^2 + 2ad + d^2 - 4ad}\right)          \\
+                  \Rightarrow & \lambda  = \frac{1}{2}\left((a + d) \pm \sqrt{a^2 - 2ad + d^2 + 4b^2}\right)                \\
+                  \Rightarrow & \lambda  = \frac{1}{2}\left((a + d) \pm \sqrt{{(a - d)}^2 + 4b^2}\right).
+              \end{align*}
+
+              Für \(A = 0_{R^{2,2}}\) ist \(A\) diagonalisierbar.
+
+              Für \(A \neq 0_{R^{2,2}}\) und \(b = 0\) ist \(A\) in diagonal
+              Form und somit diagonalisierbar.
+
+              Für \(A \neq 0_{R^{2,2}}\) und \(b \neq 0\) folgt das
+              \begin{equation*}
+                  \sqrt{{(a - d)}^2 + 4b^2} > 0
+              \end{equation*}
+              und somit zwei paarweise verschiedene Eigenwerte \(\lambda_1,
+              \lambda_2\) existieren mit linear unabhängigen Eigenvektoren
+              \(v_1, v_2\). Somit existiert eine Basis \(B \coloneq \set{v_1, v_2}\)
+              aus Eigenvektor des Vektorraumes \(R^2\) was Equivalent zu der
+              aussage ist das \(A\) diagonalisierbar ist.
+
+        \item
+              Sei \(\lambda\) ein Eigenwert von \(A\) mit dem dazugehörigen Eigenvektor \(v\).
+              So folgt aus \(Av = \lambda v\) mit Übungsblatt 2 Aufgabe 3 das
+              \begin{align*}
+                  Av = \lambda v \Rightarrow            & \overline{Av} = \overline{\lambda v}             \\
+                  \Rightarrow                           & \bar{A} \bar{v} = \bar{\lambda} \bar{v}          \\
+                  \Rightarrow                           & A \bar{v} = \bar{\lambda} \bar{v}                \\
+                  \overset{^T}{\Rightarrow}             & \bar{v}^T A^T = \bar{\lambda} \bar{v}^T          \\
+                  \overset{A = A^T}{\Rightarrow}        & \bar{v}^T A = \bar{\lambda} \bar{v}^T            \\
+                  \overset{\cdot v}{\Rightarrow}        & \bar{v}^T Av = \bar{\lambda} \bar{v}^T v         \\
+                  \overset{Av = \lambda v}{\Rightarrow} & \bar{v}^T \lambda v = \bar{\lambda} \bar{v}^T v  \\
+                  \Rightarrow                           & \lambda \bar{v}^T v = \bar{\lambda} \bar{v}^T v.
+              \end{align*}
+              Da \(v^Tv \neq \vec{0}\) folgt das \(\Im(\lambda) = 0\).
+    \end{enumerate}
+\end{proof}
+\end{problem}
+
+\end{document}
