@@ -1,0 +1,251 @@
+\documentclass{problemset}
+
+\Lecture{Lineare Algebra und analytische Geometrie II}
+\Problemset{4}
+\DoOn{12. Mai 2024}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Eindeutigkeit der Lösung; Rechenregeln für das Matrixexponential]{6 Punkte}
+Sei $n \in \mathbb{N}$, $A \in \mathbb{R}^{n,n}$ diagonalisierbar. Zeigen Sie:
+\begin{enumerate}
+    \item Für $r, s \in \mathbb{R}$ gilt $e^{rA}e^{sA} = e^{(r+s)A}$.
+    \item Sei $y_0 \in \mathbb{R}^n$, $T \in \mathbb{R}$ mit $T > 0$, $I := [0,
+              T]$ und $D := C^\infty(I; \mathbb{R}^n)$ der Vektorraum der unendlich
+          oft stetig differenzierbaren Funktionen von $I$ nach $\mathbb{R}^n$.
+          Dann ist $y(t) := e^{At}y_0 \in D$ die einzige Lösung der Gleichungen
+          \[ \frac{d}{dt} y(t) = Ay(t), \quad \text{für alle } t \in I, \]
+          \[ y(0) = y_0. \]
+          Hinweis: Für eine weitere Lösung $w \in D$ betrachten Sie die
+          Funktion $z(t) := e^{-At}w(t)$. Sie können die Produktregel für
+          Ableitungen für vektor- und matrixwertige Funktionen ohne Beweis
+          verwenden.
+    \item Ist $B \in \mathbb{R}^{n,n}$ und es gilt $AB = BA$ und alle
+          Eigenwerte von $A$ und $B$ haben jeweils die algebraische
+          Vielfachheit 1, dann stimmen die Eigenvektoren von $A$ und $B$
+          überein.
+    \item Ist $B \in \mathbb{R}^{n,n}$ zusätzlich zu den Anforderungen aus iii)
+          diagonalisierbar, dann gilt auch $e^{A+B} = e^Ae^B$. Hinweis:
+          Betrachten Sie die Funktion $z(t) := e^{(A+B)t}v - e^{At}e^{Bt}v$ für
+          einen beliebigen Vektor $v \in \mathbb{R}^n$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Aufgabe 2]{6 Punkte}
+
+Sei $n \in \mathbb{N}$, $A \in \mathbb{R}^{n,n}$, $T \in \mathbb{R}$ mit $T >
+    0$, $I := [0, T]$ und $D := C^\infty(I; \mathbb{R}^n)$ der Vektorraum der
+unendlich oft stetig differenzierbaren Funktionen von $I$ nach $\mathbb{R}^n$.
+Weiter sei $\mathcal{L} \subset D$ die Menge der Lösungen der
+Differenzialgleichung
+\[ \frac{d}{dt} y(t) = Ay(t), \quad \text{für alle } t \in I. \]
+Zeigen Sie:
+\begin{enumerate}
+    \item Die Menge der Lösungen $L$ ist ein Untervektorraum von $D$.
+    \item Für $\lambda \in \mathbb{R}$ und $v \in \mathbb{R}^n \setminus \{0\}$
+          gilt $e^{\lambda t v} =: y(t) \in \mathcal{L}$ genau dann, wenn
+          $(\lambda, v)$ ein Eigenpaar von $A$ ist (d.h., $\lambda$ ist ein
+          Eigenwert von $A$ zum Eigenvektor $v$).
+    \item \label{prob:2:iii} Für $k \in \mathbb{N}$, $\lambda_1, \dots, \lambda_k \in \mathbb{R}$
+          und $v_1, \dots, v_k \in \mathbb{R}^n \setminus \{0\}$ mit $y_j(t) :=
+              e^{\lambda_j t} v_j$, $j \in \{1, \dots, k\}$, sind folgende Aussagen
+          äquivalent:
+          \begin{itemize}
+              \item[a)] Die Vektoren $v_1, \dots, v_k$ sind linear unabhängig
+                    in $\mathbb{R}^n$.
+              \item[b)] Für alle $t \in I$ sind die Vektoren $y_1(t), \dots,
+                        y_k(t)$ linear unabhängig in $\mathbb{R}^n$.
+          \end{itemize}
+    \item \label{prob:2:iv} Gilt eine der Bedingungen aus iii), dann sind die Funktionen $y_1,
+              \dots, y_k$ linear unabhängig in $D$. Sei nun $A$ diagonalisierbar
+          und für $j \in \{1, \dots, n\}$ die Funktionen $y_j$ wie in iii) für
+          unterschiedliche Eigenpaare $(\lambda_j, v_j)$ von $A$ definiert.
+          Zeigen Sie:
+    \item Sind $\alpha_1, \dots, \alpha_n \in \mathbb{R}$ und $y_0 := \alpha_1
+              v_1 + \dots + \alpha_n v_n$, dann erfüllt $y := \alpha_1 y_1 + \dots
+              + \alpha_n y_n \in L$ die Anfangsbedingung $y(0) = y_0$ und es gilt
+          $y(t) = e^{At} y_0$ mit dem Matrixexponential $e^{At}$ aus den
+          Übungen.
+\end{enumerate}
+
+\begin{proof}
+    \leavevmode
+    \begin{enumerate}
+        \item Da die \(0 \in D\) eine Lösung der Gleichungen
+              \begin{equation}
+                  \frac{d}{dt} y(t) = A y(t)
+              \end{equation}
+              ist, folgt das \(L \neq \emptyset\).
+
+              Sei indessen \(y, z \in \mathcal{L}\) sowie \(\lambda \in R\) so
+              folgt, dass
+              \begin{align*}
+                  \lambda (\frac{d}{dt} y(t) + \frac{d}{dt} z(t))                   & = \lambda (A y(t) + A z(t))       \\
+                  \Rightarrow \frac{d}{dt} \lambda y(t) + \frac{d}{dt} \lambda z(t) & = A \lambda y(t) + A \lambda z(t) \\
+                  \Rightarrow \frac{d}{dt} \lambda (y(t) + z(t))                    & = A \lambda (y(t) + z(t))         \\
+                  \Rightarrow \lambda (y(t) + z(t))                                 & \in \mathcal{L}.
+              \end{align*}
+              Was impliziert das \(\mathcal{L}\) geschlossen und somit
+              einen Untervektorraum des Vektorraumes \(D\) ist.
+
+        \item Für \(y(t) \coloneq e^{\lambda t}v \in \mathcal{L}\) folgt, dass
+              \begin{equation}
+                  \frac{d}{dt} e^{\lambda t}v = \lambda e^{\lambda t}v = A e^{\lambda t}v
+              \end{equation} ist, was impliziert das
+              \begin{equation}
+                  e^{\lambda t} \lambda v = e^{\lambda t} Av.
+              \end{equation}
+
+              Da für alle \(t \in I \quad e^{\lambda t} > 0\) ist, folgt somit
+              das \((\lambda, v)\) ein Eigenpaar von \(A\) ist.
+
+              Sei nun \((\lambda, v)\) ein Eigenpaar von \(A\), so folgt dass
+              \begin{equation}
+                  \lambda v = Av.
+              \end{equation}
+
+              Wählen wir nun ein beliebigen \(t \in I\) so folgt, dass
+              \begin{equation}
+                  e^{\lambda t} \lambda v = e^{\lambda t} Av
+              \end{equation} ist, was impliziert das \(\lambda e^{\lambda t} v = A e^{\lambda t} v\) ist.
+
+              Definieren wir nun \(y(t) \coloneq e^{\lambda t} v\) so folgt das
+              für alle \(t \in I\)
+              \begin{equation}
+                  \lambda y(t) = A y(t)
+              \end{equation} ist, was impliziert das \(y \in \mathcal{L}\).
+
+        \item \leavevmode
+              \begin{enumerate}
+                  \item [\(a) \Rightarrow b)\)]
+                        Angenommen die Vektoren \(v_1, \ldots, v_k\) sind
+                        linear unabhängig und wir betrachten eine lineare
+                        Kombination aus Vektoren \(y_1(t), \ldots, y_k(t)\) mit
+                        \(t \in I\)
+
+                        \begin{equation}
+                            \sum_{i=1}^{k} a_i y_i(t) = \sum_{i=1}^{k} a_i e^{\lambda_i t} v_i = 0 \quad \text{für } a_i \in \reals.
+                        \end{equation}
+
+                        Da \(\set{v_i}_{1 \le i \le k}\) linear unabhängig sind
+                        und \(e^{\lambda_i t} > 0 \quad \forall t \in I\) folgt
+                        das \(a_i = 0\) sein muss, woraus Aussage \(b)\) folgt.
+
+                  \item [\(b) \Rightarrow a)\)]
+                        Angenommen für alle \(t \in I\) sein die Vektoren
+                        \(y_1(t), \ldots, y_k(t)\) linear unabhängig in \(\reals^n\).
+                        So folgt das
+                        \begin{equation*}
+                            \sum_{i=1}^{k} a_i y_i(0) = \sum_{i=1}^{k} a_i e^{\lambda_i 0} v_i = \sum_{i=1}^{k} a_i v_i = 0 \quad \text{für } a_i \in \reals
+                        \end{equation*} impliziert das \(a_i = 0\), woraus Aussage \(a)\) folgt.
+              \end{enumerate}
+        \item Aus der Linearität der Vektoren \(y_i(t)\) über alle \(t \in I\)
+              und der Äquivalenz der Aussagen im \autoref{prob:2:iii} folgt
+              sofort die lineare Unabhängigkeit der Funktion \(y_i\) über
+              \(D\).
+
+        \item Für \(y_i(t) \coloneq e^{\lambda_it}v_i\) folgt mit \(y_i(0) =
+              v_i\) sofort, dass
+              \begin{equation*}
+                  y(0) = y_0.
+              \end{equation*}
+
+              Betrachten wir nun \(e^{At}y_0\), so ergibt sich
+              \begin{align*}
+                  e^{At}y_0 & = \sum_{k=0}^{\infty} \frac{A^k t^k}{k!} y_0                                                                                  \\
+                            & = \sum_{k=0}^{\infty} \sum_{i=1}^{n} \frac{A^k t^k a_i v_i}{k!}                                                               \\
+                            & = \sum_{k=0}^{\infty} \sum_{i=1}^{n} \frac{t^k a_i A^k v_i}{k!}                                                               \\
+                            & \annotated{\((\lambda_i, v_i)\) Eigenpaar von \(A\)}{=} \sum_{k=0}^{\infty} \sum_{i=1}^{n} \frac{t^k a_i \lambda_i^k v_i}{k!} \\
+                            & = \sum_{k=0}^{\infty} \sum_{i=1}^{n} \frac{t^k \lambda_i^k a_i v_i}{k!}                                                       \\
+                            & \annotated{\(e^x\) konvergiert Absolut}{=} \sum_{i=1}^{n} \sum_{k=0}^{\infty} \frac{t^k \lambda_i^k a_i v_i}{k!}              \\
+                            & = \sum_{i=1}^{n} a_i e^{\lambda_i t} v_i                                                                                      \\
+                            & = y(t).
+              \end{align*}
+    \end{enumerate}
+\end{proof}
+
+\end{problem}
+
+\begin{problem}[Stark gedämpfte Schwingungen]{3 Punkte}
+Es sei $y_0 \in \mathbb{R}^2$, $\omega, \mu \in \mathbb{R}$ mit $\mu > \omega >
+    0$ und
+\[ A := \begin{pmatrix} 0 & 1 \\ -\omega^2 & -2\mu \end{pmatrix} \in \mathbb{R}^{2,2}. \]
+Weiter sei $T \in \mathbb{R}$ mit $T > 0$, $I := [0, T]$ und $D :=
+    C^\infty(I; \mathbb{R}^2)$. Gesucht sind Lösungen $y \in D$ der Gleichungen
+
+\begin{align}
+    \frac{d}{dt} y(t) = Ay(t) \quad \text{für } t \in I, \quad \\
+    y(0) = y_0. \quad
+\end{align}
+
+\begin{enumerate}
+    \item Bestimmen Sie eine Basis aus Eigenvektoren von $A$ und geben Sie eine
+          Basis des Lösungsraums von (1) an.
+    \item Bestimmen Sie die Lösung des Gleichungssystems (1), (2).
+\end{enumerate}
+
+\begin{proof}
+    \leavevmode
+
+    \begin{enumerate}
+        \item Für Eigenpaar \((\lambda, v)\) der Matrix \(A\) gilt, dass
+              \begin{equation*}
+                  \lambda v = Av
+              \end{equation*} woraus folgt das
+              \begin{equation*}
+                  \det(A - \lambda I) = \lambda^2 + 2\mu\lambda + w^2 = 0.
+              \end{equation*}
+
+              Somit ergeben sich konkrete Eigenwerte werte
+              \begin{equation*}
+                  \lambda_1 =  -\mu + \sqrt{\mu^2 - w^2}, \quad \lambda_2 =  -\mu - \sqrt{\mu^2 - w^2},
+              \end{equation*} sowie Eigenvektoren
+              \begin{equation*}
+                  v_1 = \begin{pmatrix}
+                      \frac{-\mu + \sqrt{\mu^2 - w^2}}{w^2} \\ 1
+                  \end{pmatrix}, \quad
+                  v_2 = \begin{pmatrix}
+                      \frac{-\mu - \sqrt{\mu^2 - w^2}}{w^2} \\ 1
+                  \end{pmatrix},
+              \end{equation*} der Matrix \(A\).
+
+              Da \(\lambda_1\) und \(\lambda_2\) paarweise verschieden sind,
+              folgt das die Vektoren \(v_1\) und \(v_2\) eine Basis aus
+              Eigenvektoren Bilden. Mit \autoref{prob:2:iii} und
+              \autoref{prob:2:iv} der Aufgabe 2 folgt das
+              \begin{equation*}
+                  B_\mathcal{L} \coloneq \set{e^{\lambda_1 t}v_1, e^{\lambda_2 t}v_2}
+              \end{equation*} eine Basis des Lösungsraumes von (1) bildet.
+
+        \item Betrachten wir einen beliebigen Vektor \(y_0 \in \reals^2\)
+              \begin{equation*}
+                  y_0 = \begin{pmatrix}
+                      x_1 \\ x_2
+                  \end{pmatrix} \quad \text{mit } x_1, x_2 \in \reals
+              \end{equation*} sowie einen allgemeinen Vektor des Lösungsraumes von (1)
+              \begin{equation}
+                  y(t) = \alpha_1 e^{\lambda_1 t} v_1 + \alpha_2 e^{\lambda_2 t} v_2
+              \end{equation} so erhalten wir durch das Einsetzen in (2) die folgende Gleichung
+              \begin{equation}
+                  y(0) = \alpha_1 v_1 + \alpha_2 v_2 = y_0.
+              \end{equation}
+
+              Lösen wir besagte Gleichung für \(\alpha_1\) sowie \(\alpha_2\)
+              so erhalten wir
+              \begin{equation*}
+                  \alpha_1 = \frac{x_2 (\sqrt{u^2 - w^2} - u) - w^2 x_1}{2\sqrt{u^2 -w^2}},
+                  \quad \text{und} \quad
+                  \alpha_2 = - \alpha_1.
+              \end{equation*}
+
+              Somit ergibt sich eine Lösung des Gleichungssystems von (1) und
+              (2).
+    \end{enumerate}
+\end{proof}
+
+\end{problem}
+
+\end{document}
+
