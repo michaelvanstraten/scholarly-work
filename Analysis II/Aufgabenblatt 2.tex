@@ -1,0 +1,107 @@
+\documentclass{problemset}
+
+\Lecture{Analysis II}
+\Problemset{2}
+\DoOn{30.05.2024}
+\author{Michael van Straten}
+
+\setlist[enumerate, 1]{label=\alph*)}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Erzeugende Funktion für Catalan-Zahlen]{9 Punkte}
+Sei $f : \left[-\frac{1}{2}, \frac{1}{2}\right] \to [-1, 1]$, $x \mapsto f(x) := \begin{cases} \frac{1}{2x} - \frac{1}{2x\sqrt{1 - 4x^2}} & \text{für } x \neq 0, \\ 0 & \text{für } x = 0. \end{cases}$
+\begin{enumerate}
+    \item Zeigen Sie, dass $f$ eine auf ganz $\left[-\frac{1}{2},
+                  \frac{1}{2}\right]$ stetige und auf ganz $]\,-\frac{1}{2},
+              \frac{1}{2}[\,$ stetig differenzierbare Funktion ist.
+    \item Beweisen Sie, dass sich $f$ um den Entwicklungspunkt 0 in eine
+          konvergente Taylor-Reihe entwickeln lässt. Bestimmen Sie den
+          Konvergenzradius. Konvergiert die Taylor-Reihe auf ganz
+          $\left[-\frac{1}{2}, \frac{1}{2}\right]$ gegen $f$?
+    \item Zeigen Sie, dass die Taylor-Reihe von $f$ um 0 gegeben ist durch
+          $\sum_{n=0}^{\infty} C_n x^{2n+1}$, wobei $C_n =
+              \frac{(2n)!}{n!(n+1)!}$ die sogenannten Catalan-Zahlen sind.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Skalarprodukt für reelle Folgen]{6 Punkte}
+Sei $F$ die Menge aller reellen Folgen: $F = \{(x_n)_{n\in\mathbb{N}}\}$.
+\begin{enumerate}
+    \item Zeigen Sie, dass $F$ mit der Addition $(x_n) + (y_n) := (x_n + y_n)$
+          und der skalaren Multiplikation $\lambda \cdot (x_n) := (\lambda
+              x_n)$ zum reellen Vektorraum wird.
+    \item Sei $\ell^2 := \left\{(x_n) \in F \mid \sum_{n=0}^{\infty} |x_n|^2 <
+              \infty\right\}$. Zeigen Sie, dass $\ell^2$ ein Untervektorraum des
+          Vektorraums $F$ ist.
+    \item Skalarprodukte für reelle Vektorräume genügen den gleichen Axiomen
+          (Def 22.7) wie im komplexen Fall. Allerdings darf man dann die
+          Semilinearität (Def 22.7 1.a.) im ersten Argument einfach durch
+          Linearität ersetzen, und die Hermitizität (Def 22.7 2.) durch
+          Symmetrie: $\forall u, v \langle u, v \rangle = \langle v, u
+              \rangle$. Für $(x_n), (y_n) \in \ell^2$ sei nun $\langle (x_n), (y_n)
+              \rangle := \sum_{n=0}^{\infty} x_n \cdot y_n$. Zeigen Sie, dass
+          $\langle \cdot, \cdot \rangle$ ein Skalarprodukt auf $\ell^2$ ist.
+\end{enumerate}
+
+\begin{proof}
+    \leavevmode
+    \begin{enumerate}
+        \item Um zu zeigen das \(F\) einen reellen Vektorraum abbildet müssen
+              die folgenden Eigenschaft erfüllt sein.
+
+              \textbf{Assoziativität:} Für \(x_n,y_n,z_n
+              \in F\) folgt, \[
+                  ((x_n) + (y_n)) + (z_n) = (x_n + y_n) + (z_n) = (x_n + y_n + z_n) = (x_n) (y_n + z_n) = (x_n) + ((y_n) + (z_n)).
+              \]
+
+              \textbf{Existenz des neutralen Elements:} Für \((0), x_n \in F\) folgt \((0) + (x_n) = (0 + x_n) = (x_n)\).
+
+              \textbf{Existenz von Inversen Elementen:} Für alle \((x_n) \in F\) existiert eine Folge \((-x_n) \in F\) mit \((x_n) + (-x_n) = (0)\).
+
+              \textbf{Kommutativität:} Für \((x_n), (y_n) \in F\) folgt aus der Kommutativität über \(\reals\) das \((x_n) + (y_n) = (y_n) + (x_n)\).
+
+              \textbf{S1:}Für \(\lambda \in \reals, (x_n), (y_n) \in F\) folgt, \[
+                  \lambda \cdot ((x_n) + (y_n)) = \lambda \cdot (x_n +_\reals y_n) = (\lambda x_n) + (\lambda y_n) = \lambda \cdot (x_n) + \lambda \cdot (y_n).
+              \]
+
+              \textbf{S2:} Folgt analog zu S1.
+
+              \textbf{S3:} Für \(\lambda_1, \lambda_2 \in \reals, (x_n) \in F\) folgt, \[
+                  (\lambda_1 +_\reals \lambda_2) \cdot (x_n) = (\lambda_1 x_n +_\reals \lambda_2 x_n) = (\lambda_1 x_n) + (\lambda_2 x_n) = \lambda_1 \cdot (x_n) + \lambda_2 \cdot (x_n)
+              \]
+
+              \textbf{Multiplikative Identität:} Für alle \(x_n \in F\) folgt das \(1 \in \reals\) die Identität zur Multiplikation über \(F\) ist da \[
+                  1 \cdot (x_n) = (1 x_n) = (x_n)
+              \]
+
+        \item Damit \(l^2\) einen Untervektorraum bildet müssen die folgenden
+              Bedingungen gelten.
+
+              \begin{enumerate}
+                  \item[\(l^2 \neq \emptyset\):] Da \((0) \in F\) und \[
+                            \sum_{n = 0}^\infty \abs{0}^2 = 0
+                        \] folgt das \((0) \in l^2\), was die nicht leere des
+                        Untervektorraums beweist.
+
+                  \item[Geschlossenheit:] Für \(x_n, y_n \in l^2\) folgt aus
+
+                  \item[\(\):] Für \(x_n, y_n \in l^2\) folgt aus
+              \end{enumerate}
+    \end{enumerate}
+
+\end{proof}
+
+\end{problem}
+
+\begin{problem}[Fourier-Reihe]{5 Punkte}
+Berechnen Sie die Fourier-Reihe der Funktion $f(x) = |\sin x|$.
+\end{problem}
+
+\begin{problem}[Restglied der Taylor-Formel*]{4 Sonderpunkte}
+Sei $p \in \mathbb{N}$ mit $1 \leq p \leq n + 1$. Man beweise für das Restglied $R_{n+1}(x)$ der Taylor-Formel Satz 21.2: Es gibt ein $\xi$ zwischen $a$ und $x$, so dass
+\[ R_{n+1}(x) = \frac{f^{(n+1)}(\xi)}{p \cdot n!} (x - \xi)^{n+1-p} (x - a)^p. \]
+\end{problem}
+
+\end{document}
