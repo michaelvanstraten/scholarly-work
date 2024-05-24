@@ -2,3 +2,4 @@ defaultIndent: "    "
 modifyLineBreaks:
   textWrapOptions:
     columns: 80
+onlyOneBackUp: 1
