@@ -4,25 +4,25 @@
  * Klasse KochSchneeflocke zeichnet eine fraktale Schneeflocke.
  * Zum Kompilieren und ausfuehren wird die Klasse StdDraw der
  * Bibliothek stdlib.jar genutzt.
- * 
+ *
  * Dokumentation zur stdlib:
  * https://introcs.cs.princeton.edu/java/stdlib/
- * 
+ *
  * Download:
  * https://introcs.cs.princeton.edu/java/stdlib/stdlib.jar
- * 
+ *
  * Dokumentation der Klasse StdDraw:
  * https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html
- * 
+ *
  * Beispiel: kompilieren unter Linux/OSX und Windows:
  * javac -cp stdlib.jar KochSchneeflocke.java
- * 
+ *
  * Beispielaufruf Linux/OSX:
  * java -cp .:stdlib.jar KochSchneeflocke 2 1.0
- * 
+ *
  * Beispielaufruf Windows:
  * java -cp ".;stdlib.jar" KochSchneeflocke 2 1.0
- * 
+ *
  */
 
 public class KochSchneeflocke {
@@ -68,13 +68,13 @@ public class KochSchneeflocke {
     /**
      * Zeichnet rekrusiv eine Kochkurve mit der uebergebenen Tiefe
      * im Linienabschnitt von (x1,y1) nach (x5, y5).
-     * 
+     *
      * Fuer tiefe=0 zeichnet die Funktion einfach eine Linie von (x1,y1) nach
      * (x5,y5) (Rekursionsanker).
      * Fuer tiefe>0 ruft sich die Funktion viermal selbst mit tiefe-1 und den
      * entsprechenden Koordinaten
      * fuer die 4 Teilstücke wieder auf (Rekursionsschritt).
-     * 
+     *
      * @param tiefe - Aktuelle Tiefe der Kochkurve
      * @param x1    - x-Koordinate des Beginns des akutellen Linienabschnitts
      * @param y1    - y-Koordinate des Beginns des aktuellen Linienabschnitts
