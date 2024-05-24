@@ -11,9 +11,7 @@
       flake-utils,
       git-hooks,
     }:
-    {
-      lib.latexmk = import ./build-document.nix;
-    }
+    { }
     // flake-utils.lib.eachDefaultSystem (
       system:
       let
