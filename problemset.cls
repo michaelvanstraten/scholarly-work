@@ -72,6 +72,8 @@
 }
 \fancyfoot[C]{\thepage}
 
+\newenvironment{hint}{\textbf{Hinweis:}}{}
+
 % Define mathematical symbols and operations
 \newcommand{\Id}{\operatorname{Id}}
 \newcommand{\im}{\operatorname{im}}
