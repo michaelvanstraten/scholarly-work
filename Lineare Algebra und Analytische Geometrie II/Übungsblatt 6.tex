@@ -1,0 +1,147 @@
+\documentclass{problemset}
+
+\Lecture{Lineare Algebra und Analytische Geometrie II}
+\Problemset{6}
+\DoOn{26. Mai 2024}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Rechenregeln und Definition des Annihilators \textit{[LM21, Aufgabe 11.5, 16.2]}]{7 Punkte}
+Sei $K$ ein Körper, $V$ ein endlichdimensionaler $K$-Vektorraum, $U_1, U_2$
+Untervektorräume von $V$ und $M$ ein Untervektorraum von $V^*$.
+\begin{enumerate}
+    \item Zeigen Sie:
+          \begin{enumerate}
+              \item $(U_1 + U_2)^\circ = U_1^\circ \cap U_2^\circ$.
+              \item $(U_1 \cap U_2)^\circ = U_1^\circ + U_2^\circ$.
+              \item $U_2^\circ \subseteq U_1^\circ$, falls $U_1 \subseteq U_2$.
+          \end{enumerate}
+    \item Konstruieren Sie ausgehend von einer Basis von $M$ eine Basis von $M^\circ
+              \subseteq V$ und eine Basis von $M^\circ \subseteq (V^*)^*$.
+          \begin{hint}
+              Hier sind die zwei unterschiedlichen Sichtweisen auf die Definition des
+              Annihilators zu einem Unterraum eines Dualraums gemeint.
+          \end{hint}
+    \item Zeigen Sie, dass $\dim(V) = \dim(M) + \dim(M^\circ)$.
+\end{enumerate}
+
+\begin{proof}
+    \leavevmode
+    \begin{enumerate}
+        \item
+              \leavevmode
+              \begin{enumerate}
+                  \item Sei zunächst \(f \in (U_1 + U_2)^\circ\) so folgt das für alle \(v = u_1 +
+                        u_2\), mit \(u_1 \in U_1\) und \(u_2 \in U_2\) folgt dass,
+                        \begin{equation}
+                            f(v) = 0
+                        \end{equation} ist.
+
+                        Da die Null in der Vereinigung \(U_1 \cup U_2\) ist, folgt somit das auch für
+                        alle \(v \in U_1\) und \(v \in U_2\) gilt das \(f(v) = 0\) ist. So folgt das
+                        \(f \in U_1^\circ \cap U_2^\circ\).
+
+                        Sei nun \(f \in U_1^\circ \cap U_2^\circ\) so folgt das \(f(v) = 0\) für alle
+                        \(v \in U_1 \cup U_2\). Sei indessen \(v = u_1 + u_2\) mit \(u_1 \in U_1\) und
+                        \(u_2 \in U_2\) so folgt das
+                        \begin{equation}
+                            f(v) = f(u_1 + u_2) = f(u_1) + f(u_2) = 0 + 0 = 0,
+                        \end{equation} womit folgt das \(f \in (U_1 + U_2)^\circ\) ist.
+
+                  \item Sei zunächst \(f \in (U_1 \cap U_2)^\circ\) so folgt das für alle \(v \in U_1
+                        \cap U_2\) \(f(v) = 0\) ist. Definieren wir jetzt
+                        \begin{equation*}
+                            g(v) \coloneq \left\{\begin{array}{lr}
+                                0    & \text{für } v \in U_1 \\
+                                f(v) & \text{sonst}
+                            \end{array}\right, \quad
+                            h(v) \coloneq \left\{\begin{array}{lr}
+                                0    & \text{für } v \in U_2 \cup V \setminus U_1 \\
+                                f(v) & \text{sonst}
+                            \end{array}\right.
+                        \end{equation*}
+
+                        Es ist somit leicht zu sehen das \(g \in U_1^\circ\) und \(h \in U_2^\circ\)
+                        ist.
+
+                        So folgt für \(v \in U_1 \cap U_2\) das \(f(v) = 0 = g(v) + h(v)\). Für \(v \in
+                        U_1 \setminus U_2\) folgt das \(f(v) = 0 + h(v) = g(v) + h(v)\). Für \(v \in
+                        U_2 \setminus U_1\) folgt das \(f(v) = g(v) + 0 = g(v) + h(v)\). Für \(v \in V
+                        \setminus U_1 \cup U_2\) folgt \(f(v) = g(v) + 0 = g(v) + h(v)\). So folgt das
+                        \(f \in U_1^\circ + U_2^\circ\).
+
+                        Sei nun \(f \coloneq g + h \in U_1^\circ + U_2^\circ\) mit \(g \in U_1^\circ\)
+                        und \(h \in U_2^\circ\). Für \(v \in U_1 \cap U_2\) folgt somit das \(g(v) =
+                        0\) und \(h(v) = 0\) und somit auch \(f(v) = 0\), was impliziert das \(f \in
+                        (U_1 \cap U_2)^\circ\).
+
+                  \item Sei \(f \in U_2^\circ\) so folgt das für alle \(v_2 \in U_2\) \(f(u_2) = 0\) ist.
+                        Da \(U_1 \subseteq U_2\) folgt das auch für alle \(u_1 \in U_1\) \(f(u_1) = 0\)
+                        ist.
+              \end{enumerate}
+
+        \item \label{basis:annihilator} Sei \(B_M^* \coloneq \set{v_1^*, \ldots, v_k^*}\) eine Basis von \(M \subseteq
+              V^*\), so lassen sich linear unabhängige Vektoren \(v_{k+1}^*, \ldots, v_n^*\)
+              finden die vereinigt mit \(B_M^*\) eine Basis \(B^*\) von \(V^*\) bildet. Zudem
+              existiert eine eindeutige Basis \(B\) von \(V\) mit \(B^*\) Dualer-Basis zu
+              \(B\).
+
+              Betrachten wir jetzt einen allgemeinen Vektor \(v = \lambda_1 v_1 + \ldots
+              \lambda_n v_n \in M^\circ\) so muss für jedes \(f \in M\) gelten das \(f(v) =
+              0\). Betrachten wir nun für jeden Basisvektor \(v_i^*\) der Basis \(B_M^*\) die
+              Gleichung
+              \begin{equation*}
+                  v_i^* \sum_{j=1}^n\lambda_j v_j = 0
+              \end{equation*}
+              so folgt das \(\lambda_j = 0\) für \(1 \le j \le k\) mit \(k = \dim(M)\).
+
+              Somit lässt sich jedes \(v \in M^\circ\) als eine Linearkombination der linear
+              unabhängigen Vektoren \(v_{k+1}, \ldots, v_n\) schreiben, was diese zu einer
+              Basis von \(M^\circ \subseteq V\) macht.
+
+              Betrachten wir nun zu \(B^*\) die Dualer-Basis \({B^*}^*\) mit \({v^*}^* =
+              \lambda_1 {v_1^*}^* + \cdots + \lambda_n {v_n^*}^* \in M^\circ \subseteq
+              {V^*}^* \quad {v_i^*}^* \in {B^*}^*\). So folgt unter anderem aus \({v^*}^* \in
+              M^\circ\) das
+              \begin{equation*}
+                  {v^*}^* v_j^* = \sum_{i=1}^{n} \lambda_i {v_i^*}^* v_j^* = 0 \quad \text{für } v_j^* \in B_M^* \Rightarrow \lambda_j = 0 \quad 1 \le j \le \dim(B_M^*).
+              \end{equation*}
+
+              Somit lässt sich jedes \({v^*}^* \in M^\circ\) als eine Linearkombination der
+              linear unabhängigen Vektoren \({v_{k+1}^*}^*, \ldots, {v_n^*}^*\) schreiben,
+              was diese zu einer Basis von \(M^\circ \subseteq {V^*}^*\) macht.
+
+        \item Aus \autoref{basis:annihilator} wissen wir bereits, dass für \(k = \dim(M)\)
+              eine Basis des Annihilatorraums von \(M\) mit \(n - k\) linear unabhängigen
+              Basisvektoren existiert, wobei \(n = \dim(V) = \dim(V^*)\) ist. Daraus folgt,
+              dass
+              \begin{equation*}
+                  \dim(V) = n = k + (n - k) = \dim(M) + \dim(M^\circ).
+              \end{equation*}
+    \end{enumerate}
+\end{proof}
+\end{problem}
+
+\begin{problem}{4 Punkte}
+Sei $(U, W)$ ein duales Raumpaar von endlichdimensionalen Vektorräumen über
+demselben Körper. Zeigen Sie, dass $\dim(U) = \dim(W)$.
+\end{problem}
+
+\begin{problem}[\textit{[LM21, Aufgaben 16.1, 16.3, 16.4]}]{4 Punkte}
+Sei $K$ ein Körper, $V$ ein $K$-Vektorraum, $f \in L(V, V)$, $\lambda \in K$
+und $g := f - \lambda \operatorname{Id}_V$. Zeigen Sie:
+\begin{enumerate}
+    \item Ist $v \in V \setminus \{0\}$ vom Grad $m \in \mathbb{N}$ bezüglich $f$, dann
+          gilt
+          \[
+              K_1(f, v) \subsetneq K_2(f, v) \subsetneq \ldots \subsetneq K_m(f, v) = K_{m+1}(f, v).
+          \]
+    \item Ein Unterraum von $V$ ist genau dann $f$-invariant, wenn er $g$-invariant ist.
+    \item Für $d \in \mathbb{N}$ und $v \in V$ gilt $K_d(f, v) = K_d(g, v)$ und der Grad
+          von $v$ bezüglich $f$ ist gleich dem Grad von $v$ bezüglich $g$.
+\end{enumerate}
+\end{problem}
+
+\end{document}
