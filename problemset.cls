@@ -72,6 +72,8 @@
 }
 \fancyfoot[C]{\thepage}
 
+\setlength{\headheight}{24pt}.
+
 \newenvironment{hint}{\textbf{Hinweis:}}{}
 
 % Define mathematical symbols and operations
