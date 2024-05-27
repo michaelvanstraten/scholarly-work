@@ -48,6 +48,7 @@
 
 % Redefine the maketitle command
 \renewcommand{\maketitle}{
+	\setlength{\headheight}{24pt}.
     \thispagestyle{empty}
     \begin{center}
         \Large
@@ -71,8 +72,6 @@
     \@author \\
 }
 \fancyfoot[C]{\thepage}
-
-\setlength{\headheight}{24pt}.
 
 \newenvironment{hint}{\textbf{Hinweis:}}{}
 
