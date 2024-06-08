@@ -1,0 +1,97 @@
+\documentclass{problemset}
+
+\Lecture{Lineare Algebra und Analytische Geometrie II}
+\Problemset{7}
+\DoOn{2. Juni 2024}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\begin{problem}{5 Punkte}
+Bestimmen Sie die Jordan-Normalform und eine zugehörige Transformationsmatrix zu
+\[
+    A = \begin{pmatrix}
+        4   & 1  & 0  & 0 & 0 \\
+        -4  & 0  & 0  & 0 & 0 \\
+        -16 & -8 & 4  & 0 & 1 \\
+        8   & 4  & 0  & 2 & 0 \\
+        32  & 16 & -4 & 0 & 0
+    \end{pmatrix} \in \mathbb{R}^{5 \times 5}.
+\]
+\end{problem}
+
+\begin{problem}[\textit{[FS20, Seite 280, Aufgabe 6, 7]}]{5 Punkte}
+Sei $n \in \mathbb{N}$, $V$ ein $\mathbb{C}$-Vektorraum mit $\dim(V) = n$ und $f \in L(V, V)$.
+\begin{enumerate}
+    \item Berechnen Sie $J_d(\lambda)^k$ für ein beliebiges $k \in \mathbb{N}$, wobei
+          $\lambda \in \mathbb{C}$ einen Eigenwert von $f$ und $J_d(\lambda) \in
+              \mathbb{C}^{d \times d}$ ein Jordan-Block der Größe $d \in \mathbb{N}$ ist.
+    \item Sei $k \in \mathbb{N}$ mit $k \geq 2$ und $f^k = f$. Zeigen Sie, dass $f$
+          diagonalisierbar ist.
+\end{enumerate}
+\begin{hint}
+    Sie können verwenden, dass das charakteristische Polynom eines Endomorphismus
+    über $\mathbb{C}$ in Linearfaktoren zerfällt.
+\end{hint}
+
+\begin{proof}
+    \leavevmode
+    \begin{enumerate}
+        \item Teilen wir zunächst \(J_d(\lambda)\) in zwei Matrizen \(D, N \in C^{d \times
+                      d}\), sodass \(D = \lambda I_d\) und \( N = J_d(\lambda) - D\) ist. Die
+              Matrixmultiplikation \(A N^n\) für \(A \in C^{d \times d}\) und \(n \in \nats\)
+              hat den Effekt die Spalten von \(A\) \(n\)-mal nach rechts zu verschieben.
+              Definieren wir nun
+              \begin{equation*}
+                  l : \nats \times \nats \rightarrow \set{0,1} \text{\ gegeben durch }
+                  (i,j) \mapsto \left\{
+                  \begin{array}{ll}
+                      1 & \text{ wenn, } i \le j \\
+                      0 & \text{ sonst}
+                  \end{array}
+                  \right~
+              \end{equation*}
+              so folgt das
+              \begin{align*}
+                  J_d(\lambda)^k & = {(D + N)}^k                                                \\
+                                 & = \sum_{i=0}^k \binom{k}{i} D^{k-i} N^i                      \\
+                                 & = \left(l(i,j) \binom{k}{j - i - 2} \lambda^{k-j+i-2}\right)
+              \end{align*}
+              ist.
+
+        \item Für jedes \(v \in \ker(f^k)\) gilt das \(f^k(v) = f(v) = 0 v = 0\) somit ist
+              jedes \(v \in \ker(f^k)\) ein Eigenvektor von \(f\) zum Eigenwert \(0\). Für
+              jedes \(v \in \img(f^k)\) gilt, dass ein \(w \in V\) existiert mit,
+              \begin{equation*}
+                  v = f^{k-1}(w) \Rightarrow f(v) = f^k(w) = f(w) = v
+              \end{equation*}
+              was impliziert das \(v\) ein Eigenvektor von \(f\) zum Eigenwert \(0\) ist.
+              Wählen wir nun eine Basis des Kerns sowie des Bildes von \(f^k\) so folgt aus
+              deren Direktheit sowie der Dimensionsformel, das deren Vereinigung eine Basis
+              des Vektorraum \(V\) bildet. Somit existiert eine Basis aus Eigenvektor von
+              \(f\) was Equivalent zu der Aussage ist das \(f\) diagonalisierbar ist.
+    \end{enumerate}
+\end{proof}
+
+\end{problem}
+
+\begin{problem}[duale Raumpaare und Skalarprodukte \textit{[LM21, Aufgabe 12.3]}]{5 Punkte}
+Sei $n \in \mathbb{N}$, $K \in \{\mathbb{R}, \mathbb{C}\}$.
+\begin{enumerate}
+    \item Sei $\langle \cdot , \cdot \rangle$ ein Skalarprodukt auf $K^n$. Zeigen Sie,
+          dass eine hermitesche Matrix $A \in GL_n(K)$ mit reellen positiven Eigenwerten
+          existiert, sodass für alle $v, w \in K^n$
+          \[
+              \langle v, w \rangle = w^H A v.
+          \]
+    \item Zu $A \in K^{n \times n}$ sei $\beta : K^n \times (K^n)^* \to K$ definiert
+          durch
+          \[
+              \beta(v, f) := f(Av).
+          \]
+          Zeigen Sie, dass $\beta$ genau dann nicht ausgeartet ist, wenn $A \in GL_n(K)$.
+\end{enumerate}
+\end{problem}
+
+\end{document}
