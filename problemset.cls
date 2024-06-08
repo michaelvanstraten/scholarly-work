@@ -78,6 +78,7 @@
 % Define mathematical symbols and operations
 \newcommand{\Id}{\operatorname{Id}}
 \newcommand{\im}{\operatorname{im}}
+\newcommand{\img}{\operatorname{Img}}
 \newcommand{\field}[1]{\mathbb{#1}}
 \newcommand{\nats}{\field{N}}
 \newcommand{\ints}{\field{Z}}
@@ -105,11 +106,22 @@
 \DeclarePairedDelimiterXPP{\set}[1]{}{\lbrace}{\rbrace}{}{#1}
 \DeclarePairedDelimiterXPP{\abs}[1]{}{\lvert}{\rvert}{}{#1}
 \DeclarePairedDelimiterXPP{\card}[1]{}{\lvert}{\rvert}{}{#1}
-\DeclarePairedDelimiterXPP{\inner}[2]{}{\langle}{\rangle}{}{#1, #2}
+\DeclarePairedDelimiterXPP{\inner}[2]
+    {}
+    {\langle}{\rangle}
+    {}
+    {\ifblank{#1}{\bullet}{#1}, \ifblank{#2}{\bullet}{#2}}
 \DeclarePairedDelimiterXPP{\openinterval}[2]{}{\rbrack}{\lbrack}{}{#1, #2}
 \DeclarePairedDelimiterXPP{\leftopeninterval}[2]{}{\rbrack}{\rbrack}{}{#1, #2}
 \DeclarePairedDelimiterXPP{\rightopeninterval}[2]{}{\lbrack}{\lbrack}{}{#1, #2}
 \DeclarePairedDelimiterXPP{\closedinterval}[2]{}{\lbrack}{\rbrack}{}{#1, #2}
+\DeclarePairedDelimiterXPP{\limitdom}[2]
+    {}
+    {.}{\vert}
+    {_{#2}}
+    {#1}
+
+
 
 \DeclareMathOperator{\Eig}{Eig}
 \DeclareMathOperator{\Span}{Span}

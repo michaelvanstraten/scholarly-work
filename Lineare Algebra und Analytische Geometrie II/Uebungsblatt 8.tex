@@ -1,0 +1,168 @@
+\documentclass{problemset}
+
+\Lecture{Lineare Algebra und Analytische Geometrie II}
+\Problemset{8}
+\DoOn{9. Juni 2024}
+\author{Michael van Straten}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[Orthogonale Komplemente]{5 Punkte}
+Sei $n \in \mathbb{N}$, $K \in \{\mathbb{R}, \mathbb{C}\}$ und $V := K^n$ und
+$W$ ein Unterraum von $V$. Für ein Skalarprodukt $\langle \cdot , \cdot
+    \rangle$ heißt $W^\perp := \{v \in V \mid \langle v, w \rangle = 0 \text{ für
+        alle } w \in W\}$ das zu $W$ bezüglich $\langle \cdot , \cdot \rangle$
+orthogonale Komplement. Zeigen Sie:
+\begin{enumerate}
+    \item Für ein Skalarprodukt $\langle \cdot , \cdot \rangle$ auf $V$ ist das
+          orthogonale Komplement $W^\perp$ ein Komplement von $W$ in $V$, d.h., $W^\perp$
+          ist ein Untervektorraum von $V$ und $V = W \oplus W^\perp$.
+    \item Für ein Skalarprodukt $\langle \cdot , \cdot \rangle$ gilt $W^0 = \{f \in V^*
+              \mid f = \langle \cdot , w^\perp \rangle, w^\perp \in W^\perp\}$.
+    \item Für jedes Komplement $\tilde{W} \subseteq V$ von $W$ gibt es ein Skalarprodukt
+          $\langle \cdot , \cdot \rangle$ auf $V$, bezüglich dem $\tilde{W}$ das
+          orthogonale Komplement von $W$ ist.
+\end{enumerate}
+
+\begin{proof} \hfill
+    \begin{enumerate}
+        \item Sei zunächst \(a, b \in W^\perp\) sowie \(\lambda \in K\) so gilt für alle \(w
+              \in W\) das
+              \begin{equation*}
+                  \langle \lambda a + b, w \rangle = \lambda \underbrace{\inner{a}{w}}_{= 0} + \underbrace{\inner{b}{w}}_{=0} = 0
+              \end{equation*}
+              ist, womit gezeigt wäre das \(W^\prep\) geschlossen ist.
+              Da \(0_V \in W^\perp\) ist, folgt somit das \(W^\perp\) einen
+              Untervektorraum von \(V\) bildet.
+
+              Sei nun \(B \coloneq \set{w_1, \ldots, w_n}\) eine Orthonormalbasis zu \(W\)
+              sowie
+              \begin{equation*}
+                  w^\perp = v - \sum_{i=1}^n \inner{v}{w_i} w_i \qquad \text{für alle} \qquad \(v \in V\).
+              \end{equation*}
+              So folgt das für alle \(w_j \in B\)
+              \begin{align*}
+                  \inner{w^\perp}{w_j} & = \inner{v - \sum_{i=1}^n \inner{v}{w_i} w_i}{w_j}                                           \\
+                                       & = \inner {v}{w_j} - \sum_{i=1}^n \inner{v}{w_i} \underbrace{\inner{w_i}{w_j}}_{=\delta_{ij}} \\
+                                       & = \inner {v}{w_j} - \inner {v}{w_j}                                                          \\
+                                       & = 0
+              \end{align*}
+              gilt, was impliziert das \(w^\perp \in W^\perp\) ist.
+              Zudem folgt somit das jedes \(v \in V\) als Summe von Vektoren aus \(W\) und
+              \(W^\perp\) wie folgt dargestellt werden kann
+              \begin{equation*}
+                  v = w^\perp + \sum_{i=1}^n \inner{v}{w_i} w_i \qquad \text{für} \qquad w_i \in B.
+              \end{equation*}
+              Sei jedoch \(v \in W \cap W^\perp\) so folgt das \(\inner{v}{v} = 0\), was
+              allerdings impliziert das \(v = 0\) sein muss, womit \(V = W \oplus W^\perp\)
+              gezeigt wäre.
+
+        \item Sei zunächst \(f \in W^0 \subseteq L(K^n, K)\), so folgt das \(f\) eindeutig
+              durch eine Zuordnung \(v \mapsto \bar{v}^H v\), für ein \(\bar{v} \in K^n\),
+              dargestellt werden kann. Ist \(\inner{}{}\) ein Skalarprodukt auf \(K^n\) so
+              existiert, laut Übungsblatt~6 Aufgabe~3 Punkt i, eine hermitesche Matrix \(A
+              \in GL_n(K)\), sodass für alle \(v, w \in K^n\)
+              \begin{equation*}
+                  \inner{v}{w} = w^H A v
+              \end{equation*}
+              ist.
+              Definieren wir nun \(w^\perp \coloneq A^{-1} \bar{v}\) so folgt das für alle \(v \in V\)
+              \begin{align*}
+                  \inner{v}{w^\perp} & = {w^\perp}^H A v                                        \\
+                                     & = {\left(A^{-1}v\right)}^H A v                           \\
+                                     & = v^H \underbrace{{\left(A^{-1}\right)}^H}_{=A^{-1}} A v \\
+                                     & = v^H v = f(v)
+              \end{align*}
+              gilt.
+              Da dies insbesondere auch für \(w \in W\) gilt und \(f(w) = 0\) ist, folgt das \(f \in \{f \in
+              V^* \mid f = \langle \cdot , w^\perp \rangle, w^\perp \in W^\perp\}\) ist.
+              Für \(f \in \{f \in
+              V^* \mid f = \langle \cdot , w^\perp \rangle, w^\perp \in W^\perp\}\) folgt das für alle \(w \in W\)
+              \begin{equation*}
+                  f(w) = \inner{w}{w^\perp} = 0 \qquad \text{für ein} \qquad w^\perp \in W^\perpj
+              \end{equation*}
+              gilt, woraus folgt das \(f \in W^0\) ist.
+    \end{enumerate}
+\end{proof}
+
+\end{problem}
+
+\begin{problem}[Orthogonale Polynome]{5 Punkte}
+Sei $V := \mathbb{R}_{\leq 3}[x]$, $p_i(x) := x^i$, $i \in \{0, \ldots, 3\}$
+und $B := (p_i)_{i \in \{0, \ldots, 3\}}$. Bestimmen Sie mit dem
+Gram-Schmidt-Verfahren ausgehend von $B$ eine Orthonormalbasis von $V$
+bezüglich des Skalarprodukts
+\[
+    \langle p, q \rangle := \int_{-1}^{1} p(x) q(x) \, dx.
+\]
+\end{problem}
+
+\begin{problem}[Orthogonale Matrizen in $\mathbb{R}^{2,2}$]{5 Punkte}
+Zeigen Sie:
+\begin{enumerate}
+    \item Ist $A \in \operatorname{SO}_2(\mathbb{R}) := \{A' \in
+              \operatorname{O}_2(\mathbb{R}) \mid \det(A') = 1\}$, dann gibt es $c, s \in
+              [-1, 1]$, sodass
+          \[
+              A = \begin{pmatrix}
+                  c & -s \\
+                  s & c
+              \end{pmatrix}.
+          \]
+    \item Ist $A \in \operatorname{O}_2(\mathbb{R}) \setminus
+              \operatorname{SO}_2(\mathbb{R})$, dann gibt es $c, s \in [-1, 1]$, sodass
+          \[
+              A = \begin{pmatrix}
+                  c & s  \\
+                  s & -c
+              \end{pmatrix}.
+          \]
+\end{enumerate}
+\begin{proof}
+    Bemerken wir zunächst das für \(Q \in O_2(\reals)\) folgt das
+    \begin{equation*}
+        1 = \det( I ) = \det( Q Q^{-1} ) = \det( Q )\det( Q^T) = \det(Q)^2
+    \end{equation*}
+    ist, und somit \(\det(Q) = \pm 1\) ist.
+    Zudem folgt, für \[
+        Q = \begin{pmatrix}
+            a & b \\
+            c & d
+        \end{pmatrix} \in O_2(\reals)
+    \] mit \(Q Q^T = I\) das
+    \begin{align}
+        a^2 + b^2 & = 1 \label{eq:1} \\
+        c^2 + d^2 & = 1 \label{eq:2} \\
+        ac + bd   & = 0 \label{eq:3}
+    \end{align}
+    gilt.
+
+    Aus \eqref{eq:1} und \eqref{eq:2} folgt jeweils
+    \begin{equation*}
+        a = \sqrt{1 - b^2}, \quad b = \sqrt{1 - a^2}, \quad c = \sqrt{1 - d^2}, \quad d = \sqrt{1 - c^2}
+    \end{equation*}
+    was für \(Q \in \reals^2\) impliziert das \(a, b, c, d \in [-1, 1]\) sein müssen.
+
+    Mit \eqref{eq:3} folgt das
+    \begin{align*}
+        ac + bd  = \sqrt{a^2 - a^2 d^2} + \sqrt{d^2 - a^2 d^2}                                                               & = 0     \\
+        \Rightarrow \paren*{\sqrt{a^2 - a^2 d^2} + \sqrt{d^2 - a^2 d^2}}\paren*{\sqrt{a^2 - a^2 d^2} - \sqrt{d^2 - a^2 d^2}} & = 0     \\
+        = a^2 - a^2 d^2 - d^2 + a^2 d^2                                                                                      & = 0     \\
+        \Rightarrow a^2 - d^2  = 0 \Rightarrow a                                                                             & = \pm d
+    \end{align*}
+    ist und analog auch \(b = \pm c\) ist.
+
+    Sein nun \[A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in SO_2(\reals)\]
+    so folgt aus \(ad - bc = 1\) das \(ad = 1 + bc\) und mit \(b, c \in [-1,1]\)
+    das \(ad \ge 0\), was mit \(a = \pm d\) impliziert das \(a = d\) ist. Somit
+    folgt aus \(bc = a^2 - 1\) und \(a \in [-1,1]\) \(bc \le 0\) und mit \(b = \pm
+    c\) das \( b = - c\).
+
+    Analog lässt sich zeigen das für \[
+        A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in O_2(\reals) \setminus SO_2(\reals)
+    \] also \(det(A) = -1\) das \(a = -d\) sowie \(b = d\) ist.
+\end{proof}
+\end{problem}
+
+\end{document}
