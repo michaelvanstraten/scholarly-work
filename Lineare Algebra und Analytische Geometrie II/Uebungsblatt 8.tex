@@ -20,9 +20,9 @@ orthogonale Komplement. Zeigen Sie:
           ist ein Untervektorraum von $V$ und $V = W \oplus W^\perp$.
     \item Für ein Skalarprodukt $\langle \cdot , \cdot \rangle$ gilt $W^0 = \{f \in V^*
               \mid f = \langle \cdot , w^\perp \rangle, w^\perp \in W^\perp\}$.
-    \item Für jedes Komplement $\tilde{W} \subseteq V$ von $W$ gibt es ein Skalarprodukt
-          $\langle \cdot , \cdot \rangle$ auf $V$, bezüglich dem $\tilde{W}$ das
-          orthogonale Komplement von $W$ ist.
+    \item Für jedes Komplement $\widetilde{W} \subseteq V$ von $W$ gibt es ein
+          Skalarprodukt $\langle \cdot , \cdot \rangle$ auf $V$, bezüglich dem
+          $\widetilde{W}$ das orthogonale Komplement von $W$ ist.
 \end{enumerate}
 
 \begin{proof} \hfill
@@ -32,11 +32,11 @@ orthogonale Komplement. Zeigen Sie:
               \begin{equation*}
                   \langle \lambda a + b, w \rangle = \lambda \underbrace{\inner{a}{w}}_{= 0} + \underbrace{\inner{b}{w}}_{=0} = 0
               \end{equation*}
-              ist, womit gezeigt wäre das \(W^\prep\) geschlossen ist.
+              ist, womit gezeigt wäre das \(W^\perp\) geschlossen ist.
               Da \(0_V \in W^\perp\) ist, folgt somit das \(W^\perp\) einen
               Untervektorraum von \(V\) bildet.
 
-              Sei nun \(B \coloneq \set{w_1, \ldots, w_n}\) eine Orthonormalbasis zu \(W\)
+              Sei nun \(B \coloneq \set{w_1, \ldots, w_n}\) eine Orthonormalbasis von \(W\)
               sowie
               \begin{equation*}
                   w^\perp = v - \sum_{i=1}^n \inner{v}{w_i} w_i \qquad \text{für alle} \qquad \(v \in V\).
@@ -49,7 +49,7 @@ orthogonale Komplement. Zeigen Sie:
                                        & = 0
               \end{align*}
               gilt, was impliziert das \(w^\perp \in W^\perp\) ist.
-              Zudem folgt somit das jedes \(v \in V\) als Summe von Vektoren aus \(W\) und
+              Somit folgt das jedes \(v \in V\) als Summe von Vektoren aus \(W\) und
               \(W^\perp\) wie folgt dargestellt werden kann
               \begin{equation*}
                   v = w^\perp + \sum_{i=1}^n \inner{v}{w_i} w_i \qquad \text{für} \qquad w_i \in B.
@@ -66,7 +66,7 @@ orthogonale Komplement. Zeigen Sie:
               \begin{equation*}
                   \inner{v}{w} = w^H A v
               \end{equation*}
-              ist.
+              gilt.
               Definieren wir nun \(w^\perp \coloneq A^{-1} \bar{v}\) so folgt das für alle \(v \in V\)
               \begin{align*}
                   \inner{v}{w^\perp} & = {w^\perp}^H A v                                        \\
@@ -120,49 +120,64 @@ Zeigen Sie:
           \]
 \end{enumerate}
 \begin{proof}
-    Bemerken wir zunächst das für \(Q \in O_2(\reals)\) folgt das
+    Bemerken wir zunächst, dass für \(Q \in O_2(\reals)\) folgt, dass
     \begin{equation*}
-        1 = \det( I ) = \det( Q Q^{-1} ) = \det( Q )\det( Q^T) = \det(Q)^2
+        1 = \det(I) = \det(Q Q^T) = \det(Q) \det(Q^T) = \det(Q)^2,
     \end{equation*}
-    ist, und somit \(\det(Q) = \pm 1\) ist.
-    Zudem folgt, für \[
+    und somit \(\det(Q) = \pm 1\) ist.
+
+    Zudem folgt für
+    \[
         Q = \begin{pmatrix}
             a & b \\
             c & d
         \end{pmatrix} \in O_2(\reals)
-    \] mit \(Q Q^T = I\) das
+    \]
+    mit \(Q Q^T = I\), dass
     \begin{align}
-        a^2 + b^2 & = 1 \label{eq:1} \\
-        c^2 + d^2 & = 1 \label{eq:2} \\
+        a^2 + b^2 & = 1, \label{eq:1} \\
+        c^2 + d^2 & = 1, \label{eq:2} \\
         ac + bd   & = 0 \label{eq:3}
     \end{align}
     gilt.
 
     Aus \eqref{eq:1} und \eqref{eq:2} folgt jeweils
     \begin{equation*}
-        a = \sqrt{1 - b^2}, \quad b = \sqrt{1 - a^2}, \quad c = \sqrt{1 - d^2}, \quad d = \sqrt{1 - c^2}
+        a = \sqrt{1 - b^2}, \quad b = \sqrt{1 - a^2}, \quad c = \sqrt{1 - d^2}, \quad d = \sqrt{1 - c^2},
     \end{equation*}
-    was für \(Q \in \reals^2\) impliziert das \(a, b, c, d \in [-1, 1]\) sein müssen.
+    was für \(Q \in \reals^2\) impliziert, dass \(a, b, c, d \in [-1, 1]\) sein müssen.
 
-    Mit \eqref{eq:3} folgt das
+    Mit \eqref{eq:3} folgt, dass
     \begin{align*}
-        ac + bd  = \sqrt{a^2 - a^2 d^2} + \sqrt{d^2 - a^2 d^2}                                                               & = 0     \\
-        \Rightarrow \paren*{\sqrt{a^2 - a^2 d^2} + \sqrt{d^2 - a^2 d^2}}\paren*{\sqrt{a^2 - a^2 d^2} - \sqrt{d^2 - a^2 d^2}} & = 0     \\
-        = a^2 - a^2 d^2 - d^2 + a^2 d^2                                                                                      & = 0     \\
-        \Rightarrow a^2 - d^2  = 0 \Rightarrow a                                                                             & = \pm d
+        ac + bd = \sqrt{a^2 - a^2 d^2} + \sqrt{d^2 - a^2 d^2}                                                                         & = 0      \\
+        \Rightarrow \left(\sqrt{a^2 - a^2 d^2} + \sqrt{d^2 - a^2 d^2}\right) \left(\sqrt{a^2 - a^2 d^2} - \sqrt{d^2 - a^2 d^2}\right) & = 0      \\
+        \Rightarrow a^2 - a^2 d^2 - d^2 + a^2 d^2                                                                                     & = 0      \\
+        \Rightarrow a^2 - d^2 = 0 \Rightarrow a                                                                                       & = \pm d,
     \end{align*}
-    ist und analog auch \(b = \pm c\) ist.
+    und analog auch \(b = \pm c\) ist.
 
-    Sein nun \[A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in SO_2(\reals)\]
-    so folgt aus \(ad - bc = 1\) das \(ad = 1 + bc\) und mit \(b, c \in [-1,1]\)
-    das \(ad \ge 0\), was mit \(a = \pm d\) impliziert das \(a = d\) ist. Somit
-    folgt aus \(bc = a^2 - 1\) und \(a \in [-1,1]\) \(bc \le 0\) und mit \(b = \pm
-    c\) das \( b = - c\).
+    Sei nun
+    \[
+        A = \begin{pmatrix}
+            a & b \\
+            c & d
+        \end{pmatrix} \in SO_2(\reals),
+    \]
+    so folgt aus \(ad - bc = 1\), dass \(ad = 1 + bc\), und mit \(b, c \in [-1,
+        1]\), dass \(ad \geq 0\), was mit \(a = \pm d\) impliziert, dass \(a = d\) ist.
+    Somit folgt aus \(bc = a^2 - 1\) und \(a \in [-1, 1]\), dass \(bc \leq 0\), und
+    mit \(b = \pm c\), dass \(b = -c\) ist.
 
-    Analog lässt sich zeigen das für \[
-        A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in O_2(\reals) \setminus SO_2(\reals)
-    \] also \(det(A) = -1\) das \(a = -d\) sowie \(b = d\) ist.
+    Analog lässt sich zeigen, dass für
+    \[
+        A = \begin{pmatrix}
+            a & b \\
+            c & d
+        \end{pmatrix} \in O_2(\reals) \setminus SO_2(\reals)
+    \]
+    also \(\det(A) = -1\), dass \(a = -d\) sowie \(b = d\) ist.
 \end{proof}
+
 \end{problem}
 
 \end{document}
