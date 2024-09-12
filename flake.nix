@@ -20,15 +20,12 @@
         texlive = pkgs.texliveFull;
       in
       {
+        lib = import ./lib { inherit (pkgs) lib newScope; };
+
         packages =
           with pkgs.lib;
           let
-            inherit (fileset)
-              fileFilter
-              toList
-              unions
-              toSource
-              ;
+            inherit (fileset) fileFilter toList;
             inherit (lists) forEach;
             problemset-files = toList (fileFilter (file: file.hasExt "tex") ./.);
             problemsets = forEach problemset-files (
@@ -37,49 +34,8 @@
                 problemset-name = strings.removePrefix "./" (path.removePrefix ./. problemset-file);
               in
               {
-                ${problemset-name} = pkgs.stdenvNoCC.mkDerivation {
-                  src = toSource {
-                    root = ./.;
-                    fileset = unions [
-                      problemset-file
-                      ./problemset.cls
-                    ];
-                  };
-                  name = problemset-name;
-
-                  buildInputs =
-                    (with pkgs; [
-                      coreutils
-                      ncurses
-                    ])
-                    ++ [ texlive ];
-
-                  TEXMFHOME = "./cache";
-                  TEXMFVAR = "./cache/var";
-
-                  OSFONTDIR = "/share/fonts";
-
-                  buildPhase = ''
-                    runHook preBuild
-
-                    SOURCE_DATE_EPOCH="${toString self.lastModified}" latexmk \
-                    -interaction=nonstopmode \
-                    -pdf \
-                    -lualatex \
-                    -pretex='\pdfvariable suppressoptionalinfo 512\\relax' \
-                    -usepretex \
-                    "${problemset-name}"
-
-                    runHook postBuild
-                  '';
-
-                  installPhase = ''
-                    runHook preInstall
-
-                    install -d $out && install -m644 -D *.pdf $out/
-
-                    runHook postInstall
-                  '';
+                ${problemset-name} = self.lib.${system}.mkLaTeXDerivation {
+                  inherit problemset-file problemset-name;
                 };
               }
             );
