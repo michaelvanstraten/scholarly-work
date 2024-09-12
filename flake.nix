@@ -52,7 +52,12 @@
               nixfmt-rfc-style.enable = true;
               statix.enable = true;
               chktex.enable = false;
-              latexindent.enable = true;
+              latexindent = {
+                enable = true;
+                settings = {
+                  flags = "--local --silent --modifylinebreak --overwriteIfDifferent";
+                };
+              };
               lacheck.enable = false;
               actionlint.enable = true;
               prettier = {

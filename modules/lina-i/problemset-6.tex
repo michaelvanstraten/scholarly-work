@@ -22,16 +22,17 @@ Weiterhin sei $\varphi: K \to R$ ein einserhaltender Homomorphismus von Ringen, 
     \varphi(1_K) = 1_R. \label{def:presevesone}
 \]
 Zeigen Sie, dass $(R, \oplus, \odot)$ einen Vektorraum über $K$ bildet, wobei
-die Skalarmultiplikation wie folgt definiert ist:
+  die Skalarmultiplikation wie folgt definiert ist:
 \[
     \odot: K \times R \to R, (\alpha, x) \mapsto \varphi(\alpha) \otimes x. \label{def:scalar}
 \]
 \begin{proof}
     $(R, \oplus, \odot)$ bildet einen Vektorraum über $K$
 
-    Um zu zeigen, das $(R, \oplus, \odot)$ einen Vektorraum über $K$ bildet muss
-    gezeigt werden, dass $(R, \oplus)$ eine kommutative Gruppe bildet. Sowie das
-    die folgenden Eigenschaften der Skalarmultiplikation erfüllt sind: \begin{align}
+    Um zu zeigen, das $(R, \oplus, \odot)$ einen Vektorraum über $K$ bildet
+    muss gezeigt werden, dass $(R, \oplus)$ eine kommutative Gruppe bildet.
+    Sowie das die folgenden Eigenschaften der Skalarmultiplikation erfüllt
+    sind: \begin{align}
         \alpha \odot (u \oplus v) = (\alpha \odot u) \oplus (\alpha \odot v) \\
         (\alpha + \beta) \odot v = (\alpha \odot v) \oplus (\beta \odot v)   \\
         (\alpha \cdot \beta) \odot v = \alpha \odot (\beta \odot v)          \\
@@ -79,8 +80,8 @@ Zeigen Sie, dass es keine Abbildung $\otimes: \mathbb{C} \times \mathbb{R} \to \
         (a+bi) \cdot \alpha = a \cdot \alpha + b \cdot (i \cdot \alpha) = a \alpha + b(i \cdot (\alpha \cdot 1)) = a \alpha + b \alpha (i \cdot 1).
     \]
     Angenommen, \(i \cdot 1 = r\). Dann wäre \((r-i) \cdot 1 = 0\), was im
-    Widerspruch zu den Eigenschaften eines Vektorraums steht, da \(r-i \neq 0\) und
-    \(1 \neq \mathbf{0}\). Daher existiert keine solche Vektorraumstruktur.
+    Widerspruch zu den Eigenschaften eines Vektorraums steht, da \(r-i \neq 0\)
+    und \(1 \neq \mathbf{0}\). Daher existiert keine solche Vektorraumstruktur.
 \end{proof}
 \end{problem}
 
@@ -91,9 +92,9 @@ Zeigen Sie, dass es keine Abbildung $\otimes: \mathbb{C} \times \mathbb{R} \to \
               \item $W_2 := \{(x_1, x_2) \in \mathbb{R}^2 \mid a_1x_1 + a_2x_2 = b\}$, $a_1, a_2, b \in \mathbb{R}$,
               \item $W_5 := \{(x_1, x_2) \in \mathbb{R}^2 \mid x_1x_2 \geq 0\}$.
           \end{enumerate}
-    \item Sei $x \in \mathbb{R}$. Bezeichne $\mathbb{R}[x] := P[x]$ den Vektorraum der
-          Polynome über $\mathbb{R}$. Sind die folgenden Teilmengen Untervektorräume von
-          $R[x]$?
+    \item Sei $x \in \mathbb{R}$. Bezeichne $\mathbb{R}[x] := P[x]$ den
+          Vektorraum der Polynome über $\mathbb{R}$. Sind die folgenden
+          Teilmengen Untervektorräume von $R[x]$?
           \begin{enumerate}[label=\alph*)]
               \item $U_1 := \{p(x) \in R[x] \mid p(0) = 0\}$,
               \item $U_2 := \{p(x) \in R[x] \mid p(0) = 0 \text{ und } p(1) = 0\}$,
@@ -117,13 +118,15 @@ Zeigen Sie, dass es keine Abbildung $\otimes: \mathbb{C} \times \mathbb{R} \to \
 
                         \textbf{2}: $(x_1, x_2), (y_1, y_2) \in \mathbb{R}^2$ und $(x_1, x_2) + (y_1+y_2) = (x_1 + y_1, x_2 + y_2)$ sowie \[
                             a_1(x_1+y_1) + a_2(x_2+y_2) = b \in \mathbb{R},
-                        \] da $a_1,a_2,x_1,x_2,y_1,y_2 \in \mathbb{R}$ und $\mathbb{R}$ Körper somit
-                        geschlossen unter Addition und Multiplikation.
+                        \] da $a_1,a_2,x_1,x_2,y_1,y_2 \in \mathbb{R}$ und
+                           $\mathbb{R}$ Körper somit geschlossen unter Addition
+                           und Multiplikation.
 
                         \textbf{3}: Nehme $s \in \mathbb{R}$ und $(x_1, x_2) \in \mathbb{R}^2$ somit folgt $s \odot (x_1, x_2) = (s \cdot x_1, s \cdot x_2)$ sowie \[
                             a_1(s \cdot x_1) + a_2(s \cdot x_2) = b \in \mathbb{R},
-                        \] da $a_1,a_2, s,x_1,x_2 \in \mathbb{R}$ und $\mathbb{R}$ Körper somit
-                        geschlossen unter Addition und Multiplikation.
+                        \] da $a_1,a_2, s,x_1,x_2 \in \mathbb{R}$ und
+                           $\mathbb{R}$ Körper somit geschlossen unter Addition
+                           und Multiplikation.
                   \item $W_5$ ist kein Untervektorraum von $\mathbb{R}^2$ da:
 
                         \textbf{2}: $(1, 2) \in W_5$ und $(-2, -1) \in W_5$ aber $(1, 2) + (-2, -1) = (-1, 1) \not\in W_5$
@@ -172,8 +175,8 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum und $U_1, U_2 \subseteq V$.
               \item $\operatorname{Span} U_1 \cup \operatorname{Span} U_2 \subseteq \operatorname{Span}(U_1 \cup U_2)$,
               \item $\operatorname{Span} U_1 \cup \operatorname{Span} U_2 \supseteq \operatorname{Span}(U_1 \cup U_2)$.
           \end{enumerate}
-    \item Für $M, N \subseteq V$ ist $M + N := \{v_1 + v_2 \mid v_1 \in M, v_2 \in N\}$.
-          Zeigen oder widerlegen
+    \item Für $M, N \subseteq V$ ist $M + N := \{v_1 + v_2 \mid v_1 \in M, v_2
+          \in N\}$. Zeigen oder widerlegen
 
           Sie zwei der folgenden Aussagen:
           \begin{enumerate}[label=\alph*)]
@@ -185,23 +188,24 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum und $U_1, U_2 \subseteq V$.
 \begin{proof}
     Eigenschaften von Untervektorräumen
     \begin{enumerate}
-        \item Zu zeigen ist das für $U_1 \subseteq V$ gilt $U_1 \subseteq$ Span $U_1$.
+        \item Zu zeigen ist das für $U_1 \subseteq V$ gilt $U_1 \subseteq$ Span
+              $U_1$.
 
-              Betrachten wir die definition der Menge Span $U_1 := \set{\lambda_1 v_1 +
-                      \ldots + \lambda_n v_n \mid \lambda_{n \in \mathbb{N}} \in K \; v_{n \in
-                              \mathbb{N}} \in U_1}$.
+              Betrachten wir die definition der Menge Span $U_1 :=
+              \set{\lambda_1 v_1 + \ldots + \lambda_n v_n \mid \lambda_{n \in
+              \mathbb{N}} \in K \; v_{n \in \mathbb{N}} \in U_1}$.
 
-              Da $V$ ein Vektorraum ist $\exists 0 \in K$, sodass $\forall v \in V$ gilt $0
-                  \times v = 0$, sowie ein $1 \in K$ sodass $\forall v \in V$ gilt $1 \times v =
-                  v$.
+              Da $V$ ein Vektorraum ist $\exists 0 \in K$, sodass $\forall v
+              \in V$ gilt $0 \times v = 0$, sowie ein $1 \in K$ sodass $\forall
+              v \in V$ gilt $1 \times v = v$.
 
-              Nehmen wir uns einen beliebigen $v_u \in U_1$, somit existiert eine
-              Linearkombination in Span $U_1$ mit \[
+              Nehmen wir uns einen beliebigen $v_u \in U_1$, somit existiert
+              eine Linearkombination in Span $U_1$ mit \[
                   \lambda_1 v_1 + \ldots + \lambda_n v_n \mid \lambda_u = 1 \land \lambda_{n \ne u} = 0 \; v_{n \in \mathbb{N}} \in U_1 = 0 \times v_1 + \ldots + 1 \times v_u + \ldots 0 \times v_n = v_u.
               \]
 
-              Da \(v_u\) beliebig gewählt wurde, gilt dies für jeden \(v \in U_1\), was zeigt
-              das $U_1 \subseteq$ Span $U_1$. \checkmark
+              Da \(v_u\) beliebig gewählt wurde, gilt dies für jeden \(v \in
+              U_1\), was zeigt das $U_1 \subseteq$ Span $U_1$. \checkmark
         \item Wiederlegung zweier Aussagen
 
               \textbf{a)}
@@ -218,15 +222,18 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum und $U_1, U_2 \subseteq V$.
                   0 \\ 2
               \end{pmatrix}\right\}\).
 
-              Bemerke das \(\operatorname{Span} U_1\) und \(\operatorname{Span} U_2\) gleich
-              \(R^2\) da \(U_1, U_2\) Basen von \(R^2\) und \(U_1 \cap U_2 = \emptyset \).
+              Bemerke das \(\operatorname{Span} U_1\) und \(\operatorname{Span}
+              U_2\) gleich \(R^2\) da \(U_1, U_2\) Basen von \(R^2\) und \(U_1
+              \cap U_2 = \emptyset \).
 
-              Somit ist der Schnitt von \(\operatorname{Span} U_1 = \operatorname{Span} U_2 =
-              R^2\) gleich \(R^2\) und \(\operatorname{Span} \emptyset = \emptyset\).
+              Somit ist der Schnitt von \(\operatorname{Span} U_1 =
+              \operatorname{Span} U_2 = R^2\) gleich \(R^2\) und
+              \(\operatorname{Span} \emptyset = \emptyset\).
 
-              Da \(R^2 \not \subseteq \emptyset\), trivialerweise, ist die Aussagen
-              \(\operatorname{Span} U_1 \cap \operatorname{Span} U_2 \subseteq
-              \operatorname{Span}(U_1 \cap U_2)\) widerlegt. \checkmark
+              Da \(R^2 \not \subseteq \emptyset\), trivialerweise, ist die
+              Aussagen \(\operatorname{Span} U_1 \cap \operatorname{Span} U_2
+              \subseteq \operatorname{Span}(U_1 \cap U_2)\) widerlegt.
+              \checkmark
 
               \textbf{d)}
 
@@ -251,9 +258,10 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum und $U_1, U_2 \subseteq V$.
 
                   \item $\operatorname{Span}(U_1 + U_2) \not\supseteq \operatorname{Span} U_1 + \operatorname{Span} U_2$ da:
 
-                        Nehme $v \in V$ und $U_1 = \set{v}$ $U_2 = \set {-v}$, somit ist $U_1 + U_2 =
-                            \emptyset = \operatorname{Span} \emptyset$ aber $\operatorname{Span} U_1 +
-                            \operatorname{Span} U_2 \neq \emptyset$. \checkmark
+                        Nehme $v \in V$ und $U_1 = \set{v}$ $U_2 = \set {-v}$,
+                        somit ist $U_1 + U_2 = \emptyset = \operatorname{Span}
+                        \emptyset$ aber $\operatorname{Span} U_1 +
+                        \operatorname{Span} U_2 \neq \emptyset$. \checkmark
               \end{enumerate}
     \end{enumerate}
 \end{proof}

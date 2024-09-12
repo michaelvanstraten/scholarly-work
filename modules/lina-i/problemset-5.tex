@@ -16,11 +16,12 @@ Sei $(G, \cdot)$ eine Gruppe und $U \subseteq G$ nicht leer. Ist auch $(U, \cdot
           \begin{enumerate}[label=\alph*)]
               \item $(U, \cdot)$ ist eine Untergruppe von $(G, \cdot)$,
               \item Für alle $a, b \in U$ gilt $ab^{-1} \in U$,
-              \item Die Relation $\sim_U := \{(a, b) \in G \times G \mid ab^{-1} \in U\}$ ist eine
-                    Äquivalenzrelation auf $G$.
+              \item Die Relation $\sim_U := \{(a, b) \in G \times G \mid
+                    ab^{-1} \in U\}$ ist eine Äquivalenzrelation auf $G$.
           \end{enumerate}
-    \item Sei $(H, +)$ eine weitere Gruppe und $f: G \to H$ ein Gruppenhomomorphismus.
-          Zeigen Sie, dass $(\ker(f), \cdot)$ eine Untergruppe von $(G, \cdot)$ ist.
+    \item Sei $(H, +)$ eine weitere Gruppe und $f: G \to H$ ein
+          Gruppenhomomorphismus. Zeigen Sie, dass $(\ker(f), \cdot)$ eine
+          Untergruppe von $(G, \cdot)$ ist.
 \end{enumerate}
 
 \begin{proof}
@@ -55,8 +56,9 @@ Sei $(G, \cdot)$ eine Gruppe und $U \subseteq G$ nicht leer. Ist auch $(U, \cdot
         \item \textit{$\ker(f)$ ist eine Untergruppe:}
               Wie bereits in \textit{i.b} bewiesen, müssen wir lediglich zeigen, dass $\forall a,b \in \ker(f) \Rightarrow ab^{-1} \in \ker(f)$, um zu zeigen, dass $\ker(f)$ eine Untergruppe von $G$ ist.
 
-              Nehmen wir zwei Elemente aus $\ker(f)$, $a$ und $b$. Somit ist laut Definition
-              von Homomorphismen $f(a \cdot b) = f(a) + f(b)$. Somit folgt
+              Nehmen wir zwei Elemente aus $\ker(f)$, $a$ und $b$. Somit ist
+              laut Definition von Homomorphismen $f(a \cdot b) = f(a) + f(b)$.
+              Somit folgt
               \begin{align}
                   f(b^{-1})         & = f(b)^{-1} \quad \text{(Homomorphismen bilden inverse auf inverse ab)}                     \\
                   f(b \cdot b^{-1}) & = f(b) + f(b)^{-1}                                                                          \\
@@ -78,21 +80,23 @@ Sei $x \in \mathbb{R}$ und $n \in \mathbb{N}$.
 Wir betrachten die Abbildung $d: (P_{\le n }[x], +) \to (P_{\le n-1}[x], +)$
 zwischen den additiven Gruppen der Polynome vom Grad kleiner gleich $n$ und
 Grad kleiner gleich $n - 1$, die für jedes $p(x) = a_0 + a_1x + a_2x^2 + \ldots
-    + a_nx^n \in P_{\le n}[x]$, $a_j \in \mathbb{R}$, $j \in \{1, \ldots, n\}$
++ a_nx^n \in P_{\le n}[x]$, $a_j \in \mathbb{R}$, $j \in \{1, \ldots, n\}$
 gegeben ist durch \[
     d(p(x)) = a_1 + 2a_2x + \cdots + na_nx^{n-1} \in P_{\le n-1}[x].
 \]
 
 Sei weiter $P'_{\le n}[x] := \{p(x) \in P_{\le n}[x] \mid p(x) = a_1x + \ldots
-    + a_nx^n, a_j \in \mathbb{R}, j \in \{1, \ldots, n\}\}$.
++ a_nx^n, a_j \in \mathbb{R}, j \in \{1, \ldots, n\}\}$.
 
 \begin{enumerate}
     \item Zeigen Sie, dass $d$ ein surjektiver Gruppenhomomorphismus ist.
-    \item Berechnen Sie $\ker(d)$ und zeigen Sie, dass $\ker(d) \cap P'_{\le n}[x] =
-              \{0\}$, wobei $0$ das neutrale Element in $(P_{\le n}[x], +)$ bezeichnet.
-    \item Zeigen Sie, dass $(P'_{\le n}[x], +)$ eine Untergruppe von $(P_n[x], +)$ ist.
-    \item Zeigen Sie, dass $D := d|_{P'_n[x]}$ bijektiv ist und geben Sie die inverse
-          Abbildung $I := D^{-1}: P_{n-1}[x] \to P'_n[x]$ von $D$ an.
+    \item Berechnen Sie $\ker(d)$ und zeigen Sie, dass $\ker(d) \cap P'_{\le
+          n}[x] = \{0\}$, wobei $0$ das neutrale Element in $(P_{\le n}[x], +)$
+          bezeichnet.
+    \item Zeigen Sie, dass $(P'_{\le n}[x], +)$ eine Untergruppe von $(P_n[x],
+          +)$ ist.
+    \item Zeigen Sie, dass $D := d|_{P'_n[x]}$ bijektiv ist und geben Sie die
+          inverse Abbildung $I := D^{-1}: P_{n-1}[x] \to P'_n[x]$ von $D$ an.
 \end{enumerate}
 
 \begin{proof}
@@ -122,15 +126,17 @@ Sei weiter $P'_{\le n}[x] := \{p(x) \in P_{\le n}[x] \mid p(x) = a_1x + \ldots
                    & = d(p(x) + q(x)).
               \end{align}
 
-              Somit ist gezeigt, dass $d(p(x))$ ein Gruppenhomomorphismus ist. \checkmark
-              \textbf{$d$ ist surjektiv}: \\ Zu zeigen ist, dass $\forall p_{\le n-1}(x) \in
-                  P_{\le n-1}[x]$ ein $p(x) \in P_{\le n}[x]$ existiert, sodass $d(p(x)) = p_{\le
-                          n-1}(x)$. \\\\ Ein solches $p(x)$ zu finden ist gleichbedeutend damit, für
-              jedes Polynom vom Grad $n-1$ ein Polynom des Grades $n$ in $P_{\le n}[x]$ zu
-              finden, da $d(p(x))$ von Polynomen Grad $n$ zu Polynomen Grad $n-1$ abbildet.
-              Da $P_{\le n}[x]$ jedoch die Menge der Polynome vom Grad $n$ ist, lässt sich
-              für jedes Polynom aus der Menge $P_{\le n - 1}$ ein Polynom des Grades $n+1$ in
-              $P_{\le n}[x]$ finden, sodass $d(p(x)) = p_{\le n -1}(x)$. Somit ist $d$
+              Somit ist gezeigt, dass $d(p(x))$ ein Gruppenhomomorphismus ist.
+              \checkmark \textbf{$d$ ist surjektiv}: \\ Zu zeigen ist, dass
+              $\forall p_{\le n-1}(x) \in P_{\le n-1}[x]$ ein $p(x) \in P_{\le
+              n}[x]$ existiert, sodass $d(p(x)) = p_{\le n-1}(x)$. \\\\ Ein
+              solches $p(x)$ zu finden ist gleichbedeutend damit, für jedes
+              Polynom vom Grad $n-1$ ein Polynom des Grades $n$ in $P_{\le
+              n}[x]$ zu finden, da $d(p(x))$ von Polynomen Grad $n$ zu
+              Polynomen Grad $n-1$ abbildet. Da $P_{\le n}[x]$ jedoch die Menge
+              der Polynome vom Grad $n$ ist, lässt sich für jedes Polynom aus
+              der Menge $P_{\le n - 1}$ ein Polynom des Grades $n+1$ in $P_{\le
+              n}[x]$ finden, sodass $d(p(x)) = p_{\le n -1}(x)$. Somit ist $d$
               surjektiv. \checkmark
         \item \textit{Der $\ker(d)$ und seine Schnitte} \\
               Es ist leicht zu sehen, dass der $\ker(d)$ gleich der Menge
@@ -141,8 +147,8 @@ Sei weiter $P'_{\le n}[x] := \{p(x) \in P_{\le n}[x] \mid p(x) = a_1x + \ldots
               \[
                   d(p(x)) = 0 + 0 + \cdots + 0 = 0 = \text{neutrales Element aus } P_{\le n-1}.
               \]
-              Somit ist jedoch auch leicht zu sehen, dass $\ker(d) \cap P'_{\le n}[x] =
-                  \{0\}$, da
+              Somit ist jedoch auch leicht zu sehen, dass $\ker(d) \cap P'_{\le
+              n}[x] = \{0\}$, da
               \begin{align}
                   \ker(d) \cap P'_{\le n}[x] & = \{p(x) \in P_{\le n} \mid (a_0 \in \mathbb{R} \land a_j = 0) \land (a_0 = 0 \land a_j \in \mathbb{R}), j \in \{1, \ldots, n\}\} \\
                                              & = \{p(x) \in P_{\le n} \mid (a_0 = 0 \land a_j = 0, j \in \{1, \ldots, n\}\}                                                      \\
@@ -165,41 +171,47 @@ Sei weiter $P'_{\le n}[x] := \{p(x) \in P_{\le n}[x] \mid p(x) = a_1x + \ldots
                   a^\prime_1 x + \cdots + a^\prime_nx^n + b^\prime_1x + \cdots + b^\prime_nx^n =
                   \overbrace{(a^\prime_1+b^\prime_1)}^{\in \mathbb{R}}x + \cdots + \overbrace{(a^\prime_n+b^\prime_n)}^{\in \mathbb{R}}x^n,
               \] was jedoch wieder in $P'_{\le n}[x]$ liegt. \checkmark \\
-              \textbf{Geschlossenheit unter Inversen}: \\ Da $\mathbb{R}$ ein Körper ist,
-              existiert zu jedem Faktor $a_j$ ein additives inverses Element in $\mathbb{R}$,
-              sodass $a_j + a_j^{-1} = 0$. Daraus folgt, dass es für jedes $p(x) \in P'_{\le
-                  n}[x]$ ein $p(x)^{-1} \in P'_{\le n}[x]$ existiert, sodass $p(x) + p(x)^{-1} =
-                  0 =$ neutrales Element in $P'_{\le n}[x]$ und in $P_{\le n}[x]$. \checkmark
+                 \textbf{Geschlossenheit unter Inversen}: \\ Da $\mathbb{R}$
+                 ein Körper ist, existiert zu jedem Faktor $a_j$ ein additives
+                 inverses Element in $\mathbb{R}$, sodass $a_j + a_j^{-1} = 0$.
+                 Daraus folgt, dass es für jedes $p(x) \in P'_{\le n}[x]$ ein
+                 $p(x)^{-1} \in P'_{\le n}[x]$ existiert, sodass $p(x) +
+                 p(x)^{-1} = 0 =$ neutrales Element in $P'_{\le n}[x]$ und in
+                 $P_{\le n}[x]$. \checkmark
         \item \textit{Die Bijektivität von $D$ und die Inverse Abbildung $I$} \\
               Um zu zeigen, dass $D := d|_{P'_{\le n}[x]}$ bijektiv ist, betrachten wir die Injektivität und die Surjektivität von $D$.
 
               \textbf{Injektivität von $D$}: \\
               Angenommen, es gibt $p_1(x), p_2(x) \in P'_{\le n}[x]$ mit $D(p_1(x)) = D(p_2(x))$. Das bedeutet, dass $d(p_1(x)) = d(p_2(x))$.
 
-              Da $d$ surjektiv ist (wie im ersten Teil gezeigt), existieren Polynome $q_1(x),
-                  q_2(x) \in P_{\le n}[x]$ mit $d(q_1(x)) = p_1(x)$ und $d(q_2(x)) = p_2(x)$.
+              Da $d$ surjektiv ist (wie im ersten Teil gezeigt), existieren
+              Polynome $q_1(x), q_2(x) \in P_{\le n}[x]$ mit $d(q_1(x)) =
+              p_1(x)$ und $d(q_2(x)) = p_2(x)$.
 
-              Da $d(p_1(x)) = d(p_2(x))$, folgt $d(q_1(x)) = d(q_2(x))$. Durch die
-              Injektivität von $d$ erhalten wir $q_1(x) = q_2(x)$.
+              Da $d(p_1(x)) = d(p_2(x))$, folgt $d(q_1(x)) = d(q_2(x))$. Durch
+              die Injektivität von $d$ erhalten wir $q_1(x) = q_2(x)$.
 
-              Somit ist $p_1(x) = d(q_1(x)) = d(q_2(x)) = p_2(x)$. Daher ist $D$ injektiv.
-              \checkmark
+              Somit ist $p_1(x) = d(q_1(x)) = d(q_2(x)) = p_2(x)$. Daher ist
+              $D$ injektiv. \checkmark
 
               \textbf{Surjektivität von $D$}: \\
               Angenommen, es gibt $p'(x) \in P_{\le n-1}[x]$. Da $d$ surjektiv ist, existiert ein Polynom $q(x) \in P_{\le n}[x]$ mit $d(q(x)) = p'(x)$.
 
-              Da $q(x) \in P_{\le n}[x]$, können wir $q(x) = a_1x + \cdots + a_nx^n$
-              schreiben. Dann ist $q(x) \in P'_{\le n}[x]$, und es gilt $D(q(x)) = p'(x)$.
+              Da $q(x) \in P_{\le n}[x]$, können wir $q(x) = a_1x + \cdots +
+              a_nx^n$ schreiben. Dann ist $q(x) \in P'_{\le n}[x]$, und es gilt
+              $D(q(x)) = p'(x)$.
 
               Daher ist $D$ surjektiv. \checkmark
 
               Da $D$ sowohl injektiv als auch surjektiv ist, ist $D$ bijektiv.
 
-              Die inverse Abbildung $I := D^{-1}: P_{n-1}[x] \to P'_{\le n}[x]$ ist die
-              Umkehrung von $D$. Das bedeutet, dass $I$ jedes $p'(x) \in P_{n-1}[x]$ auf das
-              Polynom $q(x) \in P'_{\le n}[x]$ abbildet, für das $D(q(x)) = p'(x)$.
+              Die inverse Abbildung $I := D^{-1}: P_{n-1}[x] \to P'_{\le n}[x]$
+              ist die Umkehrung von $D$. Das bedeutet, dass $I$ jedes $p'(x)
+              \in P_{n-1}[x]$ auf das Polynom $q(x) \in P'_{\le n}[x]$
+              abbildet, für das $D(q(x)) = p'(x)$.
 
-              Daher ist die inverse Abbildung $I$ gegeben durch $I(p'(x)) = q(x)$.
+              Daher ist die inverse Abbildung $I$ gegeben durch $I(p'(x)) =
+              q(x)$.
     \end{enumerate}
 \end{proof}
 
@@ -270,19 +282,20 @@ einen Körper bildet.
         (a + bj) \oplus (0 + 0j)   = (a + 0) + j(b + 0) = a + bj
     \]
 
-    Für die Operation $\otimes$ ist das neutrale Element $e_\otimes = (1+0j)$, da \[
+    Für die Operation $\otimes$ ist das neutrale Element $e_\otimes = (1+0j)$,
+    da \[
         (a + bj) \otimes (1 + 0j)  = ac + j^2b \cdot 0 + j(ad + bc) = a + bj
     \]
 
     \textbf{Inverse Elemente}
 
-    Für die Operation $\oplus$ ist das inverse Element $\forall (a + bj) \in K[j]$
-    gleich $(a^{-1} - b^{-1}j)$, da \[
+    Für die Operation $\oplus$ ist das inverse Element $\forall (a + bj) \in
+    K[j]$ gleich $(a^{-1} - b^{-1}j)$, da \[
         (a + bj) \oplus (a^{-1} - b^{-1}j) = (a + a^{-1}) + j(b - b^{-1}) = 0 + 0j
     \]
 
-    Für die Operation $\otimes$ ist das inverse Element $\forall (a + bj) \in K[j]$
-    gleich $(a{(a^2+(-j^2)b^2)}^{-1} - bj{(a^2+(-j^2)b^2)}^{-1})$.
+    Für die Operation $\otimes$ ist das inverse Element $\forall (a + bj) \in
+    K[j]$ gleich $(a{(a^2+(-j^2)b^2)}^{-1} - bj{(a^2+(-j^2)b^2)}^{-1})$.
 
     \textbf{Distributivgesetze}
 
@@ -305,8 +318,8 @@ einen Körper bildet.
                                                     & = ((c + dj) \otimes (a + bj)) \oplus ((e + fj) \otimes (a + bj))
     \end{align}
 
-    Damit sind alle Körperaxiome erfüllt, und somit ist gezeigt, dass $K[j]$ ein
-    Körper ist.
+    Damit sind alle Körperaxiome erfüllt, und somit ist gezeigt, dass $K[j]$
+    ein Körper ist.
 \end{proof}
 \end{problem}
 

@@ -24,9 +24,10 @@ Beweisen Sie folgende Summenformeln für alle $n \in \mathbb{N}$:
     Für alle $n \in \mathbb{N}$ gilt $\sum_{k = 1}^{n} k^3 = \left(\sum_{k = 1}^{n}k\right)^2$.
     \begin{enumerate}
 
-        \item[a)] \underline{Anfang}: $A(0)$ wahr: $Leere\ Summe = 0 = (Leere\ Summme)^2$
-        \item[b)] \underline{Schritt}: Sei $n \ge n_0$. Angenommen $A(n)$ sei schon bewiesen.
-              Dann ist \begin{align}
+        \item[a)] \underline{Anfang}: $A(0)$ wahr: $Leere\ Summe = 0 = (Leere\
+              Summme)^2$
+        \item[b)] \underline{Schritt}: Sei $n \ge n_0$. Angenommen $A(n)$ sei
+              schon bewiesen. Dann ist \begin{align}
                   \sum_{k = 1}^{n + 1} k^3 & = \sum_{k = 1}^{n}k^3 + (n + 1)^3                                           \\
                                            & = \left(\sum_{k = 1}^{n}k\right)^2 + (n + 1)^3 \tag{Gausische summenformel} \\
                                            & = \left(\frac{n(n+1)}{2}\right)^2 + (n + 1)^3                               \\
@@ -46,9 +47,10 @@ Beweisen Sie folgende Summenformeln für alle $n \in \mathbb{N}$:
 \begin{proof}
     Für alle $n \in \mathbb{N}$ gilt $\sum_{k = 1}^{n - 1} k^2(n - k)^2 = \frac{n(n^4 - 1)}{30}$.
     \begin{enumerate}
-        \item[a)] \underline{Anfang}: $A(1)$ wahr: $Leere\ Summe = \frac{1(1^4 - 1)}{30} = 0$
-        \item[b)] \underline{Schritt}: Sei $n \ge n_0$. Angenommen $A(n)$ sei schon beweisen:
-              Dann ist
+        \item[a)] \underline{Anfang}: $A(1)$ wahr: $Leere\ Summe = \frac{1(1^4
+              - 1)}{30} = 0$
+        \item[b)] \underline{Schritt}: Sei $n \ge n_0$. Angenommen $A(n)$ sei
+              schon beweisen: Dann ist
               \begin{align}
                   \sum_{k = 1}^{n} k^2(n + 1 - k)^2 & = \sum_{k = 1}^{n} k^2(n - k + 1)^2                                                                       \\
                                                     & = \sum_{k = 1}^{n} k^2((n - k)^2 + 2(n-k)+ 1)                                                             \\
@@ -84,8 +86,8 @@ mit $x \in \mathbb{R}$ und $v \in \mathbb{N}$:
 \[
     \binom{x}{v} := \prod_{j=1}^{v}\frac{x-j+1}{j} = \frac{x(x-1)\cdot\ldots\cdot(x-v+1)}{v!}.
 \]
-Es sein $x \in \mathbb{R}$, $v,l,k \in \mathbb{N}$ und $l \le k$. Beweisen Sie
-die folgenden Formeln für die Binomialkoeffizienten $\binom{x}{v}$:
+Es sein $x \in \mathbb{R}$, $v,l,k \in \mathbb{N}$ und $l \le k$. Beweisen
+  Sie die folgenden Formeln für die Binomialkoeffizienten $\binom{x}{v}$:
 \begin{proof}
     a)
     \begin{displaymath}
@@ -160,12 +162,14 @@ Für alle $n,m \in \mathbb{Z}$ und $x \in \mathbb{R}$ bzw. $x \in \mathbb{R}^* =
     \] geschrieben werden oder für $x < 0$ als: \[
         \underbrace{x^{-1} \cdot \ldots \cdot x^{-1}}_{n\text{ mal}}.
     \]
-    Dasselbe gilt natürlich auch für $x^m$. \\ Somit kann man $x^nx^m$ auch als: \[
+    Dasselbe gilt natürlich auch für $x^m$. \\ Somit kann man $x^nx^m$ auch
+    als: \[
         \underbrace{x \cdot \ldots \cdot x}_{n\text{ mal}} \cdot \underbrace{x \cdot \ldots \cdot x}_{m\text{ mal}}
     \] oder: \[
         \underbrace{x \cdot \ldots \cdot x \cdot x \cdot \ldots \cdot x}_{n+m\text{ mal}}
-    \] schreiben, somit gilt $x^nx^m = x^{n+m}$. \\ \\ Es ist zu bemerken das, das
-    obere immer noch hält, auch wenn einer der beiden Exponenten negative ist. Da \[
+    \] schreiben, somit gilt $x^nx^m = x^{n+m}$. \\ \\ Es ist zu bemerken das,
+       das obere immer noch hält, auch wenn einer der beiden Exponenten
+       negative ist. Da \[
         x^{-n}x^m = {(x^{-1})}^nx^m = \underbrace{x^{-1} \cdot\ldots\cdots x^{-1}}_{n\text{ mal}} \cdot \underbrace{x \cdot \ldots \cdot x}_{m\text{ mal}}
     \] oder vereinfacht \[
         x^{-n}x^m = \underbrace{x \cdot \ldots \cdot x}_{\mathclap{m - n\text{ mal da } x^{-1} \cdot x = 1}} = x^{m-n}
@@ -181,8 +185,8 @@ Für alle $n,m \in \mathbb{Z}$ und $x \in \mathbb{R}$ bzw. $x \in \mathbb{R}^* =
     Aus 3.a wissen wir bereits das wir $x^n$ als $\underbrace{x \cdot \ldots \cdot x}_{n\text{ mal}}$ schreiben können.
     Somit können wir ${(x^n)}^m$ auch als \[
         (\underbrace{x \cdot \ldots \cdot x}_{n\text{ mal}})^m
-    \] schreiben. Dasselbe lässt sich natürlich auch für $z^m$ mach und somit erhalten
-    wir \[
+    \] schreiben. Dasselbe lässt sich natürlich auch für $z^m$ mach und somit
+       erhalten wir \[
         \underbrace{
         \underbrace{
             x \cdot \ldots \cdot x
@@ -234,8 +238,8 @@ Seien $X$, $Y$ Mengen und $A$, $A^\prime$ Teilmengen von $X$ und $B$, $B^\prime$
                                                                & =  (A \cap A^\prime) \times (B \cap B^\prime).
               \end{align}
           \end{proof}
-    \item[b)] Gibt es eine ähnliche Formel für die Vereinigung? \\ Ja es gibt eine
-          ähnliche Formel: \[
+    \item[b)] Gibt es eine ähnliche Formel für die Vereinigung? \\ Ja es gibt
+          eine ähnliche Formel: \[
               (A \times B) \cup (A^\prime \times B^\prime) \subseteq (A \cup A^\prime) \times (B \cup B^\prime).
           \]
           Der Beweis dazu ist ähnliche aber nicht gleich zu dem Beweis in a).

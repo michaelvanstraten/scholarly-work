@@ -16,10 +16,11 @@ $W$ ein Unterraum von $V$. Für ein Skalarprodukt $\langle \cdot , \cdot
 orthogonale Komplement. Zeigen Sie:
 \begin{enumerate}
     \item Für ein Skalarprodukt $\langle \cdot , \cdot \rangle$ auf $V$ ist das
-          orthogonale Komplement $W^\perp$ ein Komplement von $W$ in $V$, d.h., $W^\perp$
-          ist ein Untervektorraum von $V$ und $V = W \oplus W^\perp$.
-    \item Für ein Skalarprodukt $\langle \cdot , \cdot \rangle$ gilt $W^0 = \{f \in V^*
-              \mid f = \langle \cdot , w^\perp \rangle, w^\perp \in W^\perp\}$.
+          orthogonale Komplement $W^\perp$ ein Komplement von $W$ in $V$, d.h.,
+          $W^\perp$ ist ein Untervektorraum von $V$ und $V = W \oplus W^\perp$.
+    \item Für ein Skalarprodukt $\langle \cdot , \cdot \rangle$ gilt $W^0 = \{f
+          \in V^* \mid f = \langle \cdot , w^\perp \rangle, w^\perp \in
+          W^\perp\}$.
     \item Für jedes Komplement $\widetilde{W} \subseteq V$ von $W$ gibt es ein
           Skalarprodukt $\langle \cdot , \cdot \rangle$ auf $V$, bezüglich dem
           $\widetilde{W}$ das orthogonale Komplement von $W$ ist.
@@ -27,8 +28,8 @@ orthogonale Komplement. Zeigen Sie:
 
 \begin{proof} \hfill
     \begin{enumerate}
-        \item Sei zunächst \(a, b \in W^\perp\) sowie \(\lambda \in K\) so gilt für alle \(w
-              \in W\) das
+        \item Sei zunächst \(a, b \in W^\perp\) sowie \(\lambda \in K\) so gilt
+              für alle \(w \in W\) das
               \begin{equation*}
                   \langle \lambda a + b, w \rangle = \lambda \underbrace{\inner{a}{w}}_{= 0} + \underbrace{\inner{b}{w}}_{=0} = 0
               \end{equation*}
@@ -36,8 +37,8 @@ orthogonale Komplement. Zeigen Sie:
               Da \(0_V \in W^\perp\) ist, folgt somit das \(W^\perp\) einen
               Untervektorraum von \(V\) bildet.
 
-              Sei nun \(B \coloneq \set{w_1, \ldots, w_n}\) eine Orthonormalbasis von \(W\)
-              sowie
+              Sei nun \(B \coloneq \set{w_1, \ldots, w_n}\) eine
+              Orthonormalbasis von \(W\) sowie
               \begin{equation*}
                   w^\perp = v - \sum_{i=1}^n \inner{v}{w_i} w_i \qquad \text{für alle} \qquad \(v \in V\).
               \end{equation*}
@@ -58,11 +59,12 @@ orthogonale Komplement. Zeigen Sie:
               allerdings impliziert das \(v = 0\) sein muss, womit \(V = W \oplus W^\perp\)
               gezeigt wäre.
 
-        \item Sei zunächst \(f \in W^0 \subseteq L(K^n, K)\), so folgt das \(f\) eindeutig
-              durch eine Zuordnung \(v \mapsto \bar{v}^H v\), für ein \(\bar{v} \in K^n\),
-              dargestellt werden kann. Ist \(\inner{}{}\) ein Skalarprodukt auf \(K^n\) so
-              existiert, laut Übungsblatt~6 Aufgabe~3 Punkt i, eine hermitesche Matrix \(A
-              \in GL_n(K)\), sodass für alle \(v, w \in K^n\)
+        \item Sei zunächst \(f \in W^0 \subseteq L(K^n, K)\), so folgt das
+              \(f\) eindeutig durch eine Zuordnung \(v \mapsto \bar{v}^H v\),
+              für ein \(\bar{v} \in K^n\), dargestellt werden kann. Ist
+              \(\inner{}{}\) ein Skalarprodukt auf \(K^n\) so existiert, laut
+              Übungsblatt~6 Aufgabe~3 Punkt i, eine hermitesche Matrix \(A \in
+              GL_n(K)\), sodass für alle \(v, w \in K^n\)
               \begin{equation*}
                   \inner{v}{w} = w^H A v
               \end{equation*}
@@ -102,8 +104,8 @@ bezüglich des Skalarprodukts
 Zeigen Sie:
 \begin{enumerate}
     \item Ist $A \in \operatorname{SO}_2(\mathbb{R}) := \{A' \in
-              \operatorname{O}_2(\mathbb{R}) \mid \det(A') = 1\}$, dann gibt es $c, s \in
-              [-1, 1]$, sodass
+          \operatorname{O}_2(\mathbb{R}) \mid \det(A') = 1\}$, dann gibt es $c,
+          s \in [-1, 1]$, sodass
           \[
               A = \begin{pmatrix}
                   c & -s \\
@@ -111,7 +113,8 @@ Zeigen Sie:
               \end{pmatrix}.
           \]
     \item Ist $A \in \operatorname{O}_2(\mathbb{R}) \setminus
-              \operatorname{SO}_2(\mathbb{R})$, dann gibt es $c, s \in [-1, 1]$, sodass
+          \operatorname{SO}_2(\mathbb{R})$, dann gibt es $c, s \in [-1, 1]$,
+          sodass
           \[
               A = \begin{pmatrix}
                   c & s  \\
@@ -164,9 +167,9 @@ Zeigen Sie:
         \end{pmatrix} \in SO_2(\reals),
     \]
     so folgt aus \(ad - bc = 1\), dass \(ad = 1 + bc\), und mit \(b, c \in [-1,
-        1]\), dass \(ad \geq 0\), was mit \(a = \pm d\) impliziert, dass \(a = d\) ist.
-    Somit folgt aus \(bc = a^2 - 1\) und \(a \in [-1, 1]\), dass \(bc \leq 0\), und
-    mit \(b = \pm c\), dass \(b = -c\) ist.
+    1]\), dass \(ad \geq 0\), was mit \(a = \pm d\) impliziert, dass \(a = d\)
+    ist. Somit folgt aus \(bc = a^2 - 1\) und \(a \in [-1, 1]\), dass \(bc \leq
+    0\), und mit \(b = \pm c\), dass \(b = -c\) ist.
 
     Analog lässt sich zeigen, dass für
     \[

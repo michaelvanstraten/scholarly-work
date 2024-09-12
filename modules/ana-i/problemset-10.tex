@@ -30,7 +30,8 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
 \begin{proof}
     \leavevmode
     \begin{enumerate}
-        \item Zunächst versuchen wir $\frac{1+i\sqrt{3}}{1-i\sqrt{3}}$ zu vereinfachen:
+        \item Zunächst versuchen wir $\frac{1+i\sqrt{3}}{1-i\sqrt{3}}$ zu
+              vereinfachen:
               \[
                   \frac{1+i\sqrt{3}}{1-i\sqrt{3}}
                   = \frac{1+i\sqrt{3}}{1-i\sqrt{3}} \cdot \frac{1+i\sqrt{3}}{1+i\sqrt{3}}
@@ -55,8 +56,9 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
               \end{center}
 
               Berechnen wir nun den Abstand des Punktes zum Ursprung: $\sqrt{-
-                  {\left(\frac{1}{2}\right)}^2 + {\left(\frac{\sqrt{3}}{2}\right)}^2} = 1$. Wir
-              sehen, dass dieser auf dem Einheitskreis liegt.
+              {\left(\frac{1}{2}\right)}^2 +
+              {\left(\frac{\sqrt{3}}{2}\right)}^2} = 1$. Wir sehen, dass dieser
+              auf dem Einheitskreis liegt.
 
               \begin{center}
                   \begin{tikzpicture}
@@ -73,8 +75,9 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
                   \end{tikzpicture}
               \end{center}
 
-              Betrachten wir jetzt den Winkel zwischen dem Punkt und $(1, 0)$. Er ergibt sich
-              als Bogen von $120^\circ$ oder $\frac{2\pi}{3}$ Radian.
+              Betrachten wir jetzt den Winkel zwischen dem Punkt und $(1, 0)$.
+              Er ergibt sich als Bogen von $120^\circ$ oder $\frac{2\pi}{3}$
+              Radian.
 
               \begin{center}
                   \begin{tikzpicture}
@@ -94,14 +97,14 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
               \end{center}
 
               Somit lässt sich der Punkt $\frac{1+i\sqrt{3}}{1-i\sqrt{3}}$ als
-              $cos\left(\frac{2 \pi}{3}\right) + i \cdot sin\left(\frac{2 \pi}{3}\right)$
-              darstellen.
+              $cos\left(\frac{2 \pi}{3}\right) + i \cdot sin\left(\frac{2
+              \pi}{3}\right)$ darstellen.
 
-              Wandeln wir dies jetzt in die polare Form um, erhalten wir $e^{i\frac{2 \pi
-                          }{3}}$.
+              Wandeln wir dies jetzt in die polare Form um, erhalten wir
+              $e^{i\frac{2 \pi }{3}}$.
 
-              Betrachten wir zunächst, was passiert, wenn wir unseren Punkt mit $3$
-              potenzieren.
+              Betrachten wir zunächst, was passiert, wenn wir unseren Punkt mit
+              $3$ potenzieren.
 
               \begin{center}
                   \begin{tikzpicture}
@@ -121,13 +124,13 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
                   \end{tikzpicture}
               \end{center}
 
-              Somit rotiert die Potenzierung mit $3$ den Punkt $e^{i\frac{2 \pi }{3}}$ zur
-              $1$. Algebraisch ergibt sich dies aus der Euler'schen Identität: $({e^{i\frac{2
-                                      \pi }{3}}})^3 = e^{i2\pi} = 1$.
+              Somit rotiert die Potenzierung mit $3$ den Punkt $e^{i\frac{2 \pi
+              }{3}}$ zur $1$. Algebraisch ergibt sich dies aus der Euler'schen
+              Identität: $({e^{i\frac{2 \pi }{3}}})^3 = e^{i2\pi} = 1$.
 
-              Jede weitere Multiplikation von $e^{i2\pi}$ mit sich selbst resultiert somit in
-              einer Rotation des Punktes um weitere $360^\circ$, was wieder in dem Punkt $1$
-              resultiert.
+              Jede weitere Multiplikation von $e^{i2\pi}$ mit sich selbst
+              resultiert somit in einer Rotation des Punktes um weitere
+              $360^\circ$, was wieder in dem Punkt $1$ resultiert.
 
               Somit ergibt sich
               \[
@@ -139,9 +142,10 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
                   = 1.
               \]
 
-              Um die Frage aus der Aufgabenstellung zu beantworten: Der Realteil von $1$ ist
-              sicherlich $1$, der Imaginärteil ist $0$, der Abstand zur $0$ beträgt $1$
-              (Betrag), und das Argument ist ein Vielfaches von $2\pi$.
+              Um die Frage aus der Aufgabenstellung zu beantworten: Der
+              Realteil von $1$ ist sicherlich $1$, der Imaginärteil ist $0$,
+              der Abstand zur $0$ beträgt $1$ (Betrag), und das Argument ist
+              ein Vielfaches von $2\pi$.
 
         \item Betrachten wir zunächst die beiden Basen der Summanden.
 
@@ -162,14 +166,16 @@ Bestimmen Sie Real- und Imaginärteil sowie Betrag und Argument der folgenden ko
                   \item[$n$ gerade]
                         ist $1+ {(-1)}^n = 2$ und $i^n = {(-1)}^\frac{n}{2}$ also $2^ni^n(1+ {(-1)}^n) = 2^{n+1}{(-1)}^{\frac{n}{2}}$
 
-                        Somit sehen wir das der Imaginärteil immer gleich null ist. Der Betrag,
-                        Realteil hingegen hängt proportional von $n$ ab also \[
+                        Somit sehen wir das der Imaginärteil immer gleich null
+                        ist. Der Betrag, Realteil hingegen hängt proportional
+                        von $n$ ab also \[
                             |(1 + i)^{2n} + (1 - i)^{2n}|  = \operatorname{Re}((1 + i)^{2n} + (1 - i)^{2n}) = 2^{n+1}{(-1)}^{\frac{n}{2}}.
                         \].
 
-                        Das Argument hingegen beträgt $\pi \frac{n}{2}$ da somit $2^{n+1}
-                            e^{i\pi\frac{n}{2}} = 2^{n+1} {(e^{i\pi})}^\frac{n}{2} =
-                            2^{n+1}{(-1)}^{\frac{n}{2}}$.
+                        Das Argument hingegen beträgt $\pi \frac{n}{2}$ da
+                        somit $2^{n+1} e^{i\pi\frac{n}{2}} = 2^{n+1}
+                        {(e^{i\pi})}^\frac{n}{2} =
+                        2^{n+1}{(-1)}^{\frac{n}{2}}$.
 
                   \item[$n$ ungerade]
                         erhalten wir $1+ {(-1)}^n = 0$ und somit Real-, Imaginärteil sowie Betrag von $(1 + i)^{2n} + (1 - i)^{2n}$ gleich
@@ -210,9 +216,10 @@ Skizzieren Sie die folgenden Teilmengen $A_k \subset \mathbb{C}$:
     \leavevmode
     \begin{enumerate}
         \item Wie in Aufgabe 4 beschrieben erhalten wir für $- \frac{1}{z} =
-                  \frac{-a}{a^2+b^2} + i\frac{b}{a^2+b^2}$. Es ist leicht zu sehen das für
-              $\frac{1}{z} = \frac{a}{a^2+b^2} + i\frac{b}{a^2+b^2}$ erhalten also
-              $\operatorname{Re}(\frac{1}{z}) = \frac{a}{a^2+b^2} \leq 2$.
+              \frac{-a}{a^2+b^2} + i\frac{b}{a^2+b^2}$. Es ist leicht zu sehen
+              das für $\frac{1}{z} = \frac{a}{a^2+b^2} + i\frac{b}{a^2+b^2}$
+              erhalten also $\operatorname{Re}(\frac{1}{z}) = \frac{a}{a^2+b^2}
+              \leq 2$.
 
               \begin{center}
                   \begin{tikzpicture}
@@ -229,8 +236,8 @@ Skizzieren Sie die folgenden Teilmengen $A_k \subset \mathbb{C}$:
                       \end{axis}
                   \end{tikzpicture}
               \end{center}
-        \item Für $z \in \field{C}$ mit $z := a +ib$ $a,b \in \reals$ erhalten wir für $|z -
-                  1| = \operatorname{Re}(z)$
+        \item Für $z \in \field{C}$ mit $z := a +ib$ $a,b \in \reals$ erhalten
+              wir für $|z - 1| = \operatorname{Re}(z)$
               \[
                   \sqrt{{(a-1)}^2 + b^2} = a
               \] oder \[
@@ -255,8 +262,8 @@ Skizzieren Sie die folgenden Teilmengen $A_k \subset \mathbb{C}$:
                       \end{axis}
                   \end{tikzpicture}
               \end{center}
-        \item Setzen wir wiederum unsere definition von $z$ ein erhalten wir für
-              $\overline{z}z + z - 3\overline{z} + 1 = 0$ \[
+        \item Setzen wir wiederum unsere definition von $z$ ein erhalten wir
+              für $\overline{z}z + z - 3\overline{z} + 1 = 0$ \[
                   a^{2}+b^{2}+a+b-3(a-b) + 1 = 0
               \] oder \[
                   b = \pm \sqrt{ -a^2 +2a + 3 } - 2.
@@ -300,31 +307,34 @@ Die obere Halbebene ist die Menge aller komplexen Zahlen mit positivem Imaginär
 \begin{proof}
     Beginnen wir zunächst zu zeigen das $\forall z \in \field{C}$ mit $\Im(z) > 0$ gilt $\Im(-\frac{1}{z}) > 0$.
 
-    Nehmen wir $z \in \field{C}$ mit $z := a + ib$ $a,b \in \reals$, bemerke das
-    $\Im(z) > 0 \Rightarrow b > 0$, somit gilt
+    Nehmen wir $z \in \field{C}$ mit $z := a + ib$ $a,b \in \reals$, bemerke
+    das $\Im(z) > 0 \Rightarrow b > 0$, somit gilt
     \[
         - \frac{1}{z} = - \frac{\bar{z}}{z\bar{z}} = - \frac{a - ib}{a^2 + b^2} = \frac{-a + ib}{a^2 + b^2} = \frac{-a}{a^2+b^2} + i\frac{b}{a^2+b^2},
-    \] also $\Im(-\frac{1}{z}) = \frac{b}{a^2 + b^2}$ und $\frac{b}{a^2 + b^2} > 0$ da
-    $b > 0$ und somit auch $a^2 + b^2 > 0$, somit $\Im(-\frac{1}{z}) > 0$.
+    \] also $\Im(-\frac{1}{z}) = \frac{b}{a^2 + b^2}$ und $\frac{b}{a^2 + b^2}
+       > 0$ da $b > 0$ und somit auch $a^2 + b^2 > 0$, somit $\Im(-\frac{1}{z})
+       > 0$.
 
     Somit bleibt es noch zu zeigen das $T$ Injektive sowie Surjektiv ist.
 
     \textbf{Injektive}
 
     Um zu zeigen, das $T$ Injektive ist muss gezeigt werden $T(z) = T(z^\prime)
-        \Rightarrow z = z^\prime$. Nehmen wir uns zwei $z, z^\prime \in H$ somit folgt
+    \Rightarrow z = z^\prime$. Nehmen wir uns zwei $z, z^\prime \in H$ somit
+    folgt
     \[
         - \frac{1}{z} = - \frac{1}{z^\prime} \Rightarrow -1 = \frac{-z}{z^\prime} \Rightarrow -z^\prime = -z \Rightarrow z^\prime = z.
     \]
 
     \textbf{Surjektiv}
 
-    Um zu zeigen, das $T$ surjektiv ist muss gezeigt werden das $\forall z \in H$
-    ein $z^\prime$ in $H$ existiert mit $T(z^\prime) = z$. Wählen wir $z^\prime = -
-        \frac{1}{z}$, wie bereits zu begin des Beweises gezeigt wurde, gilt $\forall z
-        \in H$ $T(z) \in H$, somit $z^\prime \in H$, wenn wir nun $T$ auf $z^\prime$ an
-    erhalten wir $T(z^\prime) = -\frac{1}{-\frac{1}{z}} = z$. Somit $\exists
-        z^\prime \in H$ $\forall z \in H$ mit $T(z^\prime) = z$.
+    Um zu zeigen, das $T$ surjektiv ist muss gezeigt werden das $\forall z \in
+    H$ ein $z^\prime$ in $H$ existiert mit $T(z^\prime) = z$. Wählen wir
+    $z^\prime = - \frac{1}{z}$, wie bereits zu begin des Beweises gezeigt
+    wurde, gilt $\forall z \in H$ $T(z) \in H$, somit $z^\prime \in H$, wenn
+    wir nun $T$ auf $z^\prime$ an erhalten wir $T(z^\prime) =
+    -\frac{1}{-\frac{1}{z}} = z$. Somit $\exists z^\prime \in H$ $\forall z \in
+    H$ mit $T(z^\prime) = z$.
 
 \end{proof}
 \end{problem}
@@ -333,23 +343,23 @@ Die obere Halbebene ist die Menge aller komplexen Zahlen mit positivem Imaginär
 a) Gegeben sei die Abbildung $f : \mathbb{C}^* = \mathbb{C} \setminus \{0\} \rightarrow \mathbb{C}$, $z \mapsto \frac{1}{z}$. Finden Sie eine geometrische Interpretation dieser Abbildung in der komplexen Ebene! Was geschieht durch die Abbildung anschaulich?
 
 b) Gegeben sei eine weitere Abbildung $g : \mathbb{C}^* \rightarrow
-    \mathbb{C}$, $z \mapsto \frac{1}{\overline{z}}$. Verdeutlichen Sie geometrisch,
+\mathbb{C}$, $z \mapsto \frac{1}{\overline{z}}$. Verdeutlichen Sie geometrisch,
 warum diese Abbildung \qouted{Inversion an der Einheitskreislinie} genannt
 wird! Welche Fixpunkte ($g(z) = z$) besitzt die Abbildung g?
 
 \begin{proof}
     \leavevmode
     \begin{enumerate}
-        \item Betrachten wir zunächst was mit einem generischen Punkt $z \in \field{C}$
-              passiert, wenn wir $f$ auf $z$ anwenden.
+        \item Betrachten wir zunächst was mit einem generischen Punkt $z \in
+              \field{C}$ passiert, wenn wir $f$ auf $z$ anwenden.
 
               \[
                   f(z) = \frac{1}{z} = \frac{\bar{z}}{z \bar{z}} = \frac{\bar{z}}{{|z|}^2}
-              \] also wird $z$ auf sein konjugiertes komplexes abgebilded und dann durch seinen
-              quadrierten Betrag skaliert.
+              \] also wird $z$ auf sein konjugiertes komplexes abgebilded und
+                 dann durch seinen quadrierten Betrag skaliert.
 
-              Visualisiert für einen konkreten Punkt $z = 1 + 2i$, sieht die transformation
-              durch $f$ wie folgt aus.
+              Visualisiert für einen konkreten Punkt $z = 1 + 2i$, sieht die
+              transformation durch $f$ wie folgt aus.
 
               \begin{center}
                   \begin{tikzpicture}
@@ -371,18 +381,20 @@ wird! Welche Fixpunkte ($g(z) = z$) besitzt die Abbildung g?
                   \end{tikzpicture}
               \end{center}
 
-              Somit spiegelt $f$ $z$ zunächst über die reale Zahlenebene und dann verschiebt
-              sie $\bar{z}$ inverse proportional entlang seiner Achse.
+              Somit spiegelt $f$ $z$ zunächst über die reale Zahlenebene und
+              dann verschiebt sie $\bar{z}$ inverse proportional entlang seiner
+              Achse.
 
-        \item Für $g$ Betrachten wir wiederum einen generischen Punkt $z \in \field{C}$. \[
+        \item Für $g$ Betrachten wir wiederum einen generischen Punkt $z \in
+              \field{C}$. \[
                   g(z) = \frac{1}{\bar{z}} = \frac{z}{\bar{z}z} = \frac{z}{{|z|}^2}
               \]
 
-              Diese Abbildung ist relative ähnlich zu $f$ nur das hier $z$ nicht gespiegelt
-              wird.
+              Diese Abbildung ist relative ähnlich zu $f$ nur das hier $z$
+              nicht gespiegelt wird.
 
-              Visualisiert für einen konkreten Punkt $z = 1 + 2i$, sieht die transformation
-              durch $g$ wie folgt aus.
+              Visualisiert für einen konkreten Punkt $z = 1 + 2i$, sieht die
+              transformation durch $g$ wie folgt aus.
 
               \begin{tikzpicture}
                   \begin{axis}[
@@ -404,17 +416,20 @@ wird! Welche Fixpunkte ($g(z) = z$) besitzt die Abbildung g?
 
               Betrachten wir nun die Fixpunkte $g(z) = z$ erhalten wir \[
                   z = \frac{1}{\bar{z}} \Rightarrow z \bar{z} = 1 \Rightarrow \sqrt{z \bar{z}} = 1
-              \] also alle Punkte $z \in \field{C}$ mit einem Betrag von $1$ oder vereinfacht,
-              alle Punkte die auf der Einheitskreislinie liegen.
+              \] also alle Punkte $z \in \field{C}$ mit einem Betrag von $1$
+                 oder vereinfacht, alle Punkte die auf der Einheitskreislinie
+                 liegen.
 
-              Somit ergibt sich die Bezeichnung \qouted{Inversion an der Einheitskreislinie},
-              durch die eigenschaft der Funktion Punkte die innerhalb des Einheitskreises
-              liegen außerhalb des Einheitskreises zu projizieren und Punkte außerhalb in das
-              Innere des Einheitskreises. Nur die Punkte auf der Einheitskreislinie bleiben
-              unberührt.
+              Somit ergibt sich die Bezeichnung \qouted{Inversion an der
+              Einheitskreislinie}, durch die eigenschaft der Funktion Punkte
+              die innerhalb des Einheitskreises liegen außerhalb des
+              Einheitskreises zu projizieren und Punkte außerhalb in das Innere
+              des Einheitskreises. Nur die Punkte auf der Einheitskreislinie
+              bleiben unberührt.
 
-              Ich habe mir die Freiheit genommen das Ganze einmal zeichnen zu lassen, bitte
-              bemerke, dass wir hier $z := a + ib$ als $a + b$ darstellen.
+              Ich habe mir die Freiheit genommen das Ganze einmal zeichnen zu
+              lassen, bitte bemerke, dass wir hier $z := a + ib$ als $a + b$
+              darstellen.
 
               % \begin{center}
               %  \begin{tikzpicture}

@@ -40,8 +40,9 @@ Untersuchen Sie folgende Reihe auf Konvergenz und absolute Konvergenz:
                                                                       & = \sum_{n=1}^{\infty} (-1)^n \left(\frac{1}{\sqrt{n + 1} + \sqrt{n}}\right)
               \end{align*}
 
-              Da $a_n = \frac{1}{\sqrt{n + 1} + \sqrt{n}}$ eine monoton fallende Nullfolge ist, konvergiert die Reihe nach dem Leibnitzkriterium, jedoch nicht notwendigerweise absolut.
-        \item
+              Da $a_n = \frac{1}{\sqrt{n + 1} + \sqrt{n}}$ eine monoton
+              fallende Nullfolge ist, konvergiert die Reihe nach dem
+              Leibnitzkriterium, jedoch nicht notwendigerweise absolut. \item
               \begin{align*}
                   \sum_{n \to \infty} \frac{\frac{{(n+1)}^2}{{(3 + \frac{1}{n+1})}^{n+1}}}{\frac{n^2}{{(3 + \frac{1}{n})}^n}} & < \sum_{n \to \infty} \frac{n^2 \cdot {(3 + \frac{1}{n})}^n}{{(3 + \frac{1}{n+1})}^{n+1} \cdot n^2} \\
                                                                                                                               & = \sum_{n \to \infty} \frac{1}{3 + \frac{1}{n+1}}                                                   \\
@@ -50,7 +51,10 @@ Untersuchen Sie folgende Reihe auf Konvergenz und absolute Konvergenz:
 
               Daher konvergiert die Reihe absolut nach dem Quotientenkriterium.
 
-        \item Da $\left|\frac{2^{n+1}}{5 \cdot 3^n} \right| = \frac{2^{n+1}}{5 \cdot 3^n}$ (Nenner und Zähler sind immer größer null), konvergiert $\sum_{n=2}^{\infty} \frac{2^{n+1}}{5 \cdot 3^n}$ auch absolut, wenn sie konvergiert.
+        \item Da $\left|\frac{2^{n+1}}{5 \cdot 3^n} \right| = \frac{2^{n+1}}{5
+              \cdot 3^n}$ (Nenner und Zähler sind immer größer null),
+              konvergiert $\sum_{n=2}^{\infty} \frac{2^{n+1}}{5 \cdot 3^n}$
+              auch absolut, wenn sie konvergiert.
 
               \begin{align*}
                   \sum_{n=2}^{\infty} \frac{2^{n+1}}{5 \cdot 3^n} & = \frac{2}{5} \sum_{n=2}^{\infty} \frac{2^n}{3^n}                                                \\
@@ -79,11 +83,15 @@ Untersuchen Sie folgende Reihe auf Konvergenz und absolute Konvergenz:
 
 \begin{problem}[Binomialreihe]{6 Punkte}
 \begin{enumerate}
-    \item Sei $a \in \mathbb{R}$ und $x \in \mathbb{R}$ mit $|x| < 1$. Untersuchen Sie die folgende Binomialreihe auf Konvergenz und absolute Konvergenz:
+    \item Sei $a \in \mathbb{R}$ und $x \in \mathbb{R}$ mit $|x| < 1$.
+          Untersuchen Sie die folgende Binomialreihe auf Konvergenz und
+          absolute Konvergenz:
           \[
               B_a(x) := \sum_{n=0}^{\infty} \binom{a}{n}x^n.
           \]
-    \item Zeigen Sie für die Binomialreihe aus a), dass für alle $x \in \mathbb{R}$ mit $|x| < 1$ und alle $a, b \in \mathbb{R}$ die folgende Funktionalgleichung gilt:
+    \item Zeigen Sie für die Binomialreihe aus a), dass für alle $x \in
+          \mathbb{R}$ mit $|x| < 1$ und alle $a, b \in \mathbb{R}$ die folgende
+          Funktionalgleichung gilt:
           \[
               B_a(x) \cdot B_b(x) = B_{a+b}(x).
           \]
@@ -104,7 +112,8 @@ Zusatzfrage: In welchem Sinne gelten diese Funktionalgleichungen auch für die f
     \begin{enumerate}
         \item $\cosh(x + y) = \cosh(x) \cosh(y) + \sinh(x) \sinh(y)$
 
-              Verwenden wir \(\cosh x + \sinh x = e^x\) und \(\cosh x - \sinh x = e^{-x}\).
+              Verwenden wir \(\cosh x + \sinh x = e^x\) und \(\cosh x - \sinh x
+              = e^{-x}\).
               \begin{align*}
                   2\cosh(x+y) & = e^{x+y} + e^{-x -y}                                                            \\
                               & = e^xe^y + e^{-x}e^{-y}                                                          \\
@@ -132,7 +141,8 @@ Zusatzfrage: In welchem Sinne gelten diese Funktionalgleichungen auch für die f
 
         \item $(\cosh(x))^2 - (\sinh(x))^2 = 1$
 
-              Verwenden wrr die Tatsachen \(\cosh x + \sinh x = e^x\) und \(\cosh x - \sinh x = e^{-x}\).
+              Verwenden wrr die Tatsachen \(\cosh x + \sinh x = e^x\) und
+              \(\cosh x - \sinh x = e^{-x}\).
               \begin{align*}
                   (\cosh x)^2 - (\sinh x)^2 & = (\cosh x + \sinh x)(\cosh x - \sinh x) \\
                                             & = e^x e^{-x}                             \\
@@ -148,9 +158,12 @@ Betrachten Sie die alternierende harmonische Reihe, die gegen $a \in \mathbb{R}$
     \sum_{n=1}^{\infty} \frac{{(-1)}^{n-1}}{n}.
 \]
 \begin{enumerate}
-    \item Finden Sie eine Umordnung dieser Reihe, so dass diese gegen $\frac{3}{2}a$ konvergiert.
-    \item Finden Sie eine Umordnung, so dass diese bestimmt gegen $-\infty$ divergiert.
-    \item Finden Sie eine Umordnung, so dass diese weder konvergiert noch bestimmt gegen $\pm\infty$ divergiert.
+    \item Finden Sie eine Umordnung dieser Reihe, so dass diese gegen
+          $\frac{3}{2}a$ konvergiert.
+    \item Finden Sie eine Umordnung, so dass diese bestimmt gegen $-\infty$
+          divergiert.
+    \item Finden Sie eine Umordnung, so dass diese weder konvergiert noch
+          bestimmt gegen $\pm\infty$ divergiert.
 \end{enumerate}
 \begin{proof}
     \begin{enumerate}

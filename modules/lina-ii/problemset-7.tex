@@ -24,11 +24,12 @@ Bestimmen Sie die Jordan-Normalform und eine zugehörige Transformationsmatrix z
 \begin{problem}[\textit{[FS20, Seite 280, Aufgabe 6, 7]}]{5 Punkte}
 Sei $n \in \mathbb{N}$, $V$ ein $\mathbb{C}$-Vektorraum mit $\dim(V) = n$ und $f \in L(V, V)$.
 \begin{enumerate}
-    \item Berechnen Sie $J_d(\lambda)^k$ für ein beliebiges $k \in \mathbb{N}$, wobei
-          $\lambda \in \mathbb{C}$ einen Eigenwert von $f$ und $J_d(\lambda) \in
-              \mathbb{C}^{d \times d}$ ein Jordan-Block der Größe $d \in \mathbb{N}$ ist.
-    \item Sei $k \in \mathbb{N}$ mit $k \geq 2$ und $f^k = f$. Zeigen Sie, dass $f$
-          diagonalisierbar ist.
+    \item Berechnen Sie $J_d(\lambda)^k$ für ein beliebiges $k \in \mathbb{N}$,
+          wobei $\lambda \in \mathbb{C}$ einen Eigenwert von $f$ und
+          $J_d(\lambda) \in \mathbb{C}^{d \times d}$ ein Jordan-Block der Größe
+          $d \in \mathbb{N}$ ist.
+    \item Sei $k \in \mathbb{N}$ mit $k \geq 2$ und $f^k = f$. Zeigen Sie, dass
+          $f$ diagonalisierbar ist.
 \end{enumerate}
 \begin{hint}
     Sie können verwenden, dass das charakteristische Polynom eines Endomorphismus
@@ -38,10 +39,11 @@ Sei $n \in \mathbb{N}$, $V$ ein $\mathbb{C}$-Vektorraum mit $\dim(V) = n$ und $f
 \begin{proof}
     \leavevmode
     \begin{enumerate}
-        \item Teilen wir zunächst \(J_d(\lambda)\) in zwei Matrizen \(D, N \in C^{d \times
-                      d}\), sodass \(D = \lambda I_d\) und \( N = J_d(\lambda) - D\) ist. Die
-              Matrixmultiplikation \(A N^n\) für \(A \in C^{d \times d}\) und \(n \in \nats\)
-              hat den Effekt die Spalten von \(A\) \(n\)-mal nach rechts zu verschieben.
+        \item Teilen wir zunächst \(J_d(\lambda)\) in zwei Matrizen \(D, N \in
+              C^{d \times d}\), sodass \(D = \lambda I_d\) und \( N =
+              J_d(\lambda) - D\) ist. Die Matrixmultiplikation \(A N^n\) für
+              \(A \in C^{d \times d}\) und \(n \in \nats\) hat den Effekt die
+              Spalten von \(A\) \(n\)-mal nach rechts zu verschieben.
               Definieren wir nun
               \begin{equation*}
                   l : \nats \times \nats \rightarrow \set{0,1} \text{\ gegeben durch }
@@ -60,9 +62,10 @@ Sei $n \in \mathbb{N}$, $V$ ein $\mathbb{C}$-Vektorraum mit $\dim(V) = n$ und $f
               \end{align*}
               ist.
 
-        \item Für jedes \(v \in \ker(f^k)\) gilt das \(f^k(v) = f(v) = 0 v = 0\) somit ist
-              jedes \(v \in \ker(f^k)\) ein Eigenvektor von \(f\) zum Eigenwert \(0\). Für
-              jedes \(v \in \img(f^k)\) gilt, dass ein \(w \in V\) existiert mit,
+        \item Für jedes \(v \in \ker(f^k)\) gilt das \(f^k(v) = f(v) = 0 v =
+              0\) somit ist jedes \(v \in \ker(f^k)\) ein Eigenvektor von \(f\)
+              zum Eigenwert \(0\). Für jedes \(v \in \img(f^k)\) gilt, dass ein
+              \(w \in V\) existiert mit,
               \begin{equation*}
                   v = f^{k-1}(w) \Rightarrow f(v) = f^k(w) = f(w) = v
               \end{equation*}
@@ -79,18 +82,19 @@ Sei $n \in \mathbb{N}$, $V$ ein $\mathbb{C}$-Vektorraum mit $\dim(V) = n$ und $f
 \begin{problem}[duale Raumpaare und Skalarprodukte \textit{[LM21, Aufgabe 12.3]}]{5 Punkte}
 Sei $n \in \mathbb{N}$, $K \in \{\mathbb{R}, \mathbb{C}\}$.
 \begin{enumerate}
-    \item Sei $\langle \cdot , \cdot \rangle$ ein Skalarprodukt auf $K^n$. Zeigen Sie,
-          dass eine hermitesche Matrix $A \in GL_n(K)$ mit reellen positiven Eigenwerten
-          existiert, sodass für alle $v, w \in K^n$
+    \item Sei $\langle \cdot , \cdot \rangle$ ein Skalarprodukt auf $K^n$.
+          Zeigen Sie, dass eine hermitesche Matrix $A \in GL_n(K)$ mit reellen
+          positiven Eigenwerten existiert, sodass für alle $v, w \in K^n$
           \[
               \langle v, w \rangle = w^H A v.
           \]
-    \item Zu $A \in K^{n \times n}$ sei $\beta : K^n \times (K^n)^* \to K$ definiert
-          durch
+    \item Zu $A \in K^{n \times n}$ sei $\beta : K^n \times (K^n)^* \to K$
+          definiert durch
           \[
               \beta(v, f) := f(Av).
           \]
-          Zeigen Sie, dass $\beta$ genau dann nicht ausgeartet ist, wenn $A \in GL_n(K)$.
+          Zeigen Sie, dass $\beta$ genau dann nicht ausgeartet ist, wenn $A \in
+          GL_n(K)$.
 \end{enumerate}
 \end{problem}
 
