@@ -15,51 +15,52 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum, und seien $U_1$, $U_2$ Unterräume 
 
     $\Rightarrow$ Annahme: $U_1 \cup U_2$ ist ein Unterraum von $V$.
 
-    Betrachten wir zwei beliebige Elemente $u_1 \in U_1$ und $u_2 \in U_2$. Da $U_1
-        \cup U_2$ ein Vektorraum ist, folgt $u_1 + u_2 \in U_1 \cup U_2$. Somit muss
-    entweder $u_1 + u_2 \in U_1$ oder $u_1 + u_2 \in U_2$ gelten. Durch Umformung
-    erhalten wir entweder $(u_1 + u_2) - u_1 \in U_1$ oder $(u_1 + u_2) - u_2 \in
-        U_2$. Das führt zu $u_2 \in U_1$ oder $u_1 \in U_2$.
+    Betrachten wir zwei beliebige Elemente $u_1 \in U_1$ und $u_2 \in U_2$. Da
+    $U_1 \cup U_2$ ein Vektorraum ist, folgt $u_1 + u_2 \in U_1 \cup U_2$.
+    Somit muss entweder $u_1 + u_2 \in U_1$ oder $u_1 + u_2 \in U_2$ gelten.
+    Durch Umformung erhalten wir entweder $(u_1 + u_2) - u_1 \in U_1$ oder
+    $(u_1 + u_2) - u_2 \in U_2$. Das führt zu $u_2 \in U_1$ oder $u_1 \in U_2$.
 
-    Da $u_1$ und $u_2$ beliebig gewählt wurden, folgt entweder $U_1 \subseteq U_2$
-    oder $U_2 \subseteq U_1$. \checkmark
+    Da $u_1$ und $u_2$ beliebig gewählt wurden, folgt entweder $U_1 \subseteq
+    U_2$ oder $U_2 \subseteq U_1$. \checkmark
 
     $\Leftarrow$ Annahme: $U_1 \subseteq U_2$ oder $U_2 \subseteq U_1$.
 
     Wenn $U_1 \subseteq U_2$, dann ist $U_1 \cup U_2 = U_2$. Da $U_2$ ein
     Vektorraum ist, folgt, dass $U_1 \cup U_2$ ein Unterraum von $V$ ist.
 
-    Ebenso, wenn $U_2 \subseteq U_1$, dann ist $U_2 \cup U_1 = U_1$, und auch in
-    diesem Fall ist $U_1 \cup U_2$ ein Unterraum von $V$. \checkmark
+    Ebenso, wenn $U_2 \subseteq U_1$, dann ist $U_2 \cup U_1 = U_1$, und auch
+    in diesem Fall ist $U_1 \cup U_2$ ein Unterraum von $V$. \checkmark
 
-    Somit ist $U_1 \cup U_2$ genau dann ein Unterraum von $V$, wenn $U_1 \subseteq
-        U_2$ oder $U_2 \subseteq U_1$ gilt.
+    Somit ist $U_1 \cup U_2$ genau dann ein Unterraum von $V$, wenn $U_1
+    \subseteq U_2$ oder $U_2 \subseteq U_1$ gilt.
 \end{proof}
 \end{problem}
 
 \begin{problem}[Lineare Unabhängigkeit in Vektorräumen]{6 Punkte}
 Sei $K$ ein Körper, $V$ ein $K$-Vektorraum. Zeigen oder widerlegen Sie:
 \begin{enumerate}
-    \item Falls $v_1, \ldots, v_n \in V$ linear unabhängig sind und $\alpha_2, \ldots,
-              \alpha_n \in K$, dann sind die Vektoren $v_1, v_2 + \alpha_2v_1, \ldots, v_n +
-              \alpha_nv_1$ linear unabhängig.
-    \item Falls $v_1, v_2, v_3 \in V$ linear unabhängig sind und $1 + 1 \neq 0$ in $K$,
-          dann sind auch die folgenden Vektoren linear unabhängig: $v_{12} := v_1 + v_2$,
-          $v_{23} := v_2 + v_3$, $v_{13} := v_1 + v_3$.
-    \item Falls $v_1, v_2, v_3 \in V$ linear unabhängig sind und $1 + 1 = 0$ in $K$, dann
-          sind auch die folgenden Vektoren linear unabhängig: $v_{12} := v_1 + v_2$,
-          $v_{23} := v_2 + v_3$, $v_{13} := v_1 + v_3$.
-    \item Für einen Unterkörper $K'$ von $K$ und linear unabhängige Vektoren $v_1,
-              \ldots, v_n$ im $K'$-Vektorraum $V$, sind $v_1, \ldots, v_n$ auch linear
-          unabhängig im $K$-Vektorraum $V$.
+    \item Falls $v_1, \ldots, v_n \in V$ linear unabhängig sind und $\alpha_2,
+          \ldots, \alpha_n \in K$, dann sind die Vektoren $v_1, v_2 +
+          \alpha_2v_1, \ldots, v_n + \alpha_nv_1$ linear unabhängig.
+    \item Falls $v_1, v_2, v_3 \in V$ linear unabhängig sind und $1 + 1 \neq 0$
+          in $K$, dann sind auch die folgenden Vektoren linear unabhängig:
+          $v_{12} := v_1 + v_2$, $v_{23} := v_2 + v_3$, $v_{13} := v_1 + v_3$.
+    \item Falls $v_1, v_2, v_3 \in V$ linear unabhängig sind und $1 + 1 = 0$ in
+          $K$, dann sind auch die folgenden Vektoren linear unabhängig: $v_{12}
+          := v_1 + v_2$, $v_{23} := v_2 + v_3$, $v_{13} := v_1 + v_3$.
+    \item Für einen Unterkörper $K'$ von $K$ und linear unabhängige Vektoren
+          $v_1, \ldots, v_n$ im $K'$-Vektorraum $V$, sind $v_1, \ldots, v_n$
+          auch linear unabhängig im $K$-Vektorraum $V$.
 \end{enumerate}
 \begin{proof}
     $ $
 
     \begin{enumerate}
-        \item Annahme: $v_1, \ldots, v_n \in V$ sind linear unabhängig und $\alpha_2, \ldots,
-                  \alpha_n \in K$. Wir wollen zeigen, dass die Vektoren $v_1, v_2 + \alpha_2v_1,
-                  \ldots, v_n + \alpha_nv_1$ ebenfalls linear unabhängig sind.
+        \item Annahme: $v_1, \ldots, v_n \in V$ sind linear unabhängig und
+              $\alpha_2, \ldots, \alpha_n \in K$. Wir wollen zeigen, dass die
+              Vektoren $v_1, v_2 + \alpha_2v_1, \ldots, v_n + \alpha_nv_1$
+              ebenfalls linear unabhängig sind.
 
               Betrachten wir die lineare Kombination:
 
@@ -69,8 +70,9 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum. Zeigen oder widerlegen Sie:
                   (\lambda_1 + \lambda_2\alpha_2 + \ldots + \lambda_n\alpha_n)v_1 + \lambda_2v_2 + \ldots + \lambda_nv_n & = 0.
               \end{align*}
 
-              Da $v_1, \ldots, v_n$ linear unabhängig sind, folgt, dass jeder Koeffizient
-              dieser linearen Kombination gleich null sein muss. Also:
+              Da $v_1, \ldots, v_n$ linear unabhängig sind, folgt, dass jeder
+              Koeffizient dieser linearen Kombination gleich null sein muss.
+              Also:
 
               \begin{align*}
                   \lambda_1 + \lambda_2\alpha_2 + \ldots + \lambda_n\alpha_n & = 0,    \\
@@ -79,14 +81,16 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum. Zeigen oder widerlegen Sie:
                   \lambda_n                                                  & = 0.
               \end{align*}
 
-              Dies impliziert $(\lambda_1 + 0\alpha_2 + \ldots + 0\alpha_n) = 0 \Rightarrow
-                  \lambda_1 = 0$. Somit sind alle Koeffizienten gleich null.
+              Dies impliziert $(\lambda_1 + 0\alpha_2 + \ldots + 0\alpha_n) = 0
+              \Rightarrow \lambda_1 = 0$. Somit sind alle Koeffizienten gleich
+              null.
 
-              Daher sind die Vektoren $v_1, v_2 + \alpha_2v_1, \ldots, v_n + \alpha_nv_1$
-              linear unabhängig.
+              Daher sind die Vektoren $v_1, v_2 + \alpha_2v_1, \ldots, v_n +
+              \alpha_nv_1$ linear unabhängig.
 
-        \item Seien \(\{v_1, v_2, v_3\}\) linear unabhängig. Wir möchten herausfinden, ob
-              auch \(\{v_1+v_2, v_2+v_3, v_1+v_3\}\) unabhängig ist.
+        \item Seien \(\{v_1, v_2, v_3\}\) linear unabhängig. Wir möchten
+              herausfinden, ob auch \(\{v_1+v_2, v_2+v_3, v_1+v_3\}\)
+              unabhängig ist.
 
               Betrachten wir die lineare Kombination:
               \[
@@ -98,14 +102,16 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum. Zeigen oder widerlegen Sie:
                   \alpha_1v_1 + \alpha_1v_2 + \alpha_2v_2 + \alpha_2v_3 + \alpha_3v_1 + \alpha_3v_3 = v_1(\alpha_1+\alpha_3) + v_2(\alpha_1+\alpha_2) + v_3(\alpha_2+\alpha_3) = 0
               \]
 
-              Sei \(\delta_1 = \alpha_1 + \alpha_3\), \(\delta_2 = \alpha_1 + \alpha_2\) und
-              \(\delta_3 = \alpha_2 + \alpha_3\). Die Gleichung lautet dann:
+              Sei \(\delta_1 = \alpha_1 + \alpha_3\), \(\delta_2 = \alpha_1 +
+              \alpha_2\) und \(\delta_3 = \alpha_2 + \alpha_3\). Die Gleichung
+              lautet dann:
               \[
                   \delta_1v_1 + \delta_2v_2 + \delta_3v_3 = 0
               \]
 
-              Nun haben wir gezeigt, dass die Koeffizienten \(\delta_1\), \(\delta_2\) und
-              \(\delta_3\) gleich null sein müssen. Das bedeutet:
+              Nun haben wir gezeigt, dass die Koeffizienten \(\delta_1\),
+              \(\delta_2\) und \(\delta_3\) gleich null sein müssen. Das
+              bedeutet:
 
               \begin{align*}
                   0 & = \delta_1 = \alpha_1 + \alpha_3  \\
@@ -113,8 +119,9 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum. Zeigen oder widerlegen Sie:
                   0 & = \delta_3 = \alpha_2 + \alpha_3.
               \end{align*}
 
-              Wir müssen nun zeigen, dass dies impliziert, dass jede der \(\alpha_i\)'s
-              gleich null ist. Wir betrachten die Gleichungen paarweise:
+              Wir müssen nun zeigen, dass dies impliziert, dass jede der
+              \(\alpha_i\)'s gleich null ist. Wir betrachten die Gleichungen
+              paarweise:
 
               1. Aus \(0 = \alpha_1 + \alpha_3\) folgt \(\alpha_1 = -\alpha_3\).
 
@@ -122,10 +129,12 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum. Zeigen oder widerlegen Sie:
 
               3. Schließlich, setzen wir \(\alpha_2 = \alpha_3\) in \(0 = \alpha_2 + \alpha_3\) ein und erhalten \(0 = \alpha_3 + \alpha_3\), was zu \(\alpha_3 = 0\) führt. Dann ergibt sich aus \(\alpha_2 = \alpha_3\), dass auch \(\alpha_2 = 0\) ist, und schließlich aus \(\alpha_1 = -\alpha_3\), dass \(\alpha_1 = 0\) ist.
 
-              Somit haben wir gezeigt, dass jede der \(\alpha_i\)'s gleich null ist, und
-              folglich ist die ursprüngliche lineare Kombination die triviale Lösung. Das
-              beweist, dass \(\{v_1+v_2, v_2+v_3, v_1+v_3\}\) unabhängig ist.
-        \item Angenommen, $\{v_1+v_2, v_2+v_3, v_1+v_3\}$ ist linear unabhängig.
+              Somit haben wir gezeigt, dass jede der \(\alpha_i\)'s gleich null
+              ist, und folglich ist die ursprüngliche lineare Kombination die
+              triviale Lösung. Das beweist, dass \(\{v_1+v_2, v_2+v_3,
+              v_1+v_3\}\) unabhängig ist.
+        \item Angenommen, $\{v_1+v_2, v_2+v_3, v_1+v_3\}$ ist linear
+              unabhängig.
 
               Das bedeutet, dass die lineare Kombination
 
@@ -135,15 +144,15 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum. Zeigen oder widerlegen Sie:
 
               nur die triviale Lösung $\alpha_1 = \alpha_2 = \alpha_3 = 0$ hat.
 
-              Nun zeigen wir, dass dies zu einem Widerspruch führt. Betrachten Sie die
-              gegebene Kondition
+              Nun zeigen wir, dass dies zu einem Widerspruch führt. Betrachten
+              Sie die gegebene Kondition
 
               \[
                   1 + 1 = 0
               \]
 
-              Aufgrund dieser Kondition und der Annahme, dass $\alpha_1 = \alpha_2 = \alpha_3
-                  = 0$, folgt:
+              Aufgrund dieser Kondition und der Annahme, dass $\alpha_1 =
+              \alpha_2 = \alpha_3 = 0$, folgt:
 
               \begin{align*}
                   0(v_1 + v_2) + 0(v_2 + v_3) + 0(v_1 + v_3)                                                    & = 0                               \\
@@ -153,13 +162,14 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum. Zeigen oder widerlegen Sie:
                   \Rightarrow 4v_1 + 4v_2 + 4v_3                                                                & = 0                               \\
               \end{align*}
 
-              Dies führt zu der Gleichung $4v_1 + 4v_2 + 4v_3 = 0$, was impliziert, dass es
-              nicht-triviale Skalare $\alpha_1, \alpha_2, \alpha_3 \in K$ gibt, sodass
-              $\alpha_1 v_1 + \alpha_2 v_2 + \alpha_3 v_3 = 0$. Somit sind $v_1, v_2, v_3$
-              nicht linear unabhängig über $K$, was einen Widerspruch zur Annahme der
-              linearen Unabhängigkeit von $\{v_1+v_2, v_2+v_3, v_1+v_3\}$ darstellt. Daher
-              kann die Annahme nicht korrekt sein, und $\{v_1+v_2, v_2+v_3, v_1+v_3\}$ ist
-              linear abhängig.
+              Dies führt zu der Gleichung $4v_1 + 4v_2 + 4v_3 = 0$, was
+              impliziert, dass es nicht-triviale Skalare $\alpha_1, \alpha_2,
+              \alpha_3 \in K$ gibt, sodass $\alpha_1 v_1 + \alpha_2 v_2 +
+              \alpha_3 v_3 = 0$. Somit sind $v_1, v_2, v_3$ nicht linear
+              unabhängig über $K$, was einen Widerspruch zur Annahme der
+              linearen Unabhängigkeit von $\{v_1+v_2, v_2+v_3, v_1+v_3\}$
+              darstellt. Daher kann die Annahme nicht korrekt sein, und
+              $\{v_1+v_2, v_2+v_3, v_1+v_3\}$ ist linear abhängig.
 
         \item
     \end{enumerate}
@@ -169,21 +179,23 @@ Sei $K$ ein Körper, $V$ ein $K$-Vektorraum. Zeigen oder widerlegen Sie:
 \begin{problem}[Lineare Abhängigkeit bei Funktionen]{4 Punkte}
 Sei $V = \text{Abb}(\mathbb{R}^2, \mathbb{R})$ der $\mathbb{R}$-Vektorraum aller Abbildungen von $\mathbb{R}^2$ nach $\mathbb{R}$, und seien $f_1, f_2, f_3, f_4 \in \text{Abb}(\mathbb{R}^2, \mathbb{R})$ definiert durch
 \[ f_1(x, y) := \max(x, y), \quad f_2(x, y) := \min(x, y), \quad f_3(x, y) := x, \quad f_4(x, y) := y. \]
-Bestimmen Sie eine Basis von $U = \text{Span}\{f_1, f_2, f_3, f_4\} \subset V$.
+Bestimmen Sie eine Basis von $U = \text{Span}\{f_1, f_2, f_3, f_4\} \subset
+   V$.
 \begin{proof}
     $ $
 
-    Betrachten wir $B = \{f_1, f_2, f_3, f_4\}$ als eine mögliche Basis von $U$. Da
-    $U = \operatorname{Span} B$, muss lediglich gezeigt oder widerlegt werden, dass
-    $B$ linear unabhängig ist, um zu zeigen, dass $B$ eine Basis von $U$ ist.
+    Betrachten wir $B = \{f_1, f_2, f_3, f_4\}$ als eine mögliche Basis von
+    $U$. Da $U = \operatorname{Span} B$, muss lediglich gezeigt oder widerlegt
+    werden, dass $B$ linear unabhängig ist, um zu zeigen, dass $B$ eine Basis
+    von $U$ ist.
 
-    Wenn $B$ linear unabhängig ist, muss gelten, dass aus $\alpha_1 f_1 + \alpha_2
-        f_2 + \alpha_3 f_3 + \alpha_4 f_4 = 0$ folgt $\alpha_1 = \alpha_2 = \alpha_3 =
-        \alpha_4 = 0$.
+    Wenn $B$ linear unabhängig ist, muss gelten, dass aus $\alpha_1 f_1 +
+    \alpha_2 f_2 + \alpha_3 f_3 + \alpha_4 f_4 = 0$ folgt $\alpha_1 = \alpha_2
+    = \alpha_3 = \alpha_4 = 0$.
 
-    Um zu zeigen, dass eine Funktion die Nullfunktion ist, muss sie an jeder Stelle
-    $f(x) = 0$ sein. Somit nehmen wir 4 Werte und überprüfen, ob folgt, dass
-    $\alpha_{1 \le n \le 4} = 0$.
+    Um zu zeigen, dass eine Funktion die Nullfunktion ist, muss sie an jeder
+    Stelle $f(x) = 0$ sein. Somit nehmen wir 4 Werte und überprüfen, ob folgt,
+    dass $\alpha_{1 \le n \le 4} = 0$.
 
     Für $x = 0, y = 1$:
     \begin{align*}
@@ -216,12 +228,12 @@ Bestimmen Sie eine Basis von $U = \text{Span}\{f_1, f_2, f_3, f_4\} \subset V$.
         \Rightarrow \alpha_2 = - \alpha_3
     \end{align*}
 
-    Somit lässt sich der Span von $\{f_1, f_2, f_3, f_4\}$ durch $f_1 = f_3 + f_4 -
-        f_2$, $f_2 = f_3 + f_4 - f_2$, $f_3 = f_4 - f_1 - f_2$ und $f_4 = f_3 - f_1 -
-        f_2$ darstellen.
+    Somit lässt sich der Span von $\{f_1, f_2, f_3, f_4\}$ durch $f_1 = f_3 +
+    f_4 - f_2$, $f_2 = f_3 + f_4 - f_2$, $f_3 = f_4 - f_1 - f_2$ und $f_4 = f_3
+    - f_1 - f_2$ darstellen.
 
-    Wähle somit die Basis $\{f_2, f_3, f_4\}$ und teste, ob sie linear unabhängig
-    ist.
+    Wähle somit die Basis $\{f_2, f_3, f_4\}$ und teste, ob sie linear
+    unabhängig ist.
 
     Für $x = 0, y = 1$:
     \begin{align*}
@@ -243,9 +255,9 @@ Bestimmen Sie eine Basis von $U = \text{Span}\{f_1, f_2, f_3, f_4\} \subset V$.
         \Rightarrow \alpha_1 + \alpha_2 + \alpha_3                      & = 0 \\
     \end{align*}
 
-    Da $\alpha_1 = - \alpha_3$ folgt $\alpha_2 = 0$, und da $\alpha_1 = - \alpha_2$
-    folgt $\alpha_3 = 0$, und somit auch $\alpha_1 = 0$. Somit ist $\{f_2, f_3,
-        f_4\}$ linear unabhängig und eine Basis von $U$.
+    Da $\alpha_1 = - \alpha_3$ folgt $\alpha_2 = 0$, und da $\alpha_1 = -
+    \alpha_2$ folgt $\alpha_3 = 0$, und somit auch $\alpha_1 = 0$. Somit ist
+    $\{f_2, f_3, f_4\}$ linear unabhängig und eine Basis von $U$.
 \end{proof}
 \end{problem}
 
@@ -260,8 +272,8 @@ Geben Sie für jeden der folgenden Unterräume des $\mathbb{R}$-Vektorraums $\ma
     $ $
 
     \begin{enumerate}
-        \item Beachte, dass die Gleichung $x + y + z = 0$ eine Ebene im $\mathbb{R}^3$
-              darstellt, die durch die Gleichung
+        \item Beachte, dass die Gleichung $x + y + z = 0$ eine Ebene im
+              $\mathbb{R}^3$ darstellt, die durch die Gleichung
               \[
                   \alpha_1 \cdot \begin{pmatrix}
                       1 \\
@@ -289,15 +301,16 @@ Geben Sie für jeden der folgenden Unterräume des $\mathbb{R}$-Vektorraums $\ma
                       -1
                   \end{pmatrix}\right\}
               \]
-              konstruieren, für die offensichtlich ist, dass sie linear unabhängig ist und
-              teilmenge von $U_1$ ist.
+              konstruieren, für die offensichtlich ist, dass sie linear
+              unabhängig ist und teilmenge von $U_1$ ist.
 
-              Es bleibt zu zeigen, dass $\operatorname{Span} B = U_1$, um zu beweisen, dass
-              $B$ eine Basis von $U_1$ ist.
+              Es bleibt zu zeigen, dass $\operatorname{Span} B = U_1$, um zu
+              beweisen, dass $B$ eine Basis von $U_1$ ist.
 
-              Sei $(x_1, x_2, x_3) \in U_1$ mit $x_1 + x_2 + x_3 = 0 \Leftrightarrow x_3 = -
-                  x_1 - x_2$ beliebig, aber fest. Es ist also zu zeigen, dass $\alpha_1, \alpha_2
-                  \in \mathbb{R}$ existieren, sodass
+              Sei $(x_1, x_2, x_3) \in U_1$ mit $x_1 + x_2 + x_3 = 0
+              \Leftrightarrow x_3 = - x_1 - x_2$ beliebig, aber fest. Es ist
+              also zu zeigen, dass $\alpha_1, \alpha_2 \in \mathbb{R}$
+              existieren, sodass
               \[
                   \alpha_1 \cdot \begin{pmatrix}
                       1 \\
@@ -321,10 +334,11 @@ Geben Sie für jeden der folgenden Unterräume des $\mathbb{R}$-Vektorraums $\ma
                   x_3 & = - \alpha_1 - \alpha_2 = - x_1 - x_2 \tag{\checkmark}
               \end{align*}
 
-              Somit existieren Werte $\alpha_1, \alpha_2 \in \mathbb{R}$ genau dann, wenn
-              $x_1 + x_2 + x_3 = 0$. Daher ist $B$ eine Basis von $U_1$.
-        \item Sei $U_2 = \text{Span}\{(2, -3, 1), (1, 1, 3), (-8, 17, 1)\}$ ein Unterraum des
-              $\mathbb{R}$-Vektorraums $\mathbb{R}^3$.
+              Somit existieren Werte $\alpha_1, \alpha_2 \in \mathbb{R}$ genau
+              dann, wenn $x_1 + x_2 + x_3 = 0$. Daher ist $B$ eine Basis von
+              $U_1$.
+        \item Sei $U_2 = \text{Span}\{(2, -3, 1), (1, 1, 3), (-8, 17, 1)\}$ ein
+              Unterraum des $\mathbb{R}$-Vektorraums $\mathbb{R}^3$.
 
               Wir betrachten die Menge $B$:
 
@@ -341,16 +355,18 @@ Geben Sie für jeden der folgenden Unterräume des $\mathbb{R}$-Vektorraums $\ma
 
               als potenzielle Basis für $U_2$.
 
-              Um zu zeigen, dass $B$ eine Basis ist, überprüfen wir zwei Bedingungen:
+              Um zu zeigen, dass $B$ eine Basis ist, überprüfen wir zwei
+              Bedingungen:
 
               1. Die Vektoren in $B$ sind linear unabhängig.
 
               2. Der von $B$ erzeugte Raum ist gleich dem Raum $U_2$.
 
-              Beginnen wir mit der Überprüfung der linearen Unabhängigkeit von $B$:
+              Beginnen wir mit der Überprüfung der linearen Unabhängigkeit von
+              $B$:
 
-              Angenommen, es existieren Skalare $\beta_1$ und $\beta_2$, nicht beide gleich
-              null, sodass
+              Angenommen, es existieren Skalare $\beta_1$ und $\beta_2$, nicht
+              beide gleich null, sodass
 
               \[
                   \beta_1 \begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix} + \beta_2 \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
@@ -366,11 +382,11 @@ Geben Sie für jeden der folgenden Unterräume des $\mathbb{R}$-Vektorraums $\ma
                   \end{cases}
               \]
 
-              Die Lösung dieses Systems ist $\beta_1 = 0$ und $\beta_2 = 0$, was bedeutet,
-              dass die Vektoren in $B$ linear unabhängig sind.
+              Die Lösung dieses Systems ist $\beta_1 = 0$ und $\beta_2 = 0$,
+              was bedeutet, dass die Vektoren in $B$ linear unabhängig sind.
 
-              Da die Vektoren in $B$ linear unabhängig sind, überprüfen wir nun, ob der Raum,
-              den sie erzeugen, gleich dem Raum $U_2$ ist.
+              Da die Vektoren in $B$ linear unabhängig sind, überprüfen wir
+              nun, ob der Raum, den sie erzeugen, gleich dem Raum $U_2$ ist.
 
               Der Raum, der durch $B$ erzeugt wird, ist der Span der Vektoren $\begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix}$ und $\begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}$. Wir müssen überprüfen, ob jeder Vektor in $U_2$ als Linearkombination dieser beiden Vektoren dargestellt werden kann.
 
@@ -380,13 +396,13 @@ Geben Sie für jeden der folgenden Unterräume des $\mathbb{R}$-Vektorraums $\ma
 
               Der Vektor $(-8, 17, 1)$ kann als $-8 \cdot \begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix} + 17 \cdot \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}$ dargestellt werden.
 
-              Da jeder Vektor in $U_2$ als Linearkombination der Vektoren in $B$ dargestellt
-              werden kann, ist $B$ eine Basis von $U_2$.
+              Da jeder Vektor in $U_2$ als Linearkombination der Vektoren in
+              $B$ dargestellt werden kann, ist $B$ eine Basis von $U_2$.
 
         \item Angenommen, die Basen in i) sowie ii) wurden korrekt bestimmt.
 
-              Unser Ziel ist es, alle Vektoren zu finden, die sowohl in \(U_1\) als auch in
-              \(U_2\) liegen.
+              Unser Ziel ist es, alle Vektoren zu finden, die sowohl in \(U_1\)
+              als auch in \(U_2\) liegen.
 
               Dies lässt sich durch die Gleichung
 
@@ -408,8 +424,8 @@ Geben Sie für jeden der folgenden Unterräume des $\mathbb{R}$-Vektorraums $\ma
 
               ausdrücken.
 
-              Um die Beziehung der Koeffizienten \(\alpha_1, \alpha_2, \beta_1\) und
-              \(\beta_2\) zu untersuchen, formen wir um:
+              Um die Beziehung der Koeffizienten \(\alpha_1, \alpha_2,
+              \beta_1\) und \(\beta_2\) zu untersuchen, formen wir um:
 
               \[
                   \alpha_1 \cdot \begin{pmatrix}
@@ -448,8 +464,8 @@ Geben Sie für jeden der folgenden Unterräume des $\mathbb{R}$-Vektorraums $\ma
                   \alpha_1 = -\alpha_2
               \]
 
-              Daher können wir schlussfolgern, dass die Vektoren, die sowohl in \(U_1\) als
-              auch in \(U_2\) liegen, die Form \(\alpha_1 \cdot \begin{pmatrix}
+              Daher können wir schlussfolgern, dass die Vektoren, die sowohl in
+              \(U_1\) als auch in \(U_2\) liegen, die Form \(\alpha_1 \cdot \begin{pmatrix}
                   1 \\
                   0 \\
                   -1

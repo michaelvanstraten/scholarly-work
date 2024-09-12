@@ -12,7 +12,8 @@
 
 \begin{problem}[Unendliche Reihen]{6 Punkte}
 \begin{enumerate}
-    \item Zeigen Sie, dass die folgende Reihe konvergiert und bestimmen Sie ihren Grenzwert:
+    \item Zeigen Sie, dass die folgende Reihe konvergiert und bestimmen Sie
+          ihren Grenzwert:
           \[
               \sum_{n=1}^{\infty} \frac{1}{n(n + 1)(n + 2)}.
           \]
@@ -20,7 +21,10 @@
           \[
               \sum_{n=0}^{\infty} \sum_{k=0}^{n} {n \choose k} \frac{1}{3n+k}.
           \]
-    \item Drücken Sie zunächst, unter der natürlichen Annahme ihres Bildungsgesetzes, die folgende Reihe mittels des Summenzeichens aus. Zeigen Sie sodann, dass sie konvergiert, und bestimmen Sie ihren Grenzwert:
+    \item Drücken Sie zunächst, unter der natürlichen Annahme ihres
+          Bildungsgesetzes, die folgende Reihe mittels des Summenzeichens aus.
+          Zeigen Sie sodann, dass sie konvergiert, und bestimmen Sie ihren
+          Grenzwert:
           \[
               \frac{1}{1 \cdot 4 } + \frac{1}{4 \cdot 7 } + \frac{1}{7 \cdot 10} + \frac{1}{10 \cdot 13} + \ldots
           \]
@@ -76,14 +80,17 @@ Sei $(a_n)_{n\in\mathbb{N}}$ eine reelle Zahlenfolge mit $|a_n - a_{n+1}| \leq c
     sodass für alle $m, n \geq N$ die Ungleichung $|a_m - a_n| < \varepsilon$ erfüllt ist.
 
     \begin{enumerate}
-        \item Wie wir bereits aus der Vorlesung wissen konvergiert $c^n$, mit $|c| < 1$.
-              Somit existiert ein $N \in \mathbb{N}$ sodas für alle $n \in \mathbb{N}$ $n \ge N$ $c^n < \varepsilon$. \\
-              Also gilt \[
+        \item Wie wir bereits aus der Vorlesung wissen konvergiert $c^n$, mit
+              $|c| < 1$. Somit existiert ein $N \in \mathbb{N}$ sodas für alle
+              $n \in \mathbb{N}$ $n \ge N$ $c^n < \varepsilon$. \\ Also gilt \[
                   |a_n - a_{n+1}| \leq c^n < \varepsilon \Longrightarrow |a_n - a_{n+1}| < \varepsilon
-              \] für ein $N \in \mathbb{N}$. Somit konvergiert $a_n$ ebenfalls für ein $N$.
-              Da jede konvergente Folge auch eine Cauchy-Folge ist, ist $a_n$ für $0 \leq c < 1$ auch eine Cauchy-Folge.
-        \item Ja $a_n$ kann auch für $c \ge 1$ konvergieren und somit auch eine Cauchy-Folge sein.
-              Dies ist aber mit der Kondition behalten das $|a_n - a_{n+1}|$ strikt kleiner als $c^n$ sein muss für alle $n \in \mathbb{N}$.
+              \] für ein $N \in \mathbb{N}$. Somit konvergiert $a_n$ ebenfalls
+                 für ein $N$. Da jede konvergente Folge auch eine Cauchy-Folge
+                 ist, ist $a_n$ für $0 \leq c < 1$ auch eine Cauchy-Folge.
+        \item Ja $a_n$ kann auch für $c \ge 1$ konvergieren und somit auch eine
+              Cauchy-Folge sein. Dies ist aber mit der Kondition behalten das
+              $|a_n - a_{n+1}|$ strikt kleiner als $c^n$ sein muss für alle $n
+              \in \mathbb{N}$.
     \end{enumerate}
 \end{proof}
 
@@ -115,9 +122,9 @@ Sei $(a_n)_{n\in\mathbb{N}^*}$ eine reelle Zahlenfolge mit $a_n > 0$ für alle $
 \end{enumerate}
 \begin{proof}
     \begin{enumerate}
-        \item Angenommen, $\sum{a_n\over 1+{a_n}}$ konvergiert.
-              Dann konvergiert $\frac{a_n}{1+a_n}\to 0$.
-              Es ist leicht zu sehen, dass: \[
+        \item Angenommen, $\sum{a_n\over 1+{a_n}}$ konvergiert. Dann
+              konvergiert $\frac{a_n}{1+a_n}\to 0$. Es ist leicht zu sehen,
+              dass: \[
                   \lim_{n\to\infty}a_n=0\iff \lim_{n\to\infty}\frac{a_n}{1+a_n}=0.
               \]
               (Sei $b_n=\frac{a_n}{1+a_n}$, dann $a_n=\frac{b_n}{1-b_n}$.)
@@ -125,8 +132,8 @@ Sei $(a_n)_{n\in\mathbb{N}^*}$ eine reelle Zahlenfolge mit $a_n > 0$ für alle $
               Also haben wir \[
                   \lim_{n\to\infty}\frac{\frac{a_n}{1+a_n}}{a_n}=1,
               \]
-              durch den Vergleichstest für positive Reihen konvergiert die Reihe $\sum a_n$, was ein Widerspruch ist.
-              \checkmark
+              durch den Vergleichstest für positive Reihen konvergiert die
+              Reihe $\sum a_n$, was ein Widerspruch ist. \checkmark
         \item \begin{align}
                   \sum_{m=1}^k\frac{a_{N+m}}{s_{N+m}} & \ge\frac{1}{s_{N+k}}\sum_{m=1}^ka_{N+m} \\
                                                       & ={s_{N+k}-s_N\over s_{N+k}}             \\
@@ -139,7 +146,8 @@ Sei $(a_n)_{n\in\mathbb{N}^*}$ eine reelle Zahlenfolge mit $a_n > 0$ für alle $
 
         \item
 
-              Dieses Ergebnis kann durch Induktion bewiesen werden. Zuerst, im Fall $n=2$ gilt:
+              Dieses Ergebnis kann durch Induktion bewiesen werden. Zuerst, im
+              Fall $n=2$ gilt:
               \begin{align*}
                   \frac{a_2}{S^2_{2}} \leq \frac{1}{S_{1}}-\frac{1}{S_{2}},
               \end{align*}
@@ -171,12 +179,17 @@ und
 \begin{proof}
     Es bekannt, aus der Vorlesung, und leicht zu zeigen das $\sum_{n=1}^{\infty}\frac{1}{n^p}$ für $p > 1$ konvergiert.
     \begin{enumerate}
-        \item Wir bemerken das $\sum_{n=1}^{\infty} \frac{a_n}{1 + n a_n} = \sum_{n=1}^{\infty} \frac{1}{a_n^{-1} + n}$ und ein $k$ existiert mit $k > 1$ für welches gilt \[
+        \item Wir bemerken das $\sum_{n=1}^{\infty} \frac{a_n}{1 + n a_n} =
+              \sum_{n=1}^{\infty} \frac{1}{a_n^{-1} + n}$ und ein $k$ existiert
+              mit $k > 1$ für welches gilt \[
                   \sum_{n=1}^{\infty} \frac{1}{\underbrace{a_n^{-1} + n}_{> n}} \le \sum_{n=1}^{\infty} \frac{1}{n^k}.
               \]. Da $\sum_{n=1}^{\infty} \frac{1}{n^k}$ für $k > 1$ konvergiert, konvergiert auch $\sum_{n=1}^{\infty} \frac{a_n}{1 + n a_n}$.
-        \item Somit folgt \[
+        \item Somit folgt
+              \[
                   \sum_{n=1}^{\infty} \frac{a_n}{1 + n^2 a_n} <	\sum_{n=1}^{\infty} \frac{a_n}{n^2 a_n} = \sum_{n=1}^{\infty} \frac{1}{n^2},
-              \] da $2 > 1$ konvergiert $\sum_{n=1}^{\infty} \frac{1}{n^2}$ und somit konvergiert auch $\sum_{n=1}^{\infty} \frac{a_n}{1 + n^2 a_n}$.
+              \] da $2 > 1$ konvergiert $\sum_{n=1}^{\infty} \frac{1}{n^2}$ und
+                 somit konvergiert auch $\sum_{n=1}^{\infty} \frac{a_n}{1 + n^2
+                 a_n}$.
     \end{enumerate}
 \end{proof}
 

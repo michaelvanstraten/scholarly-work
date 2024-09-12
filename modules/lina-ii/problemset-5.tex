@@ -21,10 +21,11 @@ Sie:
           \[
               \operatorname{Eig}(A, \lambda) = (\operatorname{Eig}(B, \mu_1) \cap \operatorname{Eig}(A, \lambda)) \oplus \cdots \oplus (\operatorname{Eig}(B, \mu_\ell) \cap \operatorname{Eig}(A, \lambda)),
           \]
-          wobei die $\mu_1, \ldots, \mu_\ell$ die Eigenwerte von $B$ bezeichnen.
-    \item Sind $A$ und $B$ diagonalisierbar, so gilt $[A, B] = 0$ genau dann, wenn es ein
-          $T \in \operatorname{GL}_n(K)$ und Diagonalmatrizen $D_A, D_B \in K^{n,n}$
-          gibt, welche
+          wobei die $\mu_1, \ldots, \mu_\ell$ die Eigenwerte von $B$
+          bezeichnen.
+    \item Sind $A$ und $B$ diagonalisierbar, so gilt $[A, B] = 0$ genau dann,
+          wenn es ein $T \in \operatorname{GL}_n(K)$ und Diagonalmatrizen $D_A,
+          D_B \in K^{n,n}$ gibt, welche
           \[
               A = T D_A T^{-1} \quad \text{und} \quad B = T D_B T^{-1}.
           \]
@@ -52,13 +53,14 @@ Sie:
               \end{equation*}
               Da \(\Eig(A, \lambda)\) ein Untervektorraum ist, folgt das \(v \in \Eig(A, \lambda)\) ist.
 
-              Für die Inklusionsrichtung \(\subseteq\) sei \(v \in \Eig(A, \lambda)\). Da
-              \(B\) diagonalisierbar ist, folgt das
+              Für die Inklusionsrichtung \(\subseteq\) sei \(v \in \Eig(A,
+              \lambda)\). Da \(B\) diagonalisierbar ist, folgt das
               \begin{equation*}
                   v = \sum_{i = 1}^l v_i \quad \text{mit } v_i \in \Eig(B, \mu_i)
               \end{equation*} ist.
 
-              Da \(v\) im Eigenraum zum wert \(\lambda\) von \(A\) ist, folgt somit das
+              Da \(v\) im Eigenraum zum wert \(\lambda\) von \(A\) ist, folgt
+              somit das
               \begin{equation}
                   \lambda v = \lambda \sum_{i = 1}^l v_i = A \sum_{i = 1}^l v_i = \sum_{i = 1}^l A v_i \label{linear-combination-eigenvectors}
               \end{equation} ist.
@@ -67,8 +69,8 @@ Sie:
                   A v_i \in \Eig(B, \mu_i)
               \end{equation*} ist.
 
-              Stellen wir jetzt \autoref{linear-combination-eigenvectors} nach \(\lambda v_k
-              - Av_k\), mit \(1 \le k \le l\), um so erhalten wir
+              Stellen wir jetzt \autoref{linear-combination-eigenvectors} nach
+              \(\lambda v_k - Av_k\), mit \(1 \le k \le l\), um so erhalten wir
               \begin{equation*}
                   \lambda v_k - Av_k = \sum_{\substack{i = 1 \\ i \neq k}}^{l} A v_k - \lambda v_i.
               \end{equation*}
@@ -78,12 +80,12 @@ Sie:
               \end{equation*}
               was impliziert das \(v_k \in \Eig(A, \lambda)\) ist.
 
-              Die Direktheit der Summe kann aus der Direktheit der Summe über die Eigenräume
-              von \(B\) hergeleitet werden.
+              Die Direktheit der Summe kann aus der Direktheit der Summe über
+              die Eigenräume von \(B\) hergeleitet werden.
 
-        \item Aus \autoref{common-eigenvectors} lässt sich mit der Diagonalisierbarkeit von
-              \(A\) und \(B\) folgern, dass eine Basis \(B\) aus gemeinsamen Eigenvektoren
-              gefunden werden kann.
+        \item Aus \autoref{common-eigenvectors} lässt sich mit der
+              Diagonalisierbarkeit von \(A\) und \(B\) folgern, dass eine Basis
+              \(B\) aus gemeinsamen Eigenvektoren gefunden werden kann.
 
               Konstruieren wir somit eine Matrix
               \begin{equation*}
@@ -107,8 +109,8 @@ Sie:
               Bemerken wir das \( \begin{pmatrix} \lambda_j e_i \end{pmatrix} \eqcolon D_A
               \), \(T\) die gesuchten Eigenschaften für die Matrix \(A\) erfüllen.
 
-              Analog kann gezeigt werden das eine Matrix \(D_B\) existiert, für die dasselbe
-              gilt.
+              Analog kann gezeigt werden das eine Matrix \(D_B\) existiert, für
+              die dasselbe gilt.
     \end{enumerate}
 
 \end{proof}
@@ -117,14 +119,15 @@ Sie:
 \begin{problem}[Bidualraum]{4 Punkte}
 Sei $K$ ein Körper und $V$ ein $K$-Vektorraum. Für jedes $v \in V$ sei $\Phi_v : V^* \to K$ durch $\Phi_v(f) := f(v)$ definiert. Zeigen Sie:
 \begin{enumerate}
-    \item Für alle $v \in V$ ist $\Phi_v \in V^{**} := (V^*)^*$ und die Abbildung $\Phi_V
-              : V \to V^{**}, \, v \mapsto \Phi_v$ ist linear und injektiv.
+    \item Für alle $v \in V$ ist $\Phi_v \in V^{**} := (V^*)^*$ und die
+          Abbildung $\Phi_V : V \to V^{**}, \, v \mapsto \Phi_v$ ist linear und
+          injektiv.
 \end{enumerate}
 Sei nun $\dim(V) \leq \infty$. Zeigen Sie:
 \begin{enumerate}[resume]
     \item Der Bidualraum $V^{**}$ ist isomorph zu $V$.
-    \item Für einen weiteren endlich dimensionalen Vektorraum $W$ und ein $f \in L(V, W)$
-          gilt
+    \item Für einen weiteren endlich dimensionalen Vektorraum $W$ und ein $f
+          \in L(V, W)$ gilt
           \[
               f = \Phi_W^{-1} \circ f^{**} \circ \Phi_V,
           \]
@@ -136,15 +139,15 @@ Sei nun $\dim(V) \leq \infty$. Zeigen Sie:
 Sei $K$ ein Körper und $V, W$ und $X$ Vektorräume über $K$ und $f \in L(V, W)$. Zeigen Sie:
 \begin{enumerate}
     \item Für die duale Abbildung $f^*$ von $f$ gilt $f^* \in L(W^*, V^*)$.
-    \item Ist $g \in L(W, X)$, dann gilt $(g \circ f)^* \in L(X^*, V^*)$ und $(g \circ
-              f)^* = f^* \circ g^*$.
+    \item Ist $g \in L(W, X)$, dann gilt $(g \circ f)^* \in L(X^*, V^*)$ und
+          $(g \circ f)^* = f^* \circ g^*$.
     \item Ist $f$ injektiv/surjektiv, dann ist $f^*$ surjektiv/injektiv.
     \item Ist $f$ bijektiv, dann ist $f^*$ bijektiv und es gilt $(f^*)^{-1} =
-              (f^{-1})^*$.
-    \item Ist $W = V$ und $f$ nilpotent vom Grade $k \in \mathbb{N}$, so ist $f^*$
-          ebenfalls nilpotent vom Grade $k$.
-    \item Ist $W = V$, $M \subseteq V^*$ ein unter $f^*$ invarianter Unterraum, dann ist
-          $M^0$ invariant unter $f$.
+          (f^{-1})^*$.
+    \item Ist $W = V$ und $f$ nilpotent vom Grade $k \in \mathbb{N}$, so ist
+          $f^*$ ebenfalls nilpotent vom Grade $k$.
+    \item Ist $W = V$, $M \subseteq V^*$ ein unter $f^*$ invarianter Unterraum,
+          dann ist $M^0$ invariant unter $f$.
 \end{enumerate}
 \end{problem}
 

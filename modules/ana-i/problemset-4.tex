@@ -17,7 +17,8 @@
               \sum_{k=1}^{n} \frac{1}{\sqrt{k}} > \sqrt{n}.
           \]
 
-    \item Zeigen Sie mithilfe von \textbf{a)}, dass \[
+    \item Zeigen Sie mithilfe von \textbf{a)}, dass
+          \[
               \sum_{k=1}^{\infty} \frac{1}{\sqrt{k}}
           \] bestimmt gegen $+\infty$ divergiert.
 
@@ -43,16 +44,17 @@
                                                                                                                    & = \sqrt{n+1} (1)                                                                 \\
                                                                                                                    & = \sqrt{n+1} \tag*{\checkmark}.                                                  \\
               \end{align*}
-        \item Da $\sum_{k=1}^{n} \frac{1}{\sqrt{k}} > \sqrt{n}$ reicht es zu zeigen das
-              $\sqrt{n}$ divergiert und somit transitive auch $\sum_{k=1}^{n}
-                  \frac{1}{\sqrt{k}}$. Es ist zu zeigen das für alle $M > 0$ ein $N \in
-                  \mathbb{N}$ existiert sodas $\forall n \ge N$ $\mid \sqrt{n} \mod > M$. Setze
-              $N = {(M + 1)}^2$, somit ist $\forall n \ge N$ $\sqrt{n} \ge \sqrt{{(M + 1)}^2}
-                  = M+1 > M$. Somit divergiert $\sqrt{n}$ bestimmt gegen $+\infty$ und transitive
-              auch $\sum_{k=1}^{n} \frac{1}{\sqrt{k}}$. \checkmark
-        \item In Satz 4.14 haben wir die Bernoullische Ungleichungen definiert, welche
-              aussagt das für alle $x \ge -1$ gilt ${(1+x)}^k \ge 1 + kx$. Setzen wir $k =
-                  \frac{n}{2}$, folgt
+        \item Da $\sum_{k=1}^{n} \frac{1}{\sqrt{k}} > \sqrt{n}$ reicht es zu
+              zeigen das $\sqrt{n}$ divergiert und somit transitive auch
+              $\sum_{k=1}^{n} \frac{1}{\sqrt{k}}$. Es ist zu zeigen das für
+              alle $M > 0$ ein $N \in \mathbb{N}$ existiert sodas $\forall n
+              \ge N$ $\mid \sqrt{n} \mod > M$. Setze $N = {(M + 1)}^2$, somit
+              ist $\forall n \ge N$ $\sqrt{n} \ge \sqrt{{(M + 1)}^2} = M+1 >
+              M$. Somit divergiert $\sqrt{n}$ bestimmt gegen $+\infty$ und
+              transitive auch $\sum_{k=1}^{n} \frac{1}{\sqrt{k}}$. \checkmark
+        \item In Satz 4.14 haben wir die Bernoullische Ungleichungen definiert,
+              welche aussagt das für alle $x \ge -1$ gilt ${(1+x)}^k \ge 1 +
+              kx$. Setzen wir $k = \frac{n}{2}$, folgt
               \begin{align*}
                   \sqrt[n]{n} \leq 1 + \frac{2}{\sqrt{n}} \Longrightarrow 1 + \frac{2}{\sqrt{n}} \ge \sqrt[n]{n} \\
                   \Longrightarrow {(1 + \frac{2}{\sqrt{n}})}^{\frac{n}{2}} \ge 1 + \frac{n}{2}\frac{2}{\sqrt{n}} \\
@@ -63,10 +65,12 @@
                   \Longrightarrow 1 + \frac{2}{\sqrt{n}} > \sqrt[n]{n}.
               \end{align*}
               \checkmark
-        \item Aus c) wissen wir das $\sqrt[n]{n} < 1 + \frac{2}{\sqrt{n}}$, und da die $n$-te
-              Wurzel aus einer Zahlen $\ge 1$ ebenfalls $\ge 1$ sein muss, muss somit $1 \le
-                  \sqrt[n]{n} < 1 + \frac{2}{\sqrt{n}}$. Es ist somit nur noch zu zeigen, dass $1
-                  + \frac{2}{\sqrt{n}}$ für $n \to \infty$ gegen 1 konvergiert. Bemerke
+        \item Aus c) wissen wir das $\sqrt[n]{n} < 1 + \frac{2}{\sqrt{n}}$, und
+              da die $n$-te Wurzel aus einer Zahlen $\ge 1$ ebenfalls $\ge 1$
+              sein muss, muss somit $1 \le \sqrt[n]{n} < 1 +
+              \frac{2}{\sqrt{n}}$. Es ist somit nur noch zu zeigen, dass $1 +
+              \frac{2}{\sqrt{n}}$ für $n \to \infty$ gegen 1 konvergiert.
+              Bemerke
               \begin{align*}
                   \lim_{n \to \infty} 1 + \frac{2}{\sqrt{n}} & < \lim_{n \to \infty} {( 1 + \frac{2}{\sqrt{n}})}^2                                                                                 \\
                                                              & = \lim_{n \to \infty} 1 + 2\frac{2}{\sqrt{n}} + \frac{4}{n} \tag{Da aus a) $\sqrt{n}$ divergiert muss $ 2\frac{2}{\sqrt{n}} \to 0$} \\
@@ -85,8 +89,9 @@ Sei $0 < q < 1$ und $(a_n)$ eine Folge mit $|a_{n+1} - a_n| \leq q |a_n - a_{n-1
 
 \begin{enumerate}
     \item Zeigen Sie, dass dann $(a_n)$ eine Cauchy-Folge ist.
-    \item Zeigen Sie, dass aus $|a_{n+1} - a_n| < |a_n - a_{n-1}|$ ab einem $n_0$ nicht
-          notwendigerweise folgt, dass $(a_n)$ eine Cauchy-Folge ist.
+    \item Zeigen Sie, dass aus $|a_{n+1} - a_n| < |a_n - a_{n-1}|$ ab einem
+          $n_0$ nicht notwendigerweise folgt, dass $(a_n)$ eine Cauchy-Folge
+          ist.
 \end{enumerate}
 \end{problem}
 
@@ -102,13 +107,14 @@ kann ähnlich zu dem Beweis von Stz 8.8 geführt werden.
 
 \begin{problem}[$\sqrt{2}$ als dyadischer Bruch]{4 Sonderpunkte}
 \begin{enumerate}
-    \item Finden Sie die ersten vier Terme $x_0$, $x_1$, $x_2$, $x_3$ unserer Folge
-          $(x_n)$ aus 8.8 (siehe auch 1.6 im Skript) für die Quadratwurzel aus Zwei als
-          exakte dyadische (=2-adische) Brüche. Einen Beweis brauchen Sie nur für $x_0$,
-          $x_1$, $x_2$ zu führen; für $x_3$ genügt das Resultat.
-    \item Kleine Forschungsaufgabe: Finden Sie im Internet oder berechnen Sie mit einem
-          Computer \(\sqrt{2}\) als dyadischen Bruch mit einer Genauigkeit von 20 binären
-          Stellen hinter dem Punkt.
+    \item Finden Sie die ersten vier Terme $x_0$, $x_1$, $x_2$, $x_3$ unserer
+          Folge $(x_n)$ aus 8.8 (siehe auch 1.6 im Skript) für die
+          Quadratwurzel aus Zwei als exakte dyadische (=2-adische) Brüche.
+          Einen Beweis brauchen Sie nur für $x_0$, $x_1$, $x_2$ zu führen; für
+          $x_3$ genügt das Resultat.
+    \item Kleine Forschungsaufgabe: Finden Sie im Internet oder berechnen Sie
+          mit einem Computer \(\sqrt{2}\) als dyadischen Bruch mit einer
+          Genauigkeit von 20 binären Stellen hinter dem Punkt.
 \end{enumerate}
 
 \begin{proof}

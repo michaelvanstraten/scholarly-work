@@ -12,8 +12,8 @@ Zeigen oder widerlegen Sie die folgenden Aussagen:
 \begin{enumerate}
     \item Sind $f$ und $g$ injektiv, so ist auch $g \circ f$ injektiv,
     \item sind $f$ und $g$ surjektiv, so ist auch $g \circ f$ surjektiv,
-    \item sind $f$ und $g$ bijektiv, so ist auch $g \circ f$ bijektiv und ${(g \circ f
-                      )}^{−1} = f^{-1} \circ g^{-1}$,
+    \item sind $f$ und $g$ bijektiv, so ist auch $g \circ f$ bijektiv und ${(g
+          \circ f )}^{−1} = f^{-1} \circ g^{-1}$,
     \item ist $g \circ f$ injektiv, so ist auch $g$ injektiv,
     \item ist $g \circ f$ injektiv, so ist auch $f$ injektiv,
     \item ist $g \circ f$ surjektiv, so ist auch $g$ surjektiv,
@@ -23,27 +23,31 @@ Zeigen oder widerlegen Sie die folgenden Aussagen:
     $ $
 
     \begin{enumerate}
-        \item Lass $x_1,x_2 \in X$, somit is zu zeigen das, wenn $(g \circ f)(x_1) = (g \circ
-                  f)(x_2) $ dann folgt $x_1 = x_2$. Da $g$ injektiv ist gilt, wenn $y_1, y_2 \in
-                  Y$ und $g(y_1) = g(y_2)$ dann folgt $y_1 = y_2$. Es ist zu bemerken das für $f$
-              injektiv gilt, $x_1, x_2 \in X$ und $f(x_1) = f(x_2) \Rightarrow x_1 = x_2$. Da
-              $g(y_1) = g(y_2) \Rightarrow y_1 = y_2 \Rightarrow f(x_1) = f(x_2) \Rightarrow
-                  x_1 = x_2$, folgt somit, das $g \circ f$ injektiv ist. Was zu zeigen war.
+        \item Lass $x_1,x_2 \in X$, somit is zu zeigen das, wenn $(g \circ
+              f)(x_1) = (g \circ f)(x_2) $ dann folgt $x_1 = x_2$. Da $g$
+              injektiv ist gilt, wenn $y_1, y_2 \in Y$ und $g(y_1) = g(y_2)$
+              dann folgt $y_1 = y_2$. Es ist zu bemerken das für $f$ injektiv
+              gilt, $x_1, x_2 \in X$ und $f(x_1) = f(x_2) \Rightarrow x_1 =
+              x_2$. Da $g(y_1) = g(y_2) \Rightarrow y_1 = y_2 \Rightarrow
+              f(x_1) = f(x_2) \Rightarrow x_1 = x_2$, folgt somit, das $g \circ
+              f$ injektiv ist. Was zu zeigen war. \checkmark
+        \item Es ist zu zeigen das $\forall z \in Z$ folgt $\exists x \in X$
+              sodass $(g \circ f)(x) = z$. Da $g$ surjektiv folgt, $\forall z
+              \in Z$ folgt $\exists y \in X$ sodas $g(y) = z$. Da $f$ surjektiv
+              folgt, $\forall y \in Y$ folgt $\exists x \in X$ sodas $f(x) =
+              y$. Somit folgt $\forall z \in Z \Rightarrow \exists y \in Y:
+              g(y) = z \land \forall y \in Y \Rightarrow \exists x \in X: f(x)
+              = y$. $g \circ f$ ist somit surjektiv, was zu zeigen war.
               \checkmark
-        \item Es ist zu zeigen das $\forall z \in Z$ folgt $\exists x \in X$ sodass $(g \circ
-                  f)(x) = z$. Da $g$ surjektiv folgt, $\forall z \in Z$ folgt $\exists y \in X$
-              sodas $g(y) = z$. Da $f$ surjektiv folgt, $\forall y \in Y$ folgt $\exists x
-                  \in X$ sodas $f(x) = y$. Somit folgt $\forall z \in Z \Rightarrow \exists y \in
-                  Y: g(y) = z \land \forall y \in Y \Rightarrow \exists x \in X: f(x) = y$. $g
-                  \circ f$ ist somit surjektiv, was zu zeigen war. \checkmark
-        \item Angenommen $f$ und $g$ sind bijektiv. Das bedeutet, dass $f$ und $g$ sowohl
-              injektiv als auch surjektiv sind. Betrachten Sie $g \circ f$. Aufgrund der
-              Injektivität von $f$ und $g$ ist $g \circ f$ ebenfalls injektiv (wie im Beweis
-              für Punkt i gezeigt). Aufgrund der Surjektivität von $f$ und $g$ ist $g \circ
-                  f$ auch surjektiv (wie im Beweis für Punkt ii gezeigt). Daher ist $g \circ f$
-              bijektiv. Um die Gleichung ${(g \circ f )}^{-1} = f^{-1} \circ g^{-1}$ zu
-              zeigen, betrachten Sie die Zusammensetzung beider Seiten mit einem beliebigen
-              Element $x \in X$:
+        \item Angenommen $f$ und $g$ sind bijektiv. Das bedeutet, dass $f$ und
+              $g$ sowohl injektiv als auch surjektiv sind. Betrachten Sie $g
+              \circ f$. Aufgrund der Injektivität von $f$ und $g$ ist $g \circ
+              f$ ebenfalls injektiv (wie im Beweis für Punkt i gezeigt).
+              Aufgrund der Surjektivität von $f$ und $g$ ist $g \circ f$ auch
+              surjektiv (wie im Beweis für Punkt ii gezeigt). Daher ist $g
+              \circ f$ bijektiv. Um die Gleichung ${(g \circ f )}^{-1} = f^{-1}
+              \circ g^{-1}$ zu zeigen, betrachten Sie die Zusammensetzung
+              beider Seiten mit einem beliebigen Element $x \in X$:
               \begin{align*}
                   \left(f^{-1} \circ g^{-1}\right) \circ (g \circ f)(x) & = f^{-1}\left(g^{-1}(g(f(x)))\right)        \\
                                                                         & = f^{-1}\left((g^{-1} \circ g)(f(x))\right) \\
@@ -53,34 +57,39 @@ Zeigen oder widerlegen Sie die folgenden Aussagen:
               \end{align*}
               Somit ist ${(g \circ f )}^{-1} = f^{-1} \circ g^{-1}$. \checkmark
 
-        \item Angenommen, $g \circ f$ ist injektiv. Wir müssen zeigen, dass $g$ injektiv ist.
-              Seien $y_1$ und $y_2$ zwei verschiedene Elemente in $Y$. Angenommen, $g(y_1) =
-                  g(y_2)$. Da $g \circ f$ bijektiv ist, gibt es $x_1$ und $x_2$ in $X$ mit
-              $f(x_1) = y_1$ und $f(x_2) = y_2$. Dann haben wir:
+        \item Angenommen, $g \circ f$ ist injektiv. Wir müssen zeigen, dass $g$
+              injektiv ist. Seien $y_1$ und $y_2$ zwei verschiedene Elemente in
+              $Y$. Angenommen, $g(y_1) = g(y_2)$. Da $g \circ f$ bijektiv ist,
+              gibt es $x_1$ und $x_2$ in $X$ mit $f(x_1) = y_1$ und $f(x_2) =
+              y_2$. Dann haben wir:
               \[(g \circ f)(x_1) = g(f(x_1)) = g(y_1)\]
               \[(g \circ f)(x_2) = g(f(x_2)) = g(y_2)\]
-              Da $g \circ f$ injektiv ist, folgt aus $(g \circ f)(x_1) = (g \circ f)(x_2)$,
-              dass $x_1 = x_2$. Aber das bedeutet $y_1 = f(x_1) = f(x_2) = y_2$, ein
-              Widerspruch zur Annahme, dass $y_1$ und $y_2$ verschieden sind. Daher muss die
-              Annahme, dass $g(y_1) = g(y_2)$, falsch sein, und somit ist $g$ injektiv.
-              \checkmark
-        \item Der Beweis ist ähnlich zu Teil iv) Angenommen, $g \circ f$ ist injektiv. Dann
-              müssen wir zeigen, dass $f$ injektiv ist. Seien $x_1$ und $x_2$ zwei
-              verschiedene Elemente in $X$. Angenommen, $f(x_1) = f(x_2)$. Dann haben wir:
+              Da $g \circ f$ injektiv ist, folgt aus $(g \circ f)(x_1) = (g
+              \circ f)(x_2)$, dass $x_1 = x_2$. Aber das bedeutet $y_1 = f(x_1)
+              = f(x_2) = y_2$, ein Widerspruch zur Annahme, dass $y_1$ und
+              $y_2$ verschieden sind. Daher muss die Annahme, dass $g(y_1) =
+              g(y_2)$, falsch sein, und somit ist $g$ injektiv. \checkmark
+        \item Der Beweis ist ähnlich zu Teil iv) Angenommen, $g \circ f$ ist
+              injektiv. Dann müssen wir zeigen, dass $f$ injektiv ist. Seien
+              $x_1$ und $x_2$ zwei verschiedene Elemente in $X$. Angenommen,
+              $f(x_1) = f(x_2)$. Dann haben wir:
               \[(g \circ f)(x_1) = g(f(x_1)) = g(f(x_2)) = (g \circ f)(x_2)\]
-              Da $g \circ f$ injektiv ist, folgt aus $(g \circ f)(x_1) = (g \circ f)(x_2)$,
-              dass $x_1 = x_2$, was der Annahme widerspricht. Daher muss die Annahme, dass
-              $f(x_1) = f(x_2)$, falsch sein, und somit ist $f$ injektiv. \checkmark
-        \item Angenommen, $g \circ f$ ist surjektiv. Wir wollen zeigen, dass $g$ surjektiv
-              ist. Sei $z \in Z$ beliebig. Da $g \circ f$ surjektiv ist, existiert ein $x \in
-                  X$ mit $g \circ f(x) = z$. Das bedeutet, $g(f(x)) = z$. Somit existiert ein $y
-                  \in Y$ mit $f(x) = y$. Somit haben wir $g(y) = z$, was die Surjektivität von
+              Da $g \circ f$ injektiv ist, folgt aus $(g \circ f)(x_1) = (g
+              \circ f)(x_2)$, dass $x_1 = x_2$, was der Annahme widerspricht.
+              Daher muss die Annahme, dass $f(x_1) = f(x_2)$, falsch sein, und
+              somit ist $f$ injektiv. \checkmark
+        \item Angenommen, $g \circ f$ ist surjektiv. Wir wollen zeigen, dass
+              $g$ surjektiv ist. Sei $z \in Z$ beliebig. Da $g \circ f$
+              surjektiv ist, existiert ein $x \in X$ mit $g \circ f(x) = z$.
+              Das bedeutet, $g(f(x)) = z$. Somit existiert ein $y \in Y$ mit
+              $f(x) = y$. Somit haben wir $g(y) = z$, was die Surjektivität von
               $g$ zeigt. \checkmark
-        \item Angenommen, $g \circ f$ ist surjektiv. Wir wollen zeigen, dass $f$ surjektiv
-              ist. Sei $y \in Y$ beliebig. Da $g$ surjektiv ist, existiert für jedes $z \in
-                  Z$ ein $y \in Y$ mit $g(y) = z$. Da $g \circ f$ surjektiv ist, existiert ein $x
-                  \in X$ mit $g \circ f(x) = z$. Das bedeutet, $g(f(x)) = z$, und somit haben wir
-              $g(y) = z$. Das zeigt, dass $y$ die Funktion $f(x)$ erreicht, was die
+        \item Angenommen, $g \circ f$ ist surjektiv. Wir wollen zeigen, dass
+              $f$ surjektiv ist. Sei $y \in Y$ beliebig. Da $g$ surjektiv ist,
+              existiert für jedes $z \in Z$ ein $y \in Y$ mit $g(y) = z$. Da $g
+              \circ f$ surjektiv ist, existiert ein $x \in X$ mit $g \circ f(x)
+              = z$. Das bedeutet, $g(f(x)) = z$, und somit haben wir $g(y) =
+              z$. Das zeigt, dass $y$ die Funktion $f(x)$ erreicht, was die
               Surjektivität von $f$ zeigt. \checkmark
     \end{enumerate}
 \end{proof}
@@ -91,16 +100,16 @@ Sei $B := \{0, 1\}$. Dadurch ist für ein $n \in \mathbb{N}$ die Menge der Bitst
 \[B^n = \bigtimes_{i=0}^{n} B = \underbrace{B \times \ldots \times B}_{n-\text{mal}}.\]
 Die Menge der Bitstrings deren Länge kleiner als $n$ ist definieren wir durch
 \[B^{<n} = \bigcup_{i=1}^{n-1} B_i = B \cup B^2 \cup \ldots \cup B^{n-1}.\]
-Um alle möglichen Daten mit $n$ Bits verlustfrei zu komprimieren, benötigte man
-nun eine Kompressionsabbildung $C : B^n \rightarrow B^{<n}$ und eine
-Dekompressionsabbildung $D : B^{<n} \rightarrow B^n$ mit der Eigenschaft
+Um alle möglichen Daten mit $n$ Bits verlustfrei zu komprimieren, benötigte
+  man nun eine Kompressionsabbildung $C : B^n \rightarrow B^{<n}$ und eine
+  Dekompressionsabbildung $D : B^{<n} \rightarrow B^n$ mit der Eigenschaft
 \[D \circ C = \text{Id}_{B^n}.\]
-Nutzen Sie die folgenden Schritte um zu zeigen, dass ein solches Paar $(C, D)$
-nicht existieren kann:
+Nutzen Sie die folgenden Schritte um zu zeigen, dass ein solches Paar $(C,
+  D)$ nicht existieren kann:
 \begin{enumerate}
     \item Berechnen Sie die Kardinalitäten $|B^n|$ und $|B^{<n}|$.
-    \item Zeigen Sie, dass $D \circ C$ injektiv ist und folgern Sie, dass damit auch $C$
-          selbst injektiv sein muss.
+    \item Zeigen Sie, dass $D \circ C$ injektiv ist und folgern Sie, dass damit
+          auch $C$ selbst injektiv sein muss.
     \item Zeigen Sie, dass $C$ nicht injektiv sein kann.
 \end{enumerate}
 
@@ -108,23 +117,25 @@ nicht existieren kann:
     $ $
 
     \begin{enumerate}
-        \item Kardinalität von $B^n$: \[
+        \item Kardinalität von $B^n$:
+              \[
                   \mid B^n \mid = \underbrace{\mid B \mid \cdot \ldots \cdot \mid B \mid }_{n - \text{mal}} = {|B|}^n = 2^n,
               \]
               Kardinalität von $B^{<n}$: \[
                   \mid B^{<n} \mid = \sum_{i=1}^{n-1} \mid B^i \mid = \sum_{i=1}^{n-1} 2^i = 2^n - 1.
               \]
         \item Für die Abbildungen $Id_{B^n}$ gilt durch die Definition der
-              Identitätsabbildungen das, $\forall b \in B^n: Id_{B^n}(x) = x$. Es folgt somit
-              $\forall x_1, x_2 \in B^n \land Id_{B^n}(x_1) = Id_{B^n}(x_2)$ folgt $x_1 =
-                  x_2$. Somit muss $D \circ C$ injektiv sein. Wenn $C$ nicht injektiv wäre folgte
-              $\exists b_1, b_2 \in B: C(b_1) = C(b_2) \land x_1 \ne x_2$. Dies ist
-              allerdings im wiederspruch mit der injektivät von $D \circ C$ da $\exists b_1,
-                  b_2 \in B: (D \circ C)(b_1) = (D \circ C)(b_2) \land x_1 \ne x_2$ \item Die
-              Abbildungen $C$ bildet von einer Menge mit Tupeln von Länge $n$ zu einer Menge
-              mit Tupeln mit einer maximalen Länge $n-1$ ab. Somit müssen mindestens zwei
-              Elemente aus $B^n$ auf dasselbe element in $B^{<n}$ abbilden. Somit kann die
-              Abbildungen $C$ nicht injektiv sein, was zu zeigen war. \checkmark
+              Identitätsabbildungen das, $\forall b \in B^n: Id_{B^n}(x) = x$.
+              Es folgt somit $\forall x_1, x_2 \in B^n \land Id_{B^n}(x_1) =
+              Id_{B^n}(x_2)$ folgt $x_1 = x_2$. Somit muss $D \circ C$ injektiv
+              sein. Wenn $C$ nicht injektiv wäre folgte $\exists b_1, b_2 \in
+              B: C(b_1) = C(b_2) \land x_1 \ne x_2$. Dies ist allerdings im
+              wiederspruch mit der injektivät von $D \circ C$ da $\exists b_1,
+              b_2 \in B: (D \circ C)(b_1) = (D \circ C)(b_2) \land x_1 \ne x_2$ \item Die Abbildungen $C$ bildet von einer Menge mit Tupeln von Länge $n$ zu
+       einer Menge mit Tupeln mit einer maximalen Länge $n-1$ ab. Somit müssen
+       mindestens zwei Elemente aus $B^n$ auf dasselbe element in $B^{<n}$
+       abbilden. Somit kann die Abbildungen $C$ nicht injektiv sein, was zu
+       zeigen war. \checkmark
     \end{enumerate}
 \end{proof}
 
@@ -142,22 +153,24 @@ Sei $G := \{e, a, b, c\}$, $|G| = 4$ und $(G, \cdot)$ eine Gruppe mit neutralem 
     $ $
 
     \begin{enumerate}
-        \item Da $e$ eindeutig bestimmt ist, und seine Anwendung kommutativ, kann hier
-              zwischen zwei fällen unterschieden werden. Entweder ist $b$ das inverse element
-              zu $a$ und umgekehrt, in diesem Fall ist $a \cdot b$ und $b \cdot c$ gleich $e$
-              und somit in $\{e,c\}$. Oder $a \cdot b$ und $b \cdot a$ sind nicht gleich dem
-              neutralen Element und müssen somit laut Gruppen Axiomen ein weiteres Element
-              der Gruppe bilden. In diesem Fall ist sind die einzigen Elemente, welche nicht
-              dem neutralen Element entsprechen das Element $c$. Das Element $c$ ist in der
-              Menge $\{e, c\}$ und somit ist auch in diesem fall das Resultat der Operation
-              in der Menge $\{e,c\}$. \checkmark
-        \item Wie aus i) bereits bekannt ist entweder $b$ das inverse Element zu $a$ und
-              umgekehrt oder $a \cdot b$ und $b \cdot c$ resultieren in dem Element $c$. In
-              beiden Fällen ist die Operation kommutativ und somit ist $a \cdot b$, in dieser
-              Gruppe, immer gleich $b \cdot a$. \checkmark \item Aus ii) wissen wir bereits
-              das die Operation über die Elemente $a,b,e$ kommutativ ist. Es ist noch zu
-              beweisen, dass die Operation $x \in G$ $c \cdot x$ kommutativ ist. [no time
-                      left] ...
+        \item Da $e$ eindeutig bestimmt ist, und seine Anwendung kommutativ,
+              kann hier zwischen zwei fällen unterschieden werden. Entweder ist
+              $b$ das inverse element zu $a$ und umgekehrt, in diesem Fall ist
+              $a \cdot b$ und $b \cdot c$ gleich $e$ und somit in $\{e,c\}$.
+              Oder $a \cdot b$ und $b \cdot a$ sind nicht gleich dem neutralen
+              Element und müssen somit laut Gruppen Axiomen ein weiteres
+              Element der Gruppe bilden. In diesem Fall ist sind die einzigen
+              Elemente, welche nicht dem neutralen Element entsprechen das
+              Element $c$. Das Element $c$ ist in der Menge $\{e, c\}$ und
+              somit ist auch in diesem fall das Resultat der Operation in der
+              Menge $\{e,c\}$. \checkmark
+        \item Wie aus i) bereits bekannt ist entweder $b$ das inverse Element
+              zu $a$ und umgekehrt oder $a \cdot b$ und $b \cdot c$ resultieren
+              in dem Element $c$. In beiden Fällen ist die Operation kommutativ
+              und somit ist $a \cdot b$, in dieser Gruppe, immer gleich $b
+              \cdot a$. \checkmark \item Aus ii) wissen wir bereits das die Operation über die Elemente $a,b,e$
+       kommutativ ist. Es ist noch zu beweisen, dass die Operation $x \in G$ $c
+       \cdot x$ kommutativ ist. [no time left] ...
     \end{enumerate}
 \end{proof}
 \end{problem}
@@ -166,14 +179,15 @@ Sei $G := \{e, a, b, c\}$, $|G| = 4$ und $(G, \cdot)$ eine Gruppe mit neutralem 
 Sei $(G, \cdot)$ eine Gruppe mit neutralem Element $e \in G$. Zeigen Sie, dass
 \begin{enumerate}
     \item Falls $g \cdot g = e$ für alle $g \in G$, dann ist $G$ abelsch.
-    \item Für $a \in G$ ist $(G, \circ_a)$ ebenfalls eine Gruppe, wobei $x \circ_a y := x
-              \cdot a \cdot y$ für alle $x, y \in G$.
+    \item Für $a \in G$ ist $(G, \circ_a)$ ebenfalls eine Gruppe, wobei $x
+          \circ_a y := x \cdot a \cdot y$ für alle $x, y \in G$.
 \end{enumerate}
 \begin{proof}
     $ $
 
     \begin{enumerate}
-        \item Aus $g \cdot g = e$ für alle $g \in G$ folgt: \begin{align*}
+        \item Aus $g \cdot g = e$ für alle $g \in G$ folgt:
+              \begin{align*}
                    & (x \cdot y) \cdot (x \cdot y) = e \tag{$x \cdot y \in G \Longrightarrow \exists g \in G: g \cdot g = e$} \\
                    & \Longrightarrow x \cdot (x \cdot y) \cdot (x \cdot y) = x \cdot e                                        \\
                    & \Longrightarrow x \cdot (x \cdot y) \cdot (x \cdot y) = x                                                \\
@@ -187,7 +201,8 @@ Sei $(G, \cdot)$ eine Gruppe mit neutralem Element $e \in G$. Zeigen Sie, dass
               \end{align*}
               somit ist $(G, \cdot)$ abelsch. \checkmark
 
-        \item Sei $a \in G$. Wir wollen zeigen, dass $(G, \circ_a)$ eine Gruppe ist.
+        \item Sei $a \in G$. Wir wollen zeigen, dass $(G, \circ_a)$ eine Gruppe
+              ist.
               \begin{enumerate}
                   \item \textbf{Abgeschlossenheit:} Für alle $x, y \in G$ ist $x \circ_a y = x \cdot a \cdot y \in G$, da $G$ unter der Verknüpfung $\cdot$ abgeschlossen ist.
 
