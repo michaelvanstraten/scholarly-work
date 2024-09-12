@@ -1,3 +1,3 @@
 [submodule "Einführung in das wissenschaftliche Rechnen"]
-	path = modules/Einfuehrung in das wissenschaftliche Rechnen
+	path = modules/ewr
 	url = https://github.com/michaelvanstraten/ewr-so-se-2024.git
