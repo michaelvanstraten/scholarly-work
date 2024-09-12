@@ -1,8 +1,11 @@
 {
   description = "Deterministic LaTeX compilation with Nix";
 
-  inputs.flake-utils.url = "github:numtide/flake-utils";
-  inputs.git-hooks.url = "github:michaelvanstraten/git-hooks.nix";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixpkgs-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
+    git-hooks.url = "github:cachix/git-hooks.nix";
+  };
 
   outputs =
     {
@@ -46,20 +49,18 @@
           git-hooks = git-hooks.lib.${system}.run {
             src = ./.;
             hooks = {
-              # nix checks
-              nixfmt = {
-                enable = true;
-                package = pkgs.nixfmt-rfc-style;
-              };
+              nixfmt-rfc-style.enable = true;
               statix.enable = true;
-              # LaTeX checks
               chktex.enable = false;
               latexindent.enable = true;
               lacheck.enable = false;
-              # Other checks
               actionlint.enable = true;
-              # markdownlint.enable = true;
-              prettier.enable = true;
+              prettier = {
+                enable = true;
+                settings = {
+                  prose-wrap = "always";
+                };
+              };
               trim-trailing-whitespace.enable = true;
             };
           };
