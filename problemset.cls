@@ -18,6 +18,7 @@
 \RequirePackage[top=2.5cm, bottom=2.5cm, outer=2.0cm, inner=2.0cm, heightrounded, marginparwidth=1cm, marginparsep=0.5cm]{geometry}
 \RequirePackage[hidelinks, bookmarksopen=true]{hyperref}
 \RequirePackage[open]{bookmark}
+\RequirePackage[user,abspage]{zref}
 
 % Set the label format for the first level of enumerate
 \setlist[enumerate, 1]{label=\roman*)}
@@ -130,19 +131,38 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{.5em}
 
+% Initialize an external file for page ranges
+\newwrite\splitinfofile
+\immediate\openout\splitinfofile=\jobname.splitinfo
+
+% Ensure the external file is closed at the end
+\AtEndDocument{%
+    \immediate\closeout\splitinfofile
+}
+
 % Create custom 'problem' environment and counter
 \newcounter{problem}
 \newenvironment{problem}[2][]{
     \stepcounter{problem}
     \pdfbookmark[section]{Aufgabe~\theproblem}{problem-\theproblem}
     \par\noindent\textbf{Aufgabe~\theproblem:}~#1\hfill[\textbf{#2}]\par
-    \fancyhead[R]{
+    \fancyhead[R]{%
         \@author \\
         \textit{Aufgabe~\theproblem}
     }
+    % Capture the starting page
+    \zlabel{problem-\theproblem-start}
 }{
+    % Capture the ending page
+    \zlabel{problem-\theproblem-end}
+    % Write the page range to the external file
+    \immediate\write\splitinfofile{%
+        \theproblem \space
+        \zref@extract{problem-\theproblem-start}{abspage} \space
+        \zref@extract{problem-\theproblem-end}{abspage}%
+    }
     \pagebreak
-    \fancyhead[R]{
+    \fancyhead[R]{%
         \@author \\
     }
 }
