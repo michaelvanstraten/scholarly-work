@@ -10,10 +10,13 @@
       scheme-basic
       # Additional packages
       babel-german
+      calrsfs # ana-i/problemset-13
       enumitem
       etoolbox
       isodate
       mathtools
+      pgfplots # ana-i/problemset-10
+      rsfs # ana-i/problemset-13
       substr
       thmtools
       xpatch

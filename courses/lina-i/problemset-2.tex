@@ -1,20 +1,16 @@
-\documentclass{exam}
+\documentclass{problemset}
 
-\usepackage{amssymb, amsmath, amsthm}
-\usepackage[german]{babel}
-\usepackage{hyperref}
 \usepackage{tabularx}
 
-\title{Lineare Algebra und analytische Geometrie I - 2. Übungsblatt}
 \author{Michael van Straten}
-\date{\today}
 
-\newtheorem{definition}{Definition}
+\Lecture{Lineare Algebra und Analytische Geometrie I*}
+\Problemset{2}
 
 \begin{document}
 \maketitle
 
-\section*{Aufgabe 1:}
+\begin{problem}{UNKNOWN}
 \begin{enumerate}
     \item [i)] Es sei $A := \{\emptyset, \pi\}$, $B := \mathcal{P}(A)$ und $C := \mathcal{P}(B)$. Entscheiden Sie den Wahrheitsgehalt von jeder der folgenden Aussagen. \newline
           \renewcommand{\arraystretch}{1.5}
@@ -28,11 +24,9 @@
               \item [a)] $\mathcal{P}(M) \cap \mathcal{P}(N) \subseteq \mathcal{P}(M \cap N)$,
               \item [b)] $\mathcal{P}(M) \cup \mathcal{P}(N) \subseteq \mathcal{P}(M \cup N)$.
           \end{enumerate}
-          \begin{definition}
-              \begin{displaymath}
-                  \mathcal{P}(M) := \{X\,|\,X \subseteq M\}
-              \end{displaymath}
-          \end{definition}
+          \begin{displaymath}
+              \mathcal{P}(M) := \{X\,|\,X \subseteq M\}
+          \end{displaymath}
 
           \begin{proof}
               $\mathcal{P}(M) \cap \mathcal{P}(N) \subseteq \mathcal{P}(M \cap N)$
@@ -57,10 +51,9 @@
           \mathcal{P}(M \cap N)$, gilt sogar $\mathcal{P}(M) \cap
           \mathcal{P}(N) = \mathcal{P}(M \cap N)$.
 \end{enumerate}
+\end{problem}
 
-\pagebreak
-
-\section*{Aufgabe 2:}
+\begin{problem}{UNKNOWN}
 Sei $M$ eine Menge und $R$ eine reflexive, symmetrische und antisymmetrische Relation auf $M$. Zeigen Sie, dass \[
     R = Id_M := \{(x,y) \in M \times M\,|\,x=y \}.
 \]
@@ -78,10 +71,9 @@ Sei $M$ eine Menge und $R$ eine reflexive, symmetrische und antisymmetrische Rel
               Somit ist $R$ antisymmetrische.
     \end{enumerate}
 \end{proof}
+\end{problem}
 
-\pagebreak
-
-\section*{Aufgabe 3:}
+\begin{problem}{UNKNOWN}
 Sei $M$ eine Menge und $\le_{M}$ eine partielle Ordnung auf $M$. Zeigen Sie, dass \[
     \le_{M^2} := \left\{((x_1,x_2), (y_1,y_2))\in M^2 \times M^2\ \begin{array}{|ccc}
         x_1 \neq y_1 \text{ und } x_1 \le_{M} y_1 \\
@@ -104,10 +96,9 @@ Sei $M$ eine Menge und $\le_{M}$ eine partielle Ordnung auf $M$. Zeigen Sie, das
         \item [c)] \underline{transitive}: Für alle $x,y,z \in Q$ gilt, wenn $x \sim y$ und $y \sim z$ $\Rightarrow x \sim z$ \newline
     \end{enumerate}
 \end{proof}
+\end{problem}
 
-\pagebreak
-
-\section*{Aufgabe 4:}
+\begin{problem}{UNKNOWN}
 Wir betrachten die folgende Relation $\sim$ auf $Q := \mathbb{Z} \times \mathbb{Z}\setminus\{0\}$ \[
     \sim := \{((n_1,d_1),(n_2,d_2)) \in Q \times Q\ |\ n_1d_2 = n_2d_1\}.
 \]
@@ -193,5 +184,6 @@ Beweise oder widerlegen Sie die folgenden Aussagen:
               Da $\sim$ reflexive, symmetrisch und transitive ist, ist sie eine Äquivalenzrelation.
     \end{enumerate}
 \end{proof}
+\end{problem}
 
 \end{document}
