@@ -21,6 +21,10 @@ various courses throughout my Bachelor of Science in Mathematics degree.
 - **[Lineare Algebra II (LINA II)](cources/lina-ii/)**: Continuation of Linear
   Algebra I, with more advanced topics such as eigenvalues, eigenvectors, and
   diagonalization.
+- **[Lineare Algebra II (LINA II)](cources/lina-ii/)**: Continuation of Linear
+  Algebra I, with more advanced topics such as eigenvalues, eigenvectors, and
+  diagonalization.
+- **[Numerische Lineare Algebra](cources/nla)**
 
 Each directory contains problem sets and assignments related to the
 corresponding course. The file names have been standardized to a Unix-friendly

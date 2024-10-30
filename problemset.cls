@@ -121,8 +121,11 @@
     {.}{\vert}
     {_{#2}}
     {#1}
-
-
+\DeclarePairedDelimiterXPP{\norm}[1]
+    {}
+    {\lVert}{\rVert}
+    {}
+    {\ifblank{#1}{\anyarg}{#1}}
 
 \DeclareMathOperator{\Eig}{Eig}
 \DeclareMathOperator{\Span}{Span}

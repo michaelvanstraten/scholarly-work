@@ -1,0 +1,111 @@
+\documentclass{problemset}
+
+\Lecture{Mathematik}
+\Problemset{1}
+\DoOn{28. Oktober 2024}
+\author{Michael van Straten}
+
+\setlist[enumerate, 1]{label=(\alph*)}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{problem}{3}
+
+\begin{problem}{4 Punkte}
+\begin{enumerate}
+    \item Gegeben sei die Matrix
+          \begin{equation*}
+              A =
+              \begin{bmatrix}
+                  7.2 & 0.4 \\
+                  4.6 & 7.2 \\
+              \end{bmatrix}.
+          \end{equation*}
+          Bestimmen Sie die Spektralnorm von \( A \).
+
+    \item Bestimmen Sie die Spektralnorm einer orthogonalen Matrix \(Q \in
+          \mathbb{R}^{n \times n}\).
+\end{enumerate}
+\end{problem}
+
+\begin{problem}{6 Punkte}
+Zeigen Sie: Für die Normen \( \| \cdot \|_X = \| \cdot \|_1 \) auf \(
+\mathbb{R}^n \) und \( \| \cdot \|_Y = \| \cdot \|_1 \) auf \( \mathbb{R}^m \)
+gilt für Matrizen \( A \in \mathbb{R}^{m \times n} \):
+\begin{equation*}
+    \norm{A}_1 \coloneq \sup_{\norm{x}_1 = 1} \norm{A x}_1
+    = \max_{j=1, \ldots, n} \sum_{i=1}^{m} \abs{a_{ij}}.
+\end{equation*}
+Diese Norm wird daher für Matrizen auch Spaltensummennorm genannt.
+\end{problem}
+
+\begin{problem}{10 Punkte}
+Sei \( A \in \mathbb{R}^{m \times n} \) eine Matrix, \( \| \cdot \|_X \) eine
+Norm auf \( \mathbb{R}^n \) und \( \| \cdot \|_Y \) eine Norm auf \(
+\mathbb{R}^m \). Zeigen Sie, dass
+
+\begin{equation*}
+    \sup_{\norm{x}_X = 1} \norm{A x}_Y
+    = \sup_{\norm{x}_X \leq 1} \norm{A x}_Y
+    = \sup_{x \in \mathbb{R}^n \setminus \{0\}} \frac{\norm{A x}_Y}{\norm{x}_X}
+    = \inf \{ c > 0 : \norm{A x}_Y \leq c \norm{x}_X \, \forall x \in \mathbb{R}^n \}.
+\end{equation*}
+Damit können alle vier Ausdrücke als Definition von \( \norm{A}_{Y,X} \)
+verwendet werden.
+
+\begin{proof}
+    Zunächst nehmen wir an, dass
+    \begin{equation*}
+        \norm{A}_{X, Y} \ge \sup_{\norm{x}_X \le 1} \norm{A x}_Y.
+    \end{equation*}
+    Da \(\set{x : \norm{x}_X = 1} \subseteq \set{x : \norm{x}_X \le 1}\), folgt daraus
+    \begin{equation*}
+        \norm{A}_{X, Y} \le \sup_{\norm{x}_X \le 1} \norm{A x}_Y.
+    \end{equation*}
+    Somit müssen diese Terme nach dem Squeeze-Theorem gleich sein:
+    \begin{equation*}
+        \norm{A}_{X, Y} = \sup_{\norm{x}_X \le 1} \norm{A x}_Y.
+    \end{equation*}
+
+    Nun nehmen wir an,
+    \begin{equation*}
+        \norm{A}_{X, Y} \le \sup_{\norm{x}_X \le 1} \norm{A x}_Y,
+    \end{equation*}
+    und sei \(\norm{\tilde{x}}_X < 1\). Nach Aufgabe 1.1 gilt dann:
+    \begin{equation}\label{1}
+        \norm{A \tilde{x}}_Y \le \norm{A}_{X, Y} \norm{\tilde{x}}_X.
+    \end{equation}
+
+    Da \(\norm{\tilde{x}}_X < 1\), folgt für alle \(\tilde{x}\) dieser Form,
+    dass \(\norm{A}_{X, Y} \ge \norm{A \tilde{x}}_Y\) gilt. Daraus folgt erneut
+    die Gleichheit der beiden Terme nach dem Squeeze-Theorem.
+
+    Setzen wir nun \(A \neq 0\), \(a = \norm{A}_{X,Y}\), und
+    \begin{equation*}
+        b = \inf \set{c > 0 : \norm{A x}_Y \leq c \norm{x}_X \, \forall x \in \mathbb{R}^n}.
+    \end{equation*}
+    Angenommen \(a \le b\), so folgt aus der positiven Definitheit von
+    \(\norm{\cdot}_Y\), dass \(a > 0\) ist. Da \eqref{1} für \(a\) gilt,
+    erhalten wir
+    \begin{equation*}
+        a \le b \le a \Rightarrow a = b.
+    \end{equation*}
+
+    Angenommen, \(a \ge b\). Da \(a > 0\) und \eqref{1} für \(a\) gilt, folgt
+    wiederum
+    \begin{equation*}
+        b \ge a \Rightarrow a = b.
+    \end{equation*}
+
+    Schließlich folgt die Gleichheit von
+    \begin{equation*}
+        \sup_{\norm{x}_X \leq 1} \norm{A x}_Y \quad
+        \text{und} \quad \sup_{x \in \mathbb{R}^n \setminus \{0\}} \frac{\norm{A x}_Y}{\norm{x}_X}
+    \end{equation*}
+    direkt aus der Gleichheit der zugrunde liegenden Mengen.
+\end{proof}
+\end{problem}
+
+\end{document}
