@@ -131,13 +131,19 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{.5em}
 
-% Initialize an external file for page ranges
-\newwrite\splitinfofile
-\immediate\openout\splitinfofile=\jobname.splitinfo
+% Initialize an external file storing infos about this problemset
+\newwrite\psetmeta
+\immediate\openout\psetmeta=\jobname.psetmeta
+
+\AtBeginDocument{%
+    \immediate\write\psetmeta{%
+        \@Problemset
+    }
+}
 
 % Ensure the external file is closed at the end
 \AtEndDocument{%
-    \immediate\closeout\splitinfofile
+    \immediate\closeout\psetmeta
 }
 
 % Create custom 'problem' environment and counter
@@ -156,9 +162,9 @@
     % Capture the ending page
     \zlabel{problem-\theproblem-end}
     % Write the page range to the external file
-    \immediate\write\splitinfofile{%
-        \theproblem \space
-        \zref@extract{problem-\theproblem-start}{abspage} \space
+    \immediate\write\psetmeta{%
+        \theproblem\space%
+        \zref@extract{problem-\theproblem-start}{abspage}\space%
         \zref@extract{problem-\theproblem-end}{abspage}%
     }
     \pagebreak
