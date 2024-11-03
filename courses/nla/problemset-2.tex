@@ -1,0 +1,200 @@
+\documentclass{problemset}
+
+\author{Michael van Straten}
+\Lecture{Numerische Lineare Algebra}
+\Problemset{2}
+\DoOn{4. November 2024}
+
+\setlist[enumerate, 1]{label=(\alph*)}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{problem}{3}
+
+\begin{problem}{7 Punkte}
+Gegeben seien
+
+\[
+    A =
+    \begin{bmatrix}
+        2 & 2  & 1  & 2 \\
+        1 & 2  & 0  & 2 \\
+        6 & 6  & 1  & 8 \\
+        7 & 10 & 10 & 5 \\
+    \end{bmatrix}, \quad
+    b_1 =
+    \begin{bmatrix}
+        3  \\
+        21 \\
+        -1 \\
+        41 \\
+    \end{bmatrix}, \quad
+    b_2 =
+    \begin{bmatrix}
+        2  \\
+        3  \\
+        -6 \\
+        3  \\
+    \end{bmatrix}.
+\]
+
+Bestimmen Sie mithilfe der LR-Zerlegung (ohne Pivotisierung) die Lösungen der
+Gleichungssysteme \(Ax = b_i\) für \(i = 1, 2\). Wie verändert sich der Aufwand
+der Rechenoperationen zum Lösen des zweiten Systems, wenn das erste System
+bereits mit der LR-Zerlegung gelöst wurde?
+\end{problem}
+
+\begin{problem}{6 Punkte}
+Gegeben sei die Matrix
+
+\[
+    A = \begin{bmatrix} \tilde{A} & v \\ u^T & a \end{bmatrix} \in \mathbb{R}^{(n+1) \times (n+1)},
+\]
+
+wobei \(\tilde{A} \in \mathbb{R}^{n \times n}\) eine reguläre Matrix ist, deren
+LR-Zerlegung bekannt ist, und \(u, v \in \mathbb{R}^n\) sowie \(a \in
+\mathbb{R}\).
+\begin{enumerate}
+    \item Bestimmen Sie eine LR-Zerlegung von \(A\) mithilfe der LR-Zerlegung
+          von \(\tilde{A}\).
+    \item Zeigen Sie: \(A\) ist regulär \(\iff a - u^T \tilde{A}^{-1} v \neq
+          0\).
+\end{enumerate}
+\begin{proof}
+    \leavevmode
+    \begin{enumerate}
+        \item \label{problem:5:a} Aus der Blockmatrix-Multiplikation und der
+              Invertierbarkeit von \( \tilde{A} \) ergibt sich:
+              \begin{align*}
+                  A & = \begin{bmatrix}
+                            1                  & 0 \\
+                            u^T \tilde{A}^{-1} & 1
+                        \end{bmatrix}
+                  \begin{bmatrix}
+                      \tilde{A} & v                        \\
+                      0         & a - u^T \tilde{A}^{-1} v
+                  \end{bmatrix}                  \\
+                    & = \begin{bmatrix}
+                            1                  & 0 \\
+                            u^T \tilde{A}^{-1} & 1
+                        \end{bmatrix}
+                  \begin{bmatrix}
+                      \tilde{A} & 0 \\
+                      0         & 1
+                  \end{bmatrix}
+                  \begin{bmatrix}
+                      1 & \tilde{A}^{-1} v         \\
+                      0 & a - u^T \tilde{A}^{-1} v
+                  \end{bmatrix}                          \\
+                    & = \begin{bmatrix}
+                            1                  & 0 \\
+                            u^T \tilde{A}^{-1} & 1
+                        \end{bmatrix}
+                  \begin{bmatrix}
+                      L R & 0 \\
+                      0   & 1
+                  \end{bmatrix}
+                  \begin{bmatrix}
+                      1 & \tilde{A}^{-1} v         \\
+                      0 & a - u^T \tilde{A}^{-1} v
+                  \end{bmatrix}                          \\
+                    & = \begin{bmatrix}
+                            1                  & 0 \\
+                            u^T \tilde{A}^{-1} & 1
+                        \end{bmatrix}
+                  \begin{bmatrix}
+                      L & 0 \\
+                      0 & 1
+                  \end{bmatrix}
+                  \begin{bmatrix}
+                      R & 0 \\
+                      0 & 1
+                  \end{bmatrix}
+                  \begin{bmatrix}
+                      1 & \tilde{A}^{-1} v         \\
+                      0 & a - u^T \tilde{A}^{-1} v
+                  \end{bmatrix}                          \\
+                    & = \underbrace{\begin{bmatrix}
+                                            L                    & 0 \\
+                                            u^T \tilde{A}^{-1} L & 1
+                                        \end{bmatrix}}_{\eqcolon \tilde{L}}
+                  \underbrace{
+                      \begin{bmatrix}
+                          R & R \tilde{A}^{-1} v       \\
+                          0 & a - u^T \tilde{A}^{-1} v
+                      \end{bmatrix}}_{\eqcolon \tilde{R}}.
+              \end{align*}
+
+              Da \( L \) eine untere Dreiecksmatrix und \( R \) eine obere
+              Dreiecksmatrix sind, sind auch \( \tilde{L} \) und \( \tilde{R}
+              \) entsprechend untere und obere Dreiecksmatrizen.
+
+        \item Wir beweisen nun die Aussage in beiden Richtungen:
+              \begin{itemize}
+                  \item[\(\Rightarrow\)]
+                        Angenommen, \( A \) ist regulär und \( A = \tilde{L}
+                        \tilde{R} \), wobei \( \tilde{L} \) und \( \tilde{R} \)
+                        wie in \ref{problem:5:a} definiert sind. Dann müssen
+                        auch \( \tilde{L} \) und \( \tilde{R} \) in \(
+                        \mathbb{R}^{(n+1) \times (n+1)} \) regulär sein. Da \(
+                        R \) regulär und eine obere Dreiecksmatrix ist, folgt:
+                        \begin{equation*}
+                            \prod_{i=1}^n (\tilde{R})_{ii} \neq 0,
+                        \end{equation*}
+                        was impliziert, dass \( a - u^T \tilde{A}^{-1} v \neq 0 \).
+
+                  \item[\(\Leftarrow\)]
+                        Angenommen, \( a - u^T \tilde{A}^{-1} v \neq 0 \). Da
+                        \( \tilde{A} \) regulär ist, folgt, dass \( R \)
+                        regulär ist und somit auch \( \tilde{R} \) regulär sein
+                        muss. Die Regulärität von \( \tilde{L} \) und damit auch von \(
+                        A \) folgt daraus, dass die Diagonalelemente in \(
+                        \tilde{L} \)
+                        alle den Wert 1 haben.
+              \end{itemize}
+    \end{enumerate}
+\end{proof}
+\end{problem}
+
+\begin{problem}{7 Punkte}
+Gegeben sei die Tridiagonalmatrix
+
+\[
+    A =
+    \begin{bmatrix}
+        a_1    & c_1    & 0      & \dots   & 0       \\
+        b_1    & a_2    & c_2    & \ddots  & \vdots  \\
+        0      & b_2    & a_3    & \ddots  & 0       \\
+        \vdots & \ddots & \ddots & \ddots  & c_{n-1} \\
+        0      & \dots  & 0      & b_{n-1} & a_n     \\
+    \end{bmatrix} \in \mathbb{R}^{n \times n}.
+\]
+
+Leiten Sie für den Fall, dass die LR-Zerlegung \(A = LR\) mit
+
+\[
+    L =
+    \begin{bmatrix}
+        1       & 0      & \dots   & 0      \\
+        d_1     & 1      & \ddots  & \vdots \\
+        \vdots  & \ddots & \ddots  & 0      \\
+        d_{n-1} & \dots  & d_{n-2} & 1      \\
+    \end{bmatrix}, \quad
+    R =
+    \begin{bmatrix}
+        e_1    & f_1    & 0      & \dots   & 0       \\
+        0      & e_2    & f_2    & \ddots  & \vdots  \\
+        \vdots & \ddots & \ddots & \ddots  & 0       \\
+        0      & \dots  & 0      & e_{n-1} & f_{n-1} \\
+        0      & \dots  & \dots  & 0       & e_n     \\
+    \end{bmatrix}
+\]
+
+existiert, Rekursionsformeln für \(e_i\) (\(i = 1, \ldots, n\)) und \(d_i\),
+\(f_i\) (\(i = 1, \ldots, n-1\)) her. Welchen Aufwand hat die Berechnung der
+LR-Zerlegung mittels dieser Rekursion?
+\end{problem}
+
+\end{document}
