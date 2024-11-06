@@ -11,7 +11,7 @@ various courses throughout my Bachelor of Science in Mathematics degree.
   course covering topics in differential and integral calculus.
 - **[Analysis II](courses/ana-ii/)**: Continuation of Analysis I, with a deeper
   focus on integration techniques and infinite series.
-- **[Einführung in das wissenschaftliche Rechnen (EWR)](courses/ewr/)**:
+- **[Einführung in das wissenschaftliche Rechnen (not tracked here)](https://github.com/michaelvanstraten/ewr-so-se-2024)**:
   Introduction to scientific computing, focusing on numerical methods.
 - **[Grundlagen der Programmierung (GPD)](courses/gpd/)**: Basics of
   programming, including Java assignments covering fundamental algorithms and
@@ -22,7 +22,7 @@ various courses throughout my Bachelor of Science in Mathematics degree.
   Algebra I, with more advanced topics such as eigenvalues, eigenvectors, and
   diagonalization.
 - **[Numerische Lineare Algebra](courses/nla)**
-- **[Projekt Praktikum I](courses/pp-i)**
+- **[Projekt Praktikum I (not tracked here)](https://github.com/michaelvanstraten/projektpraktikum-i)**
 
 Each directory contains problem sets and assignments related to the
 corresponding course. The file names have been standardized to a Unix-friendly
