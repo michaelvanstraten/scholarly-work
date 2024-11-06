@@ -1,3 +1,6 @@
 [submodule "Einführung in das wissenschaftliche Rechnen"]
 	path = courses/ewr
 	url = https://github.com/michaelvanstraten/ewr-so-se-2024.git
+[submodule "courses/pp-i"]
+	path = courses/pp-i
+	url = https://github.com/michaelvanstraten/projektpraktikum-i.git

@@ -25,6 +25,7 @@ various courses throughout my Bachelor of Science in Mathematics degree.
   Algebra I, with more advanced topics such as eigenvalues, eigenvectors, and
   diagonalization.
 - **[Numerische Lineare Algebra](cources/nla)**
+- **[Projekt Praktikum I](cources/pp-i)**
 
 Each directory contains problem sets and assignments related to the
 corresponding course. The file names have been standardized to a Unix-friendly
