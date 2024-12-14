@@ -1,0 +1,142 @@
+\documentclass{problemset}
+
+\author{Michael van Straten}
+\Lecture{Numerische Lineare Algebra}
+\Problemset{6}
+\DoOn{2. Dezember 2024}
+
+\setlist[enumerate, 1]{label=(\alph*)}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{problem}{2}
+
+\begin{problem}{6 Punkte}
+Seien zwei invertierbare Matrizen \(A, B \in \reals^{n \times n}\)
+gegeben und \(\norm{\cdot}\) eine induzierte Matrixnorm. Es seien außerdem die
+Funktionen
+\[
+    f(x) = Ax \quad \text{und} \quad g(y) = By
+\]
+gegeben. Dazu existieren zwei rückwärtsstabile algorithmische Realisierungen
+  \(\tilde{f}\) und \(\tilde{g}\) mit
+\[
+    \tilde{f}(x) = f(x + \Delta x) \quad \text{und} \quad \tilde{g}(y) = g(y + \Delta y),
+\]
+sodass gilt:
+\begin{equation*}
+    \frac{\norm{\Delta x}}{\norm{x}} \leq C_f \text{eps},
+    \quad \frac{\norm{\Delta y}}{\norm{y}} \leq C_g \text{eps}.
+\end{equation*}
+Zeigen Sie, dass für \(x \neq 0\) gilt:
+\begin{equation*}
+    \frac{\norm{\tilde{g}(\tilde{f}(x)) - g(f(x))}}{\norm{g(f(x))}}
+    \leq \cond(B) \big(\cond(A) C_f + C_g \big) \text{eps},
+\end{equation*}
+wobei \(\cond(M)\) die Konditionszahl der Matrix \(M\) zur
+induzierten Norm \(\norm{\cdot}\) ist.
+
+\begin{proof}
+    Es folgt für \(x \neq 0\)
+    \begin{align*}
+        \frac{\norm{\tilde{g}(\tilde{f}(x)) - g(f(x))}}{\norm{g(f(x))}}
+         & = \frac{\norm{\tilde{g}(Ax+ A \Delta x) - g(Ax)}}{\norm{g(Ax)}}                                  \\
+         & = \frac{\norm{BAx + B A \Delta x + B \Delta (Ax + A \Delta x) -
+        BAx}}{\norm{BAx}}                                                                                   \\
+         & = \frac{\norm{BA \Delta x + B \Delta (Ax + A \Delta x)}}{\norm{BAx}}                             \\
+         & \le \frac{\norm{BA \Delta x}}{\norm{BAx}} + \frac{\norm{B \Delta (Ax + A \Delta x)}}{\norm{BAx}} \\
+         & = \frac{\norm{B^{-1}}\norm{BA \Delta x}}{\norm{B^{-1}}\norm{BAx}}
+        + \frac{\norm{B^{-1}}\norm{B \Delta (Ax + A \Delta x)}}{\norm{B^{-1}}\norm{BAx}}                    \\
+         & \le \cond(B) \paren*{ \frac{\norm{A \Delta x}}{\norm{Ax}}
+        + \frac{\norm{\Delta (Ax + A \Delta x)}}{\norm{Ax}}}                                                \\
+         & \le \cond(B) \paren*{ \cond(A) \frac{\norm{\Delta x}}{\norm{x}}
+            + \frac{\norm{\Delta (Ax + A \Delta x)}}{\norm{Ax}}}.
+    \end{align*}
+
+    Definieren wir nun \(y = Ax\) sowie \(\Delta y = \Delta (Ax + A \Delta x)\)
+    so folgt
+    \[
+        \cond(B) \paren*{ \cond(A) \frac{\norm{\Delta x}}{\norm{x}}
+            + \frac{\norm{\Delta y}}{\norm{y}}}
+        \le \cond(B) \big(\cond(A) C_f + C_g\big) \text{eps}.
+    \]
+\end{proof}
+\end{problem}
+
+\begin{problem}{7 Punkte}
+Die Konditionszahl einer invertierbaren Matrix \( A \in \reals^{n \times n}
+\) in der \( p \)-Norm ist definiert als
+\[
+    \kappa_p(A) := \cond_p(A) = \|A\|_p \|A^{-1}\|_p.
+\]
+Zeigen Sie:
+\begin{enumerate}
+    \item \( \|x\|_\infty \leq \|x\|_2 \leq \|x\|_1 \leq n \|x\|_\infty \) für \( x \in \reals^n \),
+    \item \( \frac{1}{n} \kappa_2(A) \leq \kappa_1(A) \leq n \kappa_2(A) \),
+    \item \( \frac{1}{n} \kappa_\infty(A) \leq \kappa_2(A) \leq n \kappa_\infty(A) \),
+    \item \( \frac{1}{n^2} \kappa_1(A) \leq \kappa_\infty(A) \leq n^2 \kappa_1(A) \).
+\end{enumerate}
+
+\textit{Hinweis:} Sie dürfen ohne Beweis nutzen, dass für \( x, y \in \reals^n \) und \( 1
+\leq q \leq r < \infty \) mit \( \frac{1}{q} + \frac{1}{r} = 1 \) die
+Hölder-Ungleichung gilt:
+\[
+    \sum_{i=1}^n |x_i y_i| \leq \left( \sum_{i=1}^n |x_i|^q \right)^{\frac{1}{q}} \left( \sum_{i=1}^n |y_i|^r \right)^{\frac{1}{r}}.
+\]
+\end{problem}
+
+\begin{problem}{7 Punkte}
+Sei \(\norm{\cdot}\) eine Norm auf \(\reals^n\), \(A \in \reals^{n \times n}\)
+invertierbar und \(\Delta A \in \reals^{n \times n}\) mit
+\begin{equation}\label{problem:5:eq:1}
+    \cond(A) \frac{\norm{\Delta A}}{\norm{A}} < 1
+\end{equation}
+(bezüglich der von \(\norm{\cdot}\) induzierten Matrixnorm). Sei zudem
+\(x + \Delta x\) die Lösung von
+\begin{equation}\label{problem:5:eq:2}
+    (A + \Delta A)(x + \Delta x) = b + \Delta b,
+\end{equation}
+mit \(x\) als Lösung von \(Ax = b\). Zeigen Sie, dass \(A + \Delta A\)
+ebenfalls invertierbar ist und es gilt:
+\begin{equation*}
+    \frac{\norm{\Delta x}}{\norm{x}} \leq \cond(A) \paren*{1 - \cond(A)
+        \frac{\norm{\Delta A}}{\norm{A}}}^{-1}
+    \paren*{\frac{\norm{\Delta A}}{\norm{A}} + \frac{\norm{\Delta b}}{\norm{b}}}.
+\end{equation*}
+
+\begin{proof}
+    Mit \autoref{problem:5:eq:1} folgt das \(\norm{A^{-1}\norm{\Delta A}} < 1\)
+    womit aus Aufgabe 6.2 folgt das \(A + \Delta A\) invertierbar ist.
+
+    Aus \autoref{problem:5:eq:2} folgt zudem
+    \begin{align*}
+         & \. (A + \Delta A)(x + \Delta x)                              & = b + \Delta b                                  \\
+         & \Rightarrow Ax + A \Delta x + \Delta A x + \Delta A \Delta x & = b + \Delta b                                  \\
+         & \Rightarrow A \Delta x + \Delta A x + \Delta A \Delta x      & = \Delta b                                      \\
+         & \Rightarrow (A  + \Delta A) \Delta x + \Delta A x            & = \Delta b                                      \\
+         & \Rightarrow (A  + \Delta A) \Delta x                         & = \Delta b - \Delta A x                         \\
+         & \Rightarrow \Delta x                                         & = {(A + \Delta A)}^{-1}(\Delta b - \Delta A x).
+    \end{align*}
+
+    Für die Norm von \(\Delta x\) folgt somit aus Aufgabe 5.5
+    \begin{align*}
+        \norm{\Delta x} & = \norm{(A + \Delta A)^{-1} (\Delta b - \Delta Ax)}                                                \\
+                        & \leq \norm{(A + \Delta A)^{-1}} (\norm{\Delta b} + \norm{\Delta A} \norm{x})                       \\
+                        & = \norm{(I + A^{-1} \Delta A)^{-1} A^{-1}} (\norm{\Delta b} + \norm{\Delta A} \norm{x})            \\
+                        & \leq \norm{(I + A^{-1} \Delta A)^{-1}} \norm{A^{-1}} (\norm{\Delta b} + \norm{\Delta A} \norm{x})  \\
+                        & \leq \frac{\norm{A^{-1}}}{1 - \norm{A^{-1} \Delta A}} (\norm{\Delta b} + \norm{\Delta A} \norm{x}) \\
+                        & = \frac{\norm{A^{-1}}}{1 - \norm{A^{-1} \Delta A}} \norm{A} \norm{x}
+        \paren*{\frac{\norm{\Delta b}}{\norm{x}} + \frac{\norm{\Delta A}}{\norm{A}}}                                         \\
+                        & = \frac{\norm{A^{-1}} \norm{A} \norm{x}}{1 - \norm{A^{-1} \Delta A}}
+        \paren*{\frac{\norm{\Delta b}}{\norm{x}} + \frac{\norm{\Delta A}}{\norm{A}}}                                         \\
+                        & \leq \frac{\norm{A^{-1}} \norm{A} \norm{x}}{1 - \norm{A^{-1}} \norm{A} \norm{\Delta A}}
+        \paren*{\frac{\norm{\Delta b}}{\norm{b}} + \frac{\norm{\Delta A}}{\norm{A}}}                                         \\
+                        & = \norm{x} \frac{\cond(A)}{1 - \cond(A) \frac{\norm{\Delta A}}{\norm{A}}}
+        \paren*{\frac{\norm{\Delta b}}{\norm{b}} + \frac{\norm{\Delta A}}{\norm{A}}}.
+    \end{align*}
+\end{proof}
+\end{problem}
+
+\end{document}
