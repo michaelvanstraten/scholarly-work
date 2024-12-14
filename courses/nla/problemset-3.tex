@@ -1,0 +1,154 @@
+\documentclass{problemset}
+
+\author{Michael van Straten}
+\Lecture{Numerische Lineare Algebra}
+\Problemset{3}
+\DoOn{11. November 2024}
+
+\setlist[enumerate, 1]{label=(\alph*)}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{problem}{3}
+
+\begin{problem}{7 Punkte}
+Lässt sich die Matrix
+\[
+    A =
+    \begin{bmatrix}
+        1 & 2 & 2 \\
+        2 & 4 & 7 \\
+        3 & 5 & 3 \\
+    \end{bmatrix}
+\]
+mit Hilfe der LR-Zerlegung ohne Pivotisierung zerlegen? Begründen Sie Ihre
+  Antwort. Bestimmen Sie anschließend die LR-Zerlegung von \(A\) mit
+  Pivotisierung. Geben Sie auch die Permutationsmatrix \(P\) von \(PA = LR\)
+  an.
+\end{problem}
+
+\begin{problem}{6 Punkte}
+Gegeben sei die Matrix
+\[
+    A =
+    \begin{bmatrix}
+        4 & 2 & 4 \\
+        2 & 2 & 3 \\
+        4 & 3 & 9 \\
+    \end{bmatrix}.
+\]
+Berechnen Sie die Cholesky-Zerlegung von \(A\).
+\end{problem}
+
+\begin{problem}{7 Punkte}
+Sei \( A \in \reals^{n \times n} \) eine symmetrisch positiv definite Matrix.
+\begin{enumerate}
+    \item Sei \( A \) aufgeteilt wie in (1) mit beliebigem \( p < n \) und sei
+          \( S \) das Schur-Komplement von \( A \) bezüglich \( A_{1,1} \).
+          Zeigen Sie: \( S \) ist wohldefiniert, und sowohl \( A_{1,1} \) als
+          auch \( S \) sind symmetrisch positiv definit.
+
+    \item Zeigen Sie, dass eine Cholesky-Zerlegung \( A = LL^T \) existiert.
+\end{enumerate}
+\textit{Hinweis:} Gehen Sie ähnlich vor wie in der Hausaufgabe 2.5 und beweisen Sie die Aussage induktiv.
+
+\begin{proof}\leavevmode
+    \begin{enumerate}
+        \item \label{problem:6:a} Zunächst zerlegen wir \( A \) wie folgt:
+              \begin{align*}
+                  A & =
+                  \begin{bmatrix}
+                      A_{1,1} & A_{1,2} \\ A_{2,1} & A_{2,2}
+                  \end{bmatrix} \\
+                    & =
+                  \underbrace{
+                      \begin{bmatrix}
+                          1                      & 0 \\
+                          A_{1,2}^T A_{1,1}^{-1} & 1
+                      \end{bmatrix}
+                  }_{\eqcolon L}
+                  \underbrace{
+                      \begin{bmatrix}
+                          A_{1,1} & 0                                        \\
+                          0       & A_{2,2} - A_{1,2}^T A_{1,1}^{-1} A_{1,2}
+                      \end{bmatrix}
+                  }_{\eqcolon D}
+                  \underbrace{
+                      \begin{bmatrix}
+                          1 & A_{1,1}^{-1} A_{1,2} \\
+                          0 & 1
+                      \end{bmatrix}}_{= L^T}.
+              \end{align*}
+
+              Da \( A \) sowie \( L \) invertierbare Matrizen sind, ist das
+              Schur-Komplement \( S \coloneq A_{2,2} - A_{1,2}^T A_{1,1}^{-1}
+              A_{1,2} \) wohldefiniert.
+
+              Da \(\det(L) = 1\), folgt:
+              \[
+                  D = L^{-1} A {\left(L^{-1}\right)}^T.
+              \]
+              Für \(v \in \reals^n \setminus \{0\}\) gilt daher:
+              \[
+                  v^T D v = v^T L^{-1} A {\left(L^{-1}\right)}^T v > 0,
+              \]
+              da \( A \) positiv definit ist. Daher sind sowohl \( A_{1,1} \)
+              als auch das Schur-Komplement \( S \) positiv definit.
+
+        \item Aus Aufgabe 2 wissen wir, dass für den \(2 \times 2\)-Fall eine
+              Cholesky-Zerlegung existiert.
+
+              Wir nehmen nun an, dass für ein \( n \in \nats \) und eine
+              Matrix \( \tilde{A} \in \reals^{n \times n} \) die
+              Cholesky-Zerlegung \( \tilde{A} = \tilde{L} \tilde{L}^T \)
+              existiert.
+
+              Sei
+              \begin{equation*}
+                  A = \begin{bmatrix}
+                      \tilde{A} & v \\
+                      v^T       & a
+                  \end{bmatrix} \in \mathbb{R}^{(n+1) \times (n+1)}
+              \end{equation*}
+              mit \( v \in \reals^n \) und \( a \in \reals \), wobei \(
+              A \) symmetrisch positiv definit ist.
+
+              Zerlegen wir \( A \) wie folgt:
+              \begin{align*}
+                  A & =
+                  \begin{bmatrix}
+                      \tilde{L}                    & 0 \\
+                      v^T \tilde{A}^{-1} \tilde{L} & 1
+                  \end{bmatrix}
+                  \begin{bmatrix}
+                      \tilde{L}^T & \tilde{L}^{-1} v \\ 0 & a - v^T \tilde{A}^{-1} v
+                  \end{bmatrix} \\
+                    & =
+                  \begin{bmatrix}
+                      \tilde{L}                & 0 \\
+                      v^T {(\tilde{L}^{-1})}^T & 1
+                  \end{bmatrix}
+                  \begin{bmatrix}
+                      \tilde{L}^T & \tilde{L}^{-1} v \\ 0 & a - v^T \tilde{A}^{-1} v
+                  \end{bmatrix} \\
+                    & =
+                  \underbrace{
+                      \begin{bmatrix}
+                          \tilde{L}                & 0                               \\
+                          v^T {(\tilde{L}^{-1})}^T & \sqrt{a - v^T \tilde{A}^{-1} v}
+                      \end{bmatrix}
+                  }_{\eqcolon L}
+                  \begin{bmatrix}
+                      \tilde{L}^T & \tilde{L}^{-1} v \\ 0 & \sqrt{a - v^T \tilde{A}^{-1} v}
+                  \end{bmatrix}.
+              \end{align*}
+              Aus \ref{problem:6:a} folgt, dass \( a - v^T \tilde{A}^{-1} v > 0
+              \), sodass \( A \) durch \( LL^T \) zerlegt werden kann.
+    \end{enumerate}
+\end{proof}
+
+\end{problem}
+
+\end{document}
