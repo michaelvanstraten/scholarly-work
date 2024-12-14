@@ -1,0 +1,140 @@
+
+\documentclass{problemset}
+
+\author{Michael van Straten}
+\Lecture{Numerische Lineare Algebra}
+\Problemset{5}
+\DoOn{25. November 2025}
+
+\setlist[enumerate, 1]{label=(\alph*)}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{problem}{2}
+
+\begin{problem}{5 Punkte}
+Sei \( A \in \mathbb{R}^{n \times n} \) eine invertierbare Matrix. Zeigen Sie, dass
+\[
+    \text{cond}_2(A) \geq \frac{\|A\|_2^n}{|\det(A)|}.
+\]
+\textit{Hinweis:} Nutzen Sie die Identität aus Aufgabe 1.3.
+\end{problem}
+
+\begin{problem}{8 Punkte}
+In dieser Aufgabe wollen wir die Rückwärtsanalyse für die Bestimmung einer der
+Nullstellen eines quadratischen Polynoms der Form \( x^2 - 2px + q \)
+durchführen, wobei \( p, q \in \mathbb{R} \) mit \( p^2 > q \neq 0 \). Dafür
+kann die pq-Formel verwendet werden:
+\[
+    f(p, q) = p + \sqrt{p^2 - q}.
+\]
+
+Für die Berechnung mit einem Computerprogramm \( \tilde{f} \) werden
+fehlerbehaftete Elementaroperationen \( \tilde{+}, \tilde{-}, \tilde{\cdot},
+\tilde{\sqrt{\phantom{x}}} \) verwendet. Dabei gilt, dass für alle Operationen
+\( \star \in \{+, -, \cdot, \sqrt{\phantom{x}}\} \) und alle \( x, y \in
+\mathbb{R} \) ein \( |\omega_\star| \leq \text{eps} \ll 1 \) existiert mit
+\[
+    x \tilde{+} y = (x + y)(1 + \omega_+), \quad x \tilde{-} y = (x - y)(1 + \omega_-),
+\]
+% \[
+%     x \tilde{\cdot} y = (x \cdot y)(1 + \omega_\cdot), \quad \tilde{\sqrt{x}} = \sqrt{x}(1 + \omega_\sqrt).
+% \]
+
+Hierbei nehmen wir zusätzlich an, dass die Wurzelfunktion im Programm nur für
+positive Argumente ausgewertet werden muss, also
+\[
+    (p^2)(1 + \omega_\cdot) \geq q.
+\]
+
+Zeigen Sie, dass \( \Delta p \) und \( \Delta q \) existieren, sodass
+\[
+    f(p + \Delta p, q + \Delta q) = \tilde{f}(p, q),
+\]
+mit
+\[
+    \left|\frac{\Delta p}{p}\right| \leq \text{eps},
+\]
+\[
+    \left|\frac{\Delta q}{q}\right| \leq \left(5 + 4 \left|\frac{p^2}{q}\right|\right) \text{eps} + O(\text{eps}^2).
+\]
+\end{problem}
+
+\begin{problem}{7 Punkte}
+Sei \( C \in \reals^{n \times n} \) mit \( \norm{C} < 1 \) in einer
+submultiplikativen Matrixnorm. Zeigen Sie:
+\begin{enumerate}
+    \item Die Reihe
+          \[
+              \sum_{k=0}^\infty C^k
+          \]
+          konvergiert, wobei \( C^0 = I \) die Einheitsmatrix ist.
+    \item Die gestörte Einheitsmatrix \( I - C \) ist invertierbar und es gilt
+          \[
+              \sum_{k=0}^\infty C^k = (I - C)^{-1}.
+          \]
+    \item Für die Matrixnorm von \( (I - C)^{-1} \) gilt
+          \[
+              \norm{(I - C)^{-1}} \leq \frac{1}{1 - \norm{C}}.
+          \]
+\end{enumerate}
+\begin{proof} \leavevmode
+    \begin{enumerate}
+        \item[(a) und (b)] Definieren wir
+              \[
+                  S_n \coloneq \sum_{k=0}^n C^k,
+              \]
+              sodass
+              \[
+                  \lim_{n \to \infty} S_n = \sum_{k=0}^\infty C^k.
+              \]
+              Es gilt:
+              \begin{align*}
+                  (I - C) S_n & = \sum_{k=0}^n C^k - \sum_{k=1}^{n + 1} C^k \\
+                              & = C^0 - C^{n+1}.
+              \end{align*}
+              Daraus folgt:
+              \[
+                  S_n = (I - C)^{-1} (C^0 - C^{n+1}).
+              \]
+
+              Für den Grenzwert von \( S_n \) gilt dann:
+              \[
+                  \lim_{n \to \infty} S_n = (I - C)^{-1} \lim_{n \to \infty} (C^0 - C^{n+1}).
+              \]
+              Da \( \norm{C} < 1 \), existiert für jedes \( \epsilon > 0 \) ein
+              \( N \in \nats \), sodass für alle \( n \geq N \) gilt:
+              \begin{align*}
+                  \norm{C^0 - C^{n+1} - C^0} & = \norm{C^{n+1}}            \\
+                                             & \leq \norm{C}^n < \epsilon.
+              \end{align*}
+
+              Somit ergibt sich:
+              \[
+                  \sum_{k=0}^\infty C^k = (I - C)^{-1}.
+              \]
+
+        \item[(c)]
+              Da Normen stetig sind und \( S_n \) gegen den oben gezeigten
+              Grenzwert konvergiert, folgt:
+              \begin{align*}
+                  \norm{(I - C)^{-1}} & = \norm*{\sum_{k=0}^\infty C^k}    \\
+                                      & \leq \sum_{k=0}^\infty \norm{C^k}  \\
+                                      & \leq \sum_{k=0}^\infty \norm{C}^k.
+              \end{align*}
+              Da \( \norm{C} < 1 \), gilt:
+              \[
+                  \sum_{k=0}^\infty \norm{C}^k = \frac{1}{1 - \norm{C}}.
+              \]
+              Somit ist
+              \[
+                  \norm{(I - C)^{-1}} \leq \frac{1}{1 - \norm{C}}.
+              \]
+    \end{enumerate}
+\end{proof}
+\end{problem}
+
+\end{document}
+

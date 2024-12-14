@@ -129,6 +129,7 @@
 
 \DeclareMathOperator{\Eig}{Eig}
 \DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\cond}{cond}
 
 % Set document spacing
 \setlength{\parindent}{0pt}
