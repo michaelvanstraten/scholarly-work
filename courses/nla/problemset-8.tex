@@ -1,0 +1,107 @@
+\documentclass{problemset}
+\usepackage{hyperref}
+\usepackage{multirow}
+
+\author{Michael van Straten}
+\Lecture{Numerische Lineare Algebra}
+\Problemset{8}
+\DoOn{16. Dezember 2024}
+
+\setlist[enumerate, 1]{label=(\alph*)}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{problem}{2}
+
+\begin{problem}{7 Punkte}
+Gegeben seien
+\[
+    A =
+    \begin{bmatrix}
+        1 & 1  & 2  \\
+        2 & -3 & 0  \\
+        2 & 4  & -4
+    \end{bmatrix}, \quad
+    b =
+    \begin{bmatrix}
+        9  \\
+        -4 \\
+        -2
+    \end{bmatrix}.
+\]
+Bestimmen Sie eine QR-Zerlegung von \( A \), indem Sie zwei
+  Householder-Transformationen \( Q_1 \) und \( Q_2 \) finden, sodass \( Q_2
+  Q_1 A \) eine rechte obere Dreiecksmatrix ist. Nutzen Sie anschließend die
+  QR-Zerlegung, um das lineare Gleichungssystem \( Ax = b \) zu lösen.
+
+\textit{Hinweis:} Nutzen Sie zuerst Lemma 5.3 für die Elimination in der ersten Spalte. In der zweiten Transformation soll die erste Spalte unverändert bleiben.
+\end{problem}
+
+\begin{problem}{7 Punkte}
+Seien \( A = Q_1 R_1 = Q_2 R_2 \) zwei QR-Zerlegungen einer regulären Matrix \(
+A \in \mathbb{R}^{n \times n} \), d.h. \( Q_1, Q_2 \in \mathbb{R}^{n \times n}
+\) sind orthogonale Matrizen und \( R_1, R_2 \in \mathbb{R}^{n \times n} \)
+obere Dreiecksmatrizen. Zeigen Sie, dass eine orthogonale Diagonalmatrix \( S
+\in \mathbb{R}^{n \times n} \) existiert, sodass
+\[
+    Q_1 = Q_2 S^T \quad \text{und} \quad R_1 = S R_2.
+\]
+
+\textit{Hinweis:} Sie können ohne Beweis annehmen, dass die Inverse einer oberen Dreiecksmatrix wieder eine obere Dreiecksmatrix ist.
+\end{problem}
+
+\begin{problem}{6 Punkte}
+Sei \( A \in \mathbb{R}^{n \times n} \) eine invertierbare Matrix mit Spalten
+\( a_i \in \mathbb{R}^n, \, i = 1, \ldots, n \). Seien \( q_1, \ldots, q_n \)
+die normierten Vektoren, die beim Gram-Schmidt-Orthonormalisierungsverfahren
+aus der Basis \( a_1, \ldots, a_n \) konstruiert werden. Sei \( Q \) die Matrix
+mit Spalten \( q_1, \ldots, q_n \). Zeigen Sie, dass
+\[
+    R := Q^T A
+\]
+eine rechte obere Dreiecksmatrix ist und \( A = QR \) somit eine QR-Zerlegung
+  ist.
+
+\begin{proof}
+    Aus \textbf{Algorithmus 3.11} der Vorlesung \emph{Lineare Algebra und
+        Analytische Geometrie 2} von Prof. Dr. Walther \cite{walther2024} ist
+    bekannt, dass für eine durch das Gram-Schmidt-Orthonormalisierungsverfahren
+    orthogonalisierte Basis, in diesem Fall die Menge \( q_1, \ldots, q_n \),
+    die ursprüngliche Basis \( a_1, \ldots, a_n \) die folgende Darstellung
+    hat:
+    \begin{equation*}
+        \begin{pmatrix} a_1, \ldots, a_n \end{pmatrix}
+        = \begin{pmatrix} q_1, \ldots, q_n \end{pmatrix}
+        \underbrace{%
+            \begin{pmatrix}
+                \norm{a_1}              & \innerp{a_1}{q_1}      & \cdots & \cdots & \innerp{a_{n-1}}{q_1}     \\
+                0                       & \norm{\widetilde{q}_2} & \ddots &        & \multirow{2}{*}{\vdots}   \\
+                \multirow{2}{*}{\vdots} & 0                      & \ddots & \ddots &                           \\
+                                        & \vdots                 & \ddots & \ddots & \innerp{a_{n-1}}{q_{n-1}} \\
+                0                       & 0                      & \cdots & 0      & \norm{\widetilde{q}_n}
+            \end{pmatrix}
+        }_{\eqcolon R} \in K^{n,n}.
+    \end{equation*}
+    Dies lässt sich bestätigen, indem wir uns die $i$-te Spalte der rechten
+    Matrix ansehen:
+    \begin{align*}
+        \sum_{j=1}^i (R)_{j,i} \cdot q_j
+         & = \norm{\widetilde{q}_i} q_i + \sum_{j=1}^{i-1} \innerp{a_i}{q_j} q_j                  \\
+         & = \widetilde{q}_i + \sum_{j=1}^{i-1} \innerp{a_i}{q_j} q_j                             \\
+         & = a_i - \sum_{j=1}^{i-1}\innerp{a_i}{q_j} q_j + \sum_{j=1}^{i-1} \innerp{a_i}{q_j} q_j \\
+         & = a_i.
+    \end{align*}
+    Damit folgt die Aussage, dass \(R\) eine obere Dreiecksmatrix ist und \(A =
+    QR\) eine QR-Zerlegung darstellt.
+\end{proof}
+
+\begin{thebibliography}{1}
+    \bibitem{walther2024}
+    Prof. Dr. Walther, \emph{Lineare Algebra und Analytische Geometrie 2}.
+    Zugriff: \url{https://pages.cms.hu-berlin.de/script-students/lina2/main.pdf#page=58}.
+\end{thebibliography}
+\end{problem}
+
+\end{document}

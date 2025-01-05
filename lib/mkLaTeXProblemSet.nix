@@ -15,6 +15,7 @@
       etoolbox
       isodate
       mathtools
+      multirow # nla/problemset-8
       pgfplots # ana-i/problemset-10
       rsfs # ana-i/problemset-13
       substr
