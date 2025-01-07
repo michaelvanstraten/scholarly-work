@@ -1,0 +1,140 @@
+\documentclass{problemset}
+
+\author{Michael van Straten}
+\Lecture{Numerische Lineare Algebra}
+\Problemset{9}
+\DoOn{6. Januar 2025}
+
+\setlist[enumerate, 1]{label=(\alph*)}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{problem}{2}
+
+\begin{problem}{7 Punkte}
+Gegeben seien
+\begin{equation}
+    A =
+    \begin{bmatrix}
+        1        & 1         \\
+        1        & 1         \\
+        \sqrt{2} & -\sqrt{2}
+    \end{bmatrix}, \quad
+    b =
+    \begin{bmatrix}
+        1 \\
+        1 \\
+        2\sqrt{2}
+    \end{bmatrix}.
+\end{equation}
+Berechnen Sie eine QR-Zerlegung von \( A \). Zeigen Sie, dass das überbestimmte
+Gleichungssystem \( Ax = b \) eine Lösung besitzt, und berechnen Sie diese.
+
+\begin{proof}
+    Mittels standardmäßiger Householder-Transformationen lässt sich eine
+    QR-Zerlegung von \( A \) wie folgt berechnen:
+    \begin{align*}
+        x & = \begin{pmatrix}
+                  1 \\ 1 \\ \sqrt{2}
+              \end{pmatrix},                \\
+        u & = x - \frac{x_1}{|x_1|} \norm{x} e_1     \\
+          & = \begin{pmatrix}
+                  1 \\ 1 \\ \sqrt{2}
+              \end{pmatrix} - 2 \begin{pmatrix}
+                                    1 \\ 0 \\ 0
+                                \end{pmatrix}, \\
+        v & = \frac{u}{\norm{u}}               \\
+          & = \frac{1}{2} u.
+    \end{align*}
+
+    Für die erste Householder-Transformation ergibt sich:
+    \begin{align*}
+        Q_1 & = I_3 - 2 v v^T                                                                              \\
+            & = I_3 - \frac{1}{2} u u^T                                                                    \\
+            & = I_3 - \frac{1}{2} \begin{bmatrix}
+                                      1         & -1       & -\sqrt{2} \\
+                                      -1        & 1        & \sqrt{2}  \\
+                                      -\sqrt{2} & \sqrt{2} & 2
+                                  \end{bmatrix}                                         \\
+            & = \begin{bmatrix}
+                    \frac{1}{2}         & \frac{1}{2}        & \frac{\sqrt{2}}{2}  \\
+                    \frac{1}{2}         & \frac{1}{2}        & -\frac{\sqrt{2}}{2} \\
+                    -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} & 0
+                \end{bmatrix}.
+    \end{align*}
+
+    Multiplizieren wir nun \( Q_1 \) linksseitig mit \( A \), so erhalten wir:
+    \begin{equation*}
+        Q_1 A = \begin{bmatrix}
+            2 & 0 \\
+            0 & 2 \\
+            0 & 0
+        \end{bmatrix} \eqcolon R.
+    \end{equation*}
+
+    Da \( R \) eine obere Dreiecksmatrix ist, folgt, dass \( Q_1^T \) in
+    Kombination mit \( R \) die gesuchten Eigenschaften der QR-Zerlegung
+    erfüllt.
+
+    Um das Gleichungssystem
+    \begin{equation*}
+        QRx = b
+    \end{equation*}
+    zu lösen, berechnen wir zunächst:
+    \begin{equation*}
+        Q^T b = Q_1 b = \begin{pmatrix}
+            3 \\ -1 \\ 0
+        \end{pmatrix}.
+    \end{equation*}
+
+    Es bleibt die Gleichung
+    \begin{equation*}
+        R x = \begin{bmatrix}
+            2 & 0 \\
+            0 & 2 \\
+            0 & 0
+        \end{bmatrix} x = Q^T b
+    \end{equation*},
+    welche uns das gesuchte \( x \) liefert:
+    \begin{equation*}
+        x = \begin{pmatrix}
+            \frac{3}{2} \\ -\frac{1}{2}
+        \end{pmatrix}.
+    \end{equation*}
+\end{proof}
+\end{problem}
+
+\begin{problem}{6 Punkte}
+Sei \( A \in \mathbb{R}^{n \times n} \) eine invertierbare Matrix mit Spalten
+\( a_i \in \mathbb{R}^n \). In Aufgabe 8.5 wurde gezeigt, dass eine
+QR-Zerlegung mit Hilfe des Gram-Schmidt-Orthonormalisierungsverfahrens
+konstruiert werden kann. Berechnen Sie die (gemeinsame) Anzahl der
+Multiplikationen und Divisionen bei der Berechnung einer orthonormalen Basis \(
+q_1, \ldots, q_n \) mit:
+\[
+    w_i = a_i - \sum_{j=1}^{i-1} \langle a_i, q_j \rangle q_j, \quad
+    q_i = \frac{w_i}{\|w_i\|}.
+\]
+\textit{Kommentar:} Beachten Sie, dass \( R \) nicht mehr durch eine
+Matrix-Matrix-Multiplikation berechnet werden muss, wie in Aufgabe 8.5
+beschrieben. Es gilt nämlich \( R_{ji} = \langle q_j, a_i \rangle \), welche
+bereits im Gram-Schmidt-Verfahren berechnet wurden.
+\end{problem}
+
+\begin{problem}{7 Punkte}
+Ist für ein Gleichungssystem \( Ax = b \) mit \( A \in \mathbb{R}^{n \times n}
+\) und \( b \in \mathbb{R}^n \) die Matrix schlecht konditioniert oder
+singulär, so kann ersatzweise das regularisierte Problem
+\[
+    \min_{x \in \mathbb{R}^n} \|Ax - b\|_2^2 + \epsilon \|x\|_2^2
+\]
+(Tikhonov-Regularisierung) mit einem \( \epsilon > 0 \) gelöst werden. Zeigen
+Sie, dass die Lösung \( x^* \) des regularisierten Problems gegeben ist durch
+\[
+    A^\top A x^* + \epsilon x^* = A^\top b.
+\]
+\end{problem}
+
+\end{document}
