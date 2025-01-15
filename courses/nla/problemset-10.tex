@@ -1,0 +1,129 @@
+\documentclass{problemset}
+
+\author{Michael van Straten}
+\Lecture{Numerische Lineare Algebra}
+\Problemset{10}
+\DoOn{13. Januar 2025}
+
+\setlist[enumerate, 1]{label=(\alph*)}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{problem}{1}
+
+\begin{problem}[Moore-Penrose-Inverse]{6 Punkte}
+Seien \( m, n \in \mathbb{N} \) und \( A \in \mathbb{R}^{m \times n} \). Eine
+Matrix \( A^\dagger \in \mathbb{R}^{n \times m} \) heißt Moore-Penrose-Inverse
+von \( A \), falls die folgenden Bedingungen erfüllt sind:
+\begin{enumerate}
+    \item[(a)] \( AA^\dagger A = A \),
+    \item[(b)] \( A^\dagger A A^\dagger = A^\dagger \),
+    \item[(c)] \( AA^\dagger \) ist symmetrisch,
+    \item[(d)] \( A^\dagger A \) ist symmetrisch.
+\end{enumerate}
+Zeigen Sie:
+\begin{enumerate}
+    \item Die Moore-Penrose-Inverse \( A^\dagger \) einer Matrix \( A \) ist
+          eindeutig durch (a)–(d) bestimmt.
+
+          \textit{Hinweis:}
+          Betrachten Sie für eine weitere Matrix \( \tilde{A}^\dagger \),
+          welche die Eigenschaften (a)–(d) erfüllt, die Matrix \( D^2 \) mit \(
+          D := A \tilde{A}^\dagger - A A^\dagger \).
+    \item Es gilt \( A^\dagger = (A^\top A)^{-1} A^\top \), falls \(
+          \operatorname{rg}(A) = n \), und \( A^\dagger = A^\top (A
+          A^\top)^{-1} \), falls \( \operatorname{rg}(A) = m \).
+    \item \( A^\dagger = A^{-1} \), falls \( A \) regulär ist.
+\end{enumerate}
+\begin{proof}\leavevmode
+    \begin{enumerate}
+        \item \label{problem:1:i} Zunächst betrachten wir wie im Hinweis vorgeschlagen \( D^2 \):
+              \begin{align*}
+                  {(A \tilde{A}^\dagger - A A^\dagger)}^2
+                   & = A \tilde{A}^\dagger A \tilde{A}^\dagger
+                  - A A^\dagger A \tilde{A}^\dagger
+                  - A \tilde{A}^\dagger A A^\dagger
+                  + A A^\dagger A A^\dagger                      \\
+                   & = A \tilde{A}^\dagger - A \tilde{A}^\dagger
+                  - A A^\dagger + A A^\dagger                    \\
+                   & = 0.
+              \end{align*}
+
+              Da \( A \tilde{A}^\dagger \) und \( A A^\dagger \) reelle,
+              symmetrische Matrizen sind, ist auch \( D \) symmetrisch und
+              somit diagonalisierbar mit Diagonaleinträgen, die den Eigenwerten
+              von \( D \) entsprechen.
+
+              Aus \((A \tilde{A}^\dagger - A A^\dagger)^2 = 0\) folgt, dass \(
+              D \) nilpotent ist und daher nur Eigenwerte gleich \( 0 \)
+              besitzt. Daraus ergibt sich:
+              \begin{align*}
+                       & A \tilde{A}^\dagger - A A^\dagger = 0                                                   \\
+                  \iff & A \tilde{A}^\dagger = A A^\dagger)                                                      \\
+                  \iff & \tilde{A}^\dagger = \tilde{A}^\dagger A A^\dagger                                       \\
+                  \iff & \tilde{A}^\dagger = \tilde{A}^\dagger A A^\dagger A A^\dagger                           \\
+                  \iff & \tilde{A}^\dagger = {(\tilde{A}^\dagger A)}^{}\top A^\dagger A A^\dagger                \\
+                  \iff & \tilde{A}^\dagger = A^\top {\tilde{A}}^{\dagger^\top} A^\top A^{\dagger^\top} A^\dagger \\
+                  \iff & \tilde{A}^\dagger = A^\top A^{\dagger^\top} A^\dagger                                   \\
+                  \iff & \tilde{A}^\dagger = {(A^\dagger A)}^\top A^\dagger                                      \\
+                  \iff & \tilde{A}^\dagger = A^\dagger.
+              \end{align*}
+              Somit ist die Moore-Penrose-Inverse eindeutig bestimmt.
+
+        \item Falls \( \operatorname{rg}(A) = n \), hat \( A^\top A \) den Rang
+              \( n \) und ist daher invertierbar. Außerdem erfüllt \( A^\dagger
+              = (A^\top A)^{-1} A^\top \) die Bedingungen (a)–(d) (diese können
+              durch Einsetzen überprüft werden). Mit der Eindeutigkeit aus
+              \ref{problem:1:i} folgt:
+              \[
+                  A^\dagger = (A^\top A)^{-1} A^\top.
+              \]
+
+              Analog gilt für \( \operatorname{rg}(A) = m \), dass \( A A^\top
+              \) invertierbar ist. Daraus folgt:
+              \[
+                  A^\dagger = A^\top (A A^\top)^{-1}.
+              \]
+
+        \item Ist \( A \) regulär, so gilt \( \operatorname{rg}(A) = n = m \),
+              und \( A^\dagger \) erfüllt die Bedingungen (a)–(d). Da \( A^{-1}
+              \) ebenfalls die Bedingungen (a)–(d) erfüllt, folgt mit der
+              Eindeutigkeit aus \ref{problem:1:i}, dass:
+              \[
+                  A^\dagger = A^{-1}.
+              \]
+    \end{enumerate}
+\end{proof}
+\end{problem}
+
+\setcounter{problem}{3}
+
+\begin{problem}{7 Punkte}
+Seien \( m, n \in \mathbb{N} \) und \( A \in \mathbb{R}^{m \times n} \). Zeigen Sie:
+\begin{enumerate}
+    \item[i)] \( \ker(A) \oplus \operatorname{img}(A^\dagger) = \mathbb{R}^n
+          \),
+    \item[ii)] \( \ker(A^\dagger) \oplus \operatorname{img}(A) = \mathbb{R}^m
+          \).
+\end{enumerate}
+\textit{Hinweis:} Nutzen Sie die Projektionen aus Aufgabe 3.
+\end{problem}
+
+\begin{problem}{7 Punkte}
+Seien \( m, n \in \mathbb{N} \), \( A \in \mathbb{R}^{m \times n} \), und \( b
+\in \mathbb{R}^m \). Zeigen Sie, dass für \( \hat{x} := A^\dagger b \) und alle
+\( x \in \mathbb{R}^n \) gilt:
+\[
+    \|A \hat{x} - b\|_2^2 = \|A x - b\|_2^2 - \|A (x - \hat{x})\|_2^2
+\]
+und
+\[
+    \|A \hat{x} - b\| = \min_{x \in \mathbb{R}^n} \|A x - b\| = \|P_1 b\|,
+\]
+wobei \( P_1 \) die Projektion aus Aufgabe 3 ist. \textit{Hinweis:} Zeigen
+  Sie gegebenenfalls zuerst, dass \( (A^\top)^\dagger = (A^\dagger)^\top \).
+\end{problem}
+
+\end{document}

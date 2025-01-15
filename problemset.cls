@@ -126,6 +126,11 @@
     {\lVert}{\rVert}
     {}
     {\ifblank{#1}{\anyarg}{#1}}
+\DeclarePairedDelimiterXPP{\innerp}[2]
+    {}
+    {\langle}{\rangle}
+    {}
+    {\ifblank{#1}{\anyarg}{#1}, \ifblank{#2}{\anyarg}{#2}}
 
 \DeclareMathOperator{\Eig}{Eig}
 \DeclareMathOperator{\Span}{Span}
