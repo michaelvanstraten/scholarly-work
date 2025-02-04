@@ -1,0 +1,192 @@
+\documentclass{problemset}
+
+\author{Michael van Straten}
+\Lecture{Numerische Lineare Algebra}
+\Problemset{11}
+\DoOn{20. Januar 2025}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{problem}{2}
+
+\begin{problem}{8 Punkte}
+
+Sei \( n \in \nats \). Zeigen Sie, dass es zu jedem \( \epsilon > 0 \) und
+jeder Matrix \( A \in \reals^{n \times n} \), deren charakteristisches Polynom
+über \( \reals \) in Linearfaktoren zerfällt, eine induzierte Matrixnorm gibt,
+für die gilt:
+\[
+    \|A\| \leq \rho(A) + \epsilon.
+\]
+\textit{Hinweis:}
+Betrachten Sie für eine Transformationsmatrix \( S \in \reals^{n \times n} \),
+welche \( A \) in Jordan-Normalform überführt, und die Diagonalmatrix \( D \in
+\reals^{n \times n} \) mit den Einträgen \( (1, \epsilon, \dots,
+\epsilon^{n-1}) \) die Norm
+\[
+    \|x\| := \|D^{-1} S^{-1} x\|_\infty.
+\]
+\begin{proof}
+    Sei \( A \in \reals^{n \times n} \) mit Jordan-Normalform \( J \in
+    \reals^{n \times n} \), bestehend aus \( k \) Jordan-Blöcken \( J_1,
+    \ldots, J_k \), und Transformationsmatrix \( S \), sodass \( A = S J S^{-1}
+    \). Sei \( l_1, \ldots, l_k \) die Größen der Jordan-Blöcke, also \( J_m
+    \in \reals^{l_m \times l_m} \) für \( m = 1, \ldots, k \), wobei \(
+    \sum_{m=1}^k l_m = n \). Wählen wir die Norm \( \|x\| \) wie im Hinweis
+    definiert, dann gilt:
+    \begin{align*}
+        \|A\| & = \sup_{x \neq 0} \frac{\|Ax\|}{\|x\|}                                                     \\
+              & = \sup_{x \neq 0} \frac{\|D^{-1} S^{-1} A x\|_\infty}{\|D^{-1} S^{-1} x\|_\infty}          \\
+              & = \sup_{x \neq 0} \frac{\|D^{-1} S^{-1} S J S^{-1} x\|_\infty}{\|D^{-1} S^{-1} x\|_\infty} \\
+              & = \sup_{x \neq 0} \frac{\|D^{-1} J S^{-1} x\|_\infty}{\|D^{-1} S^{-1} x\|_\infty}          \\
+              & = \sup_{x \neq 0} \frac{\|D^{-1} J D D^{-1} S^{-1} x\|_\infty}{\|D^{-1} S^{-1} x\|_\infty} \\
+              & \leq \|D^{-1} J D\|_\infty.
+    \end{align*}
+
+    Nun betrachten wir die Matrix \( D^{-1} J D \). Diese ergibt sich als:
+    \[
+        D^{-1} J D =
+        \begin{bmatrix}
+            1 &               &        &                   \\
+              & \epsilon^{-1} &        &                   \\
+              &               & \ddots &                   \\
+              &               &        & \epsilon^{-(n-1)}
+        \end{bmatrix}
+        \begin{bmatrix}
+            J_1 &     &        &     \\
+                & J_2 &        &     \\
+                &     & \ddots &     \\
+                &     &        & J_k
+        \end{bmatrix}
+        \begin{bmatrix}
+            1 &          &        &                \\
+              & \epsilon &        &                \\
+              &          & \ddots &                \\
+              &          &        & \epsilon^{n-1}
+        \end{bmatrix}.
+    \]
+
+    Definieren wir
+    \[
+        d \coloneq \sum_{i = 1}^{m-1} l_i,
+    \]
+    so ergibt sich für den \( m \)-ten Jordan-Block \( J_m \) der Größe \( l_m
+    \):
+    \[
+        \begin{bmatrix}
+            \epsilon^{-d} &                 &        &                         \\
+                          & \epsilon^{-d-1} &        &                         \\
+                          &                 & \ddots &                         \\
+                          &                 &        & \epsilon^{-d - l_m + 1}
+        \end{bmatrix}
+        \begin{bmatrix}
+            \lambda_m & 1         &        &           \\
+                      & \lambda_m & 1      &           \\
+                      &           & \ddots & 1         \\
+                      &           &        & \lambda_m
+        \end{bmatrix}
+        \begin{bmatrix}
+            \epsilon^{d} &                  &        &                        \\
+                         & \epsilon^{d + 1} &        &                        \\
+                         &                  & \ddots &                        \\
+                         &                  &        & \epsilon^{d + l_m - 1}
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            \lambda_m & \epsilon  &          &           \\
+                      & \lambda_m & \epsilon &           \\
+                      &           & \ddots   & \epsilon  \\
+                      &           &          & \lambda_m
+        \end{bmatrix}.
+    \]
+
+    Die Skalierung durch \( D^{-1} \) und \( D \) reduziert die Größe der
+    Nebendiagonalelemente um den Faktor \( \epsilon \). Daher gilt für die
+    Spaltensummennorm von \( D^{-1} J D \):
+    \[
+        \|D^{-1} J D\|_\infty \leq \rho(A) + \epsilon,
+    \]
+    wobei \( \rho(A) \) den Spektralradius von \( A \) bezeichnet. Damit ist
+    die Behauptung gezeigt.
+\end{proof}
+\end{problem}
+
+\begin{problem}[Das Richardson-Verfahren für SPD-Matrizen]{6 Punkte}
+Sei \( n \in \mathbb{N} \). Ermitteln Sie für jede symmetrisch positiv definite
+Matrix \( A \in \reals^{n \times n} \) die Werte des Parameters \( \omega
+\in \reals \), sodass die lineare Verfahrensfunktion \( \Phi: \reals^n
+\times \reals^n \to \reals^n \), gegeben durch
+\[
+    \Phi(x, b) = (I - \omega A)x + \omega b,
+\]
+konvergent und konsistent zu \( A \) ist.
+\end{problem}
+
+\begin{problem}[Lemma 6.8]{6 Punkte}
+Sei \( n \in \mathbb{N} \), \( A \in \reals^{n \times n} \). Weiter seien
+\( \Phi \) und \( \Psi \) zwei lineare Verfahrensfunktionen mit zugehörigen
+Matrizen \( B_\Phi, B_\Psi, C_\Phi \) und \( C_\Psi \) der ersten Normalform.
+Mit \( \Phi \circ \Psi \) sei die Produktiteration
+\[
+    (\Phi \circ \Psi)(x, b) := \Phi(\Psi(x, b), b)
+\]
+bezeichnet. Zeigen Sie:
+\begin{enumerate}
+    \item Sind \( \Phi \) und \( \Psi \) konsistent zu \( A \), dann ist auch
+          die Produktiteration \( \Phi \circ \Psi \) konsistent zu \( A \).
+    \item Sind \( \Phi \) und \( \Psi \) konvergent, dann ist auch die
+          Produktiteration \( \Phi \circ \Psi \) konvergent.
+    \item Bezeichnen \( B_{\Phi \circ \Psi} \) bzw. \( B_{\Psi \circ \Phi} \)
+          die entsprechenden Matrizen der ersten Normalformen der
+          Produktiterationen \( \Phi \circ \Psi \) bzw. \( \Psi \circ \Phi \),
+          dann gilt:
+          \[
+              \rho(B_{\Phi \circ \Psi}) = \rho(B_{\Psi \circ \Phi}).
+          \]
+\end{enumerate}
+\begin{proof}\leavevmode
+    \begin{enumerate}
+        \item Sei \( x \) die Lösung des Gleichungssystems \( A x = b \). Dann
+              folgt für die Produktiteration aufgrund der Konsistenz von \(
+              \Phi \) und \( \Psi \):
+              \begin{align*}
+                  (\Phi \circ \Psi)(x, b) & = \Phi(\Psi(x, b), b) \\
+                                          & = \Phi(x, b)          \\
+                                          & = x.
+              \end{align*}
+              Somit ist auch \( \Phi \circ \Psi \) konsistent zu \( A \).
+
+        \item Wir beobachten für die Produktiteration:
+              \begin{align*}
+                  (\Phi \circ \Psi)(x, b) & = \Phi(\Psi(x, b), b)                          \\
+                                          & = B_\Phi(B_\Psi x + C_\Psi b) + C_\Phi b       \\
+                                          & = B_\Phi B_\Psi x + B_\Phi C_\Psi b + C_\Phi b \\
+                                          & = B_\Phi B_\Psi x + (B_\Phi C_\Psi + C_\Phi) b \\
+                                          & = \underbrace{B_\Phi B_\Psi}_{\eqcolon B} x
+                  + \underbrace{(B_\Phi C_\Psi + C_\Phi)}_{\eqcolon C} b.
+              \end{align*}
+              Für die Norm von \( B \) gilt:
+              \[
+                  \|B\| = \|B_\Phi B_\Psi\| \leq \|B_\Phi\| \|B_\Psi\| \leq 1 \cdot 1 = 1.
+              \]
+              Nach Theorem 6.9 folgt damit, dass die Produktiteration \( \Phi
+              \circ \Psi \) konvergent ist.
+
+        \item Betrachten wir zwei Produktmatrizen \( AB \) und \( BA \), so
+              haben diese denselben Spektralradius. Dies folgt aus:
+              \[
+                  ABv = \lambda v \quad \Rightarrow \quad (BA)(Bv) = \lambda (Bv).
+              \]
+              Daraus folgt, dass die Eigenwerte von \( AB \) und \( BA \)
+              identisch sind. Insbesondere haben \( B_{\Phi \circ \Psi} \) und
+              \( B_{\Psi \circ \Phi} \) denselben maximalen Eigenwert:
+              \[
+                  \rho(B_{\Phi \circ \Psi}) = \rho(B_{\Psi \circ \Phi}).
+              \]
+    \end{enumerate}
+\end{proof}
+\end{problem}
+
+\end{document}
