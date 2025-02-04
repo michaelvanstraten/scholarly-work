@@ -1,0 +1,173 @@
+\documentclass{problemset}
+
+\usepackage{nicematrix}
+
+\author{Michael van Straten}
+\Lecture{Numerische Lineare Algebra}
+\Problemset{13}
+\DoOn{3. Februar 2025, 09:00 Uhr}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{problem}{2}
+
+\begin{problem}[Gerschgorin-Kreise]{5 Punkte}
+Sei \( n \in \nats \) und \( A \in \mathbb{C}^{n \times n} \). Dann heißt für
+\( i \in \{1, \ldots, n\} \) die Menge
+\[
+    K_i := \left\{ z \in \mathbb{C} : || \leq \sum_{j=1, j \neq i}^n |a_{ij}| \right\}
+\]
+der \( i \)-te Gerschgorin-Kreis von \( A \). Zeigen Sie: Ist \( \lambda \in
+  \mathbb{C} \) ein Eigenwert von \( A \), so gilt
+\[
+    \lambda \in \bigcup_{i=1}^n K_i.
+\]
+\begin{proof}
+    Sei \((\lambda, v)\) ein Eigenpaar von \(A\) sowie \(i\) sodass \(|v_i|\)
+    maximal ist. Dann folgt, dass \newcommand{\idx}{\substack{j=1 \\ j \neq i}}
+    \begin{align*}
+        Av = \lambda v & \iff \sum_{j=1}^n a_{ij} v_j = \lambda v_i                    \\
+                       & \iff \sum_{\idx}^n a_{ij} v_j = \lambda v_i - a_{ii} v_i      \\
+                       & \iff \sum_{\idx}^n a_{ij} v_j = (\lambda - a_{ii}) v_i        \\
+                       & \iff \lambda - a_{ii} = \sum_{\idx}^n a_{ij} \frac{v_j}{v_i}.
+    \end{align*}
+
+    Daraus folgt
+    \begin{align*}
+        \abs{\lambda - a_{ii}}
+         & = \big| \sum_{\idx}^n a_{ij} \frac{v_j}{v_i} \big| \\
+         & \le \sum_{\idx}^n \abs{a_{ij}},
+    \end{align*}
+    was die Behauptung zeigt.
+\end{proof}
+\end{problem}
+
+\begin{problem}[Vorkonditionierung mit unvollständiger Cholesky-Zerlegung]{8 Punkte}
+Sei
+\[
+    A :=
+    \begin{bmatrix}
+        2  & -1 & -1 & -1 \\
+        -1 & 2  & 0  & 0  \\
+        -1 & 0  & 2  & 0  \\
+        -1 & 0  & 0  & 2
+    \end{bmatrix}, \quad
+    b :=
+    \begin{bmatrix}
+        -1 \\ 1 \\ 1 \\ 1
+    \end{bmatrix}, \quad
+    x_0 :=
+    \begin{bmatrix}
+        0 \\ 0 \\ 0 \\ 0
+    \end{bmatrix}.
+\]
+Berechnen Sie:
+\begin{enumerate}
+    \item mittels Aufgabe 3 eine Schätzung für den kleinsten und größten
+          Eigenwert von \( A \),
+    \item zwei Schritte des relaxierten Richardson-Verfahrens zur Lösung von \(
+          Ax = b \) und beginnend bei \( x_0 \). Verwenden Sie dabei \( \omega
+          = 1 / \bar{\lambda} \), wobei \( \bar{\lambda} \) dem Mittelwert der
+          beiden Schätzungen aus (i) entspricht,
+    \item eine unvollständige Cholesky-Zerlegung \( \tilde{L} \tilde{L}^\top
+          \approx A \) und \( \|A - \tilde{L} \tilde{L}^\top \|_\infty \),
+    \item die vorkonditionierte Matrix \( \tilde{A} := \tilde{L}^{-1} A
+          \tilde{L}^{-\top} \),
+    \item mittels Aufgabe 3 eine Schätzung für den kleinsten und größten
+          Eigenwert von \( \tilde{A} \),
+    \item zwei Schritte des vorkonditionierten relaxierten
+          Richardson-Verfahrens zur Lösung von \( Ax = b \) und beginnend bei
+          \( x_0 \). Verwenden Sie dabei \( \omega = 1 / \bar{\lambda} \),
+          wobei \( \bar{\lambda} \) dem Mittelwert der beiden Schätzungen aus
+          (v) entspricht.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Modellierung des max-flow Problems]{7 Punkte}
+In einer technischen Anlage soll eine möglichst große Menge einer Flüssigkeit
+von einem Startpunkt zu einem Zielpunkt transportiert werden. Dazu steht ein
+Netzwerk von Rohren zur Verfügung. Die Rohre sind an Knotenpunkten verbunden.
+An jedem Knotenpunkt lässt sich der Durchfluss zu den anliegenden Rohren mit
+Hilfe von Kompressoren steuern. Für jedes Rohr ist vorab eine Flussrichtung
+festgelegt und ein maximal möglicher Durchfluss spezifiziert. In den
+Knotenpunkten kann keine Flüssigkeit zwischengespeichert werden.
+
+Modellieren Sie die Situation als lineares Optimierungsproblem in den
+Standardformen (P) und (N) aus der Vorlesung. Geben Sie dazu in beiden Fällen
+die Dimensionen \( n, m \in \nats \), sowie die Vektoren \( c \in \reals^n \),
+\( b \in \reals^m \) und die Matrix \( A \in \reals^{m \times n} \) an.
+
+\textbf{Lösung:}
+
+Für die Knotenpunkte \( V_1, \ldots, V_n \), wobei \( V_1 \) den Start- und \(
+V_n \) den Endpunkt des Netzwerks definiert, sowie \( E_1, \ldots, E_m \),
+welche die Rohre zwischen den einzelnen Knotenpunkten repräsentieren,
+definieren wir die Systemmatrix \( A \) wie folgt:
+\[
+    A \coloneq
+    \renewcommand{\arraystretch}{1.5}
+    \begin{array}{c}
+        V_1 \\ V_2 \\ \vdots \\ V_m \\ \hline E_1 \\ \vdots \\ E_n
+    \end{array}
+    \overset{
+        \begin{array}{llll}
+            E_{\text{opt}} & E_1 & \ldots & E_m
+        \end{array}
+    }
+    {
+        \begin{pmatrix}
+            1      & d_{1, 1} & \cdots & d_{1, m} \\
+            0      & d_{2, 1} & \cdots & d_{2, m} \\
+            \vdots & \vdots   & \cdots & \vdots   \\
+            -1     & d_{n, 1} & \cdots & d_{n, m} \\
+            \hline
+            0      &          &        &          \\
+            \vdots &          & I_m    &          \\
+            0      &          &        &          \\
+        \end{pmatrix}
+    }
+    \in \reals^{(n+m) \times (m+1)},
+\]
+wobei
+\[
+    d_{ij} \coloneq \begin{cases}
+        1  & \text{wenn \( V_i \) von \( E_j \) gespeist wird}, \\
+        -1 & \text{wenn \( V_i \) von \( E_j \) abläuft},       \\
+        0  & \text{sonst}.
+    \end{cases}
+\]
+Das Rohr \( E_{\text{opt}} \) verbindet den Startpunkt \( V_1 \) und den
+  Endpunkt \( V_n \) direkt miteinander. Unsere Optimierung zielt auf dieses
+  Rohr ab, daher lautet der Optimierungsvektor:
+\[
+    c = e_1 \in \reals^{m+1},
+\]
+wobei \( e_1 \) der Einheitsvektor ist.
+
+Für die rechte Seite \( b \) definieren wir:
+\[
+    b \coloneq \begin{pmatrix}
+        0 \\ \vdots \\ 0 \\ \hline t_1 \\ \vdots \\ t_m
+    \end{pmatrix} \in \reals^{m+1},
+\]
+wobei \( t_i \) der maximale Durchfluss des Rohrs \( E_i \) ist.
+
+\textbf{Standardform (P):}
+\[
+    \max \quad c^\top x \quad \text{unter den Nebenbedingungen} \quad A x \leq b, \; x \geq 0.
+\]
+
+\textbf{Normalform (N):}
+\[
+    \min \quad -c^\top x \quad \text{unter den Nebenbedingungen} \quad A x = b, \; x \geq 0.
+\]
+
+\textbf{Interpretation:}
+Die Variable \( x \in \mathbb{R}^{m+1} \) enthält den maximalen Durchfluss des
+Rohrs \( E_{\text{opt}} \) in der ersten Komponente und die optimalen
+Durchflussraten in den Komponenten \( 2 \) bis \( m+1 \).
+\end{problem}
+
+\end{document}
